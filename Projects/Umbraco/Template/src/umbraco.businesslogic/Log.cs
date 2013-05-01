@@ -356,11 +356,23 @@ namespace umbraco.BusinessLogic
         [Obsolete("Use the Instance.GetLogItems method which return a list of LogItems instead")]
         internal static IRecordsReader GetLogReader(User user, LogTypes type, DateTime sinceDate, int numberOfResults)
         {
-            return SqlHelper.ExecuteReader(
-                "select top " + numberOfResults + " userId, NodeId, DateStamp, logHeader, logComment from umbracoLog where UserId = @user and logHeader = @logHeader and DateStamp >= @dateStamp order by dateStamp desc",
-                SqlHelper.CreateParameter("@logHeader", type.ToString()),
-                SqlHelper.CreateParameter("@user", user.Id),
-                SqlHelper.CreateParameter("@dateStamp", sinceDate));
+            //YP - sql does not work for MySQL
+            if (SqlHelper is umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper)
+            {
+                return SqlHelper.ExecuteReader(
+                    "select userId, NodeId, DateStamp, logHeader, logComment from umbracoLog where UserId = @user and logHeader = @logHeader and DateStamp >= @dateStamp order by dateStamp desc limit " + numberOfResults,
+                    SqlHelper.CreateParameter("@logHeader", type.ToString()),
+                    SqlHelper.CreateParameter("@user", user.Id),
+                    SqlHelper.CreateParameter("@dateStamp", sinceDate));
+            }
+            else
+            {
+                return SqlHelper.ExecuteReader(
+                    "select top " + numberOfResults + " userId, NodeId, DateStamp, logHeader, logComment from umbracoLog where UserId = @user and logHeader = @logHeader and DateStamp >= @dateStamp order by dateStamp desc",
+                    SqlHelper.CreateParameter("@logHeader", type.ToString()),
+                    SqlHelper.CreateParameter("@user", user.Id),
+                    SqlHelper.CreateParameter("@dateStamp", sinceDate));
+            }
         }
         #endregion
 
