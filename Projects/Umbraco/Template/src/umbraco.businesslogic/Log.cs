@@ -356,7 +356,6 @@ namespace umbraco.BusinessLogic
         [Obsolete("Use the Instance.GetLogItems method which return a list of LogItems instead")]
         internal static IRecordsReader GetLogReader(User user, LogTypes type, DateTime sinceDate, int numberOfResults)
         {
-            //YP - sql does not work for MySQL
             if (SqlHelper is umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper)
             {
                 return SqlHelper.ExecuteReader(

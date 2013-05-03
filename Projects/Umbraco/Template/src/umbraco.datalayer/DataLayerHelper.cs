@@ -23,7 +23,7 @@ namespace umbraco.DataLayer
         /// <summary>Name of the property that identifies the SQL helper type.</summary>
         private const string ConnectionStringDataLayerIdentifier = "datalayer";
         /// <summary>Name of the default data layer, that is used when nothing is specified.</summary>
-        private const string DefaultDataHelperName = "SqlServer";
+        private const string DefaultDataHelperName = "MySql";
         /// <summary>Format used when the SQL helper is qualified by its simple name, instead of the full class name.</summary>
         private const string DefaultDataHelperFormat = "umbraco.DataLayer.SqlHelpers.{0}.{0}Helper";
 
