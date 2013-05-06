@@ -358,7 +358,7 @@ namespace umbraco
         [Obsolete]
         public static string NiceUrlFullPath(int nodeID)
         {
-            throw new NotImplementedException("It was broken anyway...");
+            return string.Empty;
         }
 
         /// <summary>
