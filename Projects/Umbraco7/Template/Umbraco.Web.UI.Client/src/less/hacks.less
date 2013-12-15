@@ -1,0 +1,87 @@
+// Hacks
+// -------------------------
+
+/* CONTAINS ALL HACKS AND OTHER QUICK-FIXES */
+
+/*wft ms?*/
+*{ -ms-touch-action: none;}
+
+.nounderline {text-decoration: none !important}
+.nounderline:hover {text-decoration: underline !important}
+.nounderline * {text-decoration: none !important; border: none}
+
+.ui-sortable-placeholder {
+     margin-left: 0 !important;
+}
+.controls-row img {
+	max-width: none;
+}
+.thumbnail img {
+	max-width: 100% !important
+}
+
+#mapCanvas img {
+  max-width: none !important;
+}
+
+/* loading animation for iframes and content pages */
+iframe, .content-column-body {
+    background: center center url(../img/loader.gif) no-repeat;
+    border: none;
+}
+
+/* JQUERY FILEUPLOAD TEMP STYLES */
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: translate(-300px, 0) scale(4);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+}
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+.progress-animated .progress-bar,
+.progress-animated .bar {
+  background: url(../img/progressbar.gif) !important;
+  filter: none;
+}
+.fileupload-loading {
+  float: right;
+  width: 32px;
+  height: 32px;
+  background: url(../img/loading.gif) center no-repeat;
+  background-size: contain;
+  display: none;
+}
+
+.fileupload-processing .fileupload-loading {
+  display: block;
+}
+
+/*tree legacy icon*/
+.legacy-custom-file{
+  width: 16px; height: 16px; margin-right: 11px; display: inline-block;
+  background-position: center center;
+}
+
+/*
+    missing icon names in helveticons that are in font-awesome - used by the datepicker,
+    basically making them equivalent to their helviton icon
+*/
+.icon-chevron-up:before {
+	content: "\e128";
+}
+.icon-chevron-down:before {
+	content: "\e0c9";
+}

@@ -1,0 +1,25 @@
+2013-05-12 19:27:13,806 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-05-12 19:27:13,861 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-05-12 19:27:13,866 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 5ms)
+2013-05-12 19:27:13,956 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 84ms)
+2013-05-12 19:27:13,978 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 13ms)
+2013-05-12 19:27:13,981 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-05-12 19:27:13,987 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-12 19:27:14,010 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-05-12 19:27:14,013 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-12 19:27:14,120 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 310ms)
+2013-05-12 19:27:14,447 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-12 19:27:14,568 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-12 19:27:14,799 [5] INFO  umbraco.content - [Thread 9] Loading content from disk cache...
+2013-05-12 19:27:42,182 [5] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 9] An unhandled exception occurred
+System.InvalidOperationException: The template with Id 1058 does not exist, the page cannot render
+   at Umbraco.Web.Routing.PublishedContentRequestBuilder.LookupTemplate() in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Routing\PublishedContentRequestBuilder.cs:line 416
+   at Umbraco.Web.Routing.PublishedContentRequestBuilder.LookupDocument2() in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Routing\PublishedContentRequestBuilder.cs:line 259
+   at Umbraco.Web.Routing.PublishedContentRequestBuilder.LookupDocument() in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Routing\PublishedContentRequestBuilder.cs:line 157
+   at Umbraco.Web.Routing.PublishedContentRequest.ProcessRequest(HttpContextBase httpContext, UmbracoContext umbracoContext, Action`1 onSuccess) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Routing\PublishedContentRequest.cs:line 65
+   at Umbraco.Web.UmbracoModule.ProcessRequest(HttpContextBase httpContext) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\UmbracoModule.cs:line 107
+   at Umbraco.Web.UmbracoModule.<Init>b__7(Object sender, EventArgs e) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\UmbracoModule.cs:line 407
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-05-12 19:34:07,865 [5] INFO  umbraco.BusinessLogic.Log - [Thread 10] Log scrubbed.  Removed all items older than 2013-03-13 19:34:07
+2013-05-12 19:34:07,866 [5] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 10] Application shutdown. Reason: BinDirChangeOrDirectoryRename

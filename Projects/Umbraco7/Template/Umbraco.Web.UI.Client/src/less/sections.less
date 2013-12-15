@@ -1,0 +1,122 @@
+// Sections
+// -------------------------
+
+ul.sections {
+	margin: 0;
+	display: block;
+	background: @blackLight;
+	height: 100%;
+	width: 80px;
+}
+
+ul.sections li {
+	display: block;
+	border-left: 4px @blackLight solid;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+ul.sections li [class^="icon-"]:before, 
+ul.sections li [class*=" icon-"]:before{
+	font-size: 30px;
+	margin: 1px 0 0 0;
+	opacity: 0.4;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+ul.sections:hover li [class^="icon-"]:before, 
+ul.sections:hover li [class*=" icon-"]:before {
+	opacity: 1
+}
+
+ul.sections li a {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: @grayLight;
+	padding: 20px 4px 4px 0;
+	border-bottom: 1px solid @grayDark;
+	width: 100%;
+	height: 100%;
+	margin: 0 0 0 -4px;
+}
+
+ul.sections a span {
+	font-size: 10px;
+	line-height: 1.4em;
+	opacity: 0;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	transition: all .3s linear;
+	display: block;
+}
+
+ul.sections:hover a span {
+	opacity: 1
+}
+
+
+// Avatar, Section & Help icons
+// -------------------------
+
+ul.sections li.avatar {
+	height: 69px;
+	padding: 30px 0 2px 0;
+	text-align: center;
+	margin: 0 0 0 -4px;
+	border-bottom: 1px solid @grayDark;
+}
+
+ul.sections li.avatar a {
+	margin: 0 auto;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	border: none
+}
+
+ul.sections li.avatar a img {
+	border-radius: 16px;
+	width: 30px
+}
+
+.faded ul.sections li {
+	opacity: 0.4
+}
+
+ul.sections li.current, ul.sections li:hover {
+    border-left: 4px @orange solid;
+}
+
+ul.sections li.avatar.current, ul.sections li.avatar:hover {
+	border-left: 4px @blackLight solid;
+}
+
+ul.sections li.current a{
+    padding-left: 0px;
+}
+
+ul.sections li.help {	
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+}
+
+ul.sections li.help a {
+	border-bottom: none;
+}
+
+// Section slide-out tray for additional apps
+// -------------------------
+li.expand a, li.expand{border: none !Important;}
+
+ul.sections-tray {
+	padding-top: 102px;
+	width: 80px;
+}

@@ -1,0 +1,14 @@
+<skin> 
+  <title>Runway 4 Blog 4 Umbraco (R4B4U)</title> 
+  <description> 
+    Sample theme for the blog 4 umbraco, reusing style elements from the runway package
+  </description> 
+  <author> 
+    <name>Per Ploug Hansen</name> 
+    <url>http://umbraco.org</url> 
+  </author> 
+  <license> 
+    <name>MIT</name> 
+    <url>http://www.opensource.org/licenses/mit-license.php</url> 
+  </license> 
+</skin>

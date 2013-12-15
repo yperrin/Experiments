@@ -1,0 +1,121 @@
+<%@ Master Language="C#" MasterPageFile="/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+    <head profile="http://gmpg.org/xfn/11" runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="generator" content="umbraco" />
+        <umbraco:Macro Alias="BlogMetaWeblogChannel" runat="server"></umbraco:Macro>
+        <umbraco:Macro Alias="BlogRssFeedLink" runat="server"></umbraco:Macro>
+        <title>
+            <umbraco:Item Field="blogName" recursive="true" runat="server"></umbraco:Item>
+            <umbraco:Item Field="pageName" runat="server" insertTextBefore=" - "></umbraco:Item>
+        </title>
+        
+        <umbraco:Item field="css" recursive="true" runat="server"
+            textIfEmpty="&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/sandbox.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;" 
+            insertTextBefore="&lt;link rel=&quot;stylesheet&quot; href=&quot;" 
+            insertTextAfter="&quot; type=&quot;text/css&quot; media=&quot;screen&quot;/&gt;"></umbraco:Item>
+
+       
+        <script type="text/javascript" src="/umbraco_client/ui/jquery.js"></script>
+
+        <script type="text/javascript" src="/Scripts/Blog4Umbraco/blog4umbraco.js"></script>
+
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.5.5/jquery.validate.min.js"></script>
+       
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="umbraco blog">
+        <form id="form1" runat="server">
+        <div id="wrapper" class="hfeed">
+        
+            <asp:ContentPlaceHolder ID="header" runat="server">
+            <div id="header">
+                <h1 id="blog-title">
+                    <span><a href="/" title="Theme Preview" rel="home">
+                        <umbraco:Item ID="Item1" Field="blogName" recursive="true" runat="server"></umbraco:Item>
+                    </a></span>
+                </h1>
+                <div id="blog-description">
+                    <umbraco:Item ID="Item2" Field="blogDescription" recursive="true" runat="server">
+                    </umbraco:Item>
+                </div>
+            </div>
+            <!--  #header -->
+            </asp:ContentPlaceHolder>
+            
+            <asp:ContentPlaceHolder ID="access" runat="server">
+                <div id="access">
+                    <div class="skip-link">
+                        <a href="#content" title="Skip to content">Skip to content</a></div>
+                    <div id="menu">
+                        <umbraco:Macro ID="Macro6" Alias="Blogpages" runat="server"></umbraco:Macro>
+                    </div>
+                </div>
+                <!-- #access -->
+            </asp:ContentPlaceHolder>
+            
+            <div id="container">
+                <div id="content">
+                <asp:ContentPlaceHolder ID="body" runat="server" />
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #container -->
+            
+            <asp:ContentPlaceHolder ID="sidebarPrimary" runat="server">
+                <div id="primary" class="sidebar">
+                    <ul class="xoxo">
+                        <li id="pages">
+                            <h3>
+                                Pages</h3>
+                            <umbraco:Macro ID="Macro1" Alias="Blogpages" runat="server"></umbraco:Macro>
+                        </li>
+                        <li id="categories">
+                            <h3>
+                                Tags</h3>
+                            <umbraco:Macro ID="Macro2" Alias="BlogCategories" runat="server"></umbraco:Macro>
+                        </li>
+                        <li id="archives">
+                            <h3>
+                                Archives</h3>
+                            <umbraco:Macro ID="Macro3" Alias="BlogArchive" runat="server"></umbraco:Macro>
+                        </li>
+                    </ul>
+                </div>
+                <!-- #primary .sidebar -->
+            </asp:ContentPlaceHolder>
+            
+            <asp:ContentPlaceHolder ID="sidebarSecondary" runat="server">
+                <div id="secondary" class="sidebar">
+                    <ul class="xoxo">
+                        <li id="latest-comments">
+                            <h3>
+                                Latest Comments</h3>
+                                <umbraco:Macro ID="Macro5" Alias="BlogLatestComments" runat="server"></umbraco:Macro>
+                        </li>
+                       
+                        <umbraco:Macro ID="Macro4" Alias="BlogBlogroll" runat="server"></umbraco:Macro>
+
+                    </ul>
+                </div>
+                <!-- #secondary .sidebar -->
+            </asp:ContentPlaceHolder>
+            
+            
+            <asp:ContentPlaceHolder ID="footer" runat="server" />
+            <div id="footer">
+                <span id="generator-link"><a href="http://umbraco.org/" title="Umbraco" rel="generator">
+                    Umbraco CMS</a></span> <span class="meta-sep">|</span> <span id="theme-link"><umbraco:Macro Alias="BlogGetSkinInfo" runat="server"></umbraco:Macro></span>
+            </div>
+            <!-- #footer -->
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        </form>
+    </body>
+    </html>
+</asp:Content>

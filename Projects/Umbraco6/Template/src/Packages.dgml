@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Web Application" Label="Web Application" Category="Project" />
+    <Node Id="EntityFramework 5.0.0" Label="EntityFramework 5.0.0" Category="Package" />
+    <Node Id="jQuery 1.7.1.1" Label="jQuery 1.7.1.1" Category="Package" />
+    <Node Id="jQuery.UI.Combined 1.8.20.1" Label="jQuery.UI.Combined 1.8.20.1" Category="Package" />
+    <Node Id="jQuery.Validation 1.9.0.1" Label="jQuery.Validation 1.9.0.1" Category="Package" />
+    <Node Id="knockoutjs 2.1.0" Label="knockoutjs 2.1.0" Category="Package" />
+    <Node Id="Lucene.Net 2.9.4.1" Label="Lucene.Net 2.9.4.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.1" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.Core 1.1" Label="Microsoft.AspNet.Providers.Core 1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 1.1" Label="Microsoft.AspNet.Providers.LocalDB 1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.0.0" Label="Microsoft.AspNet.Web.Optimization 1.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 4.0.20710.0" Label="Microsoft.AspNet.WebApi 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Label="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Label="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Label="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.0.20710.0" Label="Microsoft.Net.Http 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Helpers 1.0.0" Label="Microsoft.Web.Helpers 1.0.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Modernizr 2.5.3" Label="Modernizr 2.5.3" Category="Package" />
+    <Node Id="Newtonsoft.Json 4.5.6" Label="Newtonsoft.Json 4.5.6" Category="Package" />
+    <Node Id="ServiceStack.Text 3.9.43" Label="ServiceStack.Text 3.9.43" Category="Package" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="Package" />
+    <Node Id="UmbracoCms.Core 6.0.4" Label="UmbracoCms.Core 6.0.4" Category="Package" />
+    <Node Id="UrlRewritingNet 2.0.6.1" Label="UrlRewritingNet 2.0.6.1" Category="Package" />
+    <Node Id="WebGrease 1.1.0" Label="WebGrease 1.1.0" Category="Package" />
+    <Node Id="Umbraco.Core" Label="Umbraco.Core" Category="Project" />
+    <Node Id="log4net-mediumtrust 2.0.0" Label="log4net-mediumtrust 2.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="ServiceStack.Text 3.9.21" Label="ServiceStack.Text 3.9.21" Category="Package" />
+    <Node Id="SqlServerCE 4.0.0.0" Label="SqlServerCE 4.0.0.0" Category="Package" />
+    <Node Id="Test\Umbraco.Tests" Label="Umbraco.Tests" Category="Project" />
+    <Node Id="Examine 0.1.48.2941" Label="Examine 0.1.48.2941" Category="Package" />
+    <Node Id="log4net-mediumtrust 2.0.0" Label="log4net-mediumtrust 2.0.0" Category="Package" />
+    <Node Id="Lucene.Net 2.9.4.1" Label="Lucene.Net 2.9.4.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="NUnit 2.6.2" Label="NUnit 2.6.2" Category="Package" />
+    <Node Id="RhinoMocks 3.6.1" Label="RhinoMocks 3.6.1" Category="Package" />
+    <Node Id="Selenium.WebDriver 2.32.0" Label="Selenium.WebDriver 2.32.0" Category="Package" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="Package" />
+    <Node Id="SqlServerCE 4.0.0.0" Label="SqlServerCE 4.0.0.0" Category="Package" />
+    <Node Id="UmbracoExamine 0.1.42.2941" Label="UmbracoExamine 0.1.42.2941" Category="Package" />
+    <Node Id="umbraco.MacroEngines" Label="umbraco.MacroEngines" Category="Project" />
+    <Node Id="Examine 0.1.48.2941" Label="Examine 0.1.48.2941" Category="Package" />
+    <Node Id="HtmlAgilityPack 1.4.5" Label="HtmlAgilityPack 1.4.5" Category="Package" />
+    <Node Id="Lucene.Net 2.9.4.1" Label="Lucene.Net 2.9.4.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="Package" />
+    <Node Id="UmbracoExamine 0.1.42.2941" Label="UmbracoExamine 0.1.42.2941" Category="Package" />
+    <Node Id="SqlCE4Umbraco" Label="SqlCE4Umbraco" Category="Project" />
+    <Node Id="SqlServerCE 4.0.0.0" Label="SqlServerCE 4.0.0.0" Category="Package" />
+    <Node Id="umbraco.controls" Label="umbraco.controls" Category="Project" />
+    <Node Id="ClientDependency 1.5.1.0" Label="ClientDependency 1.5.1.0" Category="Package" />
+    <Node Id="umbraco.datalayer" Label="umbraco.datalayer" Category="Project" />
+    <Node Id="log4net-mediumtrust 2.0.0" Label="log4net-mediumtrust 2.0.0" Category="Package" />
+    <Node Id="Microsoft.ApplicationBlocks.Data 1.0.1559.20655" Label="Microsoft.ApplicationBlocks.Data 1.0.1559.20655" Category="Package" />
+    <Node Id="MySql.Data 6.6.4" Label="MySql.Data 6.6.4" Category="Package" />
+    <Node Id="umbraco.macroRenderings" Label="umbraco.macroRenderings" Category="Project" />
+    <Node Id="ClientDependency 1.5.1.0" Label="ClientDependency 1.5.1.0" Category="Package" />
+    <Node Id="Microsoft.ApplicationBlocks.Data 1.0.1559.20655" Label="Microsoft.ApplicationBlocks.Data 1.0.1559.20655" Category="Package" />
+    <Node Id="umbraco.editorControls" Label="umbraco.editorControls" Category="Project" />
+    <Node Id="ClientDependency 1.5.1.0" Label="ClientDependency 1.5.1.0" Category="Package" />
+    <Node Id="umbraco.cms" Label="umbraco.cms" Category="Project" />
+    <Node Id="ClientDependency 1.5.1.0" Label="ClientDependency 1.5.1.0" Category="Package" />
+    <Node Id="HtmlAgilityPack 1.4.5" Label="HtmlAgilityPack 1.4.5" Category="Package" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="Package" />
+    <Node Id="Tidy.Net 1.0.0" Label="Tidy.Net 1.0.0" Category="Package" />
+    <Node Id="umbraco.businesslogic" Label="umbraco.businesslogic" Category="Project" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Umbraco.Web" Label="Umbraco.Web" Category="Project" />
+    <Node Id="ClientDependency 1.5.1.0" Label="ClientDependency 1.5.1.0" Category="Package" />
+    <Node Id="CodeSharp.Package.AspNetWebPage 1.0" Label="CodeSharp.Package.AspNetWebPage 1.0" Category="Package" />
+    <Node Id="Examine 0.1.48.2941" Label="Examine 0.1.48.2941" Category="Package" />
+    <Node Id="HtmlAgilityPack 1.4.5" Label="HtmlAgilityPack 1.4.5" Category="Package" />
+    <Node Id="Lucene.Net 2.9.4.1" Label="Lucene.Net 2.9.4.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="Package" />
+    <Node Id="uGoLive 1.4.0" Label="uGoLive 1.4.0" Category="Package" />
+    <Node Id="UmbracoExamine 0.1.42.2941" Label="UmbracoExamine 0.1.42.2941" Category="Package" />
+    <Node Id="UrlRewritingNet.UrlRewriter 2.0.60829.1" Label="UrlRewritingNet.UrlRewriter 2.0.60829.1" Category="Package" />
+    <Node Id="xmlrpcnet 2.5.0" Label="xmlrpcnet 2.5.0" Category="Package" />
+    <Node Id="Umbraco.Web.UI" Label="Umbraco.Web.UI" Category="Project" />
+    <Node Id="ClientDependency 1.5.1.0" Label="ClientDependency 1.5.1.0" Category="Package" />
+    <Node Id="Examine 0.1.48.2941" Label="Examine 0.1.48.2941" Category="Package" />
+    <Node Id="ClientDependency-Mvc 1.5.1.0" Label="ClientDependency-Mvc 1.5.1.0" Category="Package" />
+    <Node Id="log4net-mediumtrust 2.0.0" Label="log4net-mediumtrust 2.0.0" Category="Package" />
+    <Node Id="Lucene.Net 2.9.4.1" Label="Lucene.Net 2.9.4.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Helpers 1.0.0" Label="Microsoft.Web.Helpers 1.0.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="MySql.Data 6.6.4" Label="MySql.Data 6.6.4" Category="Package" />
+    <Node Id="SharpZipLib 0.86.0" Label="SharpZipLib 0.86.0" Category="Package" />
+    <Node Id="SqlServerCE 4.0.0.0" Label="SqlServerCE 4.0.0.0" Category="Package" />
+    <Node Id="uGoLive 1.4.0" Label="uGoLive 1.4.0" Category="Package" />
+    <Node Id="UrlRewritingNet.UrlRewriter 2.0.60829.1" Label="UrlRewritingNet.UrlRewriter 2.0.60829.1" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="jQuery.UI.Combined 1.8.20.1" Target="jQuery 1.7.1.1" Category="Package Dependency" />
+    <Link Source="jQuery.Validation 1.9.0.1" Target="jQuery 1.7.1.1" Category="Package Dependency" />
+    <Link Source="Lucene.Net 2.9.4.1" Target="SharpZipLib 0.86.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.1" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 1.1" Target="Microsoft.AspNet.Providers.Core 1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="WebGrease 1.1.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 4.0.20710.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Target="Newtonsoft.Json 4.5.6" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Target="jQuery 1.7.1.1" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Target="jQuery.Validation 1.9.0.1" Category="Package Dependency" />
+    <Link Source="UmbracoCms.Core 6.0.4" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="UmbracoCms.Core 6.0.4" Target="ServiceStack.Text 3.9.43" Category="Package Dependency" />
+    <Link Source="UmbracoCms.Core 6.0.4" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.1" Category="Package Dependency" />
+    <Link Source="Web Application" Target="EntityFramework 5.0.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="jQuery 1.7.1.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="jQuery.UI.Combined 1.8.20.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="jQuery.Validation 1.9.0.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="knockoutjs 2.1.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Lucene.Net 2.9.4.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.Providers.Core 1.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.Providers.LocalDB 1.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.Web.Optimization 1.0.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.WebApi 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.WebApi.Client 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.Net.Http 2.0.20710.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Microsoft.Web.Helpers 1.0.0" Category="Installed Package" />
+    <Link Source="Web Application" Target="Modernizr 2.5.3" Category="Installed Package" />
+    <Link Source="Web Application" Target="Newtonsoft.Json 4.5.6" Category="Installed Package" />
+    <Link Source="Web Application" Target="UmbracoCms.Core 6.0.4" Category="Installed Package" />
+    <Link Source="Web Application" Target="UrlRewritingNet 2.0.6.1" Category="Installed Package" />
+    <Link Source="Web Application" Target="WebGrease 1.1.0" Category="Installed Package" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Umbraco.Core" Target="log4net-mediumtrust 2.0.0" Category="Installed Package" />
+    <Link Source="Umbraco.Core" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Umbraco.Core" Target="ServiceStack.Text 3.9.21" Category="Installed Package" />
+    <Link Source="Umbraco.Core" Target="SqlServerCE 4.0.0.0" Category="Installed Package" />
+    <Link Source="Examine 0.1.48.2941" Target="Lucene.Net 2.9.4.1" Category="Package Dependency" />
+    <Link Source="Lucene.Net 2.9.4.1" Target="SharpZipLib 0.86.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Test\Umbraco.Tests" Target="Examine 0.1.48.2941" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="log4net-mediumtrust 2.0.0" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="NUnit 2.6.2" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="RhinoMocks 3.6.1" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="Selenium.WebDriver 2.32.0" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="SqlServerCE 4.0.0.0" Category="Installed Package" />
+    <Link Source="Test\Umbraco.Tests" Target="UmbracoExamine 0.1.42.2941" Category="Installed Package" />
+    <Link Source="Examine 0.1.48.2941" Target="Lucene.Net 2.9.4.1" Category="Package Dependency" />
+    <Link Source="Lucene.Net 2.9.4.1" Target="SharpZipLib 0.86.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="umbraco.MacroEngines" Target="Examine 0.1.48.2941" Category="Installed Package" />
+    <Link Source="umbraco.MacroEngines" Target="HtmlAgilityPack 1.4.5" Category="Installed Package" />
+    <Link Source="umbraco.MacroEngines" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="umbraco.MacroEngines" Target="UmbracoExamine 0.1.42.2941" Category="Installed Package" />
+    <Link Source="SqlCE4Umbraco" Target="SqlServerCE 4.0.0.0" Category="Installed Package" />
+    <Link Source="umbraco.controls" Target="ClientDependency 1.5.1.0" Category="Installed Package" />
+    <Link Source="umbraco.datalayer" Target="log4net-mediumtrust 2.0.0" Category="Installed Package" />
+    <Link Source="umbraco.datalayer" Target="Microsoft.ApplicationBlocks.Data 1.0.1559.20655" Category="Installed Package" />
+    <Link Source="umbraco.datalayer" Target="MySql.Data 6.6.4" Category="Installed Package" />
+    <Link Source="umbraco.macroRenderings" Target="ClientDependency 1.5.1.0" Category="Installed Package" />
+    <Link Source="umbraco.macroRenderings" Target="Microsoft.ApplicationBlocks.Data 1.0.1559.20655" Category="Installed Package" />
+    <Link Source="umbraco.editorControls" Target="ClientDependency 1.5.1.0" Category="Installed Package" />
+    <Link Source="umbraco.cms" Target="ClientDependency 1.5.1.0" Category="Installed Package" />
+    <Link Source="umbraco.cms" Target="HtmlAgilityPack 1.4.5" Category="Installed Package" />
+    <Link Source="umbraco.cms" Target="SharpZipLib 0.86.0" Category="Installed Package" />
+    <Link Source="umbraco.cms" Target="Tidy.Net 1.0.0" Category="Installed Package" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="umbraco.businesslogic" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Examine 0.1.48.2941" Target="Lucene.Net 2.9.4.1" Category="Package Dependency" />
+    <Link Source="Lucene.Net 2.9.4.1" Target="SharpZipLib 0.86.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Umbraco.Web" Target="ClientDependency 1.5.1.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="CodeSharp.Package.AspNetWebPage 1.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="Examine 0.1.48.2941" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="HtmlAgilityPack 1.4.5" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="uGoLive 1.4.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="UmbracoExamine 0.1.42.2941" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="UrlRewritingNet.UrlRewriter 2.0.60829.1" Category="Installed Package" />
+    <Link Source="Umbraco.Web" Target="xmlrpcnet 2.5.0" Category="Installed Package" />
+    <Link Source="Examine 0.1.48.2941" Target="Lucene.Net 2.9.4.1" Category="Package Dependency" />
+    <Link Source="ClientDependency-Mvc 1.5.1.0" Target="ClientDependency 1.5.1.0" Category="Package Dependency" />
+    <Link Source="Lucene.Net 2.9.4.1" Target="SharpZipLib 0.86.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Umbraco.Web.UI" Target="Examine 0.1.48.2941" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="ClientDependency-Mvc 1.5.1.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="log4net-mediumtrust 2.0.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="Microsoft.Web.Helpers 1.0.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="MySql.Data 6.6.4" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="SqlServerCE 4.0.0.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="uGoLive 1.4.0" Category="Installed Package" />
+    <Link Source="Umbraco.Web.UI" Target="UrlRewritingNet.UrlRewriter 2.0.60829.1" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "TimsBlogMaster.cshtml";
+}
+
+<form>
+	@Umbraco.RenderMacro("XSLTsearch", new {source="1071" , searchFields="@nodeName,metaKeywords,metaDescription,bodyText" , previewFields="bodyText,metaDescription" , searchBoxLocation="TOP" , previewType="CONTEXT" , resultsPerPage="20" , previewChars="100" , showPageRange="1" , showOrdinals="0" , showScores="0" , showStats="0" })
+</form>
+
+@Umbraco.RenderMacro("BlogListPosts")
+	
+<h2>Showing Tags</h2>
+@foreach (umbraco.cms.businesslogic.Tags.Tag tag in asi.asicentral.umbraco.UmbracoUtil.GetBlogTags(Model.Content.Id)) 
+{
+    <div><a href="@Model.Content.Url?filterby=@tag.TagCaption">@tag.TagCaption</a> (@tag.NodeCount)</div> 
+}

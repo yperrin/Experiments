@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "ASICentralMaster.cshtml";
+}
+@Umbraco.RenderMacro("BlogListPosts")
+
+<h1>Showing Tag Cloud</h1>
+@Umbraco.RenderMacro("BlogTagcloud")

@@ -1,0 +1,176 @@
+2013-05-06 08:46:31,857 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 18] Umbraco application starting
+2013-05-06 08:46:31,875 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Determining hash of code files on disk
+2013-05-06 08:46:31,880 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Hash determined (took 4ms)
+2013-05-06 08:46:32,083 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 182ms)
+2013-05-06 08:46:32,102 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 11ms)
+2013-05-06 08:46:32,106 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-05-06 08:46:32,112 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 5ms)
+2013-05-06 08:46:32,118 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-05-06 08:46:32,122 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-06 08:46:32,193 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 18] Umbraco application startup complete (took 332ms)
+2013-05-06 08:46:32,195 [13] INFO  Umbraco.Core.ApplicationContext - [Thread 18] CurrentVersion different from configStatus: '6.0.4',''
+2013-05-06 08:46:32,203 [13] INFO  Umbraco.Core.ApplicationContext - [Thread 18] CurrentVersion different from configStatus: '6.0.4',''
+2013-05-06 08:46:32,204 [13] INFO  Umbraco.Core.ApplicationContext - [Thread 18] CurrentVersion different from configStatus: '6.0.4',''
+2013-05-06 08:46:32,313 [13] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 12] An unhandled exception occurred
+System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
+Parameter name: startIndex
+   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.Web.Compilation.DiskBuildResultCache.MarkAssemblyAndRelatedFilesForDeletion(String assemblyName)
+   at System.Web.Compilation.DiskBuildResultCache.CacheBuildResult(String cacheKey, BuildResult result, Int64 hashCode, DateTime utcStart)
+   at System.Web.Compilation.BuildManager.CacheBuildResultInternal(String cacheKey, BuildResult result, Int64 hashCode, DateTime utcStart)
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Script.Services.WebServiceData.GetWebServiceData(HttpContext context, String virtualPath, Boolean failIfNoData, Boolean pageMethods, Boolean inlineScript)
+   at System.Web.Script.Services.RestHandler.CreateHandler(HttpContext context)
+   at System.Web.Script.Services.RestHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   at System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-05-06 08:46:32,385 [13] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:46:32,417 [13] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:46:32,440 [13] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:46:32,451 [13] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:54,446 [13] ERROR umbraco.BusinessLogic.Application - [Thread 6] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:54,453 [13] ERROR umbraco.BusinessLogic.Application - [Thread 6] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:54,466 [13] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 6] Application shutdown. Reason: BuildManagerChange
+2013-05-06 08:55:57,896 [15] INFO  Umbraco.Core.CoreBootManager - [Thread 19] Umbraco application starting
+2013-05-06 08:55:57,910 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Determining hash of code files on disk
+2013-05-06 08:55:57,915 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Hash determined (took 4ms)
+2013-05-06 08:55:57,995 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 75ms)
+2013-05-06 08:55:58,014 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 10ms)
+2013-05-06 08:55:58,016 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-06 08:55:58,022 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-06 08:55:58,026 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-06 08:55:58,029 [15] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-06 08:55:58,071 [15] INFO  Umbraco.Core.CoreBootManager - [Thread 19] Umbraco application startup complete (took 172ms)
+2013-05-06 08:55:58,073 [15] INFO  Umbraco.Core.ApplicationContext - [Thread 19] CurrentVersion different from configStatus: '6.0.4',''
+2013-05-06 08:55:58,080 [15] INFO  Umbraco.Core.ApplicationContext - [Thread 19] CurrentVersion different from configStatus: '6.0.4',''
+2013-05-06 08:55:58,081 [15] INFO  Umbraco.Core.ApplicationContext - [Thread 19] CurrentVersion different from configStatus: '6.0.4',''
+2013-05-06 08:55:58,164 [15] ERROR umbraco.BusinessLogic.Application - [Thread 46] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,174 [15] ERROR umbraco.BusinessLogic.Application - [Thread 46] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,254 [15] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,261 [15] ERROR umbraco.BusinessLogic.Application - [Thread 50] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,268 [15] ERROR umbraco.BusinessLogic.Application - [Thread 9] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,268 [15] ERROR umbraco.BusinessLogic.Application - [Thread 17] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,295 [15] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,321 [15] ERROR umbraco.BusinessLogic.Application - [Thread 50] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,321 [15] ERROR umbraco.BusinessLogic.Application - [Thread 9] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,325 [15] ERROR umbraco.BusinessLogic.Application - [Thread 17] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,336 [15] ERROR umbraco.BusinessLogic.Application - [Thread 46] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,374 [15] ERROR umbraco.BusinessLogic.Application - [Thread 46] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:55:58,410 [15] ERROR umbraco.BusinessLogic.Application - [Thread 17] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:01,891 [15] ERROR umbraco.BusinessLogic.Application - [Thread 50] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:01,893 [15] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:01,938 [15] ERROR umbraco.BusinessLogic.Application - [Thread 9] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:01,961 [15] ERROR umbraco.BusinessLogic.Application - [Thread 17] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:01,961 [15] ERROR umbraco.BusinessLogic.Application - [Thread 50] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:01,961 [15] ERROR umbraco.BusinessLogic.Application - [Thread 11] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97
+2013-05-06 08:56:04,436 [15] ERROR umbraco.BusinessLogic.Application - [Thread 9] Can't instantiate SQLHelper with connectionstring ""
+System.ArgumentNullException: Value cannot be null.
+Parameter name: connectionString
+   at umbraco.DataLayer.DataLayerHelper.CreateSqlHelper(String connectionString, Boolean forceLegacyConnection) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\DataLayerHelper.cs:line 52
+   at umbraco.BusinessLogic.Application.get_SqlHelper() in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.businesslogic\Application.cs:line 97

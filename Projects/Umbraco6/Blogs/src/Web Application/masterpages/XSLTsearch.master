@@ -1,0 +1,23 @@
+<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+  
+<asp:Content ContentPlaceHolderId="ContentPlaceHolderDefault" runat="server">
+    <h2><umbraco:Item runat="server" field="pageName"/></h2>
+
+    <form>
+        <umbraco:Macro runat="server" Alias="XSLTsearch"
+          macroAlias="XSLTsearch"
+          source="-1"
+          searchFields="@nodeName,metaKeywords,metaDescription,bodyText"
+          previewFields="bodyText,metaDescription"
+          previewType="beginning"
+          searchBoxLocation="bottom"
+          resultsPerPage="5"
+          previewChars="255"
+          showPageRange="0"
+          showOrdinals="0"
+          showScores="0"
+          showStats="1">
+        </umbraco:Macro>
+    </form>
+</asp:Content>

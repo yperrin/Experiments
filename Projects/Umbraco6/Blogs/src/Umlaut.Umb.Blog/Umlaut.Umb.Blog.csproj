@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{656FFAC9-E298-442B-A90F-5ED2B9F196D9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Umlaut.Umb.Blog</RootNamespace>
+    <AssemblyName>Umlaut.Umb.Blog</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic, Version=1.0.3441.18044, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms, Version=1.0.3441.17655, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.3438.34252, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Joel.Net.Akismet, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Foreign DLLS\Joel.Net.Akismet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="umbraco, Version=1.0.3441.17657, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.3559.39516, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core DLLS\umbraco.editorControls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xslt\4.0\BlogArchive.xslt" />
+    <Content Include="xslt\4.0\BlogBlogroll.xslt" />
+    <Content Include="xslt\4.0\BlogCategories.xslt" />
+    <Content Include="xslt\4.0\BlogLatestComments.xslt" />
+    <Content Include="xslt\4.0\BlogListPosts.xslt" />
+    <Content Include="xslt\4.0\BlogPostListComments.xslt" />
+    <Content Include="xslt\4.0\BlogRss.xslt" />
+    <Content Include="xslt\4.0\BlogRssFeedLink.xslt" />
+    <Content Include="xslt\4.5\BlogArchive.xslt" />
+    <Content Include="xslt\4.5\BlogBlogroll.xslt" />
+    <Content Include="xslt\4.5\BlogCategories.xslt" />
+    <Content Include="xslt\4.5\BlogFullArchive.xslt" />
+    <Content Include="xslt\4.5\BlogGetSkinInfo.xslt" />
+    <Content Include="xslt\4.5\BlogLatestComments.xslt" />
+    <Content Include="xslt\4.5\BlogListPosts.xslt" />
+    <Content Include="xslt\4.5\BlogMetaWeblogChannel.xslt" />
+    <Content Include="xslt\4.5\Blogpages.xslt" />
+    <Content Include="xslt\4.5\BlogPostListComments.xslt" />
+    <Content Include="xslt\4.5\BlogpostRelatedPages.xslt" />
+    <Content Include="xslt\4.5\BlogRss.xslt" />
+    <Content Include="xslt\4.5\BlogRssFeedLink.xslt" />
+    <Content Include="xslt\4.5\BlogTagcloud.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Dashboard\BlogCreator.ascx.cs">
+      <DependentUpon>BlogCreator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\BlogCreator.ascx.designer.cs">
+      <DependentUpon>BlogCreator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\CommentModeration.ascx.cs">
+      <DependentUpon>CommentModeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\CommentModeration.ascx.designer.cs">
+      <DependentUpon>CommentModeration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\CreatePost.ascx.cs">
+      <DependentUpon>CreatePost.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\CreatePost.ascx.designer.cs">
+      <DependentUpon>CreatePost.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DataTypes\SkinBrowser.cs" />
+    <Compile Include="DataTypes\SkinBrowserDatatype.cs" />
+    <Compile Include="DataTypes\SkinBrowserConfig.cs" />
+    <Compile Include="DataTypes\Userpicker\UserPicker.cs" />
+    <Compile Include="EventHandlers\AutoChannelCreator.cs" />
+    <Compile Include="EventHandlers\Autoping.cs" />
+    <Compile Include="EventHandlers\BlogDateFolder.cs" />
+    <Compile Include="Installer\AddRest.cs" />
+    <Compile Include="Installer\ExecuteNonQuery.cs" />
+    <Compile Include="Interfaces\ISpamChecker.cs" />
+    <Compile Include="Library\Base.cs" />
+    <Compile Include="Library\BlogLibrary.cs" />
+    <Compile Include="plugins\blog4umbraco\skinBrowser.aspx.cs">
+      <DependentUpon>skinBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plugins\blog4umbraco\skinBrowser.aspx.designer.cs">
+      <DependentUpon>skinBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Spam\SpamChecker.cs" />
+    <Compile Include="Spam\AkismetSpamChecker.cs" />
+    <Compile Include="usercontrols\AjaxCommentForm.ascx.cs">
+      <DependentUpon>AjaxCommentForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\AjaxCommentForm.ascx.designer.cs">
+      <DependentUpon>AjaxCommentForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="usercontrols\BlogInstaller.ascx.cs">
+      <DependentUpon>BlogInstaller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\BlogInstaller.ascx.designer.cs">
+      <DependentUpon>BlogInstaller.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\jquery.validation.js" />
+    <Content Include="scripts\blog4umbraco.js" />
+    <Content Include="templates\Blog.master" />
+    <Content Include="templates\BlogMaster.master" />
+    <Content Include="templates\BlogPost.master" />
+    <Content Include="templates\Rss.master" />
+    <Content Include="usercontrols\AjaxCommentForm.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\CommentRss.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\CreateMySQL.sql" />
+    <None Include="App_Data\CreateSQLServer.sql" />
+    <None Include="App_Data\CreateVistaDB.sql" />
+    <None Include="documentation\Skinning\Skinning Guide.docx" />
+    <None Include="documentation\Usage and configuration\Usage And Configuration.docx" />
+    <Content Include="css\images\culture_arrow.gif" />
+    <Content Include="css\images\kubrickbg.jpg" />
+    <Content Include="css\images\kubrickbgcolor.jpg" />
+    <Content Include="css\images\kubrickbgwide.jpg" />
+    <Content Include="css\images\kubrickfooter.jpg" />
+    <Content Include="css\images\kubrickheader.jpg" />
+    <Content Include="css\Sandbox.css" />
+    <Content Include="Dashboard\BlogCreator.ascx" />
+    <Content Include="Dashboard\CreatePost.ascx" />
+    <Content Include="documentation\Skinning\Sample html\Home.htm" />
+    <Content Include="documentation\Skinning\Sample html\post.htm" />
+    <Content Include="documentation\Skinning\Sample html\textpage.htm" />
+    <Content Include="documentation\Skinning\Sample Skin file\css\images\background.jpg" />
+    <Content Include="documentation\Skinning\Sample Skin file\css\style.css" />
+    <Content Include="documentation\Skinning\Sample Skin file\preview.png" />
+    <Content Include="documentation\Skinning\Sample Skin file\skin.xml" />
+    <Content Include="documentation\Skinning\Sample Skin file\thumbnail.png" />
+    <Content Include="plugins\blog4umbraco\skinBrowser.aspx" />
+    <Content Include="plugins\blog4umbraco\skinBrowser.css" />
+    <Content Include="plugins\blog4umbraco\skinBrowser.js" />
+    <Content Include="templates\BlogpostTextpage.master" />
+    <Content Include="plugins\blog4umbraco\SpamChecker.config" />
+    <Content Include="Dashboard\CommentModeration.ascx" />
+    <Content Include="usercontrols\BlogInstaller.ascx" />
+    <Content Include="xslt\4.0\BlogFullArchive.xslt" />
+    <Content Include="xslt\4.0\BlogGetSkinInfo.xslt" />
+    <Content Include="xslt\4.0\BlogMetaWeblogChannel.xslt" />
+    <Content Include="xslt\4.0\Blogpages.xslt" />
+    <Content Include="xslt\4.0\BlogpostRelatedPages.xslt" />
+    <Content Include="xslt\4.0\BlogTagcloud.xslt" />
+    <Content Include="web.config" />
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="images\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54316</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

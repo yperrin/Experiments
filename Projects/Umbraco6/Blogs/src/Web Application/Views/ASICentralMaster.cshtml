@@ -1,0 +1,9 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+This is the mater template for the whole of ASI Central Blog
+<h1>Title: @Model.Content.GetPropertyValue("blogName")</h1>
+<h3>@Html.Raw(Model.Content.GetPropertyValue("blogDescription"))</h3>
+
+@RenderBody()

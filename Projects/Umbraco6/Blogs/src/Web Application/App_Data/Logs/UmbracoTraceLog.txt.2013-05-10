@@ -1,0 +1,246 @@
+2013-05-10 08:38:02,764 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-05-10 08:38:02,900 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-05-10 08:38:02,905 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 5ms)
+2013-05-10 08:38:03,358 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 401ms)
+2013-05-10 08:38:03,379 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 12ms)
+2013-05-10 08:38:03,384 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
+2013-05-10 08:38:03,390 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 6ms)
+2013-05-10 08:38:03,401 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 5ms)
+2013-05-10 08:38:03,406 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-05-10 08:38:04,127 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1359ms)
+2013-05-10 08:38:07,337 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-10 08:38:07,565 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-10 08:38:08,961 [13] INFO  umbraco.content - [Thread 9] Loading content from disk cache...
+2013-05-10 08:38:24,824 [13] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IDataType, found 38 (took 3ms)
+2013-05-10 08:38:24,831 [13] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 2ms)
+2013-05-10 08:38:53,527 [13] INFO  Umbraco.Core.PluginManager - [Thread 15] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 5ms)
+2013-05-10 08:39:45,928 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'Name'. Exception: System.ArgumentException: No key Name exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:45,951 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'Email'. Exception: System.ArgumentException: No key Email exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:45,972 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'Website'. Exception: System.ArgumentException: No key Website exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:45,995 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'Comment'. Exception: System.ArgumentException: No key Comment exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:46,016 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'Submit'. Exception: System.ArgumentException: No key Submit exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:46,036 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'CommentLoading'. Exception: System.ArgumentException: No key CommentLoading exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:46,057 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'CommentPosted'. Exception: System.ArgumentException: No key CommentPosted exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:39:46,077 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 11] Error returning dictionary item 'CommentFailend'. Exception: System.ArgumentException: No key CommentFailend exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,241 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'Name'. Exception: System.ArgumentException: No key Name exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,263 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'Email'. Exception: System.ArgumentException: No key Email exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,286 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'Website'. Exception: System.ArgumentException: No key Website exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,309 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'Comment'. Exception: System.ArgumentException: No key Comment exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,331 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'Submit'. Exception: System.ArgumentException: No key Submit exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,353 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'CommentLoading'. Exception: System.ArgumentException: No key CommentLoading exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,374 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'CommentPosted'. Exception: System.ArgumentException: No key CommentPosted exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:40:44,395 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 17] Error returning dictionary item 'CommentFailend'. Exception: System.ArgumentException: No key CommentFailend exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:43:43,725 [13] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 3ms)
+2013-05-10 08:44:10,760 [13] INFO  umbraco.BasePages.BasePage - [Thread 27] User Writer (Id: 1) logged in
+2013-05-10 08:45:50,506 [13] INFO  umbraco.cms.businesslogic.web.Document - [Thread 5] New document 1111
+2013-05-10 08:45:52,513 [13] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 25] Couldn't find any page with nodeId=1111. This is most likely caused by the page not being published.
+2013-05-10 08:46:31,538 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'Name'. Exception: System.ArgumentException: No key Name exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,558 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'Email'. Exception: System.ArgumentException: No key Email exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,581 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'Website'. Exception: System.ArgumentException: No key Website exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,602 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'Comment'. Exception: System.ArgumentException: No key Comment exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,624 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'Submit'. Exception: System.ArgumentException: No key Submit exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,646 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'CommentLoading'. Exception: System.ArgumentException: No key CommentLoading exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,668 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'CommentPosted'. Exception: System.ArgumentException: No key CommentPosted exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:46:31,690 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 12] Error returning dictionary item 'CommentFailend'. Exception: System.ArgumentException: No key CommentFailend exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:47:29,208 [13] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 6] An unhandled exception occurred
+System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> System.ArgumentException: The current user doesn't have access to this application. Please contact the system administrator.
+   at umbraco.controls.Tree.TreeControl.Initialize() in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\controls\Tree\TreeControl.ascx.cs:line 220
+   at umbraco.controls.Tree.TreeControl.OnPreRender(EventArgs e) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\controls\Tree\TreeControl.ascx.cs:line 267
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.umbraco_plugins_tinymce3_insertimage_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\669bbe79\e2cd9ebc\App_Web_insertimage.aspx.43b758d9.xhbgpdie.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-05-10 08:48:40,876 [13] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 9] Couldn't find any page with nodeId=1111. This is most likely caused by the page not being published.
+2013-05-10 08:49:11,791 [13] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 16] Couldn't find any page with nodeId=1111. This is most likely caused by the page not being published.
+2013-05-10 08:49:44,130 [13] INFO  umbraco.BasePages.BasePage - [Thread 12] User Yann (Id: 0) logged in
+2013-05-10 08:49:57,252 [13] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 33] Couldn't find any page with nodeId=1111. This is most likely caused by the page not being published.
+2013-05-10 08:52:56,373 [13] ERROR umbraco.editorControls.tinymce.tinyMCEImageHelper - [Thread 25] Error resizing image in editor
+System.FormatException: Input string was not in a correct format.
+   at System.Number.ParseSingle(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Single.Parse(String s)
+   at umbraco.editorControls.tinymce.tinyMCEImageHelper.DoResize(IDictionary attributes, Int32& finalWidth, Int32& finalHeight, String& newSrc) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\umbraco.editorControls\tinymce\tinyMCEImageHelper.cs:line 114
+   at umbraco.editorControls.tinymce.tinyMCEImageHelper.cleanImages(String html) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\umbraco.editorControls\tinymce\tinyMCEImageHelper.cs:line 54
+2013-05-10 08:52:56,754 [13] INFO  umbraco.BusinessLogic.Log - [Thread 10] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Debug | User: 1 | NodeId: 1111 | Comment: Start Before Publish Event for Blog Post 1111
+2013-05-10 08:52:56,998 [13] INFO  umbraco.cms.businesslogic.web.Document - [Thread 25] New document 1112
+2013-05-10 08:52:57,335 [13] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 25] Content '10' with Id '1112' has been published.
+2013-05-10 08:52:57,682 [13] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 25] Error adding node 1068 to SiteMapProvider in loadNodes()
+System.InvalidOperationException: Multiple nodes with the same URL '/' were found. XmlSiteMapProvider requires that sitemap nodes have unique URLs.
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.loadNodes(String parentId, SiteMapNode parentNode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\nodeFactory\UmbracoSiteMapProvider.cs:line 123
+2013-05-10 08:52:57,832 [13] INFO  umbraco.BusinessLogic.Log - [Thread 28] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Debug | User: 1 | NodeId: 1111 | Comment: Move Required for BlogPost 1111 for PostDate 10/05/2013.  Moved Under Node 1112
+2013-05-10 08:52:57,846 [13] INFO  umbraco.content - [Thread 8] Loading content from database...
+2013-05-10 08:52:57,856 [13] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 25] Content 'Demo Blog' with Id '1111' has been published.
+2013-05-10 08:53:46,301 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'Name'. Exception: System.ArgumentException: No key Name exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,321 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'Email'. Exception: System.ArgumentException: No key Email exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,367 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'Website'. Exception: System.ArgumentException: No key Website exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,390 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'Comment'. Exception: System.ArgumentException: No key Comment exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,412 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'Submit'. Exception: System.ArgumentException: No key Submit exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,433 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'CommentLoading'. Exception: System.ArgumentException: No key CommentLoading exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,455 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'CommentPosted'. Exception: System.ArgumentException: No key CommentPosted exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:46,476 [13] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 30] Error returning dictionary item 'CommentFailend'. Exception: System.ArgumentException: No key CommentFailend exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-10 08:53:59,085 [13] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 4ms)
+2013-05-10 09:03:17,865 [13] INFO  umbraco.BusinessLogic.Log - [Thread 31] Log scrubbed.  Removed all items older than 2013-03-11 09:03:17
+2013-05-10 09:03:17,866 [13] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 31] Application shutdown. Reason: BuildManagerChange
+2013-05-10 09:03:26,620 [16] INFO  Umbraco.Core.CoreBootManager - [Thread 20] Umbraco application starting
+2013-05-10 09:03:26,634 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Determining hash of code files on disk
+2013-05-10 09:03:26,639 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Hash determined (took 4ms)
+2013-05-10 09:03:26,724 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 80ms)
+2013-05-10 09:03:26,742 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 10ms)
+2013-05-10 09:03:26,745 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-10 09:03:26,750 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-10 09:03:26,755 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-10 09:03:26,758 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-10 09:03:26,814 [16] INFO  Umbraco.Core.CoreBootManager - [Thread 20] Umbraco application startup complete (took 192ms)
+2013-05-10 09:03:27,020 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-10 09:03:27,045 [16] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-10 09:04:42,190 [16] INFO  Umbraco.Core.PluginManager - [Thread 41] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 2ms)
+2013-05-10 09:04:42,409 [16] INFO  Umbraco.Core.PluginManager - [Thread 41] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 2ms)
+2013-05-10 09:11:39,782 [16] INFO  umbraco.BusinessLogic.Log - [Thread 37] Log scrubbed.  Removed all items older than 2013-03-11 09:11:39
+2013-05-10 09:11:39,783 [16] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 37] Application shutdown. Reason: BuildManagerChange
+2013-05-10 09:11:46,131 [53] INFO  Umbraco.Core.CoreBootManager - [Thread 20] Umbraco application starting
+2013-05-10 09:11:46,144 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Determining hash of code files on disk
+2013-05-10 09:11:46,149 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Hash determined (took 4ms)
+2013-05-10 09:11:46,226 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 72ms)
+2013-05-10 09:11:46,240 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 6ms)
+2013-05-10 09:11:46,243 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-10 09:11:46,247 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-10 09:11:46,252 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-10 09:11:46,255 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-10 09:11:46,289 [53] INFO  Umbraco.Core.CoreBootManager - [Thread 20] Umbraco application startup complete (took 156ms)
+2013-05-10 09:11:46,377 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-10 09:11:46,398 [53] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-10 09:12:21,529 [53] INFO  umbraco.BusinessLogic.Log - [Thread 45] Log scrubbed.  Removed all items older than 2013-03-11 09:12:21
+2013-05-10 09:12:21,530 [53] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 45] Application shutdown. Reason: BuildManagerChange
+2013-05-10 09:12:26,210 [54] INFO  Umbraco.Core.CoreBootManager - [Thread 20] Umbraco application starting
+2013-05-10 09:12:26,223 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Determining hash of code files on disk
+2013-05-10 09:12:26,228 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Hash determined (took 4ms)
+2013-05-10 09:12:26,304 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 71ms)
+2013-05-10 09:12:26,317 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 6ms)
+2013-05-10 09:12:26,320 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-10 09:12:26,325 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 3ms)
+2013-05-10 09:12:26,330 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-10 09:12:26,333 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-10 09:12:26,372 [54] INFO  Umbraco.Core.CoreBootManager - [Thread 20] Umbraco application startup complete (took 159ms)
+2013-05-10 09:12:26,458 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-10 09:12:26,480 [54] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-10 09:17:09,386 [54] INFO  Umbraco.Core.PluginManager - [Thread 37] Completed resolution of types of umbraco.interfaces.IDataType, found 38 (took 3ms)
+2013-05-10 09:17:09,393 [54] INFO  Umbraco.Core.PluginManager - [Thread 37] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 2ms)
+2013-05-10 09:17:09,500 [54] INFO  umbraco.content - [Thread 37] Loading content from disk cache...
+2013-05-10 09:17:09,856 [54] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 3ms)
+2013-05-10 09:28:40,091 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-05-10 09:28:40,110 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-05-10 09:28:40,116 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 5ms)
+2013-05-10 09:28:40,750 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 630ms)
+2013-05-10 09:28:40,771 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 11ms)
+2013-05-10 09:28:40,774 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-10 09:28:40,779 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-10 09:28:40,786 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-10 09:28:40,789 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-10 09:28:40,853 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 758ms)
+2013-05-10 09:28:41,163 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-10 09:28:41,200 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-10 09:28:41,338 [13] INFO  umbraco.content - [Thread 12] Loading content from disk cache...
+2013-05-10 09:28:43,209 [13] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.IDataType, found 38 (took 3ms)
+2013-05-10 09:28:43,216 [13] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 2ms)
+2013-05-10 09:28:45,055 [13] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 5ms)
+2013-05-10 09:28:50,962 [13] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 3ms)
+2013-05-10 09:31:34,519 [13] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 8ms)
+2013-05-10 09:33:04,029 [13] INFO  umbraco.BusinessLogic.Log - [Thread 21] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Debug | User: 0 | NodeId: 1089 | Comment: Start Before Publish Event for Blog Post 1089
+2013-05-10 09:33:04,330 [13] INFO  umbraco.content - [Thread 27] Loading content from database...
+2013-05-10 09:33:04,340 [13] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 33] Content 'Blog1' with Id '1089' has been published.
+2013-05-10 09:33:04,629 [13] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 33] Error adding node 1068 to SiteMapProvider in loadNodes()
+System.InvalidOperationException: Multiple nodes with the same URL '/' were found. XmlSiteMapProvider requires that sitemap nodes have unique URLs.
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.loadNodes(String parentId, SiteMapNode parentNode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\nodeFactory\UmbracoSiteMapProvider.cs:line 123
+2013-05-10 09:34:23,728 [13] INFO  umbraco.BusinessLogic.Log - [Thread 41] Log scrubbed.  Removed all items older than 2013-03-11 09:34:23
+2013-05-10 09:34:23,729 [13] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 41] Application shutdown. Reason: BuildManagerChange
+2013-05-10 09:34:28,944 [12] INFO  Umbraco.Core.CoreBootManager - [Thread 19] Umbraco application starting
+2013-05-10 09:34:28,958 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Determining hash of code files on disk
+2013-05-10 09:34:28,964 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Hash determined (took 5ms)
+2013-05-10 09:34:29,051 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 82ms)
+2013-05-10 09:34:29,070 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 10ms)
+2013-05-10 09:34:29,073 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-10 09:34:29,078 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-10 09:34:29,084 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-05-10 09:34:29,088 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-05-10 09:34:29,147 [12] INFO  Umbraco.Core.CoreBootManager - [Thread 19] Umbraco application startup complete (took 200ms)
+2013-05-10 09:34:29,369 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-10 09:34:29,394 [12] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-10 09:34:39,341 [12] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 49ms)
+2013-05-10 09:34:42,776 [12] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 47ms)

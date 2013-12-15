@@ -1,0 +1,336 @@
+2013-05-07 22:12:19,336 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-05-07 22:12:19,351 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-05-07 22:12:19,357 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 5ms)
+2013-05-07 22:12:19,446 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 84ms)
+2013-05-07 22:12:19,465 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 10ms)
+2013-05-07 22:12:19,469 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-07 22:12:19,474 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-07 22:12:19,482 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-07 22:12:19,487 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-05-07 22:12:19,555 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 216ms)
+2013-05-07 22:12:19,946 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-07 22:12:19,993 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-07 22:12:20,184 [5] INFO  umbraco.content - [Thread 12] Loading content from disk cache...
+2013-05-07 22:12:22,320 [5] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.IDataType, found 38 (took 3ms)
+2013-05-07 22:12:22,327 [5] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 2ms)
+2013-05-07 22:12:40,435 [5] INFO  umbraco.BasePages.BasePage - [Thread 16] User Yann (Id: 0) logged in
+2013-05-07 22:12:40,606 [5] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 3ms)
+2013-05-07 22:13:15,527 [5] INFO  umbraco.BusinessLogic.Log - [Thread 9] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Debug | User: 0 | NodeId: 1089 | Comment: Start Before Publish Event for Blog Post 1089
+2013-05-07 22:13:15,760 [5] INFO  umbraco.content - [Thread 15] Loading content from database...
+2013-05-07 22:13:15,772 [5] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 12] Content 'Blog1' with Id '1089' has been published.
+2013-05-07 22:13:16,176 [5] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 12] Error adding node 1068 to SiteMapProvider in loadNodes()
+System.InvalidOperationException: Multiple nodes with the same URL '/' were found. XmlSiteMapProvider requires that sitemap nodes have unique URLs.
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.loadNodes(String parentId, SiteMapNode parentNode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\nodeFactory\UmbracoSiteMapProvider.cs:line 123
+2013-05-07 22:13:30,168 [5] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.XsltExtensionAttribute, found 0 (took 5ms)
+2013-05-07 22:13:32,424 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'Name'. Exception: System.ArgumentException: No key Name exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,446 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'Email'. Exception: System.ArgumentException: No key Email exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,467 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'Website'. Exception: System.ArgumentException: No key Website exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,488 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'Comment'. Exception: System.ArgumentException: No key Comment exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,509 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'Submit'. Exception: System.ArgumentException: No key Submit exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,530 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'CommentLoading'. Exception: System.ArgumentException: No key CommentLoading exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,553 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'CommentPosted'. Exception: System.ArgumentException: No key CommentPosted exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:13:32,573 [5] WARN  Umbraco.Web.Dictionary.DefaultCultureDictionary - [Thread 10] Error returning dictionary item 'CommentFailend'. Exception: System.ArgumentException: No key CommentFailend exists in dictionary
+   at umbraco.cms.businesslogic.Dictionary.DictionaryItem..ctor(String key) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.cms\businesslogic\Dictionary.cs:line 114
+   at Umbraco.Web.Dictionary.DefaultCultureDictionary.get_Item(String key) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\Dictionary\UmbracoCultureDictionary.cs:line 25
+2013-05-07 22:21:41,493 [5] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - [Thread 7] Error executing query delete from cmsTagRelationship where nodeId = 1089  and tagId in (      select cmsTagRelationship.tagId  from  cmsTagRelationship  left outer join  ( select NewTags.Id from  (select 'First' as Tag, '' as [Group] union select 'Second' as Tag, '' as [Group]) as TagSet  inner join cmsTags as NewTags on (TagSet.Tag = NewTags.Tag and TagSet.[Group] = NewTags.[Group])  ) as NewTagsSet  on (cmsTagRelationship.TagId = NewTagsSet.Id and cmsTagRelationship.NodeId = 1089)  inner join  cmsTags as OldTags on (cmsTagRelationship.tagId = OldTags.Id)  where NewTagsSet.Id is null and OldTags.[Group] = '' )
+MySql.Data.MySqlClient.MySqlException (0x80004005): You can't specify target table 'CMSTAGRELATIONSHIP' for update in FROM clause
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteNonQuery(String commandText, MySqlParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelpers\MySql\MySqlHelper.cs:line 70
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 229
+2013-05-07 22:23:03,077 [5] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 7] An unhandled exception occurred
+System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteNonQuery ---> MySql.Data.MySqlClient.MySqlException: You can't specify target table 'CMSTAGRELATIONSHIP' for update in FROM clause
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteNonQuery(String commandText, MySqlParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelpers\MySql\MySqlHelper.cs:line 70
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 229
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 234
+   at Sniper.Umbraco.Tags.BackwardsCompatibility.MergeTagsToNode(Int32 nodeId, String tags, String group)
+   at Sniper.Umbraco.Tags.UserControls.TagsClient.Save()
+   at Sniper.Umbraco.Tags.ClientEditor.Save()
+   at umbraco.controls.ContentControl.SaveClick(Object sender, ImageClickEventArgs e) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\controls\ContentControl.cs:line 371
+   at System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   at System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.umbraco_editcontent_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\669bbe79\e2cd9ebc\App_Web_editcontent.aspx.5f2dec3.wcjtgamc.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-05-07 22:23:15,318 [5] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - [Thread 25] Error executing query delete from cmsTagRelationship where nodeId = 1089  and tagId in (      select cmsTagRelationship.tagId  from  cmsTagRelationship  left outer join  ( select NewTags.Id from  (select 'First' as Tag, '' as [Group] union select 'Second' as Tag, '' as [Group]) as TagSet  inner join cmsTags as NewTags on (TagSet.Tag = NewTags.Tag and TagSet.[Group] = NewTags.[Group])  ) as NewTagsSet  on (cmsTagRelationship.TagId = NewTagsSet.Id and cmsTagRelationship.NodeId = 1089)  inner join  cmsTags as OldTags on (cmsTagRelationship.tagId = OldTags.Id)  where NewTagsSet.Id is null and OldTags.[Group] = '' )
+MySql.Data.MySqlClient.MySqlException (0x80004005): You can't specify target table 'CMSTAGRELATIONSHIP' for update in FROM clause
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteNonQuery(String commandText, MySqlParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelpers\MySql\MySqlHelper.cs:line 70
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 229
+2013-05-07 22:23:17,383 [5] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 25] An unhandled exception occurred
+System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.HttpUnhandledException' was thrown. ---> umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteNonQuery ---> MySql.Data.MySqlClient.MySqlException: You can't specify target table 'CMSTAGRELATIONSHIP' for update in FROM clause
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteNonQuery(String commandText, MySqlParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelpers\MySql\MySqlHelper.cs:line 70
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 229
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 234
+   at Sniper.Umbraco.Tags.BackwardsCompatibility.MergeTagsToNode(Int32 nodeId, String tags, String group)
+   at Sniper.Umbraco.Tags.UserControls.TagsClient.Save()
+   at Sniper.Umbraco.Tags.ClientEditor.Save()
+   at umbraco.controls.ContentControl.SaveClick(Object sender, ImageClickEventArgs e) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\umbraco\controls\ContentControl.cs:line 371
+   at System.Web.UI.WebControls.ImageButton.OnClick(ImageClickEventArgs e)
+   at System.Web.UI.WebControls.ImageButton.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.ImageButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.umbraco_editcontent_aspx.ProcessRequest(HttpContext context) in c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\669bbe79\e2cd9ebc\App_Web_editcontent.aspx.5f2dec3.wcjtgamc.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2013-05-07 22:27:04,512 [5] INFO  umbraco.cms.businesslogic.packager.InstalledPackage - [Thread 10] The InstalledPackage class save method has been hit 1 times.
+2013-05-07 22:27:14,017 [5] INFO  umbraco.cms.businesslogic.packager.InstalledPackage - [Thread 29] The InstalledPackage class save method has been hit 1 times.
+2013-05-07 22:27:14,023 [5] INFO  umbraco.cms.businesslogic.packager.InstalledPackage - [Thread 29] The InstalledPackage class save method has been hit 2 times.
+2013-05-07 22:27:14,039 [5] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 0ms)
+2013-05-07 22:27:14,041 [5] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 0ms)
+2013-05-07 22:27:14,333 [5] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2013-03-08 22:27:14
+2013-05-07 22:27:14,336 [5] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 21] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-05-07 22:27:17,101 [22] INFO  Umbraco.Core.CoreBootManager - [Thread 24] Umbraco application starting
+2013-05-07 22:27:17,116 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Determining hash of code files on disk
+2013-05-07 22:27:17,121 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Hash determined (took 5ms)
+2013-05-07 22:27:17,206 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 79ms)
+2013-05-07 22:27:17,225 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 10ms)
+2013-05-07 22:27:17,228 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-07 22:27:17,233 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-07 22:27:17,240 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-05-07 22:27:17,244 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-07 22:27:17,304 [22] INFO  Umbraco.Core.CoreBootManager - [Thread 24] Umbraco application startup complete (took 200ms)
+2013-05-07 22:27:17,515 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-07 22:27:17,543 [22] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-05-07 22:27:17,767 [22] INFO  Umbraco.Core.PluginManager - [Thread 21] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-05-07 22:27:17,797 [22] INFO  Umbraco.Core.PluginManager - [Thread 21] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 3ms)
+2013-05-07 22:28:00,496 [22] INFO  umbraco.cms.businesslogic.packager.InstalledPackage - [Thread 25] The InstalledPackage class save method has been hit 1 times.
+2013-05-07 22:28:00,509 [22] INFO  umbraco.cms.businesslogic.packager.InstalledPackage - [Thread 25] The InstalledPackage class save method has been hit 1 times.
+2013-05-07 22:28:02,771 [22] INFO  umbraco.BusinessLogic.Log - [Thread 29] Log scrubbed.  Removed all items older than 2013-03-08 22:28:02
+2013-05-07 22:28:02,778 [22] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 29] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-05-07 22:28:04,539 [32] INFO  Umbraco.Core.CoreBootManager - [Thread 31] Umbraco application starting
+2013-05-07 22:28:04,553 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Determining hash of code files on disk
+2013-05-07 22:28:04,559 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Hash determined (took 5ms)
+2013-05-07 22:28:04,647 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 15 (took 83ms)
+2013-05-07 22:28:04,666 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 10ms)
+2013-05-07 22:28:04,669 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+2013-05-07 22:28:04,674 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 4ms)
+2013-05-07 22:28:04,679 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 2ms)
+2013-05-07 22:28:04,682 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 2ms)
+2013-05-07 22:28:04,743 [32] INFO  Umbraco.Core.CoreBootManager - [Thread 31] Umbraco application startup complete (took 201ms)
+2013-05-07 22:28:04,951 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-05-07 22:28:04,978 [32] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-05-07 22:28:06,234 [32] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 3ms)
+2013-05-07 22:28:06,241 [32] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 3ms)
+2013-05-07 22:28:06,244 [32] INFO  umbraco.cms.businesslogic.packager.InstalledPackage - [Thread 29] The InstalledPackage class save method has been hit 1 times.
+2013-05-07 22:28:06,279 [32] INFO  umbraco.content - [Thread 12] Loading content from database...
+2013-05-07 22:28:06,734 [32] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 3ms)
+2013-05-07 22:28:06,738 [32] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.interfaces.ITree, found 37 (took 0ms)
+2013-05-07 22:28:06,744 [32] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 2ms)
+2013-05-07 22:28:06,744 [32] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 0ms)
+2013-05-07 22:28:09,236 [32] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - [Thread 21] Error executing query INSERT INTO umbracoApp(sortOrder,appAlias,appIcon,appName,appInitWithTreeAlias) VALUES((SELECT ISNULL(MAX(sortOrder)+1, 1) AS MaxX FROM umbracoApp), 'tagMaint', 'tag.gif', 'Tag Maintenance', NULL);
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect parameter count in the call to native function 'ISNULL'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteNonQuery(String commandText, MySqlParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelpers\MySql\MySqlHelper.cs:line 70
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 229
+2013-05-07 22:28:09,298 [32] ERROR umbraco.DataLayer.SqlHelper`1[[MySql.Data.MySqlClient.MySqlParameter, MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d]] - [Thread 21] Error executing query INSERT INTO umbracoAppTree(treeSilent, treeInitialize, treeSortOrder, appAlias, treeAlias, treeTitle, treeIconClosed, treeIconOpen, treeHandlerAssembly, treeHandlerType, action) VALUES(0, 1, 0, 'tagMaint', 'tagMaintenance', 'Tag Maintenance', 'legacy', 'legacy', 'Yoyocms.Umbraco.TagManager', 'loadTagMaint', NULL);
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'asiblogs.umbracoapptree' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(MySqlConnection connection, String commandText, MySqlParameter[] commandParameters)
+   at MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(String connectionString, String commandText, MySqlParameter[] parms)
+   at umbraco.DataLayer.SqlHelpers.MySql.MySqlHelper.ExecuteNonQuery(String commandText, MySqlParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelpers\MySql\MySqlHelper.cs:line 70
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters) in d:\Projects\Experiments\Projects\Umbraco\Template\src\umbraco.datalayer\SqlHelper.cs:line 229
+2013-05-07 22:28:26,793 [32] INFO  umbraco.BasePages.BasePage - [Thread 19] User Yann (Id: 0) logged in
+2013-05-07 22:29:07,595 [32] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.XsltExtensionAttribute, found 0 (took 5ms)
+2013-05-07 22:29:08,703 [32] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 3ms)
+2013-05-07 22:33:53,122 [32] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 0ms)
+2013-05-07 22:34:11,752 [32] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 0ms)
+2013-05-07 22:38:06,623 [32] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of umbraco.interfaces.IDataType, found 37 (took 0ms)
+2013-05-07 22:45:42,329 [32] WARN  umbraco.macro - [Thread 39] Error loading XSLT BlogTagcloud.xslt. Exception: System.Xml.Xsl.XslLoadException: XSLT compile error. An error occurred at D:\Projects\Experiments\Projects\Umbraco\Blogs\src\Web Application\xslt\BlogTagcloud.xslt(44,18). ---> System.Xml.XmlException: Data at the root level is invalid. Line 44, position 18.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Xml.Xsl.Xslt.XsltInput.ReadNextSibling()
+   at System.Xml.Xsl.Xslt.XsltInput.MoveToNextSibling()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadRealStylesheet()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadDocument()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   --- End of inner exception stack trace ---
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(XmlReader reader)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(Compiler compiler, Object stylesheet, XmlResolver xmlResolver)
+   at System.Xml.Xsl.Xslt.Compiler.Compile(Object stylesheet, XmlResolver xmlResolver, QilExpression& qil)
+   at System.Xml.Xsl.XslCompiledTransform.LoadInternal(Object stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at System.Xml.Xsl.XslCompiledTransform.Load(XmlReader stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at umbraco.macro.CreateXsltTransform(XmlTextReader xslReader, Boolean debugMode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 753
+   at umbraco.macro.getXslt(String XsltFile) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 708
+   at umbraco.macro.LoadMacroXslt(macro macro, MacroModel model, Hashtable pageElements, Boolean throwError) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 801
+2013-05-07 22:47:38,509 [32] WARN  umbraco.macro - [Thread 50] Error loading XSLT BlogTagcloud.xslt. Exception: System.Xml.Xsl.XslLoadException: XSLT compile error. An error occurred at D:\Projects\Experiments\Projects\Umbraco\Blogs\src\Web Application\xslt\BlogTagcloud.xslt(44,18). ---> System.Xml.XmlException: Data at the root level is invalid. Line 44, position 18.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Xml.Xsl.Xslt.XsltInput.ReadNextSibling()
+   at System.Xml.Xsl.Xslt.XsltInput.MoveToNextSibling()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadRealStylesheet()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadDocument()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   --- End of inner exception stack trace ---
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(XmlReader reader)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(Compiler compiler, Object stylesheet, XmlResolver xmlResolver)
+   at System.Xml.Xsl.Xslt.Compiler.Compile(Object stylesheet, XmlResolver xmlResolver, QilExpression& qil)
+   at System.Xml.Xsl.XslCompiledTransform.LoadInternal(Object stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at System.Xml.Xsl.XslCompiledTransform.Load(XmlReader stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at umbraco.macro.CreateXsltTransform(XmlTextReader xslReader, Boolean debugMode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 753
+   at umbraco.macro.getXslt(String XsltFile) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 708
+   at umbraco.macro.LoadMacroXslt(macro macro, MacroModel model, Hashtable pageElements, Boolean throwError) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 801
+2013-05-07 22:47:42,148 [32] WARN  umbraco.macro - [Thread 41] Error loading XSLT BlogTagcloud.xslt. Exception: System.Xml.Xsl.XslLoadException: XSLT compile error. An error occurred at D:\Projects\Experiments\Projects\Umbraco\Blogs\src\Web Application\xslt\BlogTagcloud.xslt(44,18). ---> System.Xml.XmlException: Data at the root level is invalid. Line 44, position 18.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Xml.Xsl.Xslt.XsltInput.ReadNextSibling()
+   at System.Xml.Xsl.Xslt.XsltInput.MoveToNextSibling()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadRealStylesheet()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadDocument()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   --- End of inner exception stack trace ---
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(XmlReader reader)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(Compiler compiler, Object stylesheet, XmlResolver xmlResolver)
+   at System.Xml.Xsl.Xslt.Compiler.Compile(Object stylesheet, XmlResolver xmlResolver, QilExpression& qil)
+   at System.Xml.Xsl.XslCompiledTransform.LoadInternal(Object stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at System.Xml.Xsl.XslCompiledTransform.Load(XmlReader stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at umbraco.macro.CreateXsltTransform(XmlTextReader xslReader, Boolean debugMode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 753
+   at umbraco.macro.getXslt(String XsltFile) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 708
+   at umbraco.macro.LoadMacroXslt(macro macro, MacroModel model, Hashtable pageElements, Boolean throwError) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 801
+2013-05-07 22:48:06,706 [32] WARN  umbraco.macro - [Thread 45] Error loading XSLT BlogTagcloud.xslt. Exception: System.Xml.Xsl.XslLoadException: XSLT compile error. An error occurred at D:\Projects\Experiments\Projects\Umbraco\Blogs\src\Web Application\xslt\BlogTagcloud.xslt(44,18). ---> System.Xml.XmlException: Data at the root level is invalid. Line 44, position 18.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Xml.Xsl.Xslt.XsltInput.ReadNextSibling()
+   at System.Xml.Xsl.Xslt.XsltInput.MoveToNextSibling()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadRealStylesheet()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadDocument()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   --- End of inner exception stack trace ---
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(XmlReader reader)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(Compiler compiler, Object stylesheet, XmlResolver xmlResolver)
+   at System.Xml.Xsl.Xslt.Compiler.Compile(Object stylesheet, XmlResolver xmlResolver, QilExpression& qil)
+   at System.Xml.Xsl.XslCompiledTransform.LoadInternal(Object stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at System.Xml.Xsl.XslCompiledTransform.Load(XmlReader stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at umbraco.macro.CreateXsltTransform(XmlTextReader xslReader, Boolean debugMode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 753
+   at umbraco.macro.getXslt(String XsltFile) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 708
+   at umbraco.macro.LoadMacroXslt(macro macro, MacroModel model, Hashtable pageElements, Boolean throwError) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 801
+2013-05-07 22:49:03,291 [32] WARN  umbraco.macro - [Thread 43] Error loading XSLT BlogTagcloud.xslt. Exception: System.Xml.Xsl.XslLoadException: XSLT compile error. An error occurred at D:\Projects\Experiments\Projects\Umbraco\Blogs\src\Web Application\xslt\BlogTagcloud.xslt(44,18). ---> System.Xml.XmlException: Data at the root level is invalid. Line 44, position 18.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlTextReader.Read()
+   at System.Xml.Xsl.Xslt.XsltInput.ReadNextSibling()
+   at System.Xml.Xsl.Xslt.XsltInput.MoveToNextSibling()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadRealStylesheet()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadDocument()
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   --- End of inner exception stack trace ---
+   at System.Xml.Xsl.Xslt.XsltLoader.LoadStylesheet(XmlReader reader, Boolean include)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(XmlReader reader)
+   at System.Xml.Xsl.Xslt.XsltLoader.Load(Compiler compiler, Object stylesheet, XmlResolver xmlResolver)
+   at System.Xml.Xsl.Xslt.Compiler.Compile(Object stylesheet, XmlResolver xmlResolver, QilExpression& qil)
+   at System.Xml.Xsl.XslCompiledTransform.LoadInternal(Object stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at System.Xml.Xsl.XslCompiledTransform.Load(XmlReader stylesheet, XsltSettings settings, XmlResolver stylesheetResolver)
+   at umbraco.macro.CreateXsltTransform(XmlTextReader xslReader, Boolean debugMode) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 753
+   at umbraco.macro.getXslt(String XsltFile) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 708
+   at umbraco.macro.LoadMacroXslt(macro macro, MacroModel model, Hashtable pageElements, Boolean throwError) in d:\Projects\Experiments\Projects\Umbraco\Blogs\src\Umbraco.Web\umbraco.presentation\macro.cs:line 801
