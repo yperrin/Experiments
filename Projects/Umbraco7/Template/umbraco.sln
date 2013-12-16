@@ -1,5 +1,21 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{2849E9D4-3B4E-40A3-A309-F3CB4F0E125F}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\Build.bat = ..\build\Build.bat
+		..\build\Build.proj = ..\build\Build.proj
+		..\build\RevertToCleanInstall.bat = ..\build\RevertToCleanInstall.bat
+		umbraco.presentation.targets = umbraco.presentation.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FD962632-184C-4005-A5F3-E705D92FC645}"
+	ProjectSection(SolutionItems) = preProject
+		..\docs\License.txt = ..\docs\License.txt
+		..\docs\README.txt = ..\docs\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B5BD12C1-A454-435E-8A46-FF4A364C0382}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{66AB0414-D4F2-435C-9868-E25B6865D9A9}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -8,6 +24,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{66AB04
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UmbracoExamine Libraries", "UmbracoExamine Libraries", "{DD32977B-EF54-475B-9A1B-B97A502C6E58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuSpecs", "NuSpecs", "{227C3B55-80E5-4E7E-A802-BE16C5128B9D}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\NuSpecs\UmbracoCms.Core.nuspec = ..\build\NuSpecs\UmbracoCms.Core.nuspec
+		..\build\NuSpecs\UmbracoCms.nuspec = ..\build\NuSpecs\UmbracoCms.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Web.UI", "Umbraco.Web.UI\Umbraco.Web.UI.csproj", "{4C4C194C-B5E4-4991-8F87-4373E24CC19F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Web", "Umbraco.Web\Umbraco.Web.csproj", "{651E1350-91B6-44B7-BD60-7207006D7003}"
 EndProject
@@ -31,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "umbraco.MacroEngines", "umb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Core", "Umbraco.Core\Umbraco.Core.csproj", "{31785BC3-256C-4613-B2F5-A1B0BDDED8C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Tests", "Umbraco.Tests\Umbraco.Tests.csproj", "{5D3B8245-ADA6-453F-A008-50ED04BFE770}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoExamine", "UmbracoExamine\UmbracoExamine.csproj", "{07FBC26B-2927-4A22-8D96-D644C667FECC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoExamine.PDF", "UmbracoExamine.PDF\UmbracoExamine.PDF.csproj", "{F30DDDB8-3994-4673-82AE-057123C6E1A8}"
@@ -39,9 +65,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoExamine.Azure", "Umb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoExamine.PDF.Azure", "UmbracoExamine.PDF.Azure\UmbracoExamine.PDF.Azure.csproj", "{B555AAE6-0F56-442F-AC9F-EF497DB38DE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template", "Template\Template.csproj", "{E61E86A2-4E30-4BEA-9B3E-E1AFD70D3606}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Web.UI", "Umbraco.Web.UI\Umbraco.Web.UI.csproj", "{4C4C194C-B5E4-4991-8F87-4373E24CC19F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web Application", "Web Application\Web Application.csproj", "{A578C128-7364-43A0-987B-ED3E9C898E87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +73,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{651E1350-91B6-44B7-BD60-7207006D7003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{651E1350-91B6-44B7-BD60-7207006D7003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{651E1350-91B6-44B7-BD60-7207006D7003}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +121,10 @@ Global
 		{31785BC3-256C-4613-B2F5-A1B0BDDED8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31785BC3-256C-4613-B2F5-A1B0BDDED8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31785BC3-256C-4613-B2F5-A1B0BDDED8C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3B8245-ADA6-453F-A008-50ED04BFE770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3B8245-ADA6-453F-A008-50ED04BFE770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3B8245-ADA6-453F-A008-50ED04BFE770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3B8245-ADA6-453F-A008-50ED04BFE770}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07FBC26B-2927-4A22-8D96-D644C667FECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07FBC26B-2927-4A22-8D96-D644C667FECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07FBC26B-2927-4A22-8D96-D644C667FECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -109,19 +141,17 @@ Global
 		{B555AAE6-0F56-442F-AC9F-EF497DB38DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B555AAE6-0F56-442F-AC9F-EF497DB38DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B555AAE6-0F56-442F-AC9F-EF497DB38DE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E61E86A2-4E30-4BEA-9B3E-E1AFD70D3606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E61E86A2-4E30-4BEA-9B3E-E1AFD70D3606}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E61E86A2-4E30-4BEA-9B3E-E1AFD70D3606}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E61E86A2-4E30-4BEA-9B3E-E1AFD70D3606}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C4C194C-B5E4-4991-8F87-4373E24CC19F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A578C128-7364-43A0-987B-ED3E9C898E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A578C128-7364-43A0-987B-ED3E9C898E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A578C128-7364-43A0-987B-ED3E9C898E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A578C128-7364-43A0-987B-ED3E9C898E87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{227C3B55-80E5-4E7E-A802-BE16C5128B9D} = {2849E9D4-3B4E-40A3-A309-F3CB4F0E125F}
+		{5D3B8245-ADA6-453F-A008-50ED04BFE770} = {B5BD12C1-A454-435E-8A46-FF4A364C0382}
 		{07FBC26B-2927-4A22-8D96-D644C667FECC} = {DD32977B-EF54-475B-9A1B-B97A502C6E58}
 		{F30DDDB8-3994-4673-82AE-057123C6E1A8} = {DD32977B-EF54-475B-9A1B-B97A502C6E58}
 		{73529637-28F5-419C-A6BB-D094E39DE614} = {DD32977B-EF54-475B-9A1B-B97A502C6E58}

@@ -2157,6 +2157,7 @@
     <Content Include="Umbraco\PartialViews\Templates\MultinodeTree-picker.cshtml" />
     <Content Include="Umbraco\PartialViews\Templates\Navigation.cshtml" />
     <Content Include="Umbraco\PartialViews\Templates\SiteMap.cshtml" />
+    <Content Include="Umbraco\Views\AuthorizeUpgrade.cshtml" />
     <None Include="Umbraco_client\CodeMirror\js\mode\coffeescript\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\pascal\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\perl\LICENSE" />
@@ -2169,6 +2170,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Web.Debug.config.transformed" />
     <None Include="web.Template.Debug.config">
       <DependentUpon>Web.Template.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -2653,4 +2655,8 @@ xcopy "$(ProjectDir)"..\packages\SqlServerCE.4.0.0.0\x86\*.* "$(TargetDir)x86\" 
     <Copy SourceFiles="$(ProjectDir)Web.$(Configuration).config.transformed" DestinationFiles="$(ProjectDir)Web.config" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="false" Condition="$(BuildingInsideVisualStudio) == true" />
   </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
 </Project>

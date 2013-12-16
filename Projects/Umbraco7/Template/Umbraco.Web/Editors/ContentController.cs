@@ -28,6 +28,8 @@ using umbraco;
 using Umbraco.Core.Models;
 using Umbraco.Core.Dynamics;
 using umbraco.BusinessLogic.Actions;
+using umbraco.cms.businesslogic.web;
+using umbraco.presentation.preview;
 using Constants = Umbraco.Core.Constants;
 
 namespace Umbraco.Web.Editors
@@ -89,6 +91,19 @@ namespace Umbraco.Web.Editors
             var content = Mapper.Map<IContent, ContentItemDisplay>(foundContent);
             return content;
        }
+
+        [EnsureUserPermissionForContent("id")]
+        public ContentItemDisplay GetWithTreeDefinition(int id)
+        {
+            var foundContent = GetObjectFromRequest(() => Services.ContentService.GetById(id));
+            if (foundContent == null)
+            {
+                HandleContentNotFound(id);
+            }
+
+            var content = Mapper.Map<IContent, ContentItemDisplay>(foundContent);
+            return content;
+        }
 
         /// <summary>
         /// Gets an empty content item for the 
@@ -290,7 +305,27 @@ namespace Umbraco.Web.Editors
                     break;
             }
 
+            UpdatePreviewContext(contentItem.PersistedContent.Id);
+
             return display;
+        }
+
+        /// <summary>
+        /// Checks if the user is currently in preview mode and if so will update the preview content for this item
+        /// </summary>
+        /// <param name="contentId"></param>
+        private void UpdatePreviewContext(int contentId)
+        {
+            var previewId = Request.GetPreviewCookieValue();
+            if (previewId.IsNullOrWhiteSpace()) return;
+            Guid id;
+            if (Guid.TryParse(previewId, out id))
+            {
+                var d = new Document(contentId);
+                var pc = new PreviewContent(UmbracoUser, id, false);
+                pc.PrepareDocument(UmbracoUser, d, true);
+                pc.SavePreviewSet();
+            }          
         }
 
         /// <summary>
@@ -508,9 +543,6 @@ namespace Umbraco.Web.Editors
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //TODO: Unpublish is NOT an assignable permission therefore this won't work, I'd assume to unpublish you'd need to be able to publish??!
-        // still waiting on feedback from HQ.
-        //[EnsureUserPermissionForContent("id", 'Z')]
         [EnsureUserPermissionForContent("id", 'U')]
         public ContentItemDisplay PostUnPublish(int id)
         {

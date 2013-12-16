@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using Umbraco.Core;
@@ -36,6 +37,7 @@ namespace Umbraco.Web.Trees
     [CoreTree]
     public class ContentTreeController : ContentTreeControllerBase
     {
+       
         protected override TreeNode CreateRootNode(FormDataCollection queryStrings)
         {
             var node = base.CreateRootNode(queryStrings); 
@@ -75,48 +77,57 @@ namespace Umbraco.Web.Trees
         protected override TreeNodeCollection PerformGetTreeNodes(string id, FormDataCollection queryStrings)
         {
             var nodes = new TreeNodeCollection();
-
             var entities = GetChildEntities(id);
-
-            foreach (var entity in entities)
-            {
-                var e = (UmbracoEntity)entity;
-               
-                var allowedUserOptions = GetAllowedUserMenuItemsForNode(e);
-                if (CanUserAccessNode(e, allowedUserOptions))
-                {                    
-
-                    //Special check to see if it ia a container, if so then we'll hide children.
-                    var isContainer = entity.AdditionalData.ContainsKey("IsContainer") 
-                        && entity.AdditionalData["IsContainer"] is bool 
-                        && (bool) entity.AdditionalData["IsContainer"];
-                    
-                    var node = CreateTreeNode(
-                        e.Id.ToInvariantString(),
-                        id,
-                        queryStrings,
-                        e.Name,
-                        e.ContentTypeIcon,
-                        e.HasChildren && (isContainer == false));
-
-                    node.AdditionalData.Add("contentType", e.ContentTypeAlias);
-
-                    if (isContainer)
-                        node.SetContainerStyle();
-
-                    if (e.IsPublished == false)
-                        node.SetNotPublishedStyle();
-
-                    if (e.HasPendingChanges)
-                        node.SetHasUnpublishedVersionStyle();
-
-                    if (Access.IsProtected(e.Id, e.Path))
-                        node.SetProtectedStyle();
-                    
-                    nodes.Add(node);
-                }
-            }
+            nodes.AddRange(entities.Select(entity => GetSingleTreeNode(entity, id, queryStrings)).Where(node => node != null));            
             return nodes;
+        }
+
+        /// <summary>
+        /// Creates a tree node for a content item based on an UmbracoEntity
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="parentId"></param>
+        /// <param name="queryStrings"></param>
+        /// <returns></returns>
+        protected override TreeNode GetSingleTreeNode(IUmbracoEntity e, string parentId, FormDataCollection queryStrings)
+        {
+            var entity = (UmbracoEntity) e;
+
+            var allowedUserOptions = GetAllowedUserMenuItemsForNode(e);
+            if (CanUserAccessNode(e, allowedUserOptions))
+            {
+
+                //Special check to see if it ia a container, if so then we'll hide children.
+                var isContainer = e.AdditionalData.ContainsKey("IsContainer")
+                    && e.AdditionalData["IsContainer"] is bool
+                    && (bool)e.AdditionalData["IsContainer"];
+
+                var node = CreateTreeNode(
+                    e.Id.ToInvariantString(),
+                    parentId,
+                    queryStrings,
+                    e.Name,
+                    entity.ContentTypeIcon,
+                    entity.HasChildren && (isContainer == false));
+
+                node.AdditionalData.Add("contentType", entity.ContentTypeAlias);
+
+                if (isContainer)
+                    node.SetContainerStyle();
+
+                if (entity.IsPublished == false)
+                    node.SetNotPublishedStyle();
+
+                if (entity.HasPendingChanges)
+                    node.SetHasUnpublishedVersionStyle();
+
+                if (Access.IsProtected(e.Id, e.Path))
+                    node.SetProtectedStyle();
+
+                return node;
+            }
+
+            return null;
         }
 
         protected override MenuItemCollection PerformGetMenuForNode(string id, FormDataCollection queryStrings)

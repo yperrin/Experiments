@@ -91,10 +91,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SQLCE4Umbraco\SqlCE4Umbraco.csproj">
-      <Project>{5ba5425f-27a7-4677-865e-82246498aa2e}</Project>
-      <Name>SqlCE4Umbraco</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UmbracoExamine\UmbracoExamine.csproj">
       <Project>{07fbc26b-2927-4a22-8d96-d644c667fecc}</Project>
       <Name>UmbracoExamine</Name>
@@ -114,7 +110,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
-    <Reference Include="Examine">
+    <Reference Include="Examine, Version=0.1.52.2941, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Examine.0.1.52.2941\lib\Examine.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
@@ -228,6 +225,10 @@
       <Name>System.XML</Name>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <ProjectReference Include="..\SQLCE4Umbraco\SqlCE4Umbraco.csproj">
+      <Project>{5BA5425F-27A7-4677-865E-82246498AA2E}</Project>
+      <Name>SqlCE4Umbraco</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Umbraco.Core\Umbraco.Core.csproj">
       <Project>{31785BC3-256C-4613-B2F5-A1B0BDDED8C1}</Project>
       <Name>Umbraco.Core</Name>
@@ -301,6 +302,7 @@
     <Compile Include="Editors\EntityControllerActionSelector.cs" />
     <Compile Include="Editors\ImagesController.cs" />
     <Compile Include="Models\ContentEditing\EntityTypeSearchResult.cs" />
+    <Compile Include="Models\ContentEditing\ListViewAwareContentItemDisplayBase.cs" />
     <Compile Include="Models\IRenderModel.cs" />
     <Compile Include="Models\RenderModelOfTContent.cs" />
     <Compile Include="Mvc\MinifyJavaScriptResultAttribute.cs" />
@@ -403,6 +405,7 @@
     <Compile Include="PropertyEditors\PropertyValueEditorWrapper.cs" />
     <Compile Include="PublishedContentQuery.cs" />
     <Compile Include="Routing\UrlProviderExtensions.cs" />
+    <Compile Include="Strategies\Migrations\ClearMediaXmlCacheForDeletedItemsAfterUpgrade.cs" />
     <Compile Include="TagQuery.cs" />
     <Compile Include="Trees\CoreTreeAttribute.cs" />
     <Compile Include="Trees\DataTypeTreeController.cs" />
