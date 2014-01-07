@@ -35,7 +35,7 @@
     <add key="umbracoEnableStat" value="false" />
     <add key="umbracoHideTopLevelNodeFromPath" value="true" />
     <add key="umbracoEditXhtmlMode" value="true" />
-    <add key="umbracoUseDirectoryUrls" value="false" />
+    <add key="umbracoUseDirectoryUrls" value="true" />
     <add key="umbracoDebugMode" value="true" />
     <add key="umbracoTimeOutInMinutes" value="20" />
     <add key="umbracoVersionCheckPeriod" value="7" />
@@ -88,7 +88,7 @@
     </pages>
     <httpModules>
       <!-- URL REWRTIER -->
-      <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" />
+      <add name="UrlRewriteModule" type="UrlRewritingNet.Web.UrlRewriteModule, UrlRewritingNet.UrlRewriter" preCondition="" />
       <!-- UMBRACO -->
       <add name=" UmbracoModule" type="Umbraco.Web.UmbracoModule,umbraco" />
       <!-- ASPNETAJAX -->
@@ -159,7 +159,7 @@
         <add name="UmbracoSiteMapProvider" type="umbraco.presentation.nodeFactory.UmbracoSiteMapProvider" defaultDescriptionAlias="description" securityTrimmingEnabled="true" />
       </providers>
     </siteMap>
-    <trust level="Medium" originUrl=".*"/>
+    <trust level="Full" originUrl=".*"/>
   </system.web>
   <!-- ASPNETAJAX -->
   <system.web.extensions>
