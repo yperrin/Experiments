@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="skinBrowser.aspx.cs" Inherits="Umlaut.Umb.Blog.plugins.blog4umbraco.skinBrowser1" %><asp:literal runat="server" id="skinLists"></asp:literal>
