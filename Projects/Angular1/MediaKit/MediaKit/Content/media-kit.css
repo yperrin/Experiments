@@ -1,0 +1,224 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 14px;
+  background: none;
+}
+h1 {
+  font-size: 40px;
+  color: #808284;
+  font-family: 'Rokkitt', serif;
+}
+h2 {
+  font-size: 30px;
+  font-family: 'Rokkitt', serif;
+  border-bottom: 1px solid #000000;
+}
+h3 {
+  font-size: 30px;
+  font-family: 'Rokkitt', serif;
+}
+.btn {
+  font-size: 17px;
+  color: #fffffd;
+  background-color: #da1c23;
+  outline: none;
+  padding: 6px 12px;
+}
+.btn:hover {
+  background-color: #a8222b;
+  color: #fffffd;
+}
+.font-20 {
+  font-size: 20px;
+}
+.no-padding {
+  padding: 0;
+}
+.p-b-30 {
+  padding-bottom: 30px !important;
+}
+header {
+  background-color: #a7a9ab;
+  padding: 30px 50px;
+  margin-bottom: 50px;
+}
+header .list-inline li {
+  padding-right: 20px;
+  margin-right: 10px;
+  border-right: 1px solid #fffffd;
+}
+header .list-inline li a {
+  color: #fffffd !important;
+  font-size: 18px;
+}
+header .list-inline li a:hover {
+  color: #fffffd !important;
+}
+header .list-inline li:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+#menu a {
+  text-transform: none !important;
+}
+#menu a.collapsed:hover {
+  text-transform: none !important;
+}
+#menu .panel-heading {
+  background-color: #da1c23;
+  color: #fffffd;
+  font-size: 20px !important;
+  font-weight: bold;
+}
+#menu .panel-heading:hover {
+  background-color: #a8222b;
+  text-decoration: none;
+}
+#menu .panel {
+  border: none;
+  font-size: 16px;
+}
+#menu .panel .Sub-title {
+  font-weight: bold;
+}
+#menu .panel .panel-body {
+  padding: 5px;
+  max-height: 550px;
+  /* or any value */
+
+  overflow-y: auto;
+}
+#menu .panel li {
+  padding: 5px 10px;
+}
+#menu .panel .active {
+  background-color: #e6e7e8;
+  width: 100%;
+}
+#menu .panel .panel .panel-title:hover {
+  text-transform: none !important;
+}
+#carousel-home {
+  margin-bottom: 50px;
+  margin-top: -50px;
+}
+#carousel-home .carousel-caption {
+  position: static;
+  background-color: #58595b;
+  height: auto;
+  padding: 0 0 20px 0;
+  display: inline-block;
+  width: 100%;
+}
+#carousel-home .carousel-caption p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+#carousel-home .carousel-indicators {
+  bottom: 0px !important;
+}
+#carousel-home .carousel-indicators li {
+  background-color: #a7a9ab;
+  border: none;
+}
+#carousel-home .carousel-indicators li.active {
+  background-color: #fffffd;
+  height: 10px;
+  width: 10px;
+  margin: 1px;
+}
+.bottom-image {
+  margin-top: 50px;
+}
+#rates-pdfs {
+  margin-top: 75px;
+}
+#rates-pdfs .nav-tabs {
+  border: none;
+}
+#rates-pdfs .nav-tabs li button,
+#rates-pdfs .nav-tabs li a {
+  margin: 0 10px;
+  font-size: 17px;
+  color: #fffffd;
+  background-color: #da1c23;
+  outline: none;
+  padding: 6px 12px;
+}
+#rates-pdfs .nav-tabs li button:first-child {
+  margin: 0 10px 0 0px;
+}
+#rates-pdfs .nav-tabs .active button {
+  background-color: #808284;
+}
+#rates-pdfs .nav-tabs .active button:focus {
+  outline: none;
+}
+#rates-pdfs #accordion-specs a.collapse-link {
+  color: #000000 !important;
+}
+#rates-pdfs #accordion-specs a.collapse-link .fa {
+  color: #da1c23;
+}
+#rates-pdfs #accordion-specs a.collapse-link:focus {
+  color: #000000 !important;
+}
+footer {
+  background-color: #808284;
+  padding: 30px 50px;
+  margin-top: 75px;
+}
+footer .list-inline li {
+  padding-right: 20px;
+  margin-right: 10px;
+  border-right: 1px solid #fffffd;
+}
+footer .list-inline li a {
+  color: #fffffd !important;
+  font-size: 18px;
+}
+footer .list-inline li a:hover {
+  color: #fffffd !important;
+}
+footer .list-inline li:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+/* landscape PHONES and SMALLER - 767px and below*/
+@media (min-width: 100px) and (max-width: 767px) {
+  .btn {
+    padding: 4px 10px;
+  }
+  header ul {
+    text-align: center;
+    padding-top: 20px;
+  }
+  header ul li a {
+    font-size: 14px !important;
+  }
+  #menu .panel {
+    font-size: 14px;
+  }
+  #menu .panel li {
+    padding: 3px 10px;
+  }
+  #rates-pdfs .nav-tabs li button,
+  #rates-pdfs .nav-tabs li a {
+    font-size: 12px;
+  }
+  footer .list-inline {
+    padding-top: 10px;
+  }
+  footer .list-inline li {
+    margin-right: 0;
+    padding-right: 7px;
+  }
+  footer .list-inline li a {
+    font-size: 12px;
+  }
+}

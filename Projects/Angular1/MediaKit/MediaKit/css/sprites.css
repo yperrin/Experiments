@@ -1,0 +1,321 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Home Page: Blog and Social */
+
+.TabSprite{position:relative;} 
+.TabSprite li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
+.TabSprite li, .TabSprite a{height:30px;display:block;}
+
+.Tim{left:0px;width:45px;}
+.Tim{background:url('/images/sprites/Blogtabs_Sprite.gif') 0 -30px;}
+.Tim a:hover{background: url('/images/sprites/Blogtabs_Sprite.gif') 0 -60px;} 
+
+.Michelle{left:45px;width:63px;}
+.Michelle{background:url('/images/sprites/Blogtabs_Sprite.gif') -45px -30px;}
+.Michelle a:hover{background: url('/images/sprites/Blogtabs_Sprite.gif') -45px -60px;}
+
+.ASIcentral{left:108px;width:89px;}
+.ASIcentral{background:url('/images/sprites/Blogtabs_Sprite.gif') -108px -30px;}
+.ASIcentral a:hover{background: url('/images/sprites/Blogtabs_Sprite.gif') -108px -60px;}
+
+.FaceBook{left:0px;width:85px;}
+.FaceBook{background:url('/images/sprites/Blogtabs_Sprite.gif') 0 -30px;}
+.FaceBook a:hover{background: url('/images/sprites/Blogtabs_Sprite.gif') -202px -60px;}
+
+.Twitter{left:85px;width:82px;}
+.Twitter{background:url('/images/sprites/Blogtabs_Sprite.gif') -287px -30px;}
+.Twitter a:hover{background: url('/images/sprites/Blogtabs_Sprite.gif') -287px -60px;}
+
+/* Home Page and Header: Icons and Borders */
+
+img.iconCanadaSprite{
+	width:20px;
+	height:14px;
+	background:url('/images/sprites/iconsBorders.png') 0 0;
+	border:none;
+}
+img.iconUSASprite{
+	width:20px;
+	height:14px;
+	background:url('/images/sprites/iconsBorders.png') -21px 0;
+	border:none;
+}
+
+img.iconASIstoreSprite{
+	width:76px;
+	height:25px;
+	background:url('/images/sprites/iconsBorders.png') -48px 0;
+	border:none;
+}
+
+img.iconTwitterSprite{
+	width:20px;
+	height:20px;
+	background:url('/images/sprites/iconsBorders.png') 0 -16px;
+	border:none;
+}
+img.iconRSSSprite{
+	width:20px;
+	height:20px;
+	background:url('/images/sprites/iconsBorders.png') -21px -16px;
+	border:none;
+}
+
+img.iconYouTubeSprite{
+	width:49px;
+	height:19px;
+	background:url('/images/sprites/iconsBorders.png') -60px -25px;
+	border:none;
+}
+img.logoSprite{
+	width:201px;
+	height:107px;
+	background:url('/images/sprites/iconsBorders.png') 0 -164px;
+	border:none;
+}
+img.logoCanadaSprite{
+	width:299px;
+	height:107px;
+	background:url('/images/sprites/iconsBorders.png') -202px -164px;
+	border:none;
+}
+
+
+.loginRightSprite 
+{
+    color: #B3B3B3; /* LM */
+	float: right;
+	height: 16px;
+	/*background: url('/images/sprites/iconsBorders.png') -163px 0px;*/
+	padding-top: 12px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+img.loginLeftSprite{
+	width:29px;
+	height:26px;
+	background:url('/images/sprites/iconsBorders.png') -128px 0;
+	border:none;
+}
+
+.searchAreaSprite {
+	float: right;
+	height: 34px;
+	width: 320px;
+	clear: right;
+	margin-top: 8px;  /* LM */
+	margin-right: 60px; /* LM */
+	background:url('/images/sprites/iconsBorders.png') -301px 0;
+	background-repeat: no-repeat;
+}
+
+.searchButtonSprite {
+	float: right;
+	background:url('/images/sprites/iconsBorders.png') -585px 0;
+	width: 36px;
+	height: 34px;
+}
+.searchButtonSprite a:link, .searchButtonSprite a:link, .searchButtonSprite a:visited  {
+	background:url('/images/sprites/iconsBorders.png') -585px 0;
+	width: 36px;
+	height: 29px;
+	display:block;
+}
+
+
+.searchButtonSprite a:hover, .searchButtonSprite a:active  {
+	background:url('/images/sprites/iconsBorders.png') -621px 0;
+	width: 36px;
+	height: 34px;
+	display:block;
+}
+.topSprite {
+	background:url('/images/sprites/iconsBorders.png') 0 -272px;
+	height: 107px;
+	width: 646px;
+	float: left;
+	overflow:hidden;
+}
+img.angleOnRedSprite{
+	width:23px;
+	height:22px;
+	background:url('/images/sprites/iconsBorders.png') 0 -44px;
+	border:none;
+}
+img.newsPanelBaseSprite{
+	width:611px;
+	height:15px;
+	background:url('/images/sprites/iconsBorders.png') -3px -116px;
+	border:none;
+}
+img.eduPanelHeaderRightSprite{
+	width:16px;
+	height:30px;
+	background:url('/images/sprites/edu_sprite.png');
+	border:none;
+}
+img.newsPanelHeaderRightSprite{
+	width:16px;
+	height:30px;
+	background:url('/images/sprites/iconsBorders.png') -193px -38px;
+	border:none;
+}
+
+img.timsBlogSprite{
+	width:84px;
+	height:76px;
+	background:url('/images/sprites/iconsBorders.png') -515px -196px;
+	border:none;
+}
+img.micheleBlogSprite{
+	width:84px;
+	height:76px;
+	background:url('/images/sprites/iconsBorders.png') -601px -196px;
+	border:none;
+}
+img.teamBlogSprite{
+	width:84px;
+	height:76px;
+	background:url('/images/sprites/iconsBorders.png') -686px -196px;
+	border:none;
+}
+img.youTubeSprite{
+	width:47px;
+	height:19px;
+	background:url('/images/sprites/iconsBorders.png') -62px -25px;
+	border:none;
+}
+img.videoPanelBaseSprite{
+	width:369px;
+	height:16px;
+	background:url('/images/sprites/iconsBorders.png') -3px -148px;
+	border:none;
+}
+img.angleOnGreySprite{
+	width:32px;
+	height:30px;
+	background:url('/images/sprites/iconsBorders.png') -211px -38px;
+	border:none;
+}
+img.angleOnGreySprite{
+	width:32px;
+	height:30px;
+	background:url('/images/sprites/iconsBorders.png') -211px -38px;
+	border:none;
+}
+img.redHeaderRightSprite{
+	width:15px;
+	height:30px;
+	background:url('/images/sprites/iconsBorders.png') -244px -38px;
+	border:none;
+}
+img.footerLightLeftSprite{
+	width:294px;
+	height:30px;
+	background:url('/images/sprites/iconsBorders.png') -621px -116px;
+	border:none;
+}
+
+img.footerRedRightSprite{
+	width:14px;
+	height:30px;
+	background:url('/images/sprites/iconsBorders.png') -736px -38px;
+	border:none;
+}
+img.footerPollSprite{
+	width:247px;
+	height:17px;
+	background:url('/images/sprites/iconsBorders.png') -372px -147px;
+	border:none;
+}
+
+/* Supplier Search Icons */
+
+
+img.iconsmMailSprite{
+	width:16px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -55px -4px;
+	border:none;
+}
+img.iconsmWebSprite{
+	width:17px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -35px -73px;
+	border:none;
+}
+img.iconsmRateSprite{
+	width:16px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -52px -74px;
+	border:none;
+}
+img.iconsmRate12Sprite{
+	width:16px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -105px -74px;
+	border:none;
+}
+img.iconsmRegSprite{
+	width:17px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -67px -73px;
+	border:none;
+}
+img.iconsmCatSprite{
+	width:17px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -86px -73px;
+	border:none;
+}
+img.iconsmCatPlusSprite{
+	width:19px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -86px -96px;
+	border:none;
+}
+img.iconPrintSprite{
+	width:37px;
+	height:45px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -31px -30px;
+	border:none;
+}
+img.iconPDFSprite{
+	width:35px;
+	height:45px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -69px -30px;
+	border:none;
+}
+img.iconMailSprite{
+	width:35px;
+	height:45px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -105px -30px;
+	border:none;
+}
+img.iconsmPrintSprite{
+	width:16px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -76px -4px;
+	border:none;
+}
+img.iconsmSprite{
+	width:18px;
+	height:20px;
+	margin-right:2px;
+	background:url('/Images/sprites/icons_Sprite.png') -9px -68px;
+	border:none;
+}

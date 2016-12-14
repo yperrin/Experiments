@@ -1,0 +1,584 @@
+body {
+  margin: 0px auto !important;
+  width: 990px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #F5F5F5;
+  padding: 0;
+  line-height: 1.3;
+  color: #000000;
+}
+.container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.43);
+  background: #ffffff;
+  width: 100%;
+}
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #58585a;
+  padding: 10px 15px;
+  margin: 20px 0 0 0 !important;
+}
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 0 !important;
+  margin-bottom: 2px;
+  margin-top: 20px !important;
+}
+a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #da1c23;
+}
+a:hover,
+a:focus {
+  color: #da1c23;
+}
+p {
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 30px;
+}
+.p-l-0 {
+  padding-left: 0 !important;
+}
+.p-r-0 {
+  padding-right: 0 !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.m-t-100 {
+  margin-top: 100px !important;
+}
+#asi-careers-main-nav {
+  margin-top: 20px;
+}
+.list-main-content {
+  margin-bottom: 31px;
+  margin-top: -21px;
+}
+/*------Header------*/
+.asi-careers-logo {
+  padding: 0 15px;
+}
+.search {
+  margin-top: 2px;
+  width: 280px;
+}
+.search input {
+  vertical-align: top;
+  height: 26px;
+}
+.search button {
+  border: none;
+  background: #da1c23 url('../images/ASICareers/search.png') no-repeat;
+  height: 26px;
+  width: 26px;
+  border-radius: 0px;
+  box-shadow: none;
+  color: #fff;
+  text-shadow: none;
+  padding: 0;
+  vertical-align: top;
+  margin: 0;
+}
+.search-social-media {
+  width: 280px;
+  margin: 10px 15px 30px 0;
+}
+.search-social-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.search-social-media ul li {
+  margin-right: 0;
+  float: left;
+}
+.search-social-media ul li a {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.search-social-media ul #facebook-menu {
+  width: 30px;
+  height: 30px;
+  background: url('../images/ASICareers/social-icons.png') 0 0 no-repeat;
+}
+.search-social-media ul #twitter-menu {
+  width: 30px;
+  height: 30px;
+  background: url('../images/ASICareers/social-icons.png') -30px 0 no-repeat;
+}
+.search-social-media ul #linkedin-menu {
+  width: 30px;
+  height: 30px;
+  background: url('../images/ASICareers/social-icons.png') -60px 0 no-repeat;
+}
+#mobile-career-menu {
+  padding: 10px 0;
+  width: 991px !important;
+}
+#mobile-career-menu .navbar-nav {
+  background-color: #bfbfbf;
+  width: 100%;
+}
+#mobile-career-menu .navbar-nav li a {
+  color: #000000;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: -1px 0 0 0;
+  padding: 5px 16.35px 4px;
+  text-shadow: none;
+  border: 1px solid #ffffff;
+  background-color: #bfbfbf;
+  text-align: center;
+  display: inherit;
+}
+#mobile-career-menu .navbar-nav li a:hover,
+#mobile-career-menu .navbar-nav li .active {
+  color: #da1c23 !important;
+  background-color: #ffffff;
+}
+#mobile-career-menu .navbar-nav li:first-child a:first-child {
+  border-left: 1px solid #bfbfbf;
+}
+#mobile-career-menu .navbar-nav li:first-child a.active:first-child {
+  border-left: 1px solid #ffffff;
+}
+#mobile-career-menu .navbar-nav li:last-child a:last-child {
+  border-right: 1px solid #bfbfbf;
+}
+#mobile-career-menu .navbar-nav li:last-child a.active:last-child {
+  border-right: 1px solid #ffffff;
+}
+.section-header-image {
+  margin-bottom: 20px;
+}
+/*------Home------*/
+.jobs-toggle {
+  display: none;
+}
+.jobs-collapse.collapse {
+  display: block !important;
+}
+#technology-team-jobs h2,
+#creative-team-jobs h2,
+#business-team-jobs h2,
+#technology-team-jobs ul,
+#creative-team-jobs ul,
+#business-team-jobs ul {
+  margin-left: 15px;
+}
+#technology-team-jobs ul,
+#creative-team-jobs ul,
+#business-team-jobs ul {
+  padding: 0px;
+  margin-bottom: 10px;
+}
+#technology-team-jobs ul li,
+#creative-team-jobs ul li,
+#business-team-jobs ul li {
+  list-style: none;
+  padding: 5px 0;
+}
+/*-------Job Description and Apply-------*/
+.jvjobheader h2,
+.jvcontainer h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #58585a;
+  padding: 10px 15px !important;
+  margin: 20px 0 0 0 !important;
+}
+.jvjobheader h3,
+.jvcontainer h3 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.applybtn .btn,
+.applybtnbot .btn,
+.sendbtn .btn {
+  color: #ffffff;
+  background-color: #da1c23;
+  font-size: 18px;
+  border-radius: 0;
+  padding: 5px 45px;
+  margin: 10px 0 20px;
+  float: left;
+}
+.applybtn .sendjobvite,
+.applybtnbot .sendjobvite,
+.sendbtn .sendjobvite {
+  float: left;
+  margin: 17px 0 27px 10px;
+}
+.applybtn .sendjobvite a,
+.applybtnbot .sendjobvite a,
+.sendbtn .sendjobvite a {
+  color: #000000 !important;
+}
+#share-job {
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#share-job .IN-widget {
+  float: left;
+}
+.backlink {
+  float: right;
+  margin-top: 19px;
+}
+.jvdescriptionbody p {
+  font-weight: normal !important;
+}
+.jvapply .control-group {
+  margin: 0 0 15px;
+}
+.jvapply label {
+  display: inline-block;
+  padding: 0 10px 0 0;
+  vertical-align: middle;
+  width: 150px;
+  font-weight: normal;
+}
+.jvapply .controls {
+  display: inline-block;
+}
+.jvapply .controls input {
+  width: 175px;
+}
+.jvapply #jvAttachSocialProfileSection {
+  margin-top: 5px;
+}
+.jvapply #jv-modalDialog,
+.jvapply #jv-fbAttachProfileContainer {
+  display: none;
+}
+.jvapply #jvcoverletter {
+  width: 100%;
+}
+.eeo ul li {
+  list-style-type: none;
+}
+.eeo ul li label {
+  width: 93% !important;
+}
+/*===Search----*/
+#search-results {
+  padding-left: 0;
+}
+#search-results li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+#search-results h2 > a {
+  font-size: 18px !important;
+}
+/*--------Video and modals-----*/
+.video-link {
+  border: 1px solid #bfbfbf;
+  padding: 0;
+  cursor: pointer;
+}
+.modal-dialog {
+  max-width: 685px;
+  width: 94%;
+}
+.modal-dialog iframe {
+  height: 360px;
+  width: 640px;
+}
+/*------ Life at ASI-------*/
+.life-asi-video-bar img {
+  margin: 15px 9px;
+}
+#employee-testimony {
+  background-color: #bfbfbf;
+}
+#employee-testimony div {
+  border-bottom: 1px solid #58585a;
+  padding: 10px;
+}
+#employee-testimony div img {
+  max-width: 68px;
+  height: auto;
+  padding-bottom: 5px;
+}
+#employee-testimony div img.pull-right {
+  padding-left: 5px;
+}
+#employee-testimony div img.pull-left {
+  padding-right: 5px;
+}
+#employee-testimony div blockquote {
+  font-size: 16px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+}
+#employee-testimony div p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+#employee-testimony div.last-testimony {
+  border: none;
+}
+/*-----Benefits-------*/
+#ASI-we-prefer {
+  background-color: #bfbfbf;
+  text-align: center;
+  padding: 10px 10px 50px;
+}
+#ASI-we-prefer h2 {
+  font-size: 34px;
+  padding: 5px 0 10px;
+}
+#ASI-we-prefer .prefer-image {
+  margin-bottom: 50px;
+}
+#ASI-we-prefer .prefer-image img {
+  margin-bottom: 0;
+}
+#ASI-we-prefer .prefer-image h3 {
+  margin: 5px 0;
+}
+/*------Friends of ASI-----*/
+.video-link-friends.pull-left {
+  margin-right: 10px;
+  margin-top: 6px;
+}
+.video-link-friends.pull-right {
+  margin-left: 10px;
+}
+/*-------Right Side Bar-------*/
+#right-side img {
+  margin: 0 auto 20px auto;
+}
+/* ----------------Footer-------------------*/
+#benefits-footer-scroll {
+  height: 200px;
+  margin: 50px -15px 20px;
+}
+.simply-scroll-container {
+  position: relative;
+}
+.simply-scroll-clip {
+  position: relative;
+  overflow: hidden;
+}
+.simply-scroll-list {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.simply-scroll-list li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.simply-scroll-list li img {
+  border: none;
+  display: block;
+}
+.simply-scroll {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1em;
+}
+.simply-scroll .simply-scroll-clip {
+  width: auto;
+  height: 196px;
+}
+.simply-scroll .simply-scroll-clip li {
+  float: left;
+  /* Horizontal scroll only */
+
+  width: 6244px;
+  height: 196px;
+}
+footer {
+  background-color: #58585a;
+  border-top: 5px solid #bfbfbf;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px 0;
+  text-align: center;
+}
+footer ul li {
+  display: inline;
+  padding: 0 44px;
+}
+footer ul li a {
+  color: #ffffff !important;
+}
+footer ul li a:hover {
+  color: #ffffff !important;
+}
+/* ---------------------------------------------- MEDIA QUERIES FOR DIFFERENT DEVICES ----------------- *//* large DESKTOP displays */
+@media (min-width: 1200px) {
+  
+}
+@media (max-width: 980px) {
+  
+}
+/* PORTRAIT/LANDSCAPE TABLET displays and DESKTOP */
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+/* LANDSCAPE PHONE displays to PORTRAIT TABLET displays - 768 and below */
+@media (min-width: 767px) and (max-width: 768px) {
+  body {
+    width: 768px;
+  }
+  #mobile-career-menu {
+    width: 769px !important;
+  }
+  #mobile-career-menu .navbar-nav li a {
+    font-size: 12px !important;
+    padding: 5px 8.9px 4px !important;
+  }
+  .life-asi-video-bar img {
+    width: 164px;
+  }
+}
+/* landscape PHONES and SMALLER - 767px and below*/
+@media (min-width: 100px) and (max-width: 767px) {
+  body {
+    width: auto;
+  }
+  .p-r-0-xs {
+    padding-right: 0;
+  }
+  .p-l-0-xs {
+    padding-left: 0 !important;
+  }
+  .asi-careers-logo {
+    width: 200px;
+  }
+  .search-social-media {
+    margin: 0;
+  }
+  .search {
+    margin: 10px 10px 20px;
+    width: 96%;
+  }
+  .search form {
+    width: 97%;
+  }
+  .search input {
+    width: 100%;
+    height: 40px;
+  }
+  .search button {
+    display: none;
+  }
+  #mobile-career-menu {
+    width: 100% !important;
+  }
+  #mobile-career-menu .navbar-nav li a:focus {
+    color: #000000 !important;
+  }
+  .navbar-collapse {
+    width: 100%;
+  }
+  .navbar-collapse .nav li a {
+    background-color: #ffffff !important;
+  }
+  .navbar-toggle {
+    background-color: #ffffff;
+    color: #da1c23;
+    border: 2px solid #da1c23;
+    border-radius: 5;
+    margin-right: 10px;
+  }
+  .navbar-toggle .icon-bar {
+    background-color: #da1c23;
+    height: 3px;
+  }
+  .navbar-toggle:hover,
+  .navbar-toggle:focus {
+    background-color: #da1c23;
+  }
+  .navbar-toggle:hover .icon-bar,
+  .navbar-toggle:focus .icon-bar {
+    background-color: #ffffff !important;
+    height: 3px;
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .navbar-nav li a {
+    text-align: left !important;
+    padding: 11px 16px !important;
+  }
+  #home-jobs .glyphicon-chevron-down {
+    color: #ffffff;
+    cursor: pointer;
+  }
+  #home-jobs .jobs-toggle {
+    display: block;
+    width: 100%;
+  }
+  #home-jobs .jobs-toggle:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #home-jobs .jobs-collapse.collapse {
+    display: none !important;
+  }
+  #home-jobs .jobs-collapse.collapse h2 {
+    float: left;
+    width: 100%;
+  }
+  #home-jobs .jobs-collapse.collapse ul {
+    float: left;
+  }
+  #home-jobs .jobs-collapse.collapse ul li {
+    padding: 8px 0;
+  }
+  #home-jobs .jobs-collapse.collapse.in {
+    display: block !important;
+  }
+  /*------ Video Modal-------*/
+  .modal-dialog .modal-body {
+    padding: 0;
+  }
+  .modal-dialog iframe {
+    height: 219px;
+    width: 299px;
+    margin: 10px auto;
+    display: block;
+  }
+  .backlink {
+    float: left;
+  }
+  #benefits-footer-scroll {
+    display: none;
+  }
+  footer {
+    margin-top: 40px !important;
+  }
+  footer ul li {
+    white-space: nowrap;
+  }
+}

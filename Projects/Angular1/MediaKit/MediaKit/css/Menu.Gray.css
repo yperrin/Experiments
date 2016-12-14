@@ -1,0 +1,268 @@
+/* RadMenu Telerik Skin */
+
+.RadMenu_Gray .rmRootGroup
+{
+	border: 1px solid #828282;
+	display: inline-block !important;
+}
+
+.RadMenu_Gray .rmItem
+{
+	background: transparent url('Menu/MenuBg.gif') repeat 0 0;
+}
+
+.RadMenu_Gray .rmLink,
+.RadMenu_Gray .rmTemplate
+{
+	color: #333;
+	font: 12px Arial,sans-serif;
+	text-decoration: none;
+}
+
+.RadMenu_Gray .rmLink
+{
+	background: transparent url('Menu/MenuBgRight.gif') no-repeat 100% 0;
+	
+	padding: 4px 18px 5px;
+}
+
+.RadMenu_Gray .rmLink:hover,
+.RadMenu_Gray .rmExpanded
+{
+	position: relative;
+	z-index: 1000;
+}
+
+.RadMenu_Gray .rmGroup .rmText
+{
+	padding: 0 18px 0 0;
+}
+
+.RadMenu_Gray .rmLeftImage+.rmText
+{
+	padding-left: 18px;
+}
+
+.RadMenu_Gray .rmLink:hover,
+.RadMenu_Gray .rmExpanded
+{
+	background: #fff;
+}
+
+.RadMenu_Gray .rmHorizontal .rmLink:hover,
+.RadMenu_Gray .rmHorizontal .rmExpanded
+{
+	border: solid #828282;
+	border-width: 0 1px;
+	padding: 4px 17px 5px;
+}
+
+.RadMenu_Gray .rmHorizontal .rmFirst .rmLink:hover,
+.RadMenu_Gray .rmHorizontal .rmFirst .rmExpanded
+{
+	border-left: 0;
+	padding-left: 18px;
+}
+
+.RadMenu_Gray .rmHorizontal .rmLast .rmLink:hover,
+.RadMenu_Gray .rmHorizontal .rmLast .rmExpanded
+{
+	border-right: 0;
+	padding-right: 18px;
+}
+
+.RadMenu_Gray .rmVertical.rmRootGroup .rmLink
+{
+	border-bottom: 1px solid #898989;
+	padding-bottom: 4px;
+}
+
+.RadMenu_Gray .rmVertical.rmRootGroup .rmLink:hover,
+.RadMenu_Gray .rmVertical.rmRootGroup .rmExpanded
+{
+	border-top: 0;
+	padding-top: 4px;
+}
+
+.RadMenu_Gray .rmVertical.rmRootGroup .rmGroup .rmLink
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Gray .rmVertical .rmLast .rmLink
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Gray .rmVertical .rmLink:hover,
+.RadMenu_Gray .rmVertical .rmExpanded
+{
+	border: solid #828282;
+	border-width: 1px 0;
+	padding: 3px 18px 4px 18px;
+}
+
+.RadMenu_Gray .rmVertical .rmFirst .rmLink:hover,
+.RadMenu_Gray .rmVertical .rmFirst .rmExpanded
+{
+	border-top: 0;
+	padding-top: 4px;
+}
+
+.RadMenu_Gray .rmVertical .rmLast .rmLink:hover,
+.RadMenu_Gray .rmVertical .rmLast .rmExpanded
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Gray .rmRootGroup .rmItem .rmDisabled,
+.RadMenu_Gray .rmRootGroup .rmItem .rmDisabled:hover,
+.RadMenu_Gray .rmRootGroup .rmVertical.rmGroup .rmItem .rmDisabled,
+.RadMenu_Gray .rmRootGroup .rmVertical.rmGroup .rmItem .rmDisabled:hover,
+.RadMenu_Gray .rmRootGroup .rmHorizontal.rmGroup .rmItem .rmDisabled,
+.RadMenu_Gray .rmRootGroup .rmHorizontal.rmGroup .rmItem .rmDisabled:hover
+{
+	border: 0;
+	padding: 4px 18px 5px;
+	color: #999;
+	background: transparent;
+}
+
+.RadMenu_Gray .rmActive.rmGroup .rmItem .rmDisabled,
+.RadMenu_Gray .rmActive.rmGroup .rmItem .rmDisabled:hover
+{
+	border: 0;
+	padding: 4px 0 5px 18px;
+	color: #999;
+	background: transparent;
+}
+
+.RadMenu_Gray .rmVertical.rmRootGroup .rmItem .rmDisabled,
+.RadMenu_Gray .rmVertical.rmRootGroup .rmItem .rmDisabled:hover
+{
+	border-bottom: 1px solid #898989;
+	padding-bottom: 4px;
+}
+
+.RadMenu_Gray .rmVertical.rmRootGroup .rmLast .rmDisabled,
+.RadMenu_Gray .rmVertical.rmRootGroup .rmLast .rmDisabled:hover
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Gray .rmRootGroup .rmDisabled .rmLeftImage,
+.RadMenu_Gray .rmRootGroup .rmDisabled .rmRightImage
+{
+	filter: alpha(opacity=50);
+	-moz-opacity: .5;
+	opacity: .5;
+}
+
+.RadMenu_Gray .rmGroup
+{
+	background: #fff;
+	border: 1px solid #828282;
+}
+
+.RadMenu_Gray .rmGroup .rmExpandRight
+{
+	background: transparent url('Menu/ExpandArrows.gif') no-repeat 100% -4px;
+}
+
+.RadMenu_Gray .rmGroup .rmLink,
+.RadMenu_Gray .rmGroup .rmLink:hover
+{
+	padding-right: 1px;
+}
+
+.RadMenu_Gray .rmGroup .rmLink:hover .rmExpandRight,
+.RadMenu_Gray .rmGroup .rmExpanded .rmExpandRight
+{
+	background-position: 100% -29px;
+}
+
+.RadMenu_Gray .rmVertical.rmGroup .rmLink:hover,
+.RadMenu_Gray .rmVertical.rmGroup .rmExpanded,
+.RadMenu_Gray .rmFirst .rmVertical.rmGroup .rmLink:hover,
+.RadMenu_Gray .rmFirst .rmVertical.rmGroup .rmExpanded
+{
+	background: #dfdfdf;
+	border: solid #a5a5a5;
+	border-width: 1px 0;
+	padding: 3px 1px 4px 18px;
+}
+
+.RadMenu_Gray .rmGroup .rmItem,
+.RadMenu_Gray .rmGroup .rmLink
+{
+	background: transparent;
+}
+
+.RadMenu_Gray .rmHorizontal .rmSlide
+{
+	margin: -1px 0 0 0;
+}
+
+.RadMenu_Gray .rmHorizontal .rmFirst .rmSlide,
+.RadMenu_Gray .rmHorizontal .rmFirst .rmVertical .rmSlide
+{
+	margin: -1px 0 0 -1px;
+}
+
+.RadMenu_Gray .rmVertical .rmSlide
+{
+	margin: -1px 0 0 -1px;
+}
+
+.RadMenu_Gray .rmRootGroup .rmSlide .rmGroup .rmSlide
+{
+	margin: 0;
+}
+
+.RadMenu_Gray .rmTopArrowDisabled,
+.RadMenu_Gray .rmBottomArrowDisabled,
+.RadMenu_Gray .rmLeftArrowDisabled,
+.RadMenu_Gray .rmRightArrowDisabled
+{
+	display: none;
+}
+
+.RadMenu_Gray .rmTopArrow,
+.RadMenu_Gray .rmBottomArrow,
+.RadMenu_Gray .rmLeftArrow,
+.RadMenu_Gray .rmRightArrow
+{
+	font-size: 0;
+	color: #fff;
+	line-height: 0;
+}
+
+.RadMenu_Gray .rmTopArrow,
+.RadMenu_Gray .rmBottomArrow
+{
+	height: 10px;
+	width: 100%;
+	background: #fff url('Menu/ScrollArrowUpDown.gif') no-repeat top center;
+}
+
+.RadMenu_Gray .rmBottomArrow
+{
+	background-position: center -18px;
+}
+
+.RadMenu_Gray .rmLeftArrow,
+.RadMenu_Gray .rmRightArrow
+{
+	width: 10px;
+	height: 100%;
+	background: #fff url('Menu/ScrollArrowLeftRight.gif') no-repeat left center;
+}
+
+.RadMenu_Gray .rmRightArrow
+{
+	background-position: -18px center;
+}

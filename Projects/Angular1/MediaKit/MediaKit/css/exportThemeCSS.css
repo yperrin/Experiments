@@ -1,0 +1,189 @@
+/* Styles from the KickApps Live Editor body {
+	background-image: url(http://static.kickapps.com/kickapps/images/templateimages/03_mainbg.gif);
+	background-position: center center;
+	background-color: auto !important;
+	background-repeat: repeat-y;*/
+}
+#ka_mainContainer {
+	font-family: Trebuchet MS;
+	width: 730px;
+	color: auto !important;
+}
+div#ka_contentContainer h2,div#ka_contentContainer h3 {
+	color: auto !important;
+	font-family: Trebuchet MS;
+}
+ul#ka_commentList h4 strong {
+	color: auto !important;
+}
+div.ka_createForm h1 {
+	color: auto !important;
+}
+ul.ka_sideList li,ul.ka_myHomeList li {
+	color: auto !important;
+}
+legend,label {
+	color: auto !important;
+}
+body #ka_le_headercont {
+	background-image: url(http://static.kickapps.com/kickapps/images/templateimages/03_headbg.jpg);
+	height: 110px;
+	padding: 35px 0 0 30px;
+	background-repeat: no-repeat;
+	color: #fff !important;
+	font-size: 16px;
+	font-family: Century Gothic;
+	padding: 0px !important;
+	display: block !important;
+}
+h2#ka_topHeaderName {
+	color: #fff !important;
+	font-family: Century Gothic;
+	padding: 35px 0 0 30px;
+}
+h2#ka_topHeaderName {
+	margin-top: 0px !important;
+	display: block;
+}
+h2#ka_topHeaderName a {
+	color: #fff !important;
+}
+
+body#ka_playPage .ka_contentTitle,body#ka_listPage .ka_contentTitle,body#ka_homepage .ka_contentTitle,body#ka_myhome .ka_contentTitle,body#ka_profilePage .ka_contentTitle,body#ka_groups .ka_contentTitle,body.ka_messageBoards .ka_contentTitle {
+	font-family: Arial;
+	background-color: #a9a9a9 !important;
+	color: #4A4A4A !important;
+}
+div#ka_getActive h3 {
+	color: #4A4A4A !important;
+	border: undefined;
+	border-color: auto !important;
+	font-size: undefined;
+	font-family: Arial;
+	background-color: #a9a9a9 !important;
+	background-image: undefined;
+	background-repeat: undefined;
+	background-position: undefined;
+}
+span#ka_since {
+	color: #4A4A4A !important;
+	font-family: Arial;
+	font-size: undefined;
+}
+span#ka_since {
+	border: none !important;
+	margin-top: 2px;
+}
+.ka_bumperTop span {
+	font-size: undefined;
+}
+body#ka_profilePage div.ka_profileSegHeader h5 {
+	font-family: Arial;
+}
+div#ka_manageSubNav ul li span,div#ka_manageSubNav ul li a {
+	background-color: #a9a9a9 !important;
+	background-image: undefined;
+	background-repeat: undefined;
+	background-position: undefined;
+	color: #4A4A4A !important;
+	border: undefined;
+	border-color: auto !important;
+}
+div#ka_manageSubNav ul li span,div#ka_manageSubNav ul li a {
+	border-bottom: none !important;
+}
+div#ka_manageSubNav span.ka_mkplink a {
+	background-color: none !important;
+	background-image: none !important;
+	border-width: 0px !important;
+}
+div#ka_manageSubNav {
+	border: undefined;
+	border-color: auto !important;
+}
+div#ka_manageSubNav {
+	border-width: 0px 0px 1px 0px !important;
+}
+body#ka_playPage .ka_contentBody,ul#ka_relatedTabs li a.active,#ka_relatedTabs a.active:hover,body#ka_listPage .ka_contentBody,body#ka_listPage li.ka_list,body.ka_myhome_pages li.ka_list,body#ka_homepage .ka_contentBody,body#ka_myhome .ka_contentBody,body#ka_profilePage .ka_contentBody,body#ka_groups .ka_contentBody,body.ka_messageBoards .ka_contentBody,.ka_bubble blockquote,.ka_popup,.ka_popUpDiv,form#ka_loginPopup,#ka_ProgressBarDiv {
+	background-image: none;
+	border-color: #a9a9a9;
+	background-color: #fff !important;
+	font-family: Trebuchet MS;
+	background-position: top left;
+	background-repeat: repeat-x;
+	border: 1px solid #a9a9a9;
+	color: auto !important;
+}
+.ka_allItemsContainer {
+	border: none !important;
+}
+ol#ka_audioList div.ka_null {
+	font-size: undefined;
+}
+h4 a  {
+	font-family: Trebuchet MS;
+}
+.ka_contentBody a {
+	font-family: Trebuchet MS;
+}
+.searchLetterBox {
+	width: 132px !important;
+}
+.ka_list {
+	width: 144px !important;
+}
+div.ka_createForm h1 {
+	color: auto !important;
+}
+ul.ka_sideList li,ul.ka_myHomeList li {
+	color: auto !important;
+}
+#ka_footer {
+	text-align: center;
+	font-size: 10px;
+	border-top-width: 0px !important;
+	visibility: hidden;
+}
+#ka_headerTopNav {
+	background-image: url(http://static.kickapps.com/kickapps/images/templateimages/03_navtop.jpg);
+	background-repeat: no-repeat;
+	background-color: none !important;
+	visibility: hidden;
+}
+#ka_headerTopNav_ul li a:hover {
+	background-image: url(http://static.kickapps.com/kickapps/images/templateimages/03_nav_hov.jpg);
+	background-color: transparent;
+	background-repeat: repeat-x;
+	visibility: hidden;
+}
+#ka_headerTopNav_ul li.current a {
+	background-image: url(http://static.kickapps.com/kickapps/images/templateimages/03_nav_act.jpg);
+	color: #fff !important;
+	font-family: Trebuchet MS;
+	font-size: 18px;
+	visibility: hidden;
+}
+#ka_headerTopNav_ul li a {
+	color: #000000 !important;
+	font-size: 15px;
+	visibility: hidden;
+}
+#ka_headerSubNav {
+	background-image: url(http://static.kickapps.com/kickapps/images/templateimages/03_navbot.jpg);
+	background-repeat: no-repeat;
+	height: 20px;
+	background-color: transparent;
+	padding: auto;
+}
+#ka_headerSubNav_list li a:hover {
+	color: #fff !important;
+}
+#ka_headerSubNav_list li.current a {
+	font-size: 13px;
+	color: #fff !important;
+	font-family: Century Gothic;
+}
+#ka_headerSubNav_list li a {
+	color: #4F4F4F !important;
+	font-family: Century Gothic;
+}

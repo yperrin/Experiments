@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" data-ng-app="mediakit" data-ng-controller="mediakitController as ctrl">
+<head>
+    <meta charset="utf-8">
+    <base href="/mediakit">
+    <title>{{ctrl.page.name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ASI Central">
+    <!-- Styles -->
+    @Styles.Render("~/Content/css")
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet" type="text/css" />
+    <!--<script src="less.js" type="text/javascript"></script>-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lte IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="../../../src/Web Application/Scripts/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="content/css/ie-only.css">
+    <![endif]-->
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-xs-12">
+                <a href="media-kit.html"><img src="/images/Media-Kit/Media-kit.png" alt="ASI Media Kit" class="img-responsive pull-left col-xs-12 col-sm-4 col-md-3"></a>
+                <ul class="text-right list-inline col-xs-12 col-sm-8 col-md-9">
+                    <li><a href="/faq">FAQs</a></li>
+                    <li><a href="/">Media Kit</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </header>
+            <section class="col-xs-12">
+                <section id="menu" class="col-xs-12 col-sm-4 col-md-3">
+                    <navigation menu="ctrl.menu" on-click="ctrl.load(menu)"> </navigation>
+                </section>
+                <section id="main-body" class="col-xs-12 col-sm-8 col-md-9">
+                    <page page="ctrl.page"> </page>
+                </section>
+            </section>
+            <footer class="col-xs-12">
+                <img src="/Images/Media-Kit/asi-logo.png" alt="ASI" class="img-responsive pull-left">
+                <ul class="pull-right list-inline">
+                    <li><a href="http://www.asicentral.com">ASICentral</a></li>
+                    <li><a href="http://espweb.asicentral.com">ESP</a></li>
+                    <li><a href="/faq">FAQs</a></li>
+                    <li><a href="/">Media Kit</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/mediakit")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
