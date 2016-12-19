@@ -14,6 +14,12 @@ namespace MediaKit
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Media Kit",
+                url: "mediakit/{*pathInfo}",
+                defaults: new { controller = "MediaKit", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { action = "Index", id = UrlParameter.Optional }

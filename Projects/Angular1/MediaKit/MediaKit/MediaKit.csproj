@@ -138,7 +138,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\mediaKit\controllers\ctMediaKitProduct.js" />
+    <Content Include="App\mediaKit\controllers\ctMediaKitPageCtrl.js" />
     <Content Include="App\mediaKit\ctMediakit.js" />
+    <Content Include="App\mediaKit\partials\product.html" />
     <Content Include="Content\media-kit.css" />
     <Content Include="css\asi-careers.css" />
     <Content Include="css\asi-central.css" />
@@ -209,6 +212,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />

@@ -9,10 +9,10 @@ namespace MediaKit
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/mediakit").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/angular.js",
-                        "~/Scripts/angular-route.js",
-                        "~/Scripts/angular-ui/ui-bootstrap.js")
+                        "~/Scripts/jquery-{version}.js"
+                        ,"~/Scripts/angular.js"
+                        ,"~/Scripts/angular-ui-router.js"
+                        ,"~/Scripts/angular-ui/ui-bootstrap.js")
                         .IncludeDirectory("~/App/mediakit", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

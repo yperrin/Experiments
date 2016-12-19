@@ -78,6 +78,9 @@ header .list-inline li:last-child {
   background-color: #a8222b;
   text-decoration: none;
 }
+#menu .active .panel-heading {
+  background-color: #a8222b;
+}
 #menu .panel {
   border: none;
   font-size: 16px;
@@ -138,11 +141,11 @@ header .list-inline li:last-child {
 #rates-pdfs {
   margin-top: 75px;
 }
-#rates-pdfs .list-inline {
+#rates-pdfs .nav-pills {
   border: none;
 }
-#rates-pdfs .list-inline li button,
-#rates-pdfs .list-inline li a {
+#rates-pdfs .nav-pills li button,
+#rates-pdfs .nav-pills li a {
   margin: 0 10px;
   font-size: 17px;
   color: #fffffd;
@@ -152,20 +155,20 @@ header .list-inline li:last-child {
   border-radius: 4px;
   border: none;
 }
-#rates-pdfs .list-inline li button:first-child {
+#rates-pdfs .nav-pills li button:first-child {
   margin: 0 10px 0 0px;
 }
-#rates-pdfs .list-inline li a:hover,
-#rates-pdfs .list-inline li button:hover {
+#rates-pdfs .nav-pills li a:hover,
+#rates-pdfs .nav-pills li button:hover {
   border: none;
   background-color: #a8222b;
 }
-#rates-pdfs .list-inline .active button,
-#rates-pdfs .list-inline .active a {
+#rates-pdfs .nav-pills .active button,
+#rates-pdfs .nav-pills .active a {
   background-color: #808284;
 }
-#rates-pdfs .list-inline .active button:focus,
-#rates-pdfs .list-inline .active a:focus {
+#rates-pdfs .nav-pills .active button:focus,
+#rates-pdfs .nav-pills .active a:focus {
   outline: none;
 }
 #rates-pdfs #accordion-specs a.collapse-link {

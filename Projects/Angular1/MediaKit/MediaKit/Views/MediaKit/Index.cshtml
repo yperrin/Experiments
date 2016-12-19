@@ -2,10 +2,10 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en" data-ng-app="mediakit" data-ng-controller="mediakitController as ctrl">
+<html lang="en" data-ng-app="mediakit" data-ng-controller="MediaKitController as ctrl">
 <head>
     <meta charset="utf-8">
-    <base href="/mediakit">
+    <base href="/mediakit/">
     <title>{{ctrl.page.name}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ASI Central">
@@ -31,27 +31,26 @@
             <header class="col-xs-12">
                 <a href="media-kit.html"><img src="/images/Media-Kit/Media-kit.png" alt="ASI Media Kit" class="img-responsive pull-left col-xs-12 col-sm-4 col-md-3"></a>
                 <ul class="text-right list-inline col-xs-12 col-sm-8 col-md-9">
-                    <li><a href="/faq">FAQs</a></li>
-                    <li><a href="/">Media Kit</a></li>
-                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a data-ui-sref="faq">FAQs</a></li>
+                    <li><a data-ui-sref="home">Media Kit</a></li>
+                    <li><a data-ui-sref="contact-us">Contact Us</a></li>
                 </ul>
             </header>
             <section class="col-xs-12">
                 <section id="menu" class="col-xs-12 col-sm-4 col-md-3">
-                    <navigation menu="ctrl.menu" on-click="ctrl.load(menu)"> </navigation>
+                    <navigation menu="ctrl.menu"> </navigation>
                 </section>
-                <section id="main-body" class="col-xs-12 col-sm-8 col-md-9">
-                    <page page="ctrl.page"> </page>
+                <section id="main-body" class="col-xs-12 col-sm-8 col-md-9" ui-view>
                 </section>
             </section>
             <footer class="col-xs-12">
                 <img src="/Images/Media-Kit/asi-logo.png" alt="ASI" class="img-responsive pull-left">
                 <ul class="pull-right list-inline">
-                    <li><a href="http://www.asicentral.com">ASICentral</a></li>
-                    <li><a href="http://espweb.asicentral.com">ESP</a></li>
-                    <li><a href="/faq">FAQs</a></li>
-                    <li><a href="/">Media Kit</a></li>
-                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a target="_blank" href="http://www.asicentral.com">ASICentral</a></li>
+                    <li><a target="_blank" href="http://espweb.asicentral.com">ESP</a></li>
+                    <li><a data-ui-sref="faq">FAQs</a></li>
+                    <li><a data-ui-sref="home">Media Kit</a></li>
+                    <li><a data-ui-sref="contact-us">Contact Us</a></li>
                 </ul>
             </footer>
         </div>
