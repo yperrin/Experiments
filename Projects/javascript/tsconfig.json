@@ -1,0 +1,30 @@
+{
+	"compileOnSave": true,
+    "compilerOptions": {
+		"target": "ES5",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "outDir": "build",
+        "lib": [
+        	"DOM",
+        	"DOM.Iterable",
+        	"ScriptHost",
+        	"ES5",
+        	"ES6",
+        	"ES2015.Core", 
+			"ES2015.Collection",
+			"ES2015.Generator",
+			"ES2015.Iterable",
+			"ES2015.Promise", 
+			"ES2015.Proxy",
+			"ES2015.Reflect", 
+			"ES2015.Symbol", 
+			"ES2015.Symbol.WellKnown",
+			"ES2016.Array.Include", 
+			"ES2017.object",
+			"ES2017.SharedMemory"
+        ]
+    }
+}

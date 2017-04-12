@@ -7,4 +7,4 @@ var Person = (function () {
     }
     return Person;
 }());
-var evan = new Person('evan3', 'perrin', 12, 'test');
+var evan = new Person('evan2', 'perrin', 12, 'test');

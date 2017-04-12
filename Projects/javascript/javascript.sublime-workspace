@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"con",
+				"Console\tinterface"
+			],
+			[
+				"conso",
+				"console\tvar"
+			],
+			[
+				"Suppl",
+				"SupplierEmails"
+			],
+			[
+				"he",
+				"heroService\tproperty"
+			],
+			[
+				"On",
+				"OnInit\talias"
+			],
+			[
+				"Hero",
+				"HeroService\talias"
+			],
+			[
+				"n",
+				"name\tproperty"
+			],
+			[
+				"i",
+				"id\tproperty"
+			],
+			[
 				"fi",
 				"firstName\tparameter"
 			],
@@ -28,17 +60,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 150.0,
-		"last_filter": "Package Control: in",
+		"height": 392.0,
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
 			[
-				"Package Control: in",
-				"Package Control: Install Package"
+				"Package Control: ",
+				"Package Control: List Packages"
 			],
 			[
-				"Package Control: li",
-				"Package Control: List Packages"
+				"Package Control: install ",
+				"Package Control: Install Package"
 			],
 			[
 				"intall",
@@ -71,13 +103,9 @@
 			[
 				"Package Control: ins",
 				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: List Packages"
 			]
 		],
-		"width": 392.0
+		"width": 400.0
 	},
 	"console":
 	{
@@ -99,17 +127,70 @@
 	},
 	"file_history":
 	[
-		"/D/Projects/Experiments/Projects/TypeScript/learning.ts",
-		"/D/Projects/Experiments/Projects/TypeScript/learning.js",
-		"/C/Users/yperrin/AppData/Roaming/Sublime Text 3/Packages/TypeScript/README.md",
+		"/D/Projects/Experiments/Projects/javascript/es6/basics.ts",
+		"/D/Projects/Experiments/Projects/javascript/tsconfig.json",
+		"/D/Projects/Experiments/Projects/javascript/build/es6/basics.js",
+		"/D/Projects/Experiments/Projects/javascript/build/TypeScript/learning.js",
+		"/D/Projects/Experiments/Projects/javascript/TypeScript/learning.ts",
+		"/D/Projects/Experiments/Projects/javascript/lib/lib.es6.d.ts",
+		"/C/Users/yperrin/AppData/Roaming/Sublime Text 3/Packages/User/node.sublime-build",
+		"/D/Projects/espwebsite.com/wwwroot/app/build/websites/modules/apptoolbar/css/apptoolbar.css",
+		"/D/Data/www.asicomp.com/yann/ASICS/css/asics.css",
+		"/D/Projects/excit/projects/Web API/sql/data_prod.sql",
+		"/D/Program Files/nodejs/nodevars.bat",
+		"/D/Projects/legacy.asicentral.com/src/Web Application/Views/ASICentralBase.cshtml",
+		"/D/Projects/excit/projects/Product Updates/sql/database.sql",
+		"/D/Projects/excit/projects/Web API/src/excit.Tests/validation/1584.csv",
+		"/C/Users/yperrin/Desktop/3879.json",
+		"/C/Users/yperrin/Desktop/3880.json",
+		"/C/Users/yperrin/Desktop/login.png",
+		"/D/Projects/excit/projects/Web API/sql/data_dev.sql",
+		"/D/Projects/excit/projects/Web API/src/TestResults/Gemline/1000002372.xml",
+		"/D/Projects/Experiments/Projects/DeskPro/DeskPro/bin/Debug/DeskPro.log",
+		"/C/Users/yperrin/Desktop/Order.xml",
+		"/D/Projects/excit/projects/Product Updates/src/ASI.Barista.Plugins.ProductUpdates.SanMar/App.Prod.config",
+		"/D/Projects/excit/projects/Demo/src/demo/Web.Stage.config",
+		"/D/Projects/legacy.asicentral.com/src/Web Application/Web.Prod.config",
+		"/D/Projects/excit/projects/Web API/sql/database.sql",
+		"//asi-web-19/d$/WebSites/www.asishow.com/data/ASIShowLog.txt.3",
+		"//asi-web-19/d$/WebSites/www.asishow.com/data/ASIShowLog.txt.4",
+		"//asi-web-19/d$/WebSites/www.asishow.com/data/ASIShowLog.txt.2",
+		"//asi-web-19/d$/WebSites/www.asishow.com/data/ASIShowLog.txt.1",
+		"/D/Projects/excit/ProductUpdates-Deploy-Stage-Barista.cmd",
+		"/D/Projects/excit/projects/Web API/src/ASI.Barista.Plugins.Excit.InventoryReport/ASI.Barista.Plugins.Excit.InventoryReport.csproj",
+		"/D/Projects/excit/projects/Web API/src/excit/excit.csproj",
+		"/D/Projects/excit/projects/Web API/sql/sp_GETORDERREQUESTS.sql",
+		"/D/Projects/excit/projects/Web API/sql/sp_GETMAPPING.sql",
+		"/D/Projects/excit/projects/Web API/sql/sp_INSERTMAPPING.sql",
+		"/D/Projects/excit/projects/Web API/sql/SP_UPDATESUPPLIERCONFIG.sql",
+		"/D/Projects/excit/projects/Web API/sql/sp_UPDATEORDERREQUEST.sql",
+		"/D/Projects/excit/projects/Web API/sql/SP_GETORDERSTATUS.sql",
+		"/D/Projects/excit/projects/Web API/sql/sp_GETAPI.sql",
+		"/D/Projects/excit/projects/Web API/sql/SP_GETSUPPLIERCONFIG.sql",
+		"/D/Projects/excit/projects/Web API/sql/SP_ADDORDERSTATUS.sql",
+		"/D/Projects/excit/projects/Web API/sql/TR_UID_ORDR_SupplierOrder.sql",
+		"/D/Projects/excit/projects/Web API/sql/sp_INSERTORDERREQUEST.sql",
+		"/D/Data/www.asicomp.com/yann/App_Code/dsAccess.xsd",
+		"/C/Users/yperrin/Desktop/CNFG_CompanyAPIProperty.txt",
+		"/D/Projects/excit/projects/Demo/src/demo/App_Data/Logs/demo.txt",
+		"/D/Projects/legacy.asicentral.com/Prototypes/Media-Kit/Connect.html",
+		"/D/Projects/legacy.asicentral.com/src/Web Application/css/bootstrap.min.css",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/index.html",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/app/app.component.ts",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/app/hero.ts",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/app/hero-detail.component.ts",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/app/app.module.ts",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/app/main.ts",
+		"/D/Projects/Experiments/Projects/angular2/quickstart/app/app.component.js",
+		"/D/Projects/Experiments/Projects/node.js/node_modules_global/node_modules/typescript/lib/typescript.js",
+		"/D/Projects/Experiments/Projects/node.js/instructions.txt",
+		"/D/Program Files/nodejs/npm",
 		"/D/Projects/asicentral.com/Projects/ASI Central/src/html/open/MemberBenefits/nationalaccounts/06ACPWC21/training.htm",
 		"/D/Projects/Experiments/Projects/angular2/asi-chat.js",
 		"/D/Projects/asishow/Projects/Canada Seminars Prototypes/CSS/CATables.css",
-		"/D/Projects/excit/projects/Web API/sql/data_dev.sql",
 		"/D/Projects/excit/projects/Product Updates/src/TestResults/colormap.sql",
 		"/C/Users/yperrin/Desktop/alphabrodercolors.csv",
-		"/C/Users/yperrin/Desktop/mag.html",
-		"/D/Projects/excit/projects/Web API/sql/data_prod.sql"
+		"/C/Users/yperrin/Desktop/mag.html"
 	],
 	"find":
 	{
@@ -127,6 +208,94 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"caliber",
+			"alphas",
+			"charge",
+			"snugz",
+			"all",
+			"file",
+			"regis",
+			"media",
+			"launch",
+			"chat",
+			"magnet LoginValidate",
+			"Magnet LoginV",
+			"<section",
+			"instruc",
+			"customerservice@bicgraphic.com",
+			"magnet",
+			"method",
+			"name",
+			"432632 Oakley Polo",
+			"43.62",
+			"bic",
+			"cnfg_com",
+			"timeout",
+			"FE",
+			"method",
+			"<sku>",
+			"chatsettings",
+			"\\\"",
+			"shipp",
+			"cdabre",
+			"/news/category page=",
+			"/news/category",
+			"ku",
+			"sku",
+			"<location>",
+			"<p>Returning student? Login with your ESP Web credentials (the user name, password and ASI number you use to log in to ESP Web).</p>",
+			"ORDR_Request",
+			"ORDR_SupplierOrder",
+			"magnet",
+			"[PRIMARY]",
+			"error",
+			"snugz",
+			"BaristaOrderReportConfigFiles",
+			"BaristaOrderReportBinFiles",
+			"TempOrderReportConfig",
+			"OriginalOrderReportConfig",
+			"TableThirdParty",
+			"third",
+			"encry",
+			"ORDR_Suppliero",
+			"pcna",
+			"mapping",
+			"order",
+			"ordr_stat",
+			"mapping",
+			"order",
+			"dollar da",
+			"magnet",
+			"64093",
+			"company_id",
+			".wsdl",
+			"wsdl",
+			"rte",
+			"\"div\"",
+			"magnet",
+			"pcna",
+			"cap",
+			"magnet",
+			"GetDetailsTask - Processing ProductVariationInventoryArray - end - ",
+			"cnfg_companyAPIPr",
+			"cnfg_companyapiproperty",
+			"~\\media",
+			"//};",
+			"rates",
+			"UPDATE CNFG_COMPANY",
+			"WHERE COMPANYID",
+			"LOGININSTRUCTION",
+			"UPDATE CNFG_COMPANY ",
+			"</p>",
+			"invalid ship",
+			"],\n",
+			"bic",
+			"magnet",
+			"magner",
+			"ERROR ",
+			"ERROR  asi.excit.Controllers.Version1.OrderController",
+			"ordercontroller",
+			"error",
 			"function",
 			"var",
 			"element",
@@ -155,6 +324,17 @@
 		"regex": false,
 		"replace_history":
 		[
+			"EDIRequestBGNA@bicworld.com",
+			"\"",
+			"[DATAGRP1]",
+			"BaristaInventoryReportConfigFiles",
+			"BaristaInventoryReportBinFiles",
+			"TempInventoryReportConfig",
+			"OriginalInventoryReportConfig",
+			"UPDATE [dbo].[CNFG_Company]",
+			"WHERE [CompanyId]",
+			"[LoginInstruction]",
+			"UPDATE [dbo].[CNFG_Company]",
 			"/api/v4/"
 		],
 		"reverse": false,
@@ -200,7 +380,7 @@
 	},
 	"output.exec":
 	{
-		"height": 124.0
+		"height": 226.0
 	},
 	"output.find_results":
 	{
@@ -242,11 +422,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 214.0,
+	"side_bar_width": 229.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
