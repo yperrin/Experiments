@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"dophin",
+				"dolphin2\tlet"
+			],
+			[
+				"test",
+				"test2\tvar"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"ud",
+				"update"
+			],
+			[
+				"nu",
+				"num2\tparameter"
+			],
+			[
+				"async",
+				"asyncData\tlet"
+			],
+			[
+				"fi",
+				"firstName"
+			],
+			[
+				"com",
+				"Composite\tclass"
+			],
+			[
+				"value",
+				"value2\tproperty"
+			],
+			[
+				"va",
+				"value1\tproperty"
+			],
+			[
 				"con",
 				"Console\tinterface"
 			],
@@ -34,10 +74,6 @@
 			[
 				"i",
 				"id\tproperty"
-			],
-			[
-				"fi",
-				"firstName\tparameter"
 			],
 			[
 				"cons",
@@ -127,8 +163,20 @@
 	},
 	"file_history":
 	[
-		"/D/Projects/Experiments/Projects/javascript/es6/basics.ts",
+		"/D/Projects/Experiments/Projects/javascript/TypeScript/tsconfig.json",
+		"/D/Projects/Experiments/Projects/javascript/es6/src/basics.ts",
+		"/D/Projects/legacy.asicentral.com/src/Web Application/Scripts/asi-chat.js",
+		"/D/Projects/Experiments/Projects/javascript/es6/src/classes.ts",
+		"/D/Projects/Experiments/Projects/javascript/es6/tsconfig.json",
+		"/D/Projects/excit/projects/Demo/src/demo/demo.csproj",
+		"/D/Projects/excit/projects/Web API/src/excit/excit.csproj",
+		"/D/Projects/excit/projects/Web API/src/excit/packages.config",
+		"/D/Projects/excit/projects/Product Updates/src/Product Updates/ProductUpdates.csproj",
 		"/D/Projects/Experiments/Projects/javascript/tsconfig.json",
+		"/D/Projects/Experiments/Projects/javascript/build/es6/promises.js",
+		"/D/Projects/Experiments/Projects/javascript/es6/promises.ts",
+		"/D/Projects/Experiments/Projects/javascript/es6/basics.ts",
+		"/D/Projects/Experiments/Projects/javascript/es6/classes.ts",
 		"/D/Projects/Experiments/Projects/javascript/build/es6/basics.js",
 		"/D/Projects/Experiments/Projects/javascript/build/TypeScript/learning.js",
 		"/D/Projects/Experiments/Projects/javascript/TypeScript/learning.ts",
@@ -158,7 +206,6 @@
 		"//asi-web-19/d$/WebSites/www.asishow.com/data/ASIShowLog.txt.1",
 		"/D/Projects/excit/ProductUpdates-Deploy-Stage-Barista.cmd",
 		"/D/Projects/excit/projects/Web API/src/ASI.Barista.Plugins.Excit.InventoryReport/ASI.Barista.Plugins.Excit.InventoryReport.csproj",
-		"/D/Projects/excit/projects/Web API/src/excit/excit.csproj",
 		"/D/Projects/excit/projects/Web API/sql/sp_GETORDERREQUESTS.sql",
 		"/D/Projects/excit/projects/Web API/sql/sp_GETMAPPING.sql",
 		"/D/Projects/excit/projects/Web API/sql/sp_INSERTMAPPING.sql",
@@ -208,6 +255,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";\n",
+			"cvshelper",
+			"MICROSFOT.data.edm",
 			"caliber",
 			"alphas",
 			"charge",
