@@ -21,6 +21,10 @@ var __extends = (this && this.__extends) || (function () {
     };
     var sum2 = function (num1, num2) { return num1 + num2; };
     var sum3 = function (num1, num2) { return num1 + num2; };
+    var x = void 0;
+    x = ["hello", 10];
+    x[0] = "test";
+    x[3] = 12;
 }
 {
     var Mammal_1 = (function () {
@@ -66,6 +70,17 @@ var __extends = (this && this.__extends) || (function () {
     console.log(dolphin3.getInfo());
 }
 {
+    var Car = (function () {
+        function Car(moveable) {
+            this.moveable = moveable;
+        }
+        Car.prototype.move = function () {
+            return this.moveable;
+        };
+        return Car;
+    }());
+    var bmw = new Car(true);
+    bmw.move();
 }
 {
 }

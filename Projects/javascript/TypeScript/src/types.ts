@@ -15,6 +15,13 @@
 	var sum2 = function(num1: number, num2: number): number { return num1 + num2 };
 	var sum3 = function(num1: number, num2: number) { return num1 + num2 };
 	//tuples
+	let x: [string, number];
+	x = ["hello", 10];
+	// x = [10, "hello"]; // Error types do not match
+	x[0] = "test";
+	//x[0] = 12;
+	x[3] = 12;
+	//x[3] = true;
 }
 {
 	//classes
@@ -56,7 +63,23 @@
 }
 {
 	//interfaces
-}
-{
-	//namespaces module + export
+	interface Moveable {
+		readonly moveable: boolean; //only assignable in constructor
+		position? : number; //optional for the interface
+		move(): boolean;
+	}
+
+	class Car implements Moveable {
+		moveable: boolean;
+		constructor(moveable: boolean) {
+			this.moveable = moveable;
+		}
+
+		public move() {
+			return this.moveable;
+		}
+	}
+
+	let bmw = new Car(true);
+	bmw.move();
 }

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"new",
+				"newCar\tlet"
+			],
+			[
+				"mo",
+				"moved\tproperty"
+			],
+			[
+				"V",
+				"Vehicle\tinterface"
+			],
+			[
 				"dophin",
 				"dolphin2\tlet"
 			],
@@ -163,6 +175,7 @@
 	},
 	"file_history":
 	[
+		"/D/Projects/Experiments/Projects/javascript/es5/classes.js",
 		"/D/Projects/Experiments/Projects/javascript/TypeScript/tsconfig.json",
 		"/D/Projects/Experiments/Projects/javascript/es6/src/basics.ts",
 		"/D/Projects/legacy.asicentral.com/src/Web Application/Scripts/asi-chat.js",

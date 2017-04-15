@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var util = require("./utils");
+var newCar = new util.Car();
+newCar.move();
+util.log("hello");
