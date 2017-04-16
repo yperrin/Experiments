@@ -1,0 +1,18 @@
+{
+	"compileOnSave": true,
+    "compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs",
+		"moduleResolution": "node",
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "removeComments": true,
+		"experimentalDecorators": true,
+        "sourceMap": true,
+		"sourceRoot": "src",
+        "outDir": "public"
+    },
+	"exclude": [
+		"node_modules"
+	]
+}

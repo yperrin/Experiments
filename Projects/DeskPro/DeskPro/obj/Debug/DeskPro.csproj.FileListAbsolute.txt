@@ -1,0 +1,7 @@
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\bin\Debug\DeskPro.exe.config
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\bin\Debug\DeskPro.txt
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\bin\Debug\DeskPro.exe
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\bin\Debug\DeskPro.pdb
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\obj\Debug\DeskPro.csprojResolveAssemblyReference.cache
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\obj\Debug\DeskPro.exe
+D:\Projects\Experiments\Projects\DeskPro\DeskPro\obj\Debug\DeskPro.pdb
