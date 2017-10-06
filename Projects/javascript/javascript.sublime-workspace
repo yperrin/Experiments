@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getInfo"
+			],
+			[
+				"suppl",
+				"supplierName"
+			],
+			[
+				"SupplierServ",
+				"SupplierService"
+			],
+			[
 				"new",
 				"newCar\tlet"
 			],
@@ -175,12 +187,20 @@
 	},
 	"file_history":
 	[
-		"/D/Projects/Experiments/Projects/javascript/es5/classes.js",
-		"/D/Projects/Experiments/Projects/javascript/TypeScript/tsconfig.json",
+		"/D/Projects/Experiments/Projects/javascript/javascript.sublime-project",
+		"/D/Projects/Experiments/Projects/javascript/es6/build/promises.js",
+		"/D/Projects/Experiments/Projects/javascript/es6/src/promises.ts",
+		"/D/Projects/Experiments/Projects/javascript/es6/build/Types.js",
+		"/D/Projects/Experiments/Projects/javascript/es6/src/Types.ts",
 		"/D/Projects/Experiments/Projects/javascript/es6/src/basics.ts",
+		"/D/Projects/Experiments/Projects/javascript/es6/build/basics.js",
+		"/D/Projects/Experiments/Projects/javascript/es6/build/demo.js",
+		"/D/Projects/Experiments/Projects/javascript/es6/src/demo.ts",
+		"/D/Projects/Experiments/Projects/javascript/TypeScript/tsconfig.json",
+		"/D/Projects/Experiments/Projects/javascript/es6/tsconfig.json",
+		"/D/Projects/Experiments/Projects/javascript/es5/classes.js",
 		"/D/Projects/legacy.asicentral.com/src/Web Application/Scripts/asi-chat.js",
 		"/D/Projects/Experiments/Projects/javascript/es6/src/classes.ts",
-		"/D/Projects/Experiments/Projects/javascript/es6/tsconfig.json",
 		"/D/Projects/excit/projects/Demo/src/demo/demo.csproj",
 		"/D/Projects/excit/projects/Web API/src/excit/excit.csproj",
 		"/D/Projects/excit/projects/Web API/src/excit/packages.config",
@@ -268,6 +288,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"India",
+			"static",
+			"console",
 			";\n",
 			"cvshelper",
 			"MICROSFOT.data.edm",
@@ -408,7 +431,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -443,16 +466,16 @@
 	},
 	"output.exec":
 	{
-		"height": 226.0
+		"height": 726.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/User/node.sublime-build",
 	"replace":
 	{
-		"height": 62.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":

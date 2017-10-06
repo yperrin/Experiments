@@ -19,3 +19,14 @@ var Truck = (function () {
     Truck.prototype.move = function () { this.moved += 1; };
     return Truck;
 }());
+var TodoService = (function () {
+    function TodoService($http) {
+        'ngInject';
+        this.$http = $http;
+    }
+    TodoService.prototype.getTodos = function () {
+        return this.$http.get('/api/todos').then(function (response) { return response.data; });
+    };
+    return TodoService;
+}());
+exports.TodoService = TodoService;

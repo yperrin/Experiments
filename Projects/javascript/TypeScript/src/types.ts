@@ -4,7 +4,6 @@
 	//define data types + does not allow no explicit types
 	let isDone: boolean = false;
 	let var1: number = 1;
-	let var2: string = "2";
 	let list: number[] = [1, 2, 3];
 	let otherList: Array<number> = [1, 2, 3];
 	otherList.push(12);
@@ -28,7 +27,9 @@
 
 	class Mammal {
 		private _name: string; //should not be needed also using TypeScript private
-	
+		public static stativVariable: string = 'test';
+		private privateTest: string = 'another test';
+
 		constructor(name: string){
 			this._name = name;
 		}

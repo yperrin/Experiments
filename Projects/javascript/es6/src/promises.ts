@@ -34,6 +34,7 @@ var p3 = new Promise(function(resolve, reject) {
 	resolve(data);
 });
 p3.then((data) => console.log("Calling toString: " + data.toString()));
+console.log("setting new data");
 data = new Composite("test3", "test4");
 p3.then((data) => console.log("Calling toString: " + data.toString()));
 

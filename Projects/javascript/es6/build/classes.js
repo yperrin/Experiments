@@ -72,6 +72,7 @@ function createAnimal(name, owner) {
             configurable: true
         });
         Marsupial.prototype.getInfo = function () {
+            console.log(_super.prototype.getInfo.call(this));
             return this.name + " is a marsupial";
         };
         return Marsupial;

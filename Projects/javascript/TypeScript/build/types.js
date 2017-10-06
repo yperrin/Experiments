@@ -12,7 +12,6 @@ var __extends = (this && this.__extends) || (function () {
     var test = "test";
     var isDone = false;
     var var1 = 1;
-    var var2 = "2";
     var list = [1, 2, 3];
     var otherList = [1, 2, 3];
     otherList.push(12);
@@ -29,6 +28,7 @@ var __extends = (this && this.__extends) || (function () {
 {
     var Mammal_1 = (function () {
         function Mammal_1(name) {
+            this.privateTest = 'another test';
             this._name = name;
         }
         Object.defineProperty(Mammal_1.prototype, "name", {
@@ -49,6 +49,7 @@ var __extends = (this && this.__extends) || (function () {
         };
         return Mammal_1;
     }());
+    Mammal_1.stativVariable = 'test';
     var dolphin = new Mammal_1("Flipper");
     console.log(dolphin.getInfo());
     var Dolphin = (function (_super) {
@@ -81,6 +82,4 @@ var __extends = (this && this.__extends) || (function () {
     }());
     var bmw = new Car(true);
     bmw.move();
-}
-{
 }

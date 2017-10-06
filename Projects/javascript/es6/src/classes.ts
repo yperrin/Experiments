@@ -64,6 +64,7 @@ function createAnimal(name, owner){
     }
     //override methods
     getInfo(){
+      console.log(super.getInfo());
       return `${this.name} is a marsupial`;
     }
   }

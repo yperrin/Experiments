@@ -1,0 +1,21 @@
+var SupplierController = function SupplierController(supplierService) {
+    var vm = this;
+    vm.supplierName = 'test';
+    vm.suppliers = [];
+    vm.selectedSupplier = {};
+    vm.$onInit = onInit;
+    vm.resetName = resetName;
+
+    function onInit() {
+    };
+    function resetName() {
+        vm.supplierName = '';
+    }
+};
+
+var SupplierService = function SupplierService() {
+    var self = this;
+}
+
+var ctrl = SupplierController();
+console.log(ctrl.supplierName);
