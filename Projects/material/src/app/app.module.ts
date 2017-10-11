@@ -9,6 +9,7 @@ import { HeroService } from './heroes/shared/hero.service';
 import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { HeroDashboardComponent } from './heroes/hero-dashboard/hero-dashboard.component';
 import { HeroPreviewComponent } from './heroes/hero-preview/hero-preview.component';
+import { HeroesRoutingModule } from './heroes/heroes-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,21 +22,7 @@ import { HeroPreviewComponent } from './heroes/hero-preview/hero-preview.compone
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroListComponent
-      },
-      {
-        path: 'dashboard',
-        component: HeroDashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-    ])
+    HeroesRoutingModule
   ],
   providers: [
     HeroService

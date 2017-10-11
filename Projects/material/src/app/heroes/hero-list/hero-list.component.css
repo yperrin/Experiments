@@ -18,6 +18,10 @@
   height: 1.6em;
   border-radius: 4px;
 }
+.heroes li a {
+  color:black;
+  text-decoration: none;
+}
 .heroes li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;

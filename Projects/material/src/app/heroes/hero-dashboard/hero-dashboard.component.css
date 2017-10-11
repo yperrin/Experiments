@@ -35,10 +35,18 @@ h4 {
   background-color: #607D8B;
   border-radius: 2px;
 }
+.module a {
+  color: #eee;
+  text-decoration: none;
+}
 .module:hover {
   background-color: #EEE;
   cursor: pointer;
   color: #607d8b;
+}
+.module:hover a {
+  color: #607d8b;
+  text-decoration: none;
 }
 .grid-pad {
   padding: 10px 0;
