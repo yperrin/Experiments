@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './shared/in-memory-data.service';
 
 import { HeroDashboardComponent } from './hero-dashboard/hero-dashboard.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
@@ -13,7 +15,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    RouterModule.forRoot(routes)
+  ],
   exports: [ RouterModule ]
 })
 export class HeroesRoutingModule {}

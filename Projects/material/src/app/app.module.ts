@@ -2,14 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {HttpModule} from '@angular/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
-import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
 import { HeroService } from './heroes/shared/hero.service';
+import { HeroesRoutingModule } from './heroes/heroes-routing.module';
+import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
 import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { HeroDashboardComponent } from './heroes/hero-dashboard/hero-dashboard.component';
 import { HeroPreviewComponent } from './heroes/hero-preview/hero-preview.component';
-import { HeroesRoutingModule } from './heroes/heroes-routing.module';
+import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,13 @@ import { HeroesRoutingModule } from './heroes/heroes-routing.module';
     HeroDetailComponent,
     HeroListComponent,
     HeroDashboardComponent,
-    HeroPreviewComponent
+    HeroPreviewComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     HeroesRoutingModule
   ],
   providers: [
