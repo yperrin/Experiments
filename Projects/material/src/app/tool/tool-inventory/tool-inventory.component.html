@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <mat-icon _ngcontent-c27="" class="example-icon mat-icon material-icons" role="img" aria-hidden="true">playlist_add_check</mat-icon>&nbsp;
+    <span>EXCIT Inventory</span>
+  </mat-toolbar>
+  <br />
+  <mat-card>
+    <mat-card-title>This is the title</mat-card-title>
+    <mat-card-content>
+        <mat-table #table [dataSource]="supplierDatasource">
+          <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.Name}} </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </mat-card-content>
+    <mat-card-actions>Actions for the card</mat-card-actions>
+  </mat-card>
