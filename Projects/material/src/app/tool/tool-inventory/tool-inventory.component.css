@@ -1,0 +1,27 @@
+app-root {
+  background-color: darkgray;
+}
+.toolbar-item {
+  margin: 0px 10px 0px 10px;
+}
+.toolbar-item.search{
+  background-color: #4285f4;
+  margin: 0px 10px 0px 50px;
+  flex-basis: 60%;
+}
+.toolbar-item.search mat-icon{
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.toolbar-item.search input{
+  color: #ffffff;
+  width: 80%;
+  font-size: 14px;
+  background-color: #4285f4;
+  border:none;
+
+}
+.toolbar-item.search input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ffffff;
+}
