@@ -17,7 +17,7 @@ import { HeroDashboardComponent } from './heroes/hero-dashboard/hero-dashboard.c
 import { HeroPreviewComponent } from './heroes/hero-preview/hero-preview.component';
 import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
 
-// import { ToolModule } from './tool/tool.module';
+import { ToolModule } from './tool/tool.module';
 import { ToolInventoryComponent } from './tool/tool-inventory/tool-inventory.component';
 
 @NgModule({

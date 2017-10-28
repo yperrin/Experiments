@@ -1,0 +1,46 @@
+.toolbar-item {
+  margin: 0px 10px 0px 10px;
+}
+.toolbar-item.search{
+  @bgColor: #4285f4;
+  @color: #ffffff;
+
+  background-color: @bgColor;
+  margin: 0px 10px 0px 50px;
+  flex-basis: 60%;
+  mat-icon {
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  input {
+    color: @color;
+    width: 80%;
+    font-size: 14px;
+    background-color: @bgColor;
+    border:none;
+  }
+  input::-webkit-input-placeholder {
+    color: @color;
+  }
+}
+mat-row {
+  @bgColor: rgb(245, 245, 245);
+
+  &.active {
+    background-color: @bgColor;
+  }
+  mat-checkbox {
+    padding-right: 10px;
+  }
+  span {
+    vertical-align: middle;
+  }
+  mat-icon {
+    cursor: pointer;
+  }
+}
+mat-cell span.menu-active {
+    display: flex;
+  justify-content: space-between;
+}
