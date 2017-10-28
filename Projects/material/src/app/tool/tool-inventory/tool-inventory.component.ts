@@ -25,6 +25,15 @@ export class ToolInventoryComponent implements OnInit {
       new Supplier({identifier: 9, asiNumber: '123459',   name: 'name9', lastRun: new Date('01/01/2016')}),
       new Supplier({identifier: 10, asiNumber: '1234510', name: 'name10', lastRun: new Date('01/01/2016')}),
       new Supplier({identifier: 11, asiNumber: '1234511', name: 'name11', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 12, asiNumber: '123452',   name: 'name2', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 13, asiNumber: '123453',   name: 'name3', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 14, asiNumber: '123454',   name: 'name4', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 15, asiNumber: '123455',   name: 'name5', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 16, asiNumber: '123456',   name: 'name6', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 17, asiNumber: '123457',   name: 'name7', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 18, asiNumber: '123458',   name: 'name8', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 19, asiNumber: '123459',   name: 'name9', lastRun: new Date('01/01/2016')}),
+      new Supplier({identifier: 20, asiNumber: '1234510', name: 'name10', lastRun: new Date('01/01/2016')}),
     ]);
   }
 
