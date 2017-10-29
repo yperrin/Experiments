@@ -1,48 +1,46 @@
-<section>
-  <nav>
-    <mat-toolbar color="primary">
-      <span class="toolbar-item">
-          <mat-icon class="mat-icon material-icons" role="img">playlist_add_check</mat-icon>&nbsp;
-          EXCIT Inventory
-      </span>
-      <span class="toolbar-item search" (click)="searchWrapperClicked($event)">
-        &nbsp;<mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon>&nbsp;
-        <input #searchBox value="" placeholder="Search">
-      </span>
-    </mat-toolbar>
-  </nav>
-  <main>
-    <mat-card>
-      <mat-card-content>
-          <mat-table #table [dataSource]="supplierDatasource">
-            <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                  <mat-cell *matCellDef="let row" title="{{row.Identifier}}"><mat-checkbox [(ngModel)]="row.selected" color="primary"></mat-checkbox> {{row.name}} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="asiNumber">
-              <mat-header-cell *matHeaderCellDef> ASI# </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{row.asiNumber}} </mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="lastRun">
-              <mat-header-cell *matHeaderCellDef> Last Run </mat-header-cell>
-              <mat-cell *matCellDef="let row">
-                <span *ngIf="!row.active">{{row.lastRun | date }}</span>
-                <span *ngIf="row.active" class="menu-active">
-                  <span>The report was last run on <em>{{row.lastRun | date }}</em></span>
-                  <span>
-                      <button mat-icon-button color="primary" title="View Report"><mat-icon class="mat-icon material-icons" role="img">description</mat-icon></button>
-                      <button mat-icon-button color="primary" title="Run Report"><mat-icon class="mat-icon material-icons" role="img">play_arrow</mat-icon></button>
-                  </span>
-                </span>
+<nav>
+  <mat-toolbar color="primary">
+    <span class="toolbar-item">
+        <mat-icon class="mat-icon material-icons" role="img">playlist_add_check</mat-icon>&nbsp;
+        EXCIT Inventory
+    </span>
+    <span class="toolbar-item search" (click)="searchWrapperClicked($event)">
+      &nbsp;<mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon>&nbsp;
+      <input #searchBox value="" placeholder="Search">
+    </span>
+  </mat-toolbar>
+</nav>
+<mat-card>
+  <mat-card-content>
+      <mat-table #table [dataSource]="supplierDatasource">
+        <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let row" class="header" title="{{row.Identifier}}">
+                <mat-checkbox [(ngModel)]="row.selected" color="primary"></mat-checkbox>{{row.name}}
               </mat-cell>
-            </ng-container>
-            <mat-header-row *matHeaderRowDef="['name', 'asiNumber', 'lastRun']"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: ['name', 'asiNumber', 'lastRun'];"
-              [ngClass]="row.active ? 'active' : ''"
-              (mouseenter)="hovered(row, true)" (mouseleave)="hovered(row, false)">
-            </mat-row>
-          </mat-table>
-      </mat-card-content>
-    </mat-card>
-  </main>
-</section>
+        </ng-container>
+        <ng-container matColumnDef="asiNumber">
+          <mat-header-cell *matHeaderCellDef> ASI# </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.asiNumber}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastRun">
+          <mat-header-cell *matHeaderCellDef> Last Run </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <span *ngIf="!row.active" [class]="row.successRate >= 90 ? 'report-passed' : 'report-failed'">{{row.lastRun | date }}</span>
+            <span *ngIf="row.active" class="menu-active">
+              <span class="report">Last run on&nbsp;<em>{{row.lastRun | date }}</em> with success rate of <em>{{row.successRate}}</em></span>
+              <span>
+                  <button mat-icon-button color="primary" title="View Report"><mat-icon class="mat-icon material-icons" role="img">description</mat-icon></button>
+                  <button mat-icon-button color="primary" title="Run Report"><mat-icon class="mat-icon material-icons" role="img">play_arrow</mat-icon></button>
+              </span>
+            </span>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['name', 'asiNumber', 'lastRun']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['name', 'asiNumber', 'lastRun'];"
+          [ngClass]="row.active ? 'active' : ''"
+          (mouseenter)="hovered(row, true)" (mouseleave)="hovered(row, false)">
+        </mat-row>
+      </mat-table>
+  </mat-card-content>
+</mat-card>
