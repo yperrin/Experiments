@@ -6,25 +6,25 @@
     </span>
     <span class="toolbar-item search" (click)="searchWrapperClicked($event)">
       &nbsp;<mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon>&nbsp;
-      <input #searchBox value="" placeholder="Search">
+      <input #searchBox value="" placeholder="Search" (keyup)="search(searchBox.value)">
     </span>
   </mat-toolbar>
 </nav>
 <mat-card>
   <mat-card-content>
-      <mat-table #table [dataSource]="supplierDatasource">
+      <mat-table #table [dataSource]="supplierDatasource" matSort  (matSortChange)="sortData($event)">
         <ng-container matColumnDef="name">
-              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
               <mat-cell *matCellDef="let row" class="header" title="{{row.Identifier}}">
                 <mat-checkbox [(ngModel)]="row.selected" color="primary"></mat-checkbox>{{row.name}}
               </mat-cell>
         </ng-container>
         <ng-container matColumnDef="asiNumber">
-          <mat-header-cell *matHeaderCellDef> ASI# </mat-header-cell>
+          <mat-header-cell *matHeaderCellDef  mat-sort-header> ASI# </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{row.asiNumber}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="lastRun">
-          <mat-header-cell *matHeaderCellDef> Last Run </mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Last Run </mat-header-cell>
           <mat-cell *matCellDef="let row">
             <span *ngIf="!row.active" [class]="row.successRate >= 90 ? 'report-passed' : 'report-failed'">{{row.lastRun | date }}</span>
             <span *ngIf="row.active" class="menu-active">

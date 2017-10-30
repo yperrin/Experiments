@@ -17,4 +17,7 @@ export class SupplierDataSource extends DataSource<Supplier> {
     // nothing to do
   }
 
+  get data() {
+    return this.suppliers;
+  }
 }

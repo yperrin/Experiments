@@ -57,10 +57,9 @@ export class HeroSearchComponent implements OnInit {
          x => this.testing(x),
          e => console.log('onError: %s', e),
          () => console.log('onCompleted'));
-      console.log('on init completed');
   }
   private testing(data: any) {
-    console.log(data);
+    console.log('testing: ' + data);
   }
 
   gotoDetail(hero: Hero): void {
