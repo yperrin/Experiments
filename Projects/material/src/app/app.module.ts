@@ -42,7 +42,7 @@ import { ToolInventoryComponent } from './tool/tool-inventory/tool-inventory.com
     HeroService
   ],
   bootstrap: [
-    // AppComponent
+    //AppComponent
     ToolInventoryComponent
   ]
 })

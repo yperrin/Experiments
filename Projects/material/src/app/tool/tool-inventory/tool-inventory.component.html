@@ -4,8 +4,8 @@
         <mat-icon class="mat-icon material-icons" role="img">playlist_add_check</mat-icon>&nbsp;
         EXCIT Inventory
     </span>
+    <span class="toolbar-item blank"><mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon></span>
     <span class="toolbar-item search" (click)="searchWrapperClicked($event)">
-      &nbsp;<mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon>&nbsp;
       <input #searchBox value="" placeholder="Search" (keyup)="search(searchBox.value)">
     </span>
   </mat-toolbar>
