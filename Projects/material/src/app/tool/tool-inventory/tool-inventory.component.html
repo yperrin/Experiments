@@ -12,11 +12,12 @@
 </nav>
 <mat-card>
   <mat-card-content>
-      <mat-table #table [dataSource]="supplierDatasource" matSort  (matSortChange)="sortData($event)">
+    Has Selection {{hasSelection}} <br />
+    <mat-table #table [dataSource]="supplierDatasource" matSort  (matSortChange)="sortData($event)">
         <ng-container matColumnDef="name">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
               <mat-cell *matCellDef="let row" class="header" title="{{row.Identifier}}">
-                <mat-checkbox [(ngModel)]="row.selected" color="primary"></mat-checkbox>{{row.name}}
+                <mat-checkbox [(ngModel)]="row.selected" color="primary" (ngModelChange)="selectionChanged()"></mat-checkbox>{{row.name}}
               </mat-cell>
         </ng-container>
         <ng-container matColumnDef="asiNumber">

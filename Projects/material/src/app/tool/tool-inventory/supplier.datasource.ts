@@ -17,7 +17,16 @@ export class SupplierDataSource extends DataSource<Supplier> {
     // nothing to do
   }
 
-  get data() {
+  get data(): Supplier[] {
     return this.suppliers;
+  }
+
+  resetSelection() {
+    this.suppliers.forEach(supplier => supplier.selected = false);
+  }
+
+  get hasSelection(): boolean {
+      return this.suppliers.reduce(function(hasSelected, value) {
+        return hasSelected || value.selected ; }, false);
   }
 }

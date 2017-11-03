@@ -11,8 +11,9 @@ import { Subject } from 'rxjs/Subject';
 })
 export class ToolInventoryComponent implements OnInit {
   private searchTerms = new Subject<string>();
-  originalDataSource: SupplierDataSource;
+  private originalDataSource: SupplierDataSource;
   supplierDatasource: SupplierDataSource;
+  hasSelection = false;
   @ViewChild('searchBox') searchInput;
 
   ngOnInit(): void {
@@ -45,12 +46,14 @@ export class ToolInventoryComponent implements OnInit {
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .subscribe(
         function (term) {
+          self.originalDataSource.resetSelection();
           const data =  self.originalDataSource
             .data.slice()
             .filter(supplier => supplier.name.toLowerCase().indexOf(term) > -1 || supplier.asiNumber.toLowerCase().indexOf(term) > -1);
           self.supplierDatasource = new SupplierDataSource(data);
         },
         function (err) {
+          console.log('Error filtering: ' + err)
         },
         function () {
           self.supplierDatasource = new SupplierDataSource(self.originalDataSource.data);
@@ -80,6 +83,11 @@ export class ToolInventoryComponent implements OnInit {
         default: return 0;
       }
     }));
+  }
+
+  selectionChanged() {
+    console.log("selection");
+    this.hasSelection = this.supplierDatasource.hasSelection;
   }
 
   // Push a search term into the observable stream.
