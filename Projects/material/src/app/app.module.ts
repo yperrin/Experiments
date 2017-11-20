@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppMaterialModule } from './app-material.module';
 
 import { HeroesRoutingModule } from './heroes/heroes-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +17,7 @@ import { HeroSearchComponent } from './heroes/hero-search/hero-search.component'
 
 import { ToolModule } from './tool/tool.module';
 import { ToolInventoryComponent } from './tool/tool-inventory/tool-inventory.component';
+import { ToolInventoryReportComponent } from './tool/tool-inventory/tool-inventory-report/tool-inventory-report.component';
 
 @NgModule({
   declarations: [
@@ -28,18 +27,20 @@ import { ToolInventoryComponent } from './tool/tool-inventory/tool-inventory.com
     HeroDashboardComponent,
     HeroPreviewComponent,
     HeroSearchComponent,
-    ToolInventoryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    AppMaterialModule,
-    HeroesRoutingModule
+    HeroesRoutingModule,
+    ToolModule
   ],
   providers: [
     HeroService
+  ],
+  entryComponents: [
+    ToolInventoryReportComponent
   ],
   bootstrap: [
     //AppComponent

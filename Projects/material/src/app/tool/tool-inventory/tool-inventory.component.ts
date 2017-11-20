@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Supplier } from './supplier.model';
 import { SupplierDataSource } from './supplier.datasource';
-import { Sort } from '@angular/material';
+import { Sort, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
+
+import { ToolInventoryReportComponent } from './tool-inventory-report/tool-inventory-report.component';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +15,11 @@ export class ToolInventoryComponent implements OnInit {
   private searchTerms = new Subject<string>();
   private originalDataSource: SupplierDataSource;
   supplierDatasource: SupplierDataSource;
-  hasSelection = false;
+  selectionCount: number = 0;
   @ViewChild('searchBox') searchInput;
+
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     const self = this;
@@ -86,8 +91,8 @@ export class ToolInventoryComponent implements OnInit {
   }
 
   selectionChanged() {
-    console.log("selection");
-    this.hasSelection = this.supplierDatasource.hasSelection;
+    console.log('selection');
+    this.selectionCount = this.supplierDatasource.selectedCount;
   }
 
   // Push a search term into the observable stream.
@@ -97,5 +102,14 @@ export class ToolInventoryComponent implements OnInit {
 
   private compare(a, b, isAsc) {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }
+
+  openReport(supplier: Supplier) {
+    // const dialog = this.dialog.open(ToolInventoryReportComponent, {
+    //   height: '400px',
+    //   width: '250px',
+    // });
+    // dialog.updatePosition({ top: '25px', left: '25px' });
+    const dialogRef = this.dialog.open(ToolInventoryReportComponent);
   }
 }

@@ -25,8 +25,9 @@ export class SupplierDataSource extends DataSource<Supplier> {
     this.suppliers.forEach(supplier => supplier.selected = false);
   }
 
-  get hasSelection(): boolean {
-      return this.suppliers.reduce(function(hasSelected, value) {
-        return hasSelected || value.selected ; }, false);
+  get selectedCount(): number {
+      return this.suppliers.reduce(function(count, supplier) {
+        return (supplier.selected ? ++count : count);
+      }, 0);
   }
 }

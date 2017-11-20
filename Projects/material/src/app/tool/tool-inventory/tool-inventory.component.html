@@ -1,18 +1,21 @@
 <nav>
-  <mat-toolbar color="primary">
+  <mat-toolbar [color]="selectionCount > 0 ? '' : 'primary'">
     <span class="toolbar-item">
         <mat-icon class="mat-icon material-icons" role="img">playlist_add_check</mat-icon>&nbsp;
         EXCIT Inventory
     </span>
-    <span class="toolbar-item blank"><mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon></span>
-    <span class="toolbar-item search" (click)="searchWrapperClicked($event)">
+    <span [hidden]="selectionCount > 0" class="toolbar-item blank"><mat-icon class="mat-icon material-icons" role="img" (click)="searchWrapperClicked($event)">search</mat-icon></span>
+    <span [hidden]="selectionCount > 0" class="toolbar-item search" (click)="searchWrapperClicked($event)">
       <input #searchBox value="" placeholder="Search" (keyup)="search(searchBox.value)">
+    </span>
+    <span  [hidden]="selectionCount == 0" class="toolbar-item menu">
+        <button mat-icon-button color="primary" title="Run Report"><mat-icon class="mat-icon material-icons" role="img">play_arrow</mat-icon></button>
+        Run the report for the {{selectionCount}} selected supplier(s)
     </span>
   </mat-toolbar>
 </nav>
 <mat-card>
   <mat-card-content>
-    Has Selection {{hasSelection}} <br />
     <mat-table #table [dataSource]="supplierDatasource" matSort  (matSortChange)="sortData($event)">
         <ng-container matColumnDef="name">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
@@ -31,7 +34,7 @@
             <span *ngIf="row.active" class="menu-active">
               <span class="report">Last run on&nbsp;<em>{{row.lastRun | date }}</em> with success rate of <em>{{row.successRate}}</em></span>
               <span>
-                  <button mat-icon-button color="primary" title="View Report"><mat-icon class="mat-icon material-icons" role="img">description</mat-icon></button>
+                  <button mat-icon-button color="primary" title="View Report" (click)="openReport(row)"><mat-icon class="mat-icon material-icons" role="img">description</mat-icon></button>
                   <button mat-icon-button color="primary" title="Run Report"><mat-icon class="mat-icon material-icons" role="img">play_arrow</mat-icon></button>
               </span>
             </span>
