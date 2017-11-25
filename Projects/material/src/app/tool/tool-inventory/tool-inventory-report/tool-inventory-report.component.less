@@ -1,7 +1,29 @@
-tr:nth-child(even) {background: lightgray}
+@bgColor: rgb(63,81,181);
+@color: #ffffff;
+
+table {
+  border: 1px solid rgb(235, 235, 235);
+  border-collapse: collapse;
+}
+thead {
+  background-color: @bgColor;
+  color: @color;
+}
+td, th {
+  border: 1px solid rgb(235, 235, 235);
+  border-collapse: collapse;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+}
+tr:nth-child(even) {
+  background: rgb(235, 235, 235)
+}
 mat-icon.true {
   color: green;
 }
 mat-icon.false {
   color: red;
+}
+mat-dialog-actions {
+  justify-content: flex-end;
 }

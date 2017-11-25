@@ -32,7 +32,7 @@
           <mat-cell *matCellDef="let row">
             <span *ngIf="!row.active" [class]="row.successRate >= 90 ? 'report-passed' : 'report-failed'">{{row.lastRun | date }}</span>
             <span *ngIf="row.active" class="menu-active">
-              <span class="report">Last run on&nbsp;<em>{{row.lastRun | date }}</em> with success rate of <em>{{row.successRate}}</em></span>
+              <span class="report">Last run on&nbsp;<em>{{row.lastRun | date }}</em> with success rate of <em>{{row.successRate}}%</em></span>
               <span>
                   <button mat-icon-button color="primary" title="View Report" (click)="openReport(row)"><mat-icon class="mat-icon material-icons" role="img">description</mat-icon></button>
                   <button mat-icon-button color="primary" title="Run Report"><mat-icon class="mat-icon material-icons" role="img">play_arrow</mat-icon></button>
