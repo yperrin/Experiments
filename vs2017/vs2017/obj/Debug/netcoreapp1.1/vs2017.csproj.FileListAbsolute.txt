@@ -1,9 +1,0 @@
-D:\Projects\Experiments\vs2017\vs2017\bin\Debug\netcoreapp1.1\vs2017.deps.json
-D:\Projects\Experiments\vs2017\vs2017\bin\Debug\netcoreapp1.1\vs2017.runtimeconfig.json
-D:\Projects\Experiments\vs2017\vs2017\bin\Debug\netcoreapp1.1\vs2017.runtimeconfig.dev.json
-D:\Projects\Experiments\vs2017\vs2017\bin\Debug\netcoreapp1.1\vs2017.dll
-D:\Projects\Experiments\vs2017\vs2017\bin\Debug\netcoreapp1.1\vs2017.pdb
-D:\Projects\Experiments\vs2017\vs2017\obj\Debug\netcoreapp1.1\vs2017.csprojResolveAssemblyReference.cache
-D:\Projects\Experiments\vs2017\vs2017\obj\Debug\netcoreapp1.1\vs2017.AssemblyInfo.cs
-D:\Projects\Experiments\vs2017\vs2017\obj\Debug\netcoreapp1.1\vs2017.dll
-D:\Projects\Experiments\vs2017\vs2017\obj\Debug\netcoreapp1.1\vs2017.pdb
