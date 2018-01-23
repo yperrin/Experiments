@@ -74,3 +74,13 @@ div.espWebContentPieChartContainer{
 	margin-left: -12px; 
 	margin-top: -24px;
 }
+div.social img {
+	width: 18px;
+	height: 16px;
+}
+div.social table{
+	margin-left: 4px;
+}
+div.social table tr td{
+	padding-top: 10px;
+}
