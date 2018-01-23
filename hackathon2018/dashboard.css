@@ -74,3 +74,11 @@ div.espWebContentPieChartContainer{
 	margin-left: -12px; 
 	margin-top: -24px;
 }
+.ESPWebLinksList {
+	list-style-type: none;
+}
+.ESPWebLinksList .checkbox {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left: 0px !important;
+}
