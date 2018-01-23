@@ -99,174 +99,59 @@
             </div>
         </div>
     </header>
-    <div class="row headerx">My Websites Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="chartContent">
-                <h4>Orders</h4>
+    <div>
+        <div>
+            <div class="headerx">My Websites Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
+            <div class="margTop20 chartContent">
+                <h4>Web Sites - you have 3 published one(s)</h4>
+                <ul>
+                    <li><a style="cursor: hand;" herf="https://125724-flh.espwebsite.com" target="_window">125724-flh.espwebsite.com</a></li>
+                    <li><a style="cursor: hand;" herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a></li>
+                    <li><a style="cursor: hand;" herf="https://125724-002.logoshop.com" target="_window">125724-002.logoshop.com</a></li>
+                </ul>
                 <div>
-                    <canvas id="myCanvas"></canvas>
-                    <div id="pieLegend"></div>
-                    <script type="text/javascript" src="PieChart.js"></script>
+                    <strong>Key metrics</strong>
+	  			    <ul>
+	  				    <li>Top Performing Site:<a style="cursor: hand;" herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a></li>
+	  				    <li>Most Visited Page: <a style="cursor: hand;" herf="https://125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth%20Items" target="_window">125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth Items</a></li>
+	  				    <li>Top Customer: <a>Jerry McGuire</a></li>
+				    </ul>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="chartContent">
-                <h4>Orders</h4>
-                <div>
-                    <canvas id="myCanvas2"></canvas>
-                    <div id="dougnutLegend"></div>
-                    <script type="text/javascript" src="dougnutChart.js"></script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row headerx margTop20">
-        <div class="col-md-12">
-            <h4>Bar Graph</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="chartContent">
-                <div id="graphDiv1"></div>
-                <script type="text/javascript" src="BarOne.js"></script>
-            </div>
-         </div> 
-        <div class="col-md-6">
-            <div class="chartContent">
-                <div id="graphDiv2"></div>
-                <script type="text/javascript" src="BarTwo.js"></script>
-            </div>
+        </div>  
+        <div>
+            <script type="text/javascript">
+                window.onload = function () {
+                    var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        theme: "theme2",
+                        title:{
+                            text: "Top Searches done on my site ( 125724-fli.espwebsite.com )"
+                        },		
+                        data: [
+                        {       
+                            type: "pie",
+                            showInLegend: true,
+                            toolTipContent: "{y} - #percent %",
+                            yValueFormatString: "#,##0.## Thousand",
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                {  y: 20345, indexLabel: "Apparel" },
+                                {  y: 10453, indexLabel: "Mugs" },
+                                {  y: 3987, indexLabel: "Pens" },
+                                {  y: 6789, indexLabel: "Mouse Pads"},
+                                {  y: 10856, indexLabel: "Lanyards" },
+                                {  y: 3876, indexLabel: "Sports Equipment"},
+                                {  y: 2098, indexLabel: "Bottles"}
+                            ]
+                        }
+                        ]
+                    });
+                    chart.render();
+                }
+            </script>
+            <div  class="chartContent" id="chartContainer" style="height: 600px; width: 80%;" onload="barChartLoad();"></div>
         </div> 
-    </div>
-    <!--<div class="row header margTop20">
-        <div class="col-md-12">
-            <h4>Charts</h4>
-        </div>
-    </div>-->
-    <!--<div class="row">
-        <script type="text/javascript">
-            window.onload = function () {
-	            var barchart = new CanvasJS.Chart("chartContainer", {
-		            title:{
-			            text: "My First Chart in CanvasJS"
-		            },
-		            data: [
-		            {
-			            // Change type to "doughnut", "line", "splineArea", etc.
-			            type: "column",
-			            dataPoints: [
-				            { label: "apple",  y: 10  },
-				            { label: "orange", y: 15  },
-				            { label: "banana", y: 25  },
-				            { label: "mango",  y: 30  },
-				            { label: "grape",  y: 28  }
-			            ]
-		            }
-		            ]
-	            });
-	            barchart.render();
-            }
-        </script>
-        <div  class="chartContent" id="chartContainer" style="height: 300px; width: 50%;" onload="barChartLoad();"></div>
-    </div>--> 
-    <div class="row headerx margTop20">
-        <div class="col-md-12">
-            <h4>Line Chart</h4>
-        </div>
-    </div>
-    <div class="row">
-        <script type="text/javascript">
-              window.onload = function () {
-                var linechart = new CanvasJS.Chart("linechartContainer",
-                {
-
-                  title:{
-                  text: "Earthquakes - per month"
-                  },
-                  axisX: {
-                    valueFormatString: "MMM",
-                    interval:1,
-                    intervalType: "month"
-                  },
-                  axisY:{
-                    includeZero: false
-
-                  },
-                  data: [
-                  {
-                    type: "line",
-
-                    dataPoints: [
-                    { x: new Date(2012, 00, 1), y: 450 },
-                    { x: new Date(2012, 01, 1), y: 414},
-                      { x: new Date(2012, 02, 1), y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle"},
-                    { x: new Date(2012, 03, 1), y: 460 },
-                    { x: new Date(2012, 04, 1), y: 450 },
-                    { x: new Date(2012, 05, 1), y: 500 },
-                    { x: new Date(2012, 06, 1), y: 480 },
-                    { x: new Date(2012, 07, 1), y: 480 },
-                    { x: new Date(2012, 08, 1), y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross"},
-                    { x: new Date(2012, 09, 1), y: 500 },
-                    { x: new Date(2012, 10, 1), y: 480 },
-                    { x: new Date(2012, 11, 1), y: 510 }
-                    ]
-                  }
-                  ]
-                });
-
-                linechart.render();
-              }
-        </script>
-        <div class="chartContent" id="linechartContainer" style="height: 300px; width: 50%;"></div>
-    </div> 
-    <!--<div class="row header margTop20">
-        <div class="col-md-12">
-            <h4>Doughnut Chart</h4>
-        </div>
-    </div>
-    <div class="row">
-        <script type="text/javascript">
-          window.onload = function () {
-            var chart = new CanvasJS.Chart("douchartContainer",
-            {
-              title:{
-                text: "U.S Smartphone OS Market Share, Q3 2012",
-                fontFamily: "Impact",
-                fontWeight: "normal"
-              },
-
-              legend:{
-                verticalAlign: "bottom",
-                horizontalAlign: "center"
-              },
-              data: [
-              {
-                //startAngle: 45,
-               indexLabelFontSize: 20,
-               indexLabelFontFamily: "Garamond",
-               indexLabelFontColor: "darkgrey",
-               indexLabelLineColor: "darkgrey",
-               indexLabelPlacement: "outside",
-               type: "doughnut",
-               showInLegend: true,
-               dataPoints: [
-               {  y: 53.37, legendText:"Android 53%", indexLabel: "Android 53%" },
-               {  y: 35.0, legendText:"iOS 35%", indexLabel: "Apple iOS 35%" },
-               {  y: 7, legendText:"Blackberry 7%", indexLabel: "Blackberry 7%" },
-               {  y: 2, legendText:"Windows 2%", indexLabel: "Windows Phone 2%" },
-               {  y: 5, legendText:"Others 5%", indexLabel: "Others 5%" }
-               ]
-             }
-             ]
-           });
-
-            chart.render();
-          }
-        </script>
-        <div class="chartContent" id="douchartContainer" style="height: 300px; width: 50%;"></div>
-    </div>--> 
+</div>
 </body>
 </html>
