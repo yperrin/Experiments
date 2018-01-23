@@ -1,13 +1,11 @@
-﻿@font-face{
-    font-family:esp;
-    src:url(fonts/esp.eot?33115974);
-    src:url(fonts/esp.eot?33115974#iefix)  format('embedded-opentype') ,
-        url(fonts/esp.woff?33115974) format('woff'),
-        url(fonts/esp.ttf?33115974)  format('truetype'),
-        url(fonts/esp.svg?33115974#delete)  format('svg');
-    font-weight:400;
-    font-style:normal
+﻿@font-face {
+    font-family: esp;
+    src: url(fonts/esp.eot?33115974);
+    src: url(fonts/esp.eot?33115974#iefix) format('embedded-opentype'), url(fonts/esp.woff?33115974) format('woff'), url(fonts/esp.ttf?33115974) format('truetype'), url(fonts/esp.svg?33115974#delete) format('svg');
+    font-weight: 400;
+    font-style: normal
 }
+
 body {
 }
 
@@ -120,18 +118,19 @@ img {
     color: #464646;
 }
 
-.navbar-toolbar .navbar-tools > li > a > .icon {
-    color: #353535;
-    font-size: 22px;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0;
-    margin-top: 0;
-    height: 25px;
-    padding-top: 0;
-    line-height: 20px;
-    vertical-align: middle;
-}
+    .navbar-toolbar .navbar-tools > li > a > .icon {
+        color: #353535;
+        font-size: 22px;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 0;
+        margin-top: 0;
+        height: 25px;
+        padding-top: 0;
+        line-height: 20px;
+        vertical-align: middle;
+    }
+
 .esp-icon:before {
     font-family: esp;
     font-style: normal;
@@ -150,19 +149,23 @@ img {
 .icon-help:before {
     content: '\e806';
 }
+
 .icon-clipboard:before {
     content: '\e804';
 }
+
 .navbar-toolbar .user > a > img {
     border: 1px solid #cad1d7;
     max-height: 30px;
     margin: -2px 0;
     background-color: #fff;
 }
+
 .menu-dark.menu-wrapper {
     background-color: #065597;
     border: 1px solid #065597;
 }
+
 .menu-wrapper {
     background-color: #eeeeec;
     position: relative;
@@ -170,7 +173,107 @@ img {
     border: 1px solid #c7cfd1;
     border-width: 1px 0;
 }
+
 .menu-dark .navbar-menu > li > a {
     color: #e4e8eb;
     background: 0 0;
+}
+
+.dropdown-submenu > a:after {
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent transparent #ccc;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.col-tile, .dropdown-menu .dropdown-subdropdown, .dropdown-submenu, .module.ad, .tile-image, .tile-row, .user-menu .thumbnail-holder {
+    position: relative;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #cccccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover > a:after {
+        border-left-color: #ffffff;
+    }
+
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+
+
+.icon-alert:before {
+    content: '\e800';
+}
+
+.esp-icon:before {
+    font-family: esp;
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+}
+.navbar .badge {
+    position: absolute;
+    top: 2px;
+    left: 32px;
+    background: #1D82D0;
+    padding: 0 5px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    color: #fff;
+    line-height: 16px;
+    z-index: 3;
+    text-align: center;
+    font-size: 11px;
+    box-shadow: -1px 1px 1px 1px rgba(0,0,0,.3);
 }
