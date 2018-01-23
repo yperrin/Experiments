@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="./build.css" />
-	<link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./build.css"/>
+    <link rel="stylesheet" href="./dashboard.css" />
 	<link rel="stylesheet" href="./espstyles.css" />
 	<script type="text/javascript" src="Nav.js"></script>
 </head>
@@ -30,17 +30,23 @@
                                         <div class="navbar navbar-toolbar">
                                             <ul class="nav navbar-nav navbar-apps" role="tablist">
                                                 <li class="dropdown active" role="presentation">
-                                                    <a href="#Home" data-toggle="tab"  role="tab"><i class="glyphicon glyphicon-home">&nbsp;</i>Home</a>
+                                                    <a href="#Home" data-toggle="tab" role="tab"><i class="glyphicon glyphicon-home">&nbsp;</i>Home</a>
                                                 </li>
                                                 <li class="dropdown" role="presentation">
-                                                    <a href="#" class="dropdown-toggle" id="EspWebMenu" data-toggle="dropdown" role="tab">
-                                                        ESP Web
-                                                        <span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu" id="EspWeb-MenuContent">
-                                                        <li><a href="#EspWeb" role="tab" data-toggle="tab">ESP Web Home Page</a></li>
-                                                        <li><a href="#EspWeb2" role="tab" data-toggle="tab">ESP Web Something Else</a></li>
-                                                        <li><a href="http://www.google.com/" data-target="#"  >ESP Web deep link</a></li>
+                                                        <a href="#" class="dropdown-toggle" id="EspWebMenu" data-toggle="dropdown" role="tab">
+                                                            ESP Web
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu" id="EspWeb-MenuContent">
+                                                            <li><a href="#" role="tab" data-toggle="tab">Find a Product</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">Find a Supplier</a></li>
+                                                            <li><a href="#" data-target="#">Find a Decorator</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">Top Searches</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">Recent Searches</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">My Saved Searches</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">Create Presentation</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">Presentation Manager</a></li>
+                                                            <li><a href="#" role="tab" data-toggle="tab">Projects</a></li>
                                                         </ul>
                                                 </li>
                                                 <li class="dropdown" role="presentation">
@@ -48,7 +54,11 @@
                                                         <span class="caret"></span>
                                                         </a>
                                                     <ul class="dropdown-menu" id="Websites-MenuContent">
-                                                        <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">Go to Websites Admin</a></li>
+                                                        <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">Edit Site<span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                                        <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">Stats<span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                                        <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">SEO<span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                                        <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">My Saved Searches</a></li>
+                                                        <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">Custom Products</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown" role="presentation">
@@ -87,7 +97,15 @@
                         </div>
                     </div>
                     <div class="menu-wrapper menu-dark">
-
+                        <div class="container app-menu">
+                            <ul id="appMenu" class="nav navbar-nav navbar-slim navbar-menu">
+                                <li><a href="#">New Features</a></li>
+                                <li><a href="#">Preferred Supplier Admin</a></li>
+                                <li><a href="#">Application Training</a></li>
+                                <li><a href="#">Contact Support</a></li>
+                                <li><a href="#">Preferences</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

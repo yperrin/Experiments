@@ -159,3 +159,18 @@ img {
     margin: -2px 0;
     background-color: #fff;
 }
+.menu-dark.menu-wrapper {
+    background-color: #065597;
+    border: 1px solid #065597;
+}
+.menu-wrapper {
+    background-color: #eeeeec;
+    position: relative;
+    z-index: 31;
+    border: 1px solid #c7cfd1;
+    border-width: 1px 0;
+}
+.menu-dark .navbar-menu > li > a {
+    color: #e4e8eb;
+    background: 0 0;
+}
