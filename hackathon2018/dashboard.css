@@ -4,6 +4,8 @@ div.containerx {
 	border: 1px solid #d7d8da;
 	padding: 0px 0px 0px 0px;
 	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 0px;
 }
 div.headerx {
 	font-size:20px;
@@ -41,8 +43,9 @@ div.tasks div.sub-tasks div.checkbox{
   text-shadow: 0 1px 0 #fff;
   opacity:'0';	
 }
-.dropzone {
-  transition: background-color 0.3s;
+panel.dropzone {
+  	transition: background-color 0.3s;
+  	padding-right: 0px;
 }
 
 .drop-active {
