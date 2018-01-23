@@ -399,7 +399,7 @@
                     <span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div class="content">
-                    <strong>Key metrics</strong>
+                        <strong>Key metrics</strong>
                     <ul>
                         <li>
                             <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations"
@@ -414,6 +414,7 @@
                                 target="_window">There are 10 new Supplier Catalog(s)</a>
                         </li>
                     </ul>
+                    <div id="espWebContentPieChart" class="espWebContentPieChart"></div>
                 </div>
             </div>
         </div>
@@ -511,13 +512,13 @@
 		<div class="containerx draggable drag-drop" id="espweb">
 	  		<div class="headerx">ESP Web<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
 	  		<div class="content">
-	  			<strong>Key metrics</strong>
+                    <strong>Key metrics</strong>
 	  			<ul>
 	  				<li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations" target="_window">You have created 40 Presentations(s) </a></li>
 	  				<li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Projects&projectid=2099&tab=Presentations" target="_window">You have created 60 Projects(s)</a></li>
 	  				<li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=SupplierCatalogs" target="_window">There are 10 new Supplier Catalog(s)</a></li>
-				</ul>
-	  		</div>
+                </ul>
+ 	  		</div>
 	  	</div>
 	</div>	
 	<div id="crm-container">
@@ -577,6 +578,7 @@
         crossorigin="anonymous"></script>
     <script src="./interact.min.js"></script>
     <script src="./dashboard.js"></script>
+    <script src="./canvasjs.min.js"></script>
     <script>
 		var contentList = ['espweb', 'websites', 'crm', 'orders', 'email', 'tasks']
         var containerList = ['content1', 'content2', 'content3', 'content4', 'content5', 'content6'];
@@ -587,7 +589,46 @@
             for (var i = 0; i <= Math.min(contentList.length, containerList.length); i++) {
                 $('#' + containerList[i]).html($('#' + contentList[i] + '-container').html());
             }
+            renderEspWebChart();
         };
+        function renderEspWebChart(){
+            var chartDiv = "espWebContentPieChart";
+            var chart = new CanvasJS.Chart(chartDiv,
+            {
+                height: 225,
+                width:300,
+                animationEnabled: true,
+                animationDuration: 500,
+                theme: "theme2",
+                title:{
+                    text: "Top Searches",
+                    fontSize:18
+                },		
+                data: [
+                {       
+                    type: "pie",
+                    showInLegend: false,
+                    toolTipContent: "{indexLabel} - #percent %",
+                    yValueFormatString: "#,##0,,.##",
+                    legendText: "{indexLabel}",
+                    dataPoints: [
+                        {  y: 30, indexLabel: "Apparel" },
+                        {  y: 26, indexLabel: "Pens" },
+                        {  y: 24, indexLabel: "Bags" },
+                        {  y: 21, indexLabel: "Lanyards"},
+                        {  y: 13, indexLabel: "Mugs" },
+                        {  y: 8, indexLabel: "Water Bottles"},
+                        {  y: 5, indexLabel: "Headwear"},
+                        {  y: 3, indexLabel: "Patches"},
+                        {  y: 2, indexLabel: "Banners"},
+                        {  y: 1, indexLabel: "Sunglasses"}
+                        
+                    ]
+                }
+                ]
+            });
+	        chart.render();
+        }
     </script>
 </body>
 
