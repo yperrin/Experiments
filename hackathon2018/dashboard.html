@@ -1,289 +1,465 @@
 <html>
+
 <head>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./build.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./build.css" />
     <link rel="stylesheet" href="./dashboard.css" />
-	<link rel="stylesheet" href="./espstyles.css" />
-	<script type="text/javascript" src="Nav.js"></script>
+    <link rel="stylesheet" href="./espstyles.css" />
+    <script type="text/javascript" src="Nav.js"></script>
 </head>
+
 <body>
-<header>
-    <div id="fullwidthsupheaderzone">
-        <div id="module">
-            <div class="header-wrapper">
-                <div class="header">
-                    <div class="container toolbar">
-                        <div class="row">
-                            <div class="col-logo">
-                                <div class="logo">
-                                    <a id="lnkLogo" href="#">
-                                        <img id="imgLogoLnk" class="img-responsive" src="https://commonmedia.asicentral.com/210000/213450/esp.png" style="border-width: 0px;">
-                                    </a>
+    <header>
+        <div id="fullwidthsupheaderzone">
+            <div id="module">
+                <div class="header-wrapper">
+                    <div class="header">
+                        <div class="container toolbar">
+                            <div class="row">
+                                <div class="col-logo">
+                                    <div class="logo">
+                                        <a id="lnkLogo" href="#">
+                                            <img id="imgLogoLnk" class="img-responsive" src="https://commonmedia.asicentral.com/210000/213450/esp.png" style="border-width: 0px;">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-menus">
-                                <div class="toolbar-wrapper">
-                                    <div class="toolbar">
-                                        <div class="navbar navbar-toolbar">
-                                            <ul class="nav navbar-nav navbar-apps" role="tablist">
-                                                <li class="dropdown active" role="presentation">
-                                                    <a href="#Home" data-toggle="tab" role="tab"><i class="glyphicon glyphicon-home">&nbsp;</i>Home</a>
-                                                </li>
-                                                <li class="dropdown" role="presentation">
+                                <div class="col-menus">
+                                    <div class="toolbar-wrapper">
+                                        <div class="toolbar">
+                                            <div class="navbar navbar-toolbar">
+                                                <ul class="nav navbar-nav navbar-apps" role="tablist">
+                                                    <li class="dropdown active" role="presentation">
+                                                        <a href="#Home" data-toggle="tab" role="tab">
+                                                            <i class="glyphicon glyphicon-home">&nbsp;</i>Home</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
                                                         <a href="#" class="dropdown-toggle" id="EspWebMenu" data-toggle="dropdown" role="tab">
                                                             ESP Web
                                                             <span class="caret"></span>
                                                         </a>
                                                         <ul class="dropdown-menu" id="EspWeb-MenuContent">
-                                                            <li><a href="#" role="tab" data-toggle="tab">Find a Product</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">Find a Supplier</a></li>
-                                                            <li><a href="#" data-target="#">Find a Decorator</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">Top Searches</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">Recent Searches</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">My Saved Searches</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">Create Presentation</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">Presentation Manager</a></li>
-                                                            <li><a href="#" role="tab" data-toggle="tab">Projects</a></li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Find a Product</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Find a Supplier</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-target="#">Find a Decorator</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Top Searches</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Recent Searches</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">My Saved Searches</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Create Presentation</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Presentation Manager</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Projects</a>
+                                                            </li>
                                                         </ul>
-                                                </li>
-                                                <li class="dropdown" role="presentation">
-                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">Websites Admin
-                                                        <span class="caret"></span>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">Websites Admin
+                                                            <span class="caret"></span>
                                                         </a>
-                                                    <ul class="dropdown-menu" id="Websites-MenuContent">
-                                                        <li class="dropdown-submenu" ><a href="#" role="tab" data-toggle="dropdown">Edit Site</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="#" role="tab" data-toggle="tab">First Site</a></li>
-                                                                <li><a href="#" role="tab" data-toggle="tab">Second Site</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="dropdown-submenu" ><a href="#" role="tab" data-toggle="tab">Stats</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="#" role="tab" data-toggle="tab">First Site</a></li>
-                                                                <li><a href="#" role="tab" data-toggle="tab">Second Site</a> </li>
-                                                            </ul>
+                                                        <ul class="dropdown-menu" id="Websites-MenuContent">
+                                                            <li class="dropdown-submenu">
+                                                                <a href="#" role="tab" data-toggle="dropdown">Edit Site</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a href="#" role="tab" data-toggle="tab">First Site</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" role="tab" data-toggle="tab">Second Site</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="dropdown-submenu">
+                                                                <a href="#" role="tab" data-toggle="tab">Stats</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a href="#" role="tab" data-toggle="tab">First Site</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" role="tab" data-toggle="tab">Second Site</a>
+                                                                    </li>
+                                                                </ul>
 
-                                                        </li>
-                                                        <li class="dropdown-submenu" ><a href="#" role="tab" data-toggle="tab">SEO</a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="#" role="tab" data-toggle="tab">First Site</a></li>
-                                                                <li><a href="#" role="tab" data-toggle="tab">Second Site</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">My Saved Searches</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Custom Products</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown" role="presentation">
-                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">CRM
-                                                        <span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#" role="tab" data-toggle="tab">Companies</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Contacts</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Emails</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Notes</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Tasks</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Appointments</a></li>
+                                                            </li>
+                                                            <li class="dropdown-submenu">
+                                                                <a href="#" role="tab" data-toggle="tab">SEO</a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a href="#" role="tab" data-toggle="tab">First Site</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" role="tab" data-toggle="tab">Second Site</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">My Saved Searches</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Custom Products</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">CRM
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Companies</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Contacts</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Emails</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Notes</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Tasks</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Appointments</a>
+                                                            </li>
 
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown" role="presentation">
-                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">Orders
-                                                        <span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#" role="tab" data-toggle="tab">Create Order</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Create Invoice</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Create Order</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Create Quote</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Quotes</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Orders</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Invoices</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Sample Requests</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Purchase Order History</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown" role="presentation">
-                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">Email Marketing
-                                                        <span class="caret"></span>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#" role="tab" data-toggle="tab">Dashboard</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Campaigns</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Templates</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Lists</a></li>
-                                                        <li><a href="#" role="tab" data-toggle="tab">Settings</a></li>
-                                                    </ul>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">Orders
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Create Order</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Create Invoice</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Create Order</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Create Quote</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Quotes</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Orders</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Invoices</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Sample Requests</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Purchase Order History</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">Email Marketing
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Dashboard</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Campaigns</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Templates</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Lists</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" role="tab" data-toggle="tab">Settings</a>
+                                                            </li>
+                                                        </ul>
 
-                                                </li>
-                                            </ul>
-                                            <ul class="nav navbar-nav navbar-right navbar-tools">
-                                                <li>
-                                                    <a href="https://www.asicentral.com/asp/open/CustomerSupport/support.aspx?menu=top&amp;catId=1049" target="_blank" id="helpMenu" title="Help" stat-link-name="Help">
-                                                        <i class="icon esp-icon icon-help"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" id="Clipboard" class="dropdown-toggle" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="Clipboard" stat-link-name="Clipboard" xng-click="methods.stats.clipboardView()">
-                                                        <i class="icon esp-icon icon-clipboard"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="user nav-icon ng-scope dropdown">
-                                                    <a href="#" id="userInfo" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="User" stat-link-name="User Menu" class="dropdown-toggle">
-                                                        <img src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" id="userImage" ng-src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" class="img-responsive" onerror="this.src='//stage-admanagement.asicentral.com/Images/no_contact.png'">
-                                                    </a>
-                                                </li>
-                                                <li class="dropdown notifications">
-                                                    <a href="#" class="dropdown-toggle">
-                                                        <i class="icon esp-icon icon-alert"></i>
-                                                        <span class="badge">5</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav navbar-nav navbar-right navbar-tools">
+                                                    <li>
+                                                        <a href="https://www.asicentral.com/asp/open/CustomerSupport/support.aspx?menu=top&amp;catId=1049" target="_blank" id="helpMenu"
+                                                            title="Help" stat-link-name="Help">
+                                                            <i class="icon esp-icon icon-help"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" id="Clipboard" class="dropdown-toggle" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false"
+                                                            title="Clipboard" stat-link-name="Clipboard" xng-click="methods.stats.clipboardView()">
+                                                            <i class="icon esp-icon icon-clipboard"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="user nav-icon ng-scope dropdown">
+                                                        <a href="#" id="userInfo" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="User" stat-link-name="User Menu"
+                                                            class="dropdown-toggle">
+                                                            <img src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png"
+                                                                id="userImage" ng-src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png"
+                                                                class="img-responsive" onerror="this.src='//stage-admanagement.asicentral.com/Images/no_contact.png'">
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown notifications">
+                                                        <a href="#" class="dropdown-toggle">
+                                                            <i class="icon esp-icon icon-alert"></i>
+                                                            <span class="badge">5</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="menu-wrapper menu-dark">
-                        <div class="container app-menu">
-                            <ul id="appMenu" class="nav navbar-nav navbar-slim navbar-menu">
-                                <li><a href="#">New Features</a></li>
-                                <li><a href="#">Preferred Supplier Admin</a></li>
-                                <li><a href="#">Application Training</a></li>
-                                <li><a href="#">Contact Support</a></li>
-                                <li><a href="#">ASI Education</a></li>
-                                <li><a href="#">Preferences</a></li>
-                            </ul>
+                        <div class="menu-wrapper menu-dark">
+                            <div class="container app-menu">
+                                <ul id="appMenu" class="nav navbar-nav navbar-slim navbar-menu">
+                                    <li>
+                                        <a href="#">New Features</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Preferred Supplier Admin</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Application Training</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ASI Education</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Preferences</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </header>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="Home">
+            <div class="row">
+                <panel class="col-xs-12 col-md-4 dropzone" id="content1"></panel>
+                <panel class="col-xs-12 col-md-4 dropzone" id="content2"></panel>
+                <panel class="col-xs-12 col-md-4 dropzone" id="content3"></panel>
+            </div>
+            <div class="row">
+                <panel class="col-xs-12 col-md-4 dropzone" id="content4"></panel>
+                <panel class="col-xs-12 col-md-4 dropzone" id="content5"></panel>
+                <panel class="col-xs-12 col-md-4 dropzone" id="content6"></panel>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="EspWeb">This is ESP Web</div>
+        <div role="tabpanel" class="tab-pane" id="EspWeb2">This is ESP Web Something Else.</div>
+        <div role="tabpanel" class="tab-pane" id="EspWeb3">This is ESP Web Other Great Feature.</div>
+        <div role="tabpanel" class="tab-pane" id="CRM">This is CRM</div>
+        <div role="tabpanel" class="tab-pane" id="Orders">This is Orders</div>
+        <div role="tabpanel" class="tab-pane" id="WebsitesAdmin">ESP Websites Admin</div>
+        <div role="tabpanel" class="tab-pane" id="EmailMarketing">Email Marketing</div>
     </div>
-</header>
-<div class="tab-content">
-	<div role="tabpanel" class="tab-pane active" id="Home">
-		<div class="row">
-			<panel class="col-xs-12 col-md-4 dropzone" id="content1"></panel>
-			<panel class="col-xs-12 col-md-4 dropzone" id="content2"></panel>
-			<panel class="col-xs-12 col-md-4 dropzone" id="content3"></panel>
-		</div>
-		<div class="row">
-			<panel class="col-xs-12 col-md-4 dropzone" id="content4"></panel>
-			<panel class="col-xs-12 col-md-4 dropzone" id="content5"></panel>
-			<panel class="col-xs-12 col-md-4 dropzone" id="content6"></panel>
-		</div>
-	</div>
-	<div role="tabpanel" class="tab-pane" id="EspWeb">This is ESP Web</div>
-	<div role="tabpanel" class="tab-pane" id="EspWeb2">This is ESP Web Something Else.</div>
-	<div role="tabpanel" class="tab-pane" id="EspWeb3">This is ESP Web Other Great Feature.</div>
-	<div role="tabpanel" class="tab-pane" id="CRM">This is CRM</div>
-	<div role="tabpanel" class="tab-pane" id="Orders">This is Orders</div>
-	<div role="tabpanel" class="tab-pane" id="WebsitesAdmin">ESP Websites Admin</div>
-	<div role="tabpanel" class="tab-pane" id="EmailMarketing">Email Marketing</div>
-</div>
-<div class="hidden">
-	<div id="tasks-container">
-		<div class="containerx tasks draggable drag-drop" id="tasks">
-			<div class="headerx">Get Started<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span></div>
-			<div class="content">
-				<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#industry">Learn about the Industry (3)</button>
-				<div id="industry" class="sub-tasks">
-					<div class="checkbox checkbox-success checkbox-circle"><input id="checkbox1" type="checkbox"> <label for="checkbox1" /> Login to <a href="https://www.asicentral.com/login" target="_window">ASI Central</a> to read Inustry news</div>
-					<div class="checkbox checkbox-success checkbox-circle"><input id="checkbox2" type="checkbox"> <label for="checkbox2" />Register to <a href="https://www.asicentral.com/education" target="_window">ASI Education</a> and pass your BASI</div>
-					<div class="checkbox checkbox-success checkbox-circle"><input id="checkbox3" type="checkbox"> <label for="checkbox3" /> Subcribe to Industry <a href="https://www.asicentral.com/news/blogs" target="_window">leaders blogs</a> and <a href="https://www.facebook.com/search/top/?q=promotional%20products%20professionals" target="_window">Facebook Pages</a></div>
-				</div>
-				<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#products">Get the most out of Your products (2)</button>					
-				<div id="products" class="sub-tasks collapse">
-					<div class="checkbox checkbox-success checkbox-circle"><input id="checkbox4" type="checkbox"> <label for="checkbox4" /> Start Searching for Products on <a href="https://espweb.asicentral.com" target="_window">ESP Web</a></div>
-					<div class="checkbox checkbox-success checkbox-circle"><input id="checkbox5" type="checkbox"> <label for="checkbox5" /> Create your own <a href="https://admin.espwebsite.com" target="_window">Web Site</a></div>
-				</div>
-				<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#people">Get people to know you (6)</button>					
-			</div>
-		</div>
-	</div>
-	<div id="orders-container">
-	  	<div class="containerx draggable drag-drop" id="orders">
-	  		<div class="headerx">Your Orders<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span></div>
-	  		<div class="content">
-	  			<strong>Your stats</strong>
-	  			<ul>
-	  				<li><a href="https://esp.asicentral.com/orders" target="_window">You have 10 open Quote(s)</a></li>
-	  				<li><a href="https://esp.asicentral.com/orders" target="_window">You have 3 open Order(s)</a></li>
-	  				<li><a href="https://esp.asicentral.com/orders" target="_window">You closed 5 Order(s) this month</a></li>
-	  			</ul>		  			
-	  			<strong>Your top Salesmen</strong>
-	  			<ul>
-	  				<li><a href="https://esp.asicentral.com/orders" target="_window">John Carrington</a></li>
-	  				<li><a href="https://esp.asicentral.com/orders" target="_window">Henry McLane</a></li>
-	  			</ul>
-	  			<strong>Number of Orders for the last 6 months</strong>
-	  			<img src="./ordersVolume.jpg"/>
-	  		</div>
-	  	</div>
-	</div>
-	<div id="websites-container">
-	  	<div class="containerx draggable drag-drop" id="websites">
-	  		<div class="headerx">Web Sites - you have 3 published one(s)<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span></div>
-	  		<div class="content">
-	  			<strong>Orders through the sites</strong>
-	  			<img src="./ordersVolume.jpg"/>
-	  			<br /><br/>
-	  			<strong>Key metrics</strong>
-	  			<ul>
-	  				<li>Top Performing Site: <a herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a></li>
-	  				<li>Most Visited Page: <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth%20Items</a></li>
-	  				<li>Top Customer: <a>Jerry McGuire</a></li>
-				</ul>
-	  		</div>
-	  	</div>
-	</div>
-	<div id="espweb-container">
-		<div class="containerx draggable drag-drop" id="espweb">
-	  		<div class="headerx">ESP Web<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
-	  		<div class="content">
-	  			<strong>Key metrics</strong>
-	  			<ul>
-	  				<li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations" target="_window">You have created 40 Presentations(s) </a></li>
-	  				<li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Projects&projectid=2099&tab=Presentations" target="_window">You have created 60 Projects(s)</a></li>
-	  				<li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=SupplierCatalogs" target="_window">There are 10 new Supplier Catalog(s)</a></li>
-				</ul>
-	  		</div>
-	  	</div>
-	</div>	
-	<div id="dummy-container">
-	  	<div class="containerx draggable drag-drop" id="dummy">
-	  		<div class="headerx">This is the header<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(0);" class="close glyphicon glyphicon-unchecked"></span></div>
-	  		<div class="content">	Hello I am a content
-	  		</div>
-	  	</div>
-	</div>
-</div>	
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="./interact.min.js"></script>
-	<script src="./dashboard.js"></script>
-	<script>
-		var contentList = ['tasks', 'orders', 'espweb', 'dummy', 'websites', 'dummy']
-		var containerList = ['content1', 'content2', 'content3', 'content4', 'content5', 'content6'];
-		$(function() {
-			refreshUI();
-		});
-		function refreshUI() {
-			for (var i = 0; i <= Math.min(contentList.length, containerList.length); i++) {
-				$('#' + containerList[i]).html($('#' + contentList[i] + '-container').html());	
-			}			
-		};
-	</script>
+    <div class="hidden">
+        <div id="tasks-container">
+            <div class="containerx tasks draggable drag-drop" id="tasks">
+                <div class="headerx">Get Started
+                    <span class="close glyphicon glyphicon-remove"></span>
+                    <span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span>
+                </div>
+                <div class="content">
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#industry">Learn about the Industry (3)</button>
+                    <div id="industry" class="sub-tasks">
+                        <div class="checkbox checkbox-success checkbox-circle">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1" /> Login to
+                            <a href="https://www.asicentral.com/login" target="_window">ASI Central</a> to read Inustry news</div>
+                        <div class="checkbox checkbox-success checkbox-circle">
+                            <input id="checkbox2" type="checkbox">
+                            <label for="checkbox2" />Register to
+                            <a href="https://www.asicentral.com/education" target="_window">ASI Education</a> and pass your BASI</div>
+                        <div class="checkbox checkbox-success checkbox-circle">
+                            <input id="checkbox3" type="checkbox">
+                            <label for="checkbox3" /> Subcribe to Industry
+                            <a href="https://www.asicentral.com/news/blogs" target="_window">leaders blogs</a> and
+                            <a href="https://www.facebook.com/search/top/?q=promotional%20products%20professionals"
+                                target="_window">Facebook Pages</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#products">Get the most out of Your products (2)</button>
+                    <div id="products" class="sub-tasks collapse">
+                        <div class="checkbox checkbox-success checkbox-circle">
+                            <input id="checkbox4" type="checkbox">
+                            <label for="checkbox4" /> Start Searching for Products on
+                            <a href="https://espweb.asicentral.com" target="_window">ESP Web</a>
+                        </div>
+                        <div class="checkbox checkbox-success checkbox-circle">
+                            <input id="checkbox5" type="checkbox">
+                            <label for="checkbox5" /> Create your own
+                            <a href="https://admin.espwebsite.com" target="_window">Web Site</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#people">Get people to know you (6)</button>
+                </div>
+            </div>
+        </div>
+        <div id="orders-container">
+            <div class="containerx draggable drag-drop" id="orders">
+                <div class="headerx">Your Orders
+                    <span class="close glyphicon glyphicon-remove"></span>
+                    <span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span>
+                </div>
+                <div class="content">
+                    <strong>Your stats</strong>
+                    <ul>
+                        <li>
+                            <a href="https://esp.asicentral.com/orders" target="_window">You have 10 open Quote(s)</a>
+                        </li>
+                        <li>
+                            <a href="https://esp.asicentral.com/orders" target="_window">You have 3 open Order(s)</a>
+                        </li>
+                        <li>
+                            <a href="https://esp.asicentral.com/orders" target="_window">You closed 5 Order(s) this month</a>
+                        </li>
+                    </ul>
+                    <strong>Your top Salesmen</strong>
+                    <ul>
+                        <li>
+                            <a href="https://esp.asicentral.com/orders" target="_window">John Carrington</a>
+                        </li>
+                        <li>
+                            <a href="https://esp.asicentral.com/orders" target="_window">Henry McLane</a>
+                        </li>
+                    </ul>
+                    <strong>Number of Orders for the last 6 months</strong>
+                    <img src="./ordersVolume.jpg" />
+                </div>
+            </div>
+        </div>
+        <div id="websites-container">
+            <div class="containerx draggable drag-drop" id="websites">
+                <div class="headerx">Web Sites - you have 3 published one(s)
+                    <span class="close glyphicon glyphicon-remove"></span>
+                    <span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span>
+                </div>
+                <div class="content">
+                    <strong>Orders through the sites</strong>
+                    <img src="./ordersVolume.jpg" />
+                    <br />
+                    <br/>
+                    <strong>Key metrics</strong>
+                    <ul>
+                        <li>Top Performing Site:
+                            <a herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a>
+                        </li>
+                        <li>Most Visited Page:
+                            <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth%20Items</a>
+                        </li>
+                        <li>Top Customer:
+                            <a>Jerry McGuire</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="espweb-container">
+            <div class="containerx draggable drag-drop" id="espweb">
+                <div class="headerx">ESP Web
+                    <span class="close glyphicon glyphicon-remove"></span>
+                    <span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span>
+                </div>
+                <div class="content">
+                    <strong>Key metrics</strong>
+                    <ul>
+                        <li>
+                            <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations"
+                                target="_window">You have created 40 Presentations(s) </a>
+                        </li>
+                        <li>
+                            <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Projects&projectid=2099&tab=Presentations"
+                                target="_window">You have created 60 Projects(s)</a>
+                        </li>
+                        <li>
+                            <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=SupplierCatalogs"
+                                target="_window">There are 10 new Supplier Catalog(s)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="dummy-container">
+            <div class="containerx draggable drag-drop" id="dummy">
+                <div class="headerx">This is the header
+                    <span class="close glyphicon glyphicon-remove"></span>
+                    <span onclick="openDetailPage(0);" class="close glyphicon glyphicon-unchecked"></span>
+                </div>
+                <div class="content"> Hello I am a content
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright-holder">
+            <div class="container">
+                <div class="copyright row">
+                    <div class="col-x-6">
+                        <span class="asiLogo"></span>
+                    </div>
+                    <div class="col-x-6 text-right copy">
+                            <span>©&nbsp;2018, The Advertising Specialty Institute®. All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="./interact.min.js"></script>
+    <script src="./dashboard.js"></script>
+    <script>
+        var contentList = ['tasks', 'orders', 'espweb', 'dummy', 'websites', 'dummy']
+        var containerList = ['content1', 'content2', 'content3', 'content4', 'content5', 'content6'];
+        $(function () {
+            refreshUI();
+        });
+        function refreshUI() {
+            for (var i = 0; i <= Math.min(contentList.length, containerList.length); i++) {
+                $('#' + containerList[i]).html($('#' + contentList[i] + '-container').html());
+            }
+        };
+    </script>
 </body>
+
 </html>

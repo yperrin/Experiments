@@ -277,3 +277,27 @@ img {
     font-size: 11px;
     box-shadow: -1px 1px 1px 1px rgba(0,0,0,.3);
 }
+.copyright-holder {
+    font-size: 10px;
+    padding: 15px 0 60px;
+}
+.copyright .asiLogo {
+    display: inline-block;
+    width: 118px;
+    height: 40px;
+    overflow: hidden;
+    background: url(https://espweb.asicentral.com/images/lgml/dash/asi_logo.png) left top no-repeat;
+}
+.col-xs-6 {
+    width: 50%;
+}
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+ .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
