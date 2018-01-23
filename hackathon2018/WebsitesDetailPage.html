@@ -92,7 +92,15 @@
                             </div>
                         </div>
                         <div class="menu-wrapper menu-dark">
-
+                            <div class="container app-menu">
+                                <ul id="appMenu" class="nav navbar-nav navbar-slim navbar-menu">
+                                    <li><a href="#">New Features</a></li>
+                                    <li><a href="#">Preferred Supplier Admin</a></li>
+                                    <li><a href="#">Application Training</a></li>
+                                    <li><a href="#">Contact Support</a></li>
+                                    <li><a href="#">Preferences</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,8 +108,8 @@
         </div>
     </header>
     <div>
-        <div>
-            <div class="headerx">My Websites Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
+        <div class="headerx">My Websites Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
+        <div class="col-md-6">
             <div class="margTop20 chartContent">
                 <h4>Web Sites - you have 3 published one(s)</h4>
                 <ul>
@@ -118,8 +126,14 @@
 				    </ul>
                 </div>
             </div>
-        </div>  
-        <div>
+        </div> 
+        <div class="col-md-6">
+            <canvas id-"myCanvas"></canvas>
+            <legend for="myCanvas">           
+            </legend>
+            <script type="text/javascript" src="websiteChart.js"></script>
+        </div> 
+        <div class="col-md-12">
             <script type="text/javascript">
                 window.onload = function () {
                     var chart = new CanvasJS.Chart("chartContainer",
@@ -150,7 +164,7 @@
                     chart.render();
                 }
             </script>
-            <div  class="chartContent" id="chartContainer" style="height: 600px; width: 80%;" onload="barChartLoad();"></div>
+            <div  class="chartContent" id="chartContainer" style="height: 600px; width: 80%;"></div>
         </div> 
 </div>
 </body>
