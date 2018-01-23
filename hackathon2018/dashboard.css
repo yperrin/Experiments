@@ -70,9 +70,95 @@ div.chartContent {
 div.margTop20{
 	margin-top: 20px;
 }
+
 div.espWebContentPieChartContainer{
 	margin-left: -12px; 
 	margin-top: -24px;
+}
+.ESPWebLinksList {
+	list-style-type: none;
+}
+.ESPWebLinksList .checkbox {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left: 0px !important;
+}
+
+div.warningx {
+	height: 30px;
+	font-size:16px;
+	width:100%;
+	padding: 13px 20px 12px;
+}
+
+.box {
+	border:1px solid #e2e2e2;
+	background: #fff;
+	display: block;
+}
+
+.box-padding{
+	padding: 10px;
+}
+
+.box-shadowed {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.box-rounded {
+	border-radius: 4px;
+}
+
+.box-light { 
+	border: 1px solid #dfdfdf; 
+	padding: 10px; 
+	border-radius: 4px; 
+	box-shadow: 0 0 3px	rgba(0,0,0,0.1);
+}
+
+.stats-box .col-xs-4:last-child { 
+	border-right: none; 
+}
+
+.stats-box .stat {
+	font-size: 20px;
+	line-height: 24px;
+	margin: 10px 0;
+}
+
+.stats-box .title {
+	color: #878787;
+	font-size: 18px;
+}
+
+clearfix {
+	zoom: 1;
+}
+
+.content-wrapper {
+	margin: 10px 0 20px;
+} 
+
+.stats-box .stat .icon {
+	color: #377ebe;
+	text-align: right;
+	margin: 0 10px 0 0;
+	font-size: 24px;
+	display: inline-block;
+}
+
+.stats-box .col-xs-4 {
+	border-right: 1px dotted #ccc;
+}
+
+.stats-box .stat .value {
+	color: #5c6167;
+	font-weight: bold;
+}
+
+.col-xs-4 {
+	padding-right: 10px;
+	padding-left: 10px;
 }
 div.social img {
 	width: 18px;
