@@ -32,3 +32,32 @@ div.tasks button {
 div.tasks div.sub-tasks div.checkbox{
 	padding-left:50px;
 }
+.glyphicons .open {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+  text-shadow: 0 1px 0 #fff;
+  .opacity(.2);	
+}
+.dropzone {
+  transition: background-color 0.3s;
+}
+
+.drop-active {
+	border: 2px solid black;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag-drop {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
