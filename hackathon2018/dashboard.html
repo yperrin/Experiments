@@ -335,7 +335,7 @@
         </div>
         <div id="orders-container">
             <div class="containerx draggable drag-drop" id="orders">
-                <div class="headerx">Your Orders
+                <div class="headerx">Orders
                     <span class="close glyphicon glyphicon-remove"></span>
                     <span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span>
                 </div>
@@ -368,7 +368,7 @@
         </div>
         <div id="websites-container">
             <div class="containerx draggable drag-drop" id="websites">
-                <div class="headerx">Web Sites - you have 3 published one(s)
+                <div class="headerx">ESP Websites
                     <span class="close glyphicon glyphicon-remove"></span>
                     <span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span>
                 </div>
@@ -399,22 +399,58 @@
                     <span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div class="content">
-                        <strong>Key metrics</strong>
-                    <ul>
-                        <li>
-                            <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations"
-                                target="_window">You have created 40 Presentations(s) </a>
-                        </li>
-                        <li>
-                            <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Projects&projectid=2099&tab=Presentations"
-                                target="_window">You have created 60 Projects(s)</a>
-                        </li>
-                        <li>
-                            <a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=SupplierCatalogs"
-                                target="_window">There are 10 new Supplier Catalog(s)</a>
-                        </li>
-                    </ul>
-                    <div id="espWebContentPieChart" class="espWebContentPieChart"></div>
+                    <strong>Get Started</strong>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <ul class="ESPWebLinksList">
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/searching-in-esp-web"
+                                        target="_window">Searching in ESP Web </a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/creating-and-editing-a-presentation-in-esp-web"
+                                        target="_window">Create a Presentation</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/narrowing-search-results-in-esp-web"
+                                        target="_window">Narrowing Search Results</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/viewing-search-results"
+                                        target="_window">Viewing Search Results</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/esp-web-presentations-edit-products"
+                                        target="_window">Editing Products in Presentations</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/saved-recent-searches-in-esp-web"
+                                        target="_window">Saved and Recent Searches in ESP Web</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/using-the-clipboard-in-esp-web"
+                                        target="_window">How to use the Clipboard</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/creating-and-using-virtual-samples-in-esp-web"
+                                        target="_window">Creating and Using Virtual Samples</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/adding-and-managing-projects"
+                                        target="_window">Adding and Managing Projects in ESP Web</a>
+                                </li>
+                                <li>
+                                    <a href="https://kb.asicentral.com/frame-embed/kb/articles/helpful-hints-for-using-esp-web"
+                                        target="_window">Helpful Hints for Using ESP Web</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-6 espWebContentPieChartContainer" >
+                            <div id="espWebContentPieChart"></div>
+                    </div>
+                    
+                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -586,8 +622,7 @@
             var chartDiv = "espWebContentPieChart";
             var chart = new CanvasJS.Chart(chartDiv,
             {
-                height: 225,
-                width:300,
+                height: 340,
                 animationEnabled: true,
                 animationDuration: 500,
                 theme: "theme2",
@@ -598,6 +633,8 @@
                 data: [
                 {       
                     type: "pie",
+                    startAngle: 180,
+                    indexLabelPlacement: "inside",
                     showInLegend: false,
                     toolTipContent: "{indexLabel} - #percent %",
                     yValueFormatString: "#,##0,,.##",

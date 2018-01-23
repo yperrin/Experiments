@@ -70,3 +70,7 @@ div.chartContent {
 div.margTop20{
 	margin-top: 20px;
 }
+div.espWebContentPieChartContainer{
+	margin-left: -12px; 
+	margin-top: -24px;
+}
