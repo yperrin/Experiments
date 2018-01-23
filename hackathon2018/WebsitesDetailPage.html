@@ -78,11 +78,19 @@
                                                         </a>
                                                     </li>
                                                     <li class="user nav-icon ng-scope dropdown">
-                                                        <a href="#" id="userInfo" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="User" stat-link-name="User Menu" class="dropdown-toggle">
-                                                            <img src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" id="userImage" ng-src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" class="img-responsive" onerror="this.src='//stage-admanagement.asicentral.com/Images/no_contact.png'">
+                                                        <a href="#" id="userInfo" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="User" stat-link-name="User Menu"
+                                                            class="dropdown-toggle">
+                                                            <img src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png"
+                                                                id="userImage" ng-src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png"
+                                                                class="img-responsive" onerror="this.src='//stage-admanagement.asicentral.com/Images/no_contact.png'">
                                                         </a>
                                                     </li>
-                                                    <li></li>
+                                                    <li class="dropdown notifications">
+                                                        <a href="#" class="dropdown-toggle">
+                                                            <i class="icon esp-icon icon-alert"></i>
+                                                            <span class="badge">5</span>
+                                                        </a>
+                                                    </li>
                                                 </ul>
 
                                             </div>
@@ -109,6 +117,108 @@
     </header>
     <div>
         <div class="headerx">My Websites Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
+        <div class="warningx">
+            <p class="bg-warning"><span class="warning glyphicon glyphicon-warning-sign" style="padding-left:10px;"></span><a style="cursor: hand; padding-left: 20px;">Google Analytics not currently setup - Click here to learn how.</a></p>
+        </div>
+        <hr />
+        <div class="col-md-8">
+            <div class="content-wrapper">
+                <div class="section container">
+                    <p>Shop stats for the last 30 days</p>
+                    <div class="box box-padded box-shadowed box-rounded box-light stats-box">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <strong class="title">Visitors</strong>
+                                <div class="stat clearfix">
+                                    <span class="icon">
+                                        <i class="fa fa-group"></i>
+                                    </span>
+                                    <span id="ctl03_ctl00_divVisitors" class="value">
+                                        <span id="ctl03_ctl00_spanVist" class="value">77</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <strong class="title">Products Viewed</strong>
+                                <div class="stat clearfix">
+                                    <span class="icon">
+                                        <i class="fa fa-eye"></i>
+                                    </span>
+                                    <span id="ctl03_ctl00_divProdViewed" class="value">
+                                        <span id="ctl03_ctl00_spanProdView" class="">1,138</span>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="col-xs-4 text-center">
+                                <strong class="title">Searches</strong>
+                                <div class="stat clearfix">
+                                    <span class="icon">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                    <span id="ctl03_ctl00_divSearches" class="value">
+                                        <span id="ctl03_ctl00_spanSearches" class="value">95</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 col-md-3">
+            <div>
+                <select class="form-control">
+                    <option>125724-flh.espwebsite.com</option>
+                    <option>125724-fli.espwebsite.com</option>
+                    <option>125724-002.logoshop.com</option>
+                </select>
+            </div>
+            <div>
+                <h3>You have new sites to build</h3>
+                <p>Get your website up and running in minutes</p>
+            </div>
+            <div class="box-content">  
+                <table class="table vertical-align-middle list-items">
+                        <colgroup>
+                            <col span="1" class="col-xs-1">
+                            <col span="1" class="col-xs-7">
+                            <col span="1" class="col-xs-4">
+                        </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <h2 class="margin-top-5">3</h2>
+                            </td>
+                            <td>Website licenses to build
+                            </td>
+                            <td>
+                                <button class="btn btn-block btn-primary New" value="Website licenses to build" onclick="asi.SiteSelector.openSiteSelectionModal(); return false;">Start</button>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td class="text-right">
+                                <h2 class="margin-top-5">1</h2>
+                            </td>
+                            <td>Store licenses to build
+                            </td>
+                            <td>
+                                <button class="btn btn-block btn-primary New" value="Store licenses to build" onclick="asi.SiteSelector.startSite(500075020); return false;">Start</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div id="ctl03_ctl01_divBuyEspWebsites" class="col-xs-12">
+                        <button class="btn btn-block btn-success" onclick="return asi.SiteSelector.openBuySiteLicenseModal()">Buy A New Site License</button>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="margTop20 chartContent">
                 <h4>Web Sites - you have 3 published one(s)</h4>
