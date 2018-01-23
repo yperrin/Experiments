@@ -1,0 +1,272 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./build.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./espstyles.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <script type="text/javascript" src="dashboardDetail.js"></script>
+    <script type="text/javascript" src="Nav.js"></script>
+    <script type="text/javascript" src="barGraph.js"></script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="fullwidthsupheaderzone">
+            <div id="module">
+                <div class="header-wrapper">
+                    <div class="header">
+                        <div class="container toolbar">
+                            <div class="row">
+                                <div class="col-logo">
+                                    <div class="logo">
+                                        <a id="lnkLogo" href="#"><img id="imgLogoLnk" class="img-responsive" src="https://commonmedia.asicentral.com/210000/213450/esp.png" style="border-width:0px;"></a>
+                                    </div>
+                                </div>
+                                <div class="col-menus">
+                                    <div class="toolbar-wrapper">
+                                        <div class="toolbar">
+                                            <div class="navbar navbar-toolbar">
+                                                <ul class="nav navbar-nav navbar-apps" role="tablist">
+                                                    <li class="dropdown active" role="presentation">
+                                                        <a href="#Home" data-toggle="tab" role="tab"><i class="glyphicon glyphicon-home">&nbsp;</i>Home</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" id="EspWebMenu" data-toggle="dropdown" role="tab">
+                                                            ESP Web
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu" id="EspWeb-MenuContent">
+                                                            <li><a href="#EspWeb" role="tab" data-toggle="tab">ESP Web Home Page</a></li>
+                                                            <li><a href="#EspWeb2" role="tab" data-toggle="tab">ESP Web Something Else</a></li>
+                                                            <li><a href="http://www.google.com/" data-target="#">ESP Web deep link</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">
+                                                            Websites Admin
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu" id="Websites-MenuContent">
+                                                            <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">Go to Websites Admin</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#CRM" data-toggle="tab" role="tab">CRM</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#Orders" data-toggle="tab" role="tab">Orders</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#EmailMarketing" data-toggle="tab" role="tab">Email Marketing</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav navbar-nav navbar-right navbar-tools">
+                                                    <li>
+                                                        <a href="https://www.asicentral.com/asp/open/CustomerSupport/support.aspx?menu=top&amp;catId=1049" target="_blank" id="helpMenu" title="Help" stat-link-name="Help">
+                                                            <i class="icon esp-icon icon-help"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" id="Clipboard" class="dropdown-toggle" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="Clipboard" stat-link-name="Clipboard" xng-click="methods.stats.clipboardView()">
+                                                            <i class="icon esp-icon icon-clipboard"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="user nav-icon ng-scope dropdown">
+                                                        <a href="#" id="userInfo" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="User" stat-link-name="User Menu" class="dropdown-toggle">
+                                                            <img src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" id="userImage" ng-src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" class="img-responsive" onerror="this.src='//stage-admanagement.asicentral.com/Images/no_contact.png'">
+                                                        </a>
+                                                    </li>
+                                                    <li></li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-wrapper menu-dark">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row headerx">My Websites Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chartContent">
+                <h4>Orders</h4>
+                <div>
+                    <canvas id="myCanvas"></canvas>
+                    <div id="pieLegend"></div>
+                    <script type="text/javascript" src="PieChart.js"></script>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chartContent">
+                <h4>Orders</h4>
+                <div>
+                    <canvas id="myCanvas2"></canvas>
+                    <div id="dougnutLegend"></div>
+                    <script type="text/javascript" src="dougnutChart.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row headerx margTop20">
+        <div class="col-md-12">
+            <h4>Bar Graph</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chartContent">
+                <div id="graphDiv1"></div>
+                <script type="text/javascript" src="BarOne.js"></script>
+            </div>
+         </div> 
+        <div class="col-md-6">
+            <div class="chartContent">
+                <div id="graphDiv2"></div>
+                <script type="text/javascript" src="BarTwo.js"></script>
+            </div>
+        </div> 
+    </div>
+    <!--<div class="row header margTop20">
+        <div class="col-md-12">
+            <h4>Charts</h4>
+        </div>
+    </div>-->
+    <!--<div class="row">
+        <script type="text/javascript">
+            window.onload = function () {
+	            var barchart = new CanvasJS.Chart("chartContainer", {
+		            title:{
+			            text: "My First Chart in CanvasJS"
+		            },
+		            data: [
+		            {
+			            // Change type to "doughnut", "line", "splineArea", etc.
+			            type: "column",
+			            dataPoints: [
+				            { label: "apple",  y: 10  },
+				            { label: "orange", y: 15  },
+				            { label: "banana", y: 25  },
+				            { label: "mango",  y: 30  },
+				            { label: "grape",  y: 28  }
+			            ]
+		            }
+		            ]
+	            });
+	            barchart.render();
+            }
+        </script>
+        <div  class="chartContent" id="chartContainer" style="height: 300px; width: 50%;" onload="barChartLoad();"></div>
+    </div>--> 
+    <div class="row headerx margTop20">
+        <div class="col-md-12">
+            <h4>Line Chart</h4>
+        </div>
+    </div>
+    <div class="row">
+        <script type="text/javascript">
+              window.onload = function () {
+                var linechart = new CanvasJS.Chart("linechartContainer",
+                {
+
+                  title:{
+                  text: "Earthquakes - per month"
+                  },
+                  axisX: {
+                    valueFormatString: "MMM",
+                    interval:1,
+                    intervalType: "month"
+                  },
+                  axisY:{
+                    includeZero: false
+
+                  },
+                  data: [
+                  {
+                    type: "line",
+
+                    dataPoints: [
+                    { x: new Date(2012, 00, 1), y: 450 },
+                    { x: new Date(2012, 01, 1), y: 414},
+                      { x: new Date(2012, 02, 1), y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle"},
+                    { x: new Date(2012, 03, 1), y: 460 },
+                    { x: new Date(2012, 04, 1), y: 450 },
+                    { x: new Date(2012, 05, 1), y: 500 },
+                    { x: new Date(2012, 06, 1), y: 480 },
+                    { x: new Date(2012, 07, 1), y: 480 },
+                    { x: new Date(2012, 08, 1), y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross"},
+                    { x: new Date(2012, 09, 1), y: 500 },
+                    { x: new Date(2012, 10, 1), y: 480 },
+                    { x: new Date(2012, 11, 1), y: 510 }
+                    ]
+                  }
+                  ]
+                });
+
+                linechart.render();
+              }
+        </script>
+        <div class="chartContent" id="linechartContainer" style="height: 300px; width: 50%;"></div>
+    </div> 
+    <!--<div class="row header margTop20">
+        <div class="col-md-12">
+            <h4>Doughnut Chart</h4>
+        </div>
+    </div>
+    <div class="row">
+        <script type="text/javascript">
+          window.onload = function () {
+            var chart = new CanvasJS.Chart("douchartContainer",
+            {
+              title:{
+                text: "U.S Smartphone OS Market Share, Q3 2012",
+                fontFamily: "Impact",
+                fontWeight: "normal"
+              },
+
+              legend:{
+                verticalAlign: "bottom",
+                horizontalAlign: "center"
+              },
+              data: [
+              {
+                //startAngle: 45,
+               indexLabelFontSize: 20,
+               indexLabelFontFamily: "Garamond",
+               indexLabelFontColor: "darkgrey",
+               indexLabelLineColor: "darkgrey",
+               indexLabelPlacement: "outside",
+               type: "doughnut",
+               showInLegend: true,
+               dataPoints: [
+               {  y: 53.37, legendText:"Android 53%", indexLabel: "Android 53%" },
+               {  y: 35.0, legendText:"iOS 35%", indexLabel: "Apple iOS 35%" },
+               {  y: 7, legendText:"Blackberry 7%", indexLabel: "Blackberry 7%" },
+               {  y: 2, legendText:"Windows 2%", indexLabel: "Windows Phone 2%" },
+               {  y: 5, legendText:"Others 5%", indexLabel: "Others 5%" }
+               ]
+             }
+             ]
+           });
+
+            chart.render();
+          }
+        </script>
+        <div class="chartContent" id="douchartContainer" style="height: 300px; width: 50%;"></div>
+    </div>--> 
+</body>
+</html>

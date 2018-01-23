@@ -1,0 +1,205 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./build.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="stylesheet" href="./espstyles.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <script type="text/javascript" src="dashboardDetail.js"></script>
+    <script type="text/javascript" src="Nav.js"></script>
+    <script type="text/javascript" src="barGraph.js"></script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="fullwidthsupheaderzone">
+            <div id="module">
+                <div class="header-wrapper">
+                    <div class="header">
+                        <div class="container toolbar">
+                            <div class="row">
+                                <div class="col-logo">
+                                    <div class="logo">
+                                        <a id="lnkLogo" href="#"><img id="imgLogoLnk" class="img-responsive" src="https://commonmedia.asicentral.com/210000/213450/esp.png" style="border-width:0px;"></a>
+                                    </div>
+                                </div>
+                                <div class="col-menus">
+                                    <div class="toolbar-wrapper">
+                                        <div class="toolbar">
+                                            <div class="navbar navbar-toolbar">
+                                                <ul class="nav navbar-nav navbar-apps" role="tablist">
+                                                    <li class="dropdown active" role="presentation">
+                                                        <a href="#Home" data-toggle="tab" role="tab"><i class="glyphicon glyphicon-home">&nbsp;</i>Home</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" id="EspWebMenu" data-toggle="dropdown" role="tab">
+                                                            ESP Web
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu" id="EspWeb-MenuContent">
+                                                            <li><a href="#EspWeb" role="tab" data-toggle="tab">ESP Web Home Page</a></li>
+                                                            <li><a href="#EspWeb2" role="tab" data-toggle="tab">ESP Web Something Else</a></li>
+                                                            <li><a href="http://www.google.com/" data-target="#">ESP Web deep link</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="tab">
+                                                            Websites Admin
+                                                            <span class="caret"></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu" id="Websites-MenuContent">
+                                                            <li><a href="#WebsitesAdmin" role="tab" data-toggle="tab">Go to Websites Admin</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#CRM" data-toggle="tab" role="tab">CRM</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#Orders" data-toggle="tab" role="tab">Orders</a>
+                                                    </li>
+                                                    <li class="dropdown" role="presentation">
+                                                        <a href="#EmailMarketing" data-toggle="tab" role="tab">Email Marketing</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="nav navbar-nav navbar-right navbar-tools">
+                                                    <li>
+                                                        <a href="https://www.asicentral.com/asp/open/CustomerSupport/support.aspx?menu=top&amp;catId=1049" target="_blank" id="helpMenu" title="Help" stat-link-name="Help">
+                                                            <i class="icon esp-icon icon-help"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" id="Clipboard" class="dropdown-toggle" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="Clipboard" stat-link-name="Clipboard" xng-click="methods.stats.clipboardView()">
+                                                            <i class="icon esp-icon icon-clipboard"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="user nav-icon ng-scope dropdown">
+                                                        <a href="#" id="userInfo" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false" title="User" stat-link-name="User Menu" class="dropdown-toggle">
+                                                            <img src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" id="userImage" ng-src="https://www.gravatar.com/avatar/2455f40b7ee0d426d306715393296893?s=300&amp;d=https%3A%2F%2Fesp.asicentral.com%2Fimages%2Fno_contact.png" class="img-responsive" onerror="this.src='//stage-admanagement.asicentral.com/Images/no_contact.png'">
+                                                        </a>
+                                                    </li>
+                                                    <li></li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-wrapper menu-dark">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        <div>
+            <div class="headerx">My Orders Dashboard<span onclick="backToDashboard();" class="close glyphicon glyphicon-home"></span></div>
+            <div class="margTop20 chartContent">
+                <h4>Order Stats</h4>
+                <div>
+                    <strong>Your stats</strong>
+                    <ul>
+                        <li><a href="https://esp.asicentral.com/orders" target="_window">You have 10 open Quote(s)</a></li>
+                        <li><a href="https://esp.asicentral.com/orders" target="_window">You have 3 open Order(s)</a></li>
+                        <li><a href="https://esp.asicentral.com/orders" target="_window">You closed 5 Order(s) this month</a></li>
+                    </ul>		  			
+                    <strong>Your top Salesmen</strong>
+                    <ul>
+                        <li><a href="https://esp.asicentral.com/orders" target="_window">John Carrington</a></li>
+                        <li><a href="https://esp.asicentral.com/orders" target="_window">Henry McLane</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+        <div>
+            <script type="text/javascript">
+                window.onload = function () {
+                    var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                    title:{
+                        text: "Orders for the year 2017"
+                    },
+                    axisY: {
+                        title: "Dollar Amount",
+                        maximum: 1010
+                    },
+                    data: [
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        legendText: "Profit",
+                        color: "#FFD935",
+                        dataPoints: [
+                        { y: 198, label: "Jan"},
+                        { y: 250, label: "Feb"},
+                        { y: 289, label: "Mar"},
+                        { y: 436, label: "Apr"},
+                        { y: 598, label: "May"},
+                        { y: 957, label: "Jun"},
+                        { y: 800, label: "Jul"},
+                        { y: 700, label: "Aug"},
+                        { y: 200, label: "Sep"},
+                        { y: 780, label: "Oct"},
+                        { y: 460, label: "Nov"},
+                        { y: 800, label: "Dec"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        legendText: "List Price",
+                        color: "#00A850",
+                        dataPoints: [
+                        { y: 150, label: "Jan"},
+                        { y: 215, label: "Feb"},
+                        { y: 236, label: "Mar"},
+                        { y: 336, label: "Apr"},
+                        { y: 495, label: "May"},
+                        { y: 900, label: "Jun"},
+                        { y: 700, label: "Jul"},
+                        { y: 600, label: "Aug"},
+                        { y: 100, label: "Sep"},
+                        { y: 650, label: "Oct"},
+                        { y: 300, label: "Nov"},
+                        { y: 700, label: "Dec"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        legendText: "Net Cost",
+                        color: "#AAAAAA",
+                        dataPoints: [
+                        { y: 100, label: "Jan"},
+                        { y: 197, label: "Feb"},
+                        { y: 202, label: "Mar"},
+                        { y: 236, label: "Apr"},
+                        { y: 395, label: "May"},
+                        { y: 860, label: "Jun"},
+                        { y: 600, label: "Jul"},
+                        { y: 500, label: "Aug"},
+                        { y: 50, label: "Sep"},
+                        { y: 450, label: "Oct"},
+                        { y: 250, label: "Nov"},
+                        { y: 600, label: "Dec"}
+                        ]
+                    }
+                    ]
+                    });
+
+                chart.render();
+                }
+            </script>
+            <div  class="chartContent" id="chartContainer" style="height: 600px; width: 80%;" onload="barChartLoad();"></div>
+        </div> 
+</div>
+</body>
+</html>

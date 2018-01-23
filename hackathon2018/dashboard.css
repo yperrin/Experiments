@@ -39,7 +39,7 @@ div.tasks div.sub-tasks div.checkbox{
   line-height: 1;
   color: black;
   text-shadow: 0 1px 0 #fff;
-  .opacity(.2);	
+  opacity:'0';	
 }
 .dropzone {
   transition: background-color 0.3s;
@@ -60,4 +60,13 @@ div.tasks div.sub-tasks div.checkbox{
           transform: translate(0px, 0px);
 
   transition: background-color 0.3s;
+}
+
+div.chartContent {
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+div.margTop20{
+	margin-top: 20px;
 }
