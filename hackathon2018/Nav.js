@@ -1,3 +1,5 @@
+var contentList = ['espweb', 'websites', 'crm', 'orders', 'email', 'tasks']
+
 function openDetailPage(page) {
   switch(page){
     case 0:
@@ -16,9 +18,21 @@ function openDetailPage(page) {
       window.open('ESPDetailPage.html','_self');
       break;
   }
-  
 }
 
 function backToDashboard() {
   window.open('dashboard.html', '_self');
+}
+
+function switchMode() {
+  if(contentList[0] === 'espweb'){
+    contentList = ['advEspweb', 'advWebsites', 'advCrm', 'advOrders', 'advEmail', 'advTasks'];
+  } else {
+    contentList = ['espweb', 'websites', 'crm', 'orders', 'email', 'tasks'];
+  }
+  
+  var containerList = ['content1', 'content2', 'content3', 'content4', 'content5', 'content6'];
+  for (var i = 0; i <= Math.min(contentList.length, containerList.length); i++) {
+    $('#' + containerList[i]).html($('#' + contentList[i] + '-container').html());
+  }
 }
