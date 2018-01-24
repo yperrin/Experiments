@@ -1,6 +1,6 @@
 var chart = AmCharts.makeChart("chartdiv", {
 	"type": "serial",
-     "theme": "light",
+    "theme": "dark",
 	"categoryField": "year",
 	"rotate": true,
 	"startDuration": 1,
@@ -16,7 +16,8 @@ var chart = AmCharts.makeChart("chartdiv", {
 			"id": "AmGraph-1",
 			"lineAlpha": 0.2,
 			"title": "Profit",
-			"type": "column",
+            "type": "column",
+            "fillColors": "#ADD981",
 			"valueField": "profit"
 		},
 		{
@@ -25,7 +26,8 @@ var chart = AmCharts.makeChart("chartdiv", {
 			"id": "AmGraph-2",
 			"lineAlpha": 0.2,
 			"title": "List Price",
-			"type": "column",
+            "type": "column",
+            "fillColors": "#81acd9",
 			"valueField": "list price"
 		}
 	],
