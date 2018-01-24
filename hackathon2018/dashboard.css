@@ -27,9 +27,9 @@ div.tasks div.checkbox {
 	padding-left:30px;
 }
 div.tasks button {
-	width:97%;	
+	/* width:97%;	
 	text-align: left;
-	padding-left:30px;
+	padding-left:30px; */
 }
 div.tasks div.sub-tasks div.checkbox{
 	padding-left:50px;
@@ -413,9 +413,13 @@ svg:not(:root) {
     width: 98% !important;
     height: 194px !important;
 }
-button.learnMore {
-	max-width: 150px;
-}
+
 div.tasks p {
 	font-weight: bold;
+}
+
+div.LearnMore {
+	position: absolute;
+	top: 284px;
+	left: 20px;
 }
