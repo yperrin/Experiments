@@ -277,3 +277,6 @@ img {
     overflow: hidden;
     background: url(https://espweb.asicentral.com/images/lgml/dash/asi_logo.png) left top no-repeat;
 }
+.app-menu {
+    width: 994px;
+}

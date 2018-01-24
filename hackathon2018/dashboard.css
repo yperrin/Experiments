@@ -103,13 +103,29 @@ div.espWebContentPieChartContainerAdv{
 
 .CRMWebLinksList{
 	list-style-type: none;
-
 }
 .CRMWebLinksList .checkbox {
 	margin-top:0px;
 	margin-bottom:0px;
 	padding-left: 0px !important;
+}
 
+.EmailMktgLinksList{
+	list-style-type: none;
+}
+.EmailMktgLinksList .checkbox {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left: 0px !important;
+}
+
+.OrdersLinkList{
+	list-style-type: none;
+}
+.OrdersLinkList .checkbox {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left: 0px !important;
 }
 
 div.warningx {
@@ -198,6 +214,7 @@ div.social img {
 }
 div.social table{
 	margin-left: 4px;
+	font-size: small;
 }
 div.social table tr td{
 	padding-top: 10px;
@@ -398,4 +415,7 @@ svg:not(:root) {
 }
 button.learnMore {
 	max-width: 150px;
+}
+div.tasks p {
+	font-weight: bold;
 }
