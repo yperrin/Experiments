@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="./build.css" />
     <link rel="stylesheet" href="./dashboard.css" />
     <link rel="stylesheet" href="./espstyles.css" />
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="Nav.js"></script>
+    <script src="amcharts/amcharts.js" type="text/javascript"></script>
+    <script src="amcharts/serial.js" type="text/javascript"></script>
+    <script src="websiteChart.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -293,9 +297,9 @@
     <div class="hidden">
         <div id="tasks-container">
             <div class="containerx tasks draggable drag-drop" id="tasks">
-                <div class="headerx">Social Updates
+                <div class="headerx">Community
                     <span class="close glyphicon glyphicon-remove"></span>
-                    <span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span>
+                    <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div class="content social">
                     <table>
@@ -343,7 +347,7 @@
             <div class="containerx draggable drag-drop" id="orders">
                 <div class="headerx">Orders
                     <span class="close glyphicon glyphicon-remove"></span>
-                    <span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span>
+                    <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div class="content">
                     <strong>Your stats</strong>
@@ -376,7 +380,7 @@
             <div class="containerx draggable drag-drop" id="websites">
                 <div class="headerx">ESP Websites
                     <span class="close glyphicon glyphicon-remove"></span>
-                    <span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span>
+                    <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div class="content">
                     <strong>Orders through the sites</strong>
@@ -402,7 +406,7 @@
             <div class="containerx draggable drag-drop" id="espweb">
                 <div class="headerx">ESP Web
                     <span class="close glyphicon glyphicon-remove"></span>
-                    <span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span>
+                    <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
                 <div class="content">
                     <strong>Get Started</strong>
@@ -488,7 +492,7 @@
         </div>
 		<div id="crm-container">
 				<div class="containerx draggable drag-drop" id="crm">
-					<div class="headerx">CRM<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+					<div class="headerx">CRM<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
 					<div class="content">
 						<strong>Key metrics</strong>
 						<ul>
@@ -501,7 +505,7 @@
 		</div>
 		<div id="email-container">
 				<div class="containerx draggable drag-drop" id="email">
-					<div class="headerx">Email Marketing<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+					<div class="headerx">Email Marketing<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
 					<div class="content">
 						<strong>Key metrics</strong>
 						<ul>
@@ -514,7 +518,7 @@
 		</div>
 		<div id="dummy-container">
 			<div class="containerx draggable drag-drop" id="dummy">
-				<div class="headerx">This is the header<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(0);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">This is the header<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">	Hello I am a content
 				</div>
 			</div>
@@ -523,7 +527,7 @@
 	<div class="hidden">
 		<div id="advTasks-container">
 			<div class="containerx tasks draggable drag-drop" id="advTasks">
-				<div class="headerx">ADV Get Started<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">Community<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
 					<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#industry">Learn about the Industry (3)</button>
 					<div id="industry" class="sub-tasks">
@@ -542,7 +546,7 @@
 		</div>
 		<div id="advOrders-container">
 			<div class="containerx draggable drag-drop" id="advOrders">
-				<div class="headerx">ADV Your Orders<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">Orders<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
 					<strong>Your stats</strong>
 					<ul>
@@ -562,23 +566,22 @@
 		</div>
 		<div id="advWebsites-container">
 			<div class="containerx draggable drag-drop" id="advWebsites">
-				<div class="headerx">ADV Web Sites - you have 3 published one(s)<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">ESP Websites - you have 3 published one(s)<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
-					<strong>Orders through the sites</strong>
-					<img src="./ordersVolume.jpg"/>
-					<br /><br/>
-					<strong>Key metrics</strong>
-					<ul>
-						<li>Top Performing Site: <a herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a></li>
-						<li>Most Visited Page: <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth%20Items</a></li>
-						<li>Top Customer: <a>Jerry McGuire</a></li>
-					</ul>
+                    <div id="chartdiv" style="width: 90%; height: 255px; font-size: 8px;"></div>
+                    <div style="font-size: 14px;">
+                        <ul>
+                            <li>Top Performing Site: <a herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a></li>
+                            <li>Most Visited Page: <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth%20Items</a></li>
+                            <li>Top Customer: <a>Jerry McGuire</a></li>
+                        </ul>
+                    </div>
 				</div>
 			</div>
 		</div>
 		<div id="advEspweb-container">
 			<div class="containerx draggable drag-drop" id="advEspweb">
-				<div class="headerx">ADV ESP Web<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">ESP Web<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
 					<strong>Key metrics</strong>
 					<ul>
@@ -592,7 +595,7 @@
 		</div>	
 		<div id="advCrm-container">
 				<div class="containerx draggable drag-drop" id="advCrm">
-					<div class="headerx">ADV CRM<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+					<div class="headerx">CRM<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
 					<div class="content">
 						<strong>Key metrics</strong>
 						<ul>
@@ -605,7 +608,7 @@
 		</div>
 		<div id="advEmail-container">
 				<div class="containerx draggable drag-drop" id="advEmail">
-					<div class="headerx">ADV Email Marketing<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+					<div class="headerx">ADV Email Marketing<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(5);" class="close glyphicon glyphicon-unchecked"></span></div>
 					<div class="content">
 						<strong>Key metrics</strong>
 						<ul>

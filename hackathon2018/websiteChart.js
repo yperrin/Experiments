@@ -8,6 +8,11 @@ var chart = AmCharts.makeChart("chartdiv", {
 		"gridPosition": "start",
 		"position": "left"
 	},
+	"legend":{
+		"horizontalGap": 6,
+		"useGraphSettings": true,
+		"markerSize": 10
+	},
 	"trendLines": [],
 	"graphs": [
 		{
@@ -21,14 +26,14 @@ var chart = AmCharts.makeChart("chartdiv", {
 			"valueField": "profit"
 		},
 		{
-			"balloonText": "List Price:[[value]]",
+			"balloonText": "Net Cost:[[value]]",
 			"fillAlphas": 0.8,
 			"id": "AmGraph-2",
 			"lineAlpha": 0.2,
-			"title": "List Price",
+			"title": "Net Cost",
             "type": "column",
             "fillColors": "#81acd9",
-			"valueField": "list price"
+			"valueField": "cost"
 		}
 	],
 	"guides": [],
@@ -41,32 +46,37 @@ var chart = AmCharts.makeChart("chartdiv", {
 	],
 	"allLabels": [],
 	"balloon": {},
-	"titles": [],
+	"titles": [
+		{
+			"size": 16,
+			"text": "Orders from this site ( 125724-fli.espwebsite.com ) in the past five years."
+		}
+	],
 	"dataProvider": [
 		{
 			"year": 2014,
 			"profit": 230.5,
-			"list price": 180.1
+			"cost": 180.1
 		},
 		{
 			"year": 2015,
 			"profit": 260.2,
-			"list price": 220.8
+			"cost": 220.8
 		},
 		{
 			"year": 2016,
 			"profit": 300.1,
-			"list price": 230.9
+			"cost": 230.9
 		},
 		{
 			"year": 2017,
 			"profit": 290.5,
-			"list price": 250.1
+			"cost": 250.1
 		},
 		{
 			"year": 2018,
 			"profit": 240.6,
-			"list price": 200
+			"cost": 200
 		}
 	]
 });

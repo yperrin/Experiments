@@ -94,6 +94,10 @@ div.warningx {
 	padding: 13px 20px 12px;
 }
 
+div.emailcontainer {
+	width: 1170px;
+}
+
 .box {
 	border:1px solid #e2e2e2;
 	background: #fff;
@@ -172,4 +176,178 @@ div.social table{
 }
 div.social table tr td{
 	padding-top: 10px;
+}
+
+.ems-shadowbox {
+	box-shadow: 0px 0px 4px #BBBBBB;
+}
+
+.pad-wrapper {
+	margin: 20px 0;
+}
+
+.ems-credit-top-bar {
+    background-image: url(ems-crerdits-top-bar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 66px;
+    margin-top: -11px;
+}
+
+.ems-credit-font-size {
+    font-size: 70px;
+}
+
+.ems-credit-info-label {
+    font-weight: bold;
+}
+
+.ems-x-centralize-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ems-min-height-250 {
+    min-height: 250px;
+}
+
+.ems-left-10 {
+    left: 10px !important;
+}
+
+.ems-height-hover-auto {
+    z-index: 500;
+    overflow-y: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ems-thumbnail-md {
+    width: 100% !important;
+    height: 78px;
+    min-height: 78px;
+}
+
+.ems-thumbnail-campaign {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    margin-top: 10px;
+}
+
+.bt-buy-emails {
+    width: 80%;
+}
+
+.btn-primary {
+    background-color: #1c69af;
+    background-image: none;
+    border-color: #1967a5;
+}
+
+.text-muted {
+    color: #999 !important;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-left-5 {
+    padding-left: 5px;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.ems-margin-left-0-10 {
+    margin-left: -10px;
+}
+
+.ems-fit-text-wrap {
+    width: 100%;
+    white-space: normal;
+}
+
+.ems-adjust-label {
+    float: left;
+    margin-left: 15px;
+}
+
+.form-control, .btn-default {
+    border-color: #e1dfde;
+}
+
+.label-success {
+    background-color: #5cb85c;
+}
+
+.large {
+    font-size: 16px;
+}
+
+.margin-bot-28, .margin-bottom-28 {
+    margin-bottom: 28px;
+}
+
+hc-chart {
+    width: 85%;
+    display: block;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control, .btn-default {
+    border-color: #e1dfde;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
