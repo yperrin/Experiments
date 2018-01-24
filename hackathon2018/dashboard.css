@@ -196,7 +196,7 @@ div.social table tr td{
     background-size: contain;
     background-repeat: no-repeat;
     height: 66px;
-    margin-top: -11px;
+	margin-top: -11px;
 }
 
 .ems-credit-font-size {
@@ -305,6 +305,10 @@ div.social table tr td{
 
 .large {
     font-size: 16px;
+}
+
+.larger {
+    font-size: 20px;
 }
 
 .margin-bot-28, .margin-bottom-28 {
