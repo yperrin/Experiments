@@ -1,6 +1,6 @@
-var chart = AmCharts.makeChart("chartdiv", {
+var chart = AmCharts.makeChart("orderChartdiv", {
 	"type": "serial",
-    "theme": "dark",
+    "theme": "light",
 	"categoryField": "month",
 	"rotate": true,
 	"startDuration": 1,
@@ -16,13 +16,13 @@ var chart = AmCharts.makeChart("chartdiv", {
 	"trendLines": [],
 	"graphs": [
 		{
-			"balloonText": "This Year (2018)",
+			"balloonText": "This Year (2018):[[value]]",
 			"fillAlphas": 0.8,
 			"id": "AmGraph-1",
 			"lineAlpha": 0.2,
 			"title": "This Year (2018)",
             "type": "column",
-            "fillColors": "#ADD981",
+            "fillColors": "#00CC66",
 			"valueField": "thisyear"
 		},
 		{
@@ -32,7 +32,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 			"lineAlpha": 0.2,
 			"title": "Last Year (2017)",
             "type": "column",
-            "fillColors": "#81acd9",
+            "fillColors": "#0093D6",
 			"valueField": "lastyear"
 		}
 	],
@@ -49,7 +49,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 	"titles": [
 		{
 			"size": 16,
-			"text": "Orders from this site ( 125724-fli.espwebsite.com ) in the past five months."
+			"text": "Orders from the past five months."
 		}
 	],
 	"dataProvider": [
@@ -66,17 +66,17 @@ var chart = AmCharts.makeChart("chartdiv", {
 		{
 			"month": "Mar",
 			"thisyear": 300.1,
-			"lastyear": 289.90
+			"lastyear": 230.9
 		},
 		{
 			"month": "Apr",
 			"thisyear": 290.5,
-			"lastyear": 270.1
+			"lastyear": 250.1
 		},
 		{
 			"month": "May",
-			"thisyear": 335.33,
-			"lastyear": 234.78
+			"thisyear": 240.6,
+			"lastyear": 200
 		}
 	]
 });

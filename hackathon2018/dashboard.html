@@ -747,16 +747,15 @@
 						<li><a href="https://esp.asicentral.com/orders" target="_window">You have 10 Orders status updates.</a></li>
 						<li><a href="https://esp.asicentral.com/orders" target="_window">You have 3 Purchase Orders status updates.</a></li>
 					</ul>		  			
-					<strong>Five Most Recent Orders.</strong>
+					<strong>Three Most Recent Orders.</strong>
                     <ul>
                         <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008976 Date: 10/20/2018 )</a></li>
                         <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008975 Date: 10/20/2018 )</a></li>
                         <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008974 Date: 10/19/2018 )</a></li>
-                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008973 Date: 10/19/2018 )</a></li>
-                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008972 Date: 10/19/2018 )</a></li>
+                        <!--<li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008973 Date: 10/19/2018 )</a></li>
+                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008972 Date: 10/19/2018 )</a></li>-->
                     </ul>
-					<strong>Number of Orders for the last 6 months</strong>
-					<img src="./ordersVolume.jpg"/>
+                    <div id="orderChartdiv" style="width: 90%; height: 200px; font-size: 8px;"></div>
 				</div>
 			</div>
 		</div>
@@ -765,11 +764,12 @@
 				<div class="headerx">ESP Websites - you have 3 published site(s)<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
                     <div id="chartdiv" style="width: 90%; height: 255px; font-size: 8px;"></div>
-                    <div style="font-size: 14px;">
+                    <div style="font-size: 12px;">
                         <ul>
-                            <li>Top Performing Site: <a herf="https://125724-fli.espwebsite.com" target="_window">125724-fli.espwebsite.com</a></li>
-                            <li>Most Visited Page: <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth%20Items</a></li>
-                            <li>Top Customer: <a>Jerry McGuire</a></li>
+                            <li><a style="cursor: hand;" herf="https://125724-fli.espwebsite.com" target="_window">You have (5) new orders for this site.</a></li>
+                            <li><a style="cursor: hand;" herf="https://125724-fli.espwebsite.com" target="_window">You have (3) new Info Request fro this site.</a></li>
+                            <li style="cursor: hand;">Most Visited Page: <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth Items</a></li>
+                            
                         </ul>
                     </div>
 				</div>
@@ -782,11 +782,39 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <strong>Key metrics</strong>
-                            <ul class="ESPWebLinksList">
-                                <li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations" target="_window">You have 40 Presentations(s) views. </a></li>
-                                <li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Projects&projectid=2099&tab=Presentations" target="_window">THere are 56 Recent Searches.</a></li>
-                                <li><a href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=SupplierCatalogs" target="_window">There are 10 new Supplier Catalog(s)</a></li>
+                            <ul>
+                                <li><a style="cursor: hand;" href="https://espweb.stage-asicentral.com/Default.aspx?appCode=WESP&appVersion=4.1.0&page=Presentations" target="_window">You have 40 Presentations(s) views since last login. </a></li>
+                                <li><a style="cursor: hand;" herf="https://espweb.stage-asicentral.com/"  target="_window">3 Products in your recent presentations no longer exist</a></li>
+                                <li><a style="cursor: hand;" herf="https://espweb.stage-asicentral.com/"  target="_window">3 Products on your clipboard no longer exist</a></li>
                             </ul>
+                            <div style="padding-left: 10px;">
+                                <div class="btn-group" style="margin-bottom: 10px;">
+                                    <button type="button" class="btn btn-primary dropdown-toggle btn-light btn-lg" data-toggle="dropdown">Most Recent Searches <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Apparel</a></li>
+                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">Water Bottles</a></li>
+                                        <li><a href="#">Lanyards</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group" style="margin-bottom: 10px;">
+                                    <button type="button" class="btn btn-primary dropdown-toggle btn-light btn-lg" data-toggle="dropdown">Most Recent Presentations <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Coke Shirts</a></li>
+                                        <li><a href="#">New York Picnic</a></li>
+                                        <li><a href="#">CVS Promo</a></li>
+                                        <li><a href="#">Lansdale 40K Race</a></li>
+                                     </ul>
+                                </div>
+                                <div class="btn-group" style="margin-bottom: 10px;">
+                                    <button type="button" class="btn btn-primary dropdown-toggle btn-light btn-lg" data-toggle="dropdown">Trending Top Searches <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">CANDY</a></li>
+                                        <li><a href="#">TUMBLER</a></li>
+                                        <li><a href="#">YELLOW SHIRT</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xs-12 col-md-6 espWebContentPieChartContainerAdv">
                             <div id="espWebContentPieChart"></div>

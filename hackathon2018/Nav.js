@@ -55,6 +55,7 @@ function switchMode() {
   }
   renderEspWebChart();
   renderBarChart(isAdvanced);
+  renderOrderBarChart(isAdvanced);
 }
 
 function renderEspWebChart(){
@@ -101,7 +102,7 @@ function renderBarChart(isAdvanced) {
     var chart = AmCharts.makeChart("chartdiv", {
       "type": "serial",
       "theme": "dark",
-      "categoryField": "year",
+      "categoryField": "month",
       "rotate": true,
       "startDuration": 1,
       "categoryAxis": {
@@ -117,24 +118,24 @@ function renderBarChart(isAdvanced) {
       "trendLines": [],
       "graphs": [
           {
-              "balloonText": "Profit:[[value]]",
+              "balloonText": "This Year (2018):[[value]]",
               "fillAlphas": 0.8,
               "id": "AmGraph-1",
               "lineAlpha": 0.2,
-              "title": "Profit",
+              "title": "This Year (2018)",
               "type": "column",
               "fillColors": "#ADD981",
-              "valueField": "profit"
+              "valueField": "thisyear"
           },
           {
-              "balloonText": "Net Cost:[[value]]",
+              "balloonText": "Last Year (2017):[[value]]",
               "fillAlphas": 0.8,
               "id": "AmGraph-2",
               "lineAlpha": 0.2,
-              "title": "Net Cost",
+              "title": "Last Year (2017)",
               "type": "column",
               "fillColors": "#81acd9",
-              "valueField": "cost"
+              "valueField": "lastyear"
           }
       ],
       "guides": [],
@@ -150,31 +151,115 @@ function renderBarChart(isAdvanced) {
       "balloon": {},
       "titles": [],
       "dataProvider": [
+        {
+          "month": "Jan",
+          "thisyear": 230.5,
+          "lastyear": 180.1
+        },
+        {
+          "month": "Feb",
+          "thisyear": 260.2,
+          "lastyear": 220.8
+        },
+        {
+          "month": "Mar",
+          "thisyear": 300.1,
+          "lastyear": 289.90
+        },
+        {
+          "month": "Apr",
+          "thisyear": 290.5,
+          "lastyear": 270.1
+        },
+        {
+          "month": "May",
+          "thisyear": 335.33,
+          "lastyear": 234.78
+        }
+      ]
+  });
+  }
+}
+
+function renderOrderBarChart(isAdvanced) {
+  if(isAdvanced){
+    var chart = AmCharts.makeChart("orderChartdiv", {
+      "type": "serial",
+      "theme": "light",
+      "categoryField": "month",
+      "rotate": true,
+      "startDuration": 1,
+      "categoryAxis": {
+          "gridPosition": "start",
+          "position": "left"
+      },
+      "legend":{
+        "horizontalGap": 6,
+        "verticalGap": 2,
+        "useGraphSettings": true,
+        "markerSize": 10
+      },
+      "trendLines": [],
+      "graphs": [
           {
-              "year": 2014,
-              "profit": 230.5,
-              "cost": 180.1
+              "balloonText": "This Year (2018):[[value]]",
+              "fillAlphas": 0.8,
+              "id": "AmGraph-1",
+              "lineAlpha": 0.2,
+              "title": "This Year (2018)",
+              "type": "column",
+              "fillColors": "#00CC66",
+              "valueField": "thisyear"
           },
           {
-              "year": 2015,
-              "profit": 260.2,
-              "cost": 220.8
-          },
-          {
-              "year": 2016,
-              "profit": 300.1,
-              "cost": 230.9
-          },
-          {
-              "year": 2017,
-              "profit": 290.5,
-              "cost": 250.1
-          },
-          {
-              "year": 2018,
-              "profit": 240.6,
-              "cost": 200
+              "balloonText": "Last Year (2017):[[value]]",
+              "fillAlphas": 0.8,
+              "id": "AmGraph-2",
+              "lineAlpha": 0.2,
+              "title": "Last Year (2017)",
+              "type": "column",
+              "fillColors": "#0093D6",
+              "valueField": "lastyear"
           }
+      ],
+      "guides": [],
+      "valueAxes": [
+          {
+              "id": "ValueAxis-1",
+              "position": "top",
+              "axisAlpha": 0,
+              "title": "Orders from the past five months."
+          }
+      ],
+      "allLabels": [],
+      "balloon": {},
+      "titles": [],
+      "dataProvider": [
+        {
+          "month": "Jan",
+          "thisyear": 230.5,
+          "lastyear": 180.1
+        },
+        {
+          "month": "Feb",
+          "thisyear": 260.2,
+          "lastyear": 220.8
+        },
+        {
+          "month": "Mar",
+          "thisyear": 300.1,
+          "lastyear": 230.9
+        },
+        {
+          "month": "Apr",
+          "thisyear": 290.5,
+          "lastyear": 250.1
+        },
+        {
+          "month": "May",
+          "thisyear": 240.6,
+          "lastyear": 200
+        }
       ]
   });
   }

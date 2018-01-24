@@ -423,3 +423,17 @@ div.LearnMore {
 	top: 284px;
 	left: 20px;
 }
+
+.btn-light {
+    background-color: #1c69af;
+    background-image: none;
+    border-color: #1967a5;
+    color: #fff;
+}
+
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
