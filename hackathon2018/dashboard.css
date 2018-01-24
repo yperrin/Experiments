@@ -20,7 +20,7 @@ div.content {
 }
 div.content img{
 	width:98%;
-	height:150px;
+	height:140px;
 	border: 1px solid #d7d8da;
 }
 div.tasks div.checkbox {
@@ -311,6 +311,10 @@ div.social table tr td{
     font-size: 20px;
 }
 
+.margin-top-5 {
+    margin-top: -5px;
+}
+
 .margin-bot-28, .margin-bottom-28 {
     margin-bottom: 28px;
 }
@@ -358,4 +362,17 @@ svg:not(:root) {
     border-radius: 4px;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.btn-success {
+    background-color: #0c9102;
+}
+
+.btn {
+    border-bottom-width: 2px;
+}
+
+.imgContent {
+    width: 98% !important;
+    height: 194px !important;
 }
