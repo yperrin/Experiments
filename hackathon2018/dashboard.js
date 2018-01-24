@@ -92,8 +92,10 @@ document.onmouseup = function(event)  {
   if (dragging) {
     var contentIndex = contentList.indexOf(dragElement.id);
     var containerIndex = containerList.indexOf(droppedElement.id);
-    var tempContent = contentList[containerIndex];
-    contentList[containerIndex] = contentList[contentIndex];
-    contentList[contentIndex] = tempContent;
+	if (contentIndex != containerIndex) {
+		var tempContent = contentList[containerIndex];
+		contentList[containerIndex] = contentList[contentIndex];
+		contentList[contentIndex] = tempContent;
+	}
   }
 }
