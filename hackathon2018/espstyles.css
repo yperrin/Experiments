@@ -6,9 +6,6 @@
     font-style: normal
 }
 
-body {
-}
-
 img {
     vertical-align: middle;
 }
@@ -56,6 +53,13 @@ img {
     background-color: #cccccc;
     border: 1px solid #c7cfd1;
     border-width: 1px 0;
+}
+
+.btn-light {
+    background-color: #1c69af;
+    background-image: none;
+    border-color: #1967a5;
+    color: #fff;
 }
 
 .nav {
@@ -135,7 +139,6 @@ img {
     font-family: esp;
     font-style: normal;
     font-weight: 400;
-    speak: none;
     display: inline-block;
     text-decoration: inherit;
     width: 1em;
@@ -248,20 +251,6 @@ img {
     content: '\e800';
 }
 
-.esp-icon:before {
-    font-family: esp;
-    font-style: normal;
-    font-weight: 400;
-    speak: none;
-    display: inline-block;
-    text-decoration: inherit;
-    width: 1em;
-    margin-right: .2em;
-    text-align: center;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1em;
-}
 .navbar .badge {
     position: absolute;
     top: 2px;

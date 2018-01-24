@@ -76,7 +76,7 @@ div.margTop20{
 
 div.espWebContentPieChartContainer{
 	margin-left: -12px; 
-	margin-top: -22px;
+	margin-top: -4px;
 }
 
 div.espWebContentPieChartContainerAdv{
@@ -90,6 +90,26 @@ div.espWebContentPieChartContainerAdv{
 	margin-top:0px;
 	margin-bottom:0px;
 	padding-left: 0px !important;
+}
+
+.ESPWebsitesList {
+	list-style-type: none;
+}
+.ESPWebsitesList .checkbox {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left: 0px !important;
+}
+
+.CRMWebLinksList{
+	list-style-type: none;
+
+}
+.CRMWebLinksList .checkbox {
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-left: 0px !important;
+
 }
 
 div.warningx {
@@ -375,4 +395,7 @@ svg:not(:root) {
 .imgContent {
     width: 98% !important;
     height: 194px !important;
+}
+button.learnMore {
+	max-width: 150px;
 }
