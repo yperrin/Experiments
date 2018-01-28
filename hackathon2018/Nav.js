@@ -144,7 +144,7 @@ function renderBarChart(isAdvanced) {
               "id": "ValueAxis-1",
               "position": "top",
               "axisAlpha": 0,
-              "title": "Orders from this site ( 125724-fli.espwebsite.com ) in the past five years."
+              "title": "Orders from this site ( 125724-fli.espwebsite.com ) in the past five months."
           }
       ],
       "allLabels": [],

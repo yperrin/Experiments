@@ -437,3 +437,20 @@ div.LearnMore {
     line-height: 1.3333333;
     border-radius: 6px;
 }
+
+.copyright-holder {
+    font-size: 11px;
+    padding: 15px 0 60px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.col-xs-6 {
+    width: 50%;
+}
+
+.glyphicon-copy:before {
+    content: "\e205"
+}

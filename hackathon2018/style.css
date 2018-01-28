@@ -4,7 +4,6 @@ body {
 	color: black;
 }
 
-a:link {color: #84c4e2;}
-a:visited {color:#84c4e2;}
-a:hover {color: #cd82ad;}
+a:link {color: #1c69af;}
+a:visited {color:#1c69af;}
 a:active {color: #84c4e2;}
