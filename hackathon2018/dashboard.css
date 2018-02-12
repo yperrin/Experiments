@@ -16,13 +16,34 @@ div.headerx {
 }
 div.content {
 	padding-left: 5px;
-	padding-top: 5px;
+    padding-top: 5px;
 }
 div.content img{
 	width:98%;
 	height:140px;
 	border: 1px solid #d7d8da;
 }
+div.content_facebook{
+    text-align: center;
+    padding-top: 10px !important;
+}
+
+div.contentCoup{
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+div.contentCoup img{
+    width:68px;
+	height:63px;
+}
+
+.alertSummaryBtnSize{
+    font-size: 12px!important;
+    font-weight: 200!important;
+    padding: 3px 12px!important;
+}
+
 div.tasks div.checkbox {
 	padding-left:30px;
 }
@@ -66,8 +87,13 @@ panel.dropzone {
 }
 
 div.chartContent {
-	padding-left: 20px;
+	padding-left: 10px;
 	padding-top: 20px;
+}
+
+div.chartContent2 {
+	padding-left: 20px;
+	padding-top: 15px;
 }
 
 div.margTop20{
@@ -132,7 +158,7 @@ div.warningx {
 	height: 30px;
 	font-size:16px;
 	width:100%;
-	padding: 13px 20px 12px;
+    padding: 13px 20px 12px;
 }
 
 div.emailcontainer {
@@ -374,6 +400,11 @@ svg:not(:root) {
     margin-bottom: 15px;
 }
 
+.form-group-sel {
+    margin-bottom: 8px;
+}
+
+
 .form-control, .btn-default {
     border-color: #e1dfde;
 }
@@ -453,4 +484,12 @@ div.LearnMore {
 
 .glyphicon-copy:before {
     content: "\e205"
+}
+
+.coupBtnPad {
+    margin-top: 20px;
+}
+
+.btn-primary .fontColor  {
+    color: rgb(241, 238, 192) !important;
 }

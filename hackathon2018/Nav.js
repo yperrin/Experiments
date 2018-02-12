@@ -56,20 +56,22 @@ function switchMode() {
   renderEspWebChart();
   renderBarChart(isAdvanced);
   renderOrderBarChart(isAdvanced);
+  //renderOrdersSumPieChart(isAdvanced);
+  renderFunnelSumChart(isAdvanced);
 }
 
 function renderEspWebChart(){
   var chartDiv = "espWebContentPieChart";
   var chart = new CanvasJS.Chart(chartDiv,
   {
-      height: 225,
+      height: 260,
       width:300,
       animationEnabled: true,
       animationDuration: 500,
       theme: "theme2",
       title:{
           text: "Top Searches",
-          fontSize:18
+          fontSize:14
       },		
       data: [
       {       
@@ -262,5 +264,76 @@ function renderOrderBarChart(isAdvanced) {
         }
       ]
   });
+  }
+}
+
+function renderOrdersSumPieChart(isAdvanced) {
+  if(isAdvanced){
+    var chart = AmCharts.makeChart( "orderPieChartSum", {
+      "type": "pie",
+      "theme": "light",
+      "dataProvider": [ {
+        "salesRep": "Joe Moyer",
+        "profit": 20345
+      }, {
+        "salesRep": "Sara Parker",
+        "profit": 10453
+      }, {
+        "salesRep": "Fergus MacNeall",
+        "profit": 3987
+      }, {
+        "salesRep": "Steve Gever",
+        "profit": 6789
+      }, {
+        "salesRep": "Cathy Anders",
+        "profit": 10856
+      }, {
+        "salesRep": "Helen Meyers",
+        "profit": 3876
+      }, {
+        "salesRep": "Carl Jones",
+        "profit": 2098
+      } ],
+      "valueField": "profit",
+      "titleField": "salesRep",
+       "balloon":{
+       "fixedPosition":true
+      }
+    } );
+  }
+}
+
+function renderFunnelSumChart(isAdvanced)
+{
+  if(isAdvanced){
+    var chart = AmCharts.makeChart( "orderPieChartSum", {
+      "type": "funnel",
+      "theme": "light",
+      "dataProvider": [ {
+        "title": "Joe Moyer",
+        "value": 20345
+      }, {
+        "title": "Sara Parker",
+        "value": 10856
+      }, {
+        "title": "Fergus MacNeall",
+        "value": 10453
+      }, {
+        "title": "Steve Gever",
+        "value": 6789
+      }],
+      "titleField": "title",
+      "marginRight": 150,
+      "marginLeft": 15,
+      "labelPosition": "right",
+      "funnelAlpha": 0.9,
+      "valueField": "value",
+      "startX": 0,
+      "neckWidth": "40%",
+      "startAlpha": 0,
+      "outlineThickness": 1,
+      "neckHeight": "35%",
+      "balloonText": "[[title]]:<b>[[value]]</b>"
+    } );
   }
 }

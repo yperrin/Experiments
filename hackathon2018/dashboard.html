@@ -16,6 +16,9 @@
     <script type="text/javascript" src="Nav.js"></script>
     <script src="amcharts/amcharts.js" type="text/javascript"></script>
     <script src="amcharts/serial.js" type="text/javascript"></script>
+    <script src="amcharts/pie.js"></script>
+    <script src="amcharts/funnel.js"></script>
+    <script src="amcharts/themes/light.js"></script>
     <script src="websiteChart.js" type="text/javascript"></script>
 </head>
 
@@ -255,6 +258,7 @@
                                     </li>
                                     <li>
                                         <a href="#">Application Training</a>
+                           
                                     </li>
                                     <li>
                                         <a href="#">Contact Support</a>
@@ -289,7 +293,7 @@
         <div role="tabpanel" class="tab-pane" id="EspWeb">This is ESP Web</div>
         <div role="tabpanel" class="tab-pane" id="EspWeb2">This is ESP Web Something Else.</div>
         <div role="tabpanel" class="tab-pane" id="EspWeb3">This is ESP Web Other Great Feature.</div>
-        <div role="tabpanel" class="tab-pane" id="CRM">This is CRM</div>
+        <div role="tabpanel" class="tab-pane" id="CRM">This is Manage my Contacts</div>
         <div role="tabpanel" class="tab-pane" id="Orders">This is Orders</div>
         <div role="tabpanel" class="tab-pane" id="WebsitesAdmin">ESP Websites Admin</div>
         <div role="tabpanel" class="tab-pane" id="EmailMarketing">Email Marketing</div>
@@ -297,55 +301,20 @@
     <div class="hidden">
         <div id="tasks-container">
             <div class="containerx tasks draggable drag-drop" id="tasks">
-                <div class="headerx">Community
+                <div class="headerx">Social Networking
                     <span class="close glyphicon glyphicon-remove"></span>
                     <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
-                <div class="content social">
-                    <table>
-                        <tr>
-                            <td><a href="https://www.facebook.com/adspecialtyinstitute/videos/10155104126416044/" target="_window"><img class="social" src="./facebook.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.facebook.com/adspecialtyinstitute/videos/10155104126416044/" target="_window">Do you need a summer intern?</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.asicentral.com/news/newsletters/promogram/january-2018/bda-tackles-super-bowl-merch/" target="_window"><img class="social" src="./asi.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.asicentral.com/news/newsletters/promogram/january-2018/bda-tackles-super-bowl-merch/" target="_window">BDA Tackles Super Bowl Merch</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.asicentral.com/news/web-exclusive/january-2018/promo-market-to-target-healthcare/" target="_window"><img class="social" src="./asi.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.asicentral.com/news/web-exclusive/january-2018/promo-market-to-target-healthcare/" target="_window">Promo Market to Target: Healthcare</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://twitter.com/wef/status/955850700688326656" target="_window"><img class="social" src="./twitter.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://twitter.com/wef/status/955850700688326656" target="_window">.@JustinTrudeau at #wef18 on #gender equality in the workplace</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.asicentral.com/news/blogs/tims-blog/2017/a-special-message-from-the-eternal-optimist/" target="_window"><img class="social" src="./rss.png"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.asicentral.com/news/blogs/tims-blog/2017/a-special-message-from-the-eternal-optimist/" target="_window">A Special Message from the Eternal Optimist</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.facebook.com/adspecialtyinstitute/posts/10155116846831044" target="_window"><img class="social" src="./facebook.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.facebook.com/adspecialtyinstitute/posts/10155116846831044" target="_window">In recent years, hospitals and healthcare facilities have reeled ...</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.facebook.com/adspecialtyinstitute/videos/10155116863666044" target="_window"><img class="social" src="./facebook.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.facebook.com/adspecialtyinstitute/videos/10155116863666044/" target="_window">Ok-- we have to admit it-- the shot ski? Kind of awesome ...</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://twitter.com/Tim_Andrews_ASI/status/955830036921290753" target="_window"><img class="social" src="./twitter.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://twitter.com/Tim_Andrews_ASI/status/955830036921290753" target="_window">Joining us at Dallas, starting tomorrow? Be sure to ck out...</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.asicentral.com/news/newsletters/promogram/january-2018/distributor-sales-hit-record-high-in-2017" target="_window"><img class="social" src="./asi.jpg"></a></td><td>&nbsp;</td>
-                            <td><a href="https://www.asicentral.com/news/newsletters/promogram/january-2018/distributor-sales-hit-record-high-in-2017" target="_window">Distributor Sales Hit Record High In 2017</a></td>
-                        </tr>
-                    </table>
+                <div class="content_facebook">
+                    <div class="row">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com%2Fadspecialtyinstitute%2F&tabs=timeline&width=500&height=325&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="500" height="325" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="orders-container">
             <div class="containerx draggable drag-drop" id="orders">
-                <div class="headerx">Orders
+                <div class="headerx">Sales Processing and Tracking
                     <span class="close glyphicon glyphicon-remove"></span>
                     <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
@@ -420,7 +389,7 @@
         </div>
         <div id="websites-container">
             <div class="containerx draggable drag-drop" id="websites">
-                <div class="headerx">ESP Websites
+                <div class="headerx">Update your Website
                     <span class="close glyphicon glyphicon-remove"></span>
                     <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
@@ -506,7 +475,7 @@
     </div>
         <div id="espweb-container">
             <div class="containerx draggable drag-drop" id="espweb">
-                <div class="headerx">ESP Web
+                <div class="headerx">Product Sourcing
                     <span class="close glyphicon glyphicon-remove"></span>
                     <span class="close glyphicon glyphicon-unchecked"></span>
                 </div>
@@ -598,7 +567,7 @@
     </div>
 		<div id="crm-container">
             <div class="containerx draggable drag-drop" id="crm">
-                <div class="headerx">CRM<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
+                <div class="headerx">Manage my Contacts<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
                 <div class="content">
                     <div class="row tasks" >
                         <div class="col-xs-12 col-md-6">
@@ -666,7 +635,7 @@
     </div>
 		<div id="email-container">
             <div class="containerx draggable drag-drop" id="email">
-                <div class="headerx">Email Marketing<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
+                <div class="headerx">Send an Email Blast<span class="close glyphicon glyphicon-remove"></span><span class="close glyphicon glyphicon-unchecked"></span></div>
                     <div class="content">
                         <div class="row tasks" >
                             <div class="col-xs-12 col-md-6">
@@ -721,7 +690,7 @@
 	<div class="hidden">
 		<div id="advTasks-container">
 			<div class="containerx tasks draggable drag-drop" id="advTasks">
-				<div class="headerx">Community<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">Social Networking<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(1);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
 					<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#industry">Learn about the Industry (3)</button>
 					<div id="industry" class="sub-tasks">
@@ -740,44 +709,48 @@
 		</div>
 		<div id="advOrders-container">
 			<div class="containerx draggable drag-drop" id="advOrders">
-				<div class="headerx">Orders<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">Sales Processing and Tracking<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(2);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
-					<strong>Your Order status</strong>
-					<ul>
-						<li><a href="https://esp.asicentral.com/orders" target="_window">You have 10 Orders status updates.</a></li>
-						<li><a href="https://esp.asicentral.com/orders" target="_window">You have 3 Purchase Orders status updates.</a></li>
-					</ul>		  			
-					<strong>Three Most Recent Orders.</strong>
-                    <ul>
-                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008976 Date: 10/20/2018 )</a></li>
-                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008975 Date: 10/20/2018 )</a></li>
-                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008974 Date: 10/19/2018 )</a></li>
-                        <!--<li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008973 Date: 10/19/2018 )</a></li>
-                        <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">Order Number: ( 1008972 Date: 10/19/2018 )</a></li>-->
-                    </ul>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Your Order status</strong>
+                            <ul>
+                                <li><a href="https://esp.asicentral.com/orders" target="_window">10 Orders status updates.</a></li>
+                                <li><a href="https://esp.asicentral.com/orders" target="_window"> 3 Purchase Orders status updates.</a></li>
+                            </ul>		  			
+                            <strong>Three Most Recent Orders.</strong>
+                            <ul>
+                                <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">1008976 Date: 10/20/2018</a></li>
+                                <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">1008975 Date: 10/20/2018</a></li>
+                                <li><a style="cursor: hand;" herf="https://esp.asicentral.com/orders" target="_window">1008974 Date: 10/19/2018</a></li>                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="orderPieChartSum" style="width:100%; height:150px; font-size: 8px;"></div>
+                        </div>
+                    </div>
+					
                     <div id="orderChartdiv" style="width: 90%; height: 200px; font-size: 8px;"></div>
 				</div>
 			</div>
 		</div>
 		<div id="advWebsites-container">
 			<div class="containerx draggable drag-drop" id="advWebsites">
-				<div class="headerx">ESP Websites - you have 3 published site(s)<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">Update your Website - you have 3 published site(s)<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(3);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
                     <div id="chartdiv" style="width: 90%; height: 255px; font-size: 8px;"></div>
                     <div style="font-size: 12px;">
-                        <ul>
-                            <li><a style="cursor: hand;" herf="https://125724-fli.espwebsite.com" target="_window">You have (5) new orders for this site.</a></li>
-                            <li><a style="cursor: hand;" herf="https://125724-fli.espwebsite.com" target="_window">You have (3) new Info Request fro this site.</a></li>
-                            <li style="cursor: hand;">Most Visited Page: <a>125724-fli.espwebsite.com/productresults/?searchterms=Bluetooth Items</a></li>
-                            
-                        </ul>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: center; margin-top: 20px;">
+                                <button type="button" class="btn btn-primary" style="color: rgb(241, 238, 192) !important;">Send 10% off Coupon to your top 5 customer</button>
+                            </div>
+                        </div>                    
                     </div>
 				</div>
 			</div>
 		</div>
 		<div id="advEspweb-container">
 			<div class="containerx draggable drag-drop" id="advEspweb">
-				<div class="headerx">ESP Web<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+				<div class="headerx">Product Sourcing<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
 				<div class="content">
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -820,20 +793,23 @@
                             <div id="espWebContentPieChart"></div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div style="text-align: center; margin-top: 10px;">
+                            <button type="button" class="btn btn-primary" style="color: rgb(241, 238, 192) !important;" title="">Create a presentation with the top ten trending products</button>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>	
 		<div id="advCrm-container">
 				<div class="containerx draggable drag-drop" id="advCrm">
-					<div class="headerx">CRM<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
+					<div class="headerx">Manage my Contacts<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(4);" class="close glyphicon glyphicon-unchecked"></span></div>
 					<div class="content" style="font-size: 14px;">
-                        <strong>CRM statuses</strong>
-                        
-						<ul>
-							<li><a href="https://esp.asicentral.com/orders" target="_window">You have 15 new Email responses.</a></li>
-							<li><a href="https://esp.asicentral.com/orders" target="_window">You have 4 pending Tasks </a></li>
-							<li><a href="https://esp.asicentral.com/orders" target="_window">You Have 3 open Appointments</a></li>
-                        </ul>
+                        <div class="row" style="text-align: center; margin-bottom:20px; margin-top: 20px;">
+                            <button class="btn btn-danger alertSummaryBtnSize" style="width:90%; margin-bottom: 2px;"><span class="warning glyphicon glyphicon-info-sign" style="padding-left:10px;"></span>  25 Contacts without an address</button>
+                            <button class="btn btn-danger alertSummaryBtnSize" style="width:90%; margin-bottom: 2px;"><span class="warning glyphicon glyphicon-info-sign" style="padding-left:10px;"></span>  15 Contacts with an Email</button>
+                            <button class="btn btn-danger alertSummaryBtnSize" style="width:90%; margin-bottom: 2px;"><span class="warning glyphicon glyphicon-info-sign" style="padding-left:10px;"></span>  15 Companies without a customer Type</button>
+                        </div>
                         <strong>CRM statuses</strong>
 						<ul>
 							<li><a href="https://esp.asicentral.com/orders" target="_window">You have 15 new Email responses.</a></li>
@@ -845,16 +821,16 @@
 		</div>
 		<div id="advEmail-container">
 				<div class="containerx draggable drag-drop" id="advEmail">
-					<div class="headerx">Email Marketing<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(5);" class="close glyphicon glyphicon-unchecked"></span></div>
+					<div class="headerx">Send an Email Blast<span class="close glyphicon glyphicon-remove"></span><span onclick="openDetailPage(5);" class="close glyphicon glyphicon-unchecked"></span></div>
 					<div class="content">
-						<strong>Key metrics</strong>
-						<ul>
-							<li><a href="https://esp.stage-asicentral.com/emarketing" target="_window">Alert - 300 prospects - Would you like to create a list from these prospects</a></li>
-							<li><a href="https://esp.stage-asicentral.com/emarketing" target="_window">Alert - Last campaign had 10 bounces click here to view</a></li>
-                        </ul>
-                        <div class="form-group">
+                        <strong>Key metrics</strong>
+                        <div class="row" style="text-align: center;">
+                            <button class="btn btn-danger alertSummaryBtnSize" style="width:90%; margin-bottom: 2px;"><span class="warning glyphicon glyphicon-info-sign" style="padding-left:10px;"></span>    300 prospects - Would you like to create a list from these prospects</button>
+                            <button class="btn btn-danger alertSummaryBtnSize" style="width:90%; margin-bottom: 2px;"><span class="warning glyphicon glyphicon-info-sign" style="padding-left:10px;"></span>    Last campaign had 10 bounces click here to view</button>
+                        </div>
+                        <div class="form-group-sel">
                             <label class="control-label">My Campaign Stats</label>
-                            <div style="padding: 0 20px 0 20px;">
+                            <div style="padding: 0 20px 0 10px;">
                                 <select class="form-control" >
                                     <option>Campaign One</option>
                                     <option>Campaign Two</option>
@@ -908,13 +884,13 @@
             var chartDiv = "espWebContentPieChart";
             var chart = new CanvasJS.Chart(chartDiv,
             {
-                height: 340,
+                height: 260,
                 animationEnabled: true,
                 animationDuration: 500,
                 theme: "theme2",
                 title:{
                     text: "Top Searches",
-                    fontSize:18
+                    fontSize:14
                 },		
                 data: [
                 {       
