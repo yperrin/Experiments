@@ -1,0 +1,48 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "crawler",
+                "projectName": "crawler",
+                "workingDirectory": "d:\\Projects\\Experiments\\java\\crawler\\crawler",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "crawlerapp",
+                "projectName": "crawlerapp",
+                "workingDirectory": "d:\\Projects\\Experiments\\java\\crawler\\crawlerapp",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "crawler",
+                "projectName": "crawler",
+                "workingDirectory": "d:\\Projects\\Experiments\\java\\crawler\\crawler",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "crawlerapp",
+                "projectName": "crawlerapp",
+                "workingDirectory": "d:\\Projects\\Experiments\\java\\crawler\\crawlerapp",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

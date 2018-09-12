@@ -1,0 +1,7 @@
+/* Füge hier Dein eigenes CSS ein */
+
+.nav-responsive .logo img {
+    max-width: 100%;
+    max-height: 40px;
+    width: auto;
+}
