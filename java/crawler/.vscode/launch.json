@@ -12,7 +12,7 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "",
-            "args": ""
+            "args": "prop2"
         },
         {
             "type": "java",
@@ -22,7 +22,7 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "com.yann.crawler.App",
-            "args": "",
+            "args": "prop1",
             "projectName": "crawlerapp"
         },
         {
@@ -33,7 +33,7 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "com.yann.crawler.App",
-            "args": ""
+            "args": "prop1"
         },
         {
             "type": "java",
