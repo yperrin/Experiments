@@ -12,7 +12,7 @@
             "console": "internalConsole",
             "stopOnEntry": false,
             "mainClass": "",
-            "args": "d:\\temp\\chochrane.txt"
+            "args": ""
         },
         {
             "type": "java",

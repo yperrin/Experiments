@@ -25,10 +25,9 @@ public class CategoryFileRepository implements CategoryRepository {
         for (Category category : categories) {
             for (Article article : category.getArticles()) {
                 String date = article.getPublishedDate() != null ? format.format(article.getPublishedDate()) : "Not specified";
-                printWriter.printf("%s|%s|%s|%s|%s\n", article.getUrl(), category.getName(), article.getTitle(), article.getAuthors(), date );
+                printWriter.printf("%s|%s|%s|%s|%s\r\n", article.getUrl(), category.getName(), article.getTitle(), article.getAuthors(), date );
             }
         }
         printWriter.close();
 	}
-
 }
