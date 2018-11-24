@@ -1,9 +1,9 @@
 ﻿using ASI.Contracts.Excit.Inventory.Version1;
-using excit.common;
 using excit.common.model;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using excit.services.Version1;
 
 namespace ExcitCore.Controllers.v1
 {
@@ -12,12 +12,16 @@ namespace ExcitCore.Controllers.v1
     [ApiController]
     public class InventoryController : ControllerBase
     {
-        [HttpPost]
-        public async Task<ActionResult<IEnumerable<Supplier>>> Get([FromBody] InputByProduct input)
+        InventoryHandler _inventoryHandler;
+        public InventoryController(InventoryHandler inventoryHandler)
         {
-            var configurationRepository = new ConfigurationRepository("mongodb://localhost:27017", "excit");
-            var suppliers = await configurationRepository.List().ConfigureAwait(false);
-            return suppliers;
+            _inventoryHandler = inventoryHandler;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Output>> Get([FromBody] InputByProduct input)
+        {
+            return await _inventoryHandler.Process((Lamar.IServiceContext)HttpContext.RequestServices, input).ConfigureAwait(false);
         }
     }
 }

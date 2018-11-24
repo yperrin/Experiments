@@ -5,11 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Lamar" Version="1.1.2" />
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ASI.Contracts.Excit\ASI.Contracts.Excit.csproj" />
+    <ProjectReference Include="..\excit.externalreferences\excit.externalreferences.csproj" />
   </ItemGroup>
 
 </Project>

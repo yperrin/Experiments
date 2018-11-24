@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ASI.Contracts.Excit\ASI.Contracts.Excit.csproj" />
+    <ProjectReference Include="..\ASI.EntityModel\ASI.EntityModel.csproj" />
+    <ProjectReference Include="..\excit.common\excit.common.csproj" />
+  </ItemGroup>
+
+</Project>

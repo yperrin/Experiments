@@ -10,14 +10,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcitCore", "ExcitCore\Exci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "excit.common", "excit.common\excit.common.csproj", "{3506BE2C-24AA-4FC8-98B4-5344AC5EC813}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "excit.common.test", "excit.common.test\excit.common.test.csproj", "{69983192-751B-4DDB-8A85-E807813A6E75}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3506BE2C-24AA-4FC8-98B4-5344AC5EC813} = {3506BE2C-24AA-4FC8-98B4-5344AC5EC813}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASI.Contracts.Excit", "ASI.Contracts.Excit\ASI.Contracts.Excit.csproj", "{CC570CD8-3BEB-479B-8C0A-982A51816EF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASI.Contracts.Excit", "ASI.Contracts.Excit\ASI.Contracts.Excit.csproj", "{CC570CD8-3BEB-479B-8C0A-982A51816EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASI.EntityModel", "ASI.EntityModel\ASI.EntityModel.csproj", "{1AF8CCFC-319F-417F-83E9-86BD0E4E35FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASI.EntityModel", "ASI.EntityModel\ASI.EntityModel.csproj", "{1AF8CCFC-319F-417F-83E9-86BD0E4E35FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5A4CC8D0-2C5A-472F-9EFC-3F4D5D1EA9D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "excit.common.test", "excit.common.test\excit.common.test.csproj", "{EBA64580-1F0B-4CBD-9C90-A048BAFF7C91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "excit.externalreferences", "excit.externalreferences\excit.externalreferences.csproj", "{8132B95F-2374-4F60-BDE0-249DC9E8CBF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "excit.services", "excit.services\excit.services.csproj", "{039000EB-22FD-4B9B-965E-60CBA525C62F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +36,6 @@ Global
 		{3506BE2C-24AA-4FC8-98B4-5344AC5EC813}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3506BE2C-24AA-4FC8-98B4-5344AC5EC813}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3506BE2C-24AA-4FC8-98B4-5344AC5EC813}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69983192-751B-4DDB-8A85-E807813A6E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69983192-751B-4DDB-8A85-E807813A6E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69983192-751B-4DDB-8A85-E807813A6E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69983192-751B-4DDB-8A85-E807813A6E75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC570CD8-3BEB-479B-8C0A-982A51816EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC570CD8-3BEB-479B-8C0A-982A51816EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC570CD8-3BEB-479B-8C0A-982A51816EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,9 +44,24 @@ Global
 		{1AF8CCFC-319F-417F-83E9-86BD0E4E35FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF8CCFC-319F-417F-83E9-86BD0E4E35FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF8CCFC-319F-417F-83E9-86BD0E4E35FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA64580-1F0B-4CBD-9C90-A048BAFF7C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA64580-1F0B-4CBD-9C90-A048BAFF7C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA64580-1F0B-4CBD-9C90-A048BAFF7C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA64580-1F0B-4CBD-9C90-A048BAFF7C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8132B95F-2374-4F60-BDE0-249DC9E8CBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8132B95F-2374-4F60-BDE0-249DC9E8CBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8132B95F-2374-4F60-BDE0-249DC9E8CBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8132B95F-2374-4F60-BDE0-249DC9E8CBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039000EB-22FD-4B9B-965E-60CBA525C62F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039000EB-22FD-4B9B-965E-60CBA525C62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039000EB-22FD-4B9B-965E-60CBA525C62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039000EB-22FD-4B9B-965E-60CBA525C62F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EBA64580-1F0B-4CBD-9C90-A048BAFF7C91} = {5A4CC8D0-2C5A-472F-9EFC-3F4D5D1EA9D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3605862-F1FD-4582-AA63-05D76BDD6E74}
