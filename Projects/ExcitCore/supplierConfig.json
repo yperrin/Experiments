@@ -1,0 +1,140 @@
+[
+	{ 
+		"_id": "1780",
+		"name":"Hit Promo",
+		"asiNumber":"61125",
+		"loginInstructions":"<p>Please enter your credentials for HIT Promotional Products U.S to place an order or to check order status. If you do not know your credentials, please reach out to them at <a href=\"https://ds.hitpromo.net/site/register?service=esplogo\">https://ds.hitpromo.net/site/register?service=esplogo</a></p><p>Please note that your supplier credentials may need to be enabled for ESP, so please let the supplier know that intend to use your credentials within ESP.</p>",
+		"apis": [
+			{
+				"name":"Inventory",
+				"implementation":"PromoStandardsInventory v1.2.1",
+				"url":"https://dsstandardtest.hitpromo.net/inventory?ws=1",
+				"supplierEmails":"websupport@hitpromo.net",
+				"defaultCredentials": {
+					"username":"107205",
+					"password":"1b5876957e966f2d8e59a844839eda26"
+				},
+				"properties":
+					[{
+						"name":"ServiceResponseMessage",
+						"type":"TEXT",
+						"value":"Product does not exist in DB.;"
+					}]
+			},
+			{
+				"name":"OrderStatus",
+				"implementation":"PromoStandardsOrderStatus v1.0.0",
+				"url":"https://ppds.hitpromo.net/orderStatus?ws=1",
+				"supplierEmails":"websupport@hitpromo.net",
+				"properties":[]
+			},
+			{
+				"name":"LoginValidate",
+				"implementation":"HitOrderManagementLoginValidate",
+				"url":"https://ppds.hitpromo.net/hitOrderManagement/hitOrderManagement?ws=1",
+				"supplierEmails":"websupport@hitpromo.net",
+				"properties":[]
+			},
+			{
+				"name":"OrderCreation",
+				"implementation":"HitPromoOrderCreation v1.0.0",
+				"url":"ftp://ftp.hitpromo.net",
+				"supplierEmails":"websupport@hitpromo.net",
+				"properties":
+					[{
+						"name":"ftpUser",
+						"type":"TEXT",
+						"value":"asiproductionftp"
+					},
+					{
+						"name":"ftpPassword",
+						"type":"TEXT",
+						"value":"AsiFtp123"
+					},
+					{
+						"name":"path",
+						"type":"TEXT",
+						"value":"/ASI/In"
+					},
+					{
+						"name":"ftpSSL",
+						"type":"TEXT",
+						"value":"true"
+					},
+					{
+						"name":"OrderReportNotification",
+						"type":"TEXT",
+						"value":"yperrin@asicentral.com;asiorders@hitpromo.net"
+					}]
+			}]	
+	},
+	{ 
+		"_id": "7762366",
+		"name":"Hit Promo Canada",
+		"asiNumber":"61126",
+		"loginInstructions":"<p>Please enter your credentials for HIT Promotional Products Canada to place an order or to check order status. If you do not know your credentials, please reach out to them at <a href=\"https://ds.hitpromo.net/site/register?service=esplogo\">https://ds.hitpromo.net/site/register?service=esplogo</a></p><p>Please note that your supplier credentials may need to be enabled for ESP, so please let the supplier know that intend to use your credentials within ESP.</p>",
+		"apis": [
+			{
+				"name":"Inventory",
+				"implementation":"PromoStandardsInventory v1.2.1",
+				"url":"https://dsstandardtest.hitpromo.net/inventory?ws=1",
+				"supplierEmails":"websupport@hitpromo.net",
+				"defaultCredentials": {
+					"username":"107205",
+					"password":"1b5876957e966f2d8e59a844839eda26"
+				},
+				"properties":
+					[{
+						"name":"ServiceResponseMessage",
+						"type":"TEXT",
+						"value":"Product does not exist in DB.;"
+					}]
+			},
+			{
+				"name":"OrderStatus",
+				"implementation":"PromoStandardsOrderStatus v1.0.0",
+				"url":"https://ppds.hitpromo.net/orderStatus?ws=1",
+				"supplierEmails":"websupport@hitpromo.net",
+				"properties":[]
+			},
+			{
+				"name":"LoginValidate",
+				"implementation":"HitOrderManagementLoginValidate",
+				"url":"https://ppds.hitpromo.net/hitOrderManagement/hitOrderManagement?ws=1",
+				"supplierEmails":"websupport@hitpromo.net",
+				"properties":[]
+			},
+			{
+				"name":"OrderCreation",
+				"implementation":"HitPromoOrderCreation v1.0.0",
+				"url":"ftp://ftp.hitpromo.net",
+				"supplierEmails":"websupport@hitpromo.net",
+				"properties":
+					[{
+						"name":"ftpUser",
+						"type":"TEXT",
+						"value":"asiproductionftp"
+					},
+					{
+						"name":"ftpPassword",
+						"type":"TEXT",
+						"value":"AsiFtp123"
+					},
+					{
+						"name":"path",
+						"type":"TEXT",
+						"value":"/ASI/In"
+					},
+					{
+						"name":"ftpSSL",
+						"type":"TEXT",
+						"value":"true"
+					},
+					{
+						"name":"OrderReportNotification",
+						"type":"TEXT",
+						"value":"yperrin@asicentral.com;asiorders@hitpromo.net"
+					}]
+			}]	
+	}
+]
