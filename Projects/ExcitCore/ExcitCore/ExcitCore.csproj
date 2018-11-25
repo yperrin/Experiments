@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>Testing excit into the cloud</Description>
+    <UserSecretsId>2f1413b8-6044-4f23-9615-c66bc449a0c8</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

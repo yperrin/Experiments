@@ -5,11 +5,11 @@ namespace excit.common
 {
     public static class IocConfiguration
     {
-        public static void ConfigureContainer(ServiceRegistry services)
+        public static void ConfigureContainer(string connectionString, ServiceRegistry services)
         {
             services.For<ConfigurationRepository>()
                 .Add<ConfigurationRepository>()
-                .Ctor<string>("connectionString").Is("mongodb://localhost:27017")
+                .Ctor<string>("connectionString").Is(connectionString)
                 .Ctor<string>("databaseName").Is("excit");
 
             services.For<asi.excit.common.Interfaces.version1.IInventory>()

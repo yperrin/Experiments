@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace ExcitCore
 {
@@ -19,7 +20,7 @@ namespace ExcitCore
         public void ConfigureContainer(ServiceRegistry services)
         {
             services.AddMvc();
-            IocConfiguration.ConfigureContainer(services);
+            IocConfiguration.ConfigureContainer(Configuration.GetSection("ConnectionStrings:ConfigurationDB").Value, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
