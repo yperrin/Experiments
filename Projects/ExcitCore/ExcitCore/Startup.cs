@@ -1,4 +1,5 @@
 ﻿using excit.common;
+using excit.common.model;
 using Lamar;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +21,12 @@ namespace ExcitCore
         public void ConfigureContainer(ServiceRegistry services)
         {
             services.AddMvc();
-            IocConfiguration.ConfigureContainer(Configuration.GetSection("ConnectionStrings:ConfigurationDB").Value, services);
+            var applicationSettings = new ApplicationSettings
+            {
+                ConfigurationConnectionString = Configuration.GetSection("ConnectionStrings:ConfigurationDB").Value,
+                EventHubConnectionString = Configuration.GetSection("ConnectionStrings:EventHub").Value,
+            };
+            IocConfiguration.ConfigureContainer(applicationSettings, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

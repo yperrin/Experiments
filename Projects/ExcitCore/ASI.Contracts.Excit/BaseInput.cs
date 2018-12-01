@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ASI.Contracts.Excit
+﻿namespace ASI.Contracts.Excit
 {
     /// <summary>
     /// Common input.

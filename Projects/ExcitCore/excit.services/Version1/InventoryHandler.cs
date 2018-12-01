@@ -1,11 +1,9 @@
 ﻿using ASI.Contracts.Excit.Inventory.Version1;
-using excit.common.model;
 using excit.common.service;
 using Lamar;
 using log4net;
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using ASI.Contracts.Excit;
@@ -16,18 +14,27 @@ namespace excit.services.Version1
     {
         private static ILog _log = LogManager.GetLogger(typeof(InventoryHandler));
         ConfigurationRepository _configurationRepository;
-        public InventoryHandler(ConfigurationRepository configurationRepository)
+        EventService _eventService;
+        public InventoryHandler(ConfigurationRepository configurationRepository, EventService eventService)
         {
             _configurationRepository = configurationRepository;
+            _eventService = eventService;
         }
 
         public async Task<Output> Process(IServiceContext serviceContext, InputByProduct input)
         {
-            Output output = null;
             var start = DateTime.Now;
             var stopwatch = Stopwatch.StartNew();
             _log.Info("ProcessRequest - Start" + (input != null && !string.IsNullOrEmpty(input.CorrelationIdentifier) ? " - " + input.CorrelationIdentifier : string.Empty));
-            Exception capturedException = null;
+            var apiEvent = new ApiEvent()
+            {
+                Input = input,
+                Api = "Inventory",
+                Type = "Start",
+                CreatedDateTime = start,
+            };
+            await _eventService.SendInventoryEvent(apiEvent).ConfigureAwait(false);
+            apiEvent.Type = "End";
             try
             {
                 if (input == null)
@@ -47,29 +54,24 @@ namespace excit.services.Version1
                     input.UserCredentials = new User { Username = supplierApi.DefaultCredentials.Username, Password = supplierApi.DefaultCredentials.Password, AccountNumber = supplierApi.DefaultCredentials.Email };
                 }
                 if (input.UserCredentials == null) input.UserCredentials = new User();
-                output = await (implementation.GetByProductAsync((InputByProduct)input, supplier).ConfigureAwait(false));
-                //The output validate methods validate and sets IsValid property.                
-                //output.IsValid = IsValidInventory(output, supplier, System.Configuration.ConfigurationManager.AppSettings[InvalidValuesForInventory]);
-                if (!output.IsValid)
-                {
-                    //@todo invalid output
-                }
+                apiEvent.Output = await (implementation.GetByProductAsync((InputByProduct)input, supplier).ConfigureAwait(false));
+                //apiEvent.Output.IsValid = IsValidInventory(output, supplier, System.Configuration.ConfigurationManager.AppSettings[InvalidValuesForInventory]);
+                stopwatch.Stop();
+                apiEvent.Output.OverallTimings = Math.Round(stopwatch.Elapsed.TotalMilliseconds, 0);
+                apiEvent.Output.SupplierTimings = Math.Round(apiEvent.Output.SupplierTimings, 0);
+                apiEvent.CreatedDateTime = DateTime.Now;
+                await _eventService.SendInventoryEvent(apiEvent).ConfigureAwait(false);
+                _log.Info("Get - End - " + stopwatch.Elapsed + (input != null && !string.IsNullOrEmpty(input.CorrelationIdentifier) ? " - " + input.CorrelationIdentifier : string.Empty));
+                return (Output)apiEvent.Output;
             }
             catch (Exception ex)
             {
-                capturedException = ex;
+                apiEvent.CreatedDateTime = DateTime.Now;
+                apiEvent.ExceptionMessage = ex.Message;
+                apiEvent.ExceptionStackTrace = ex.StackTrace;
+                await _eventService.SendInventoryEvent(apiEvent).ConfigureAwait(false);
+                throw;
             }
-            if (capturedException != null)
-            {
-                string exceptionMessage = capturedException.Message;
-                //@todo monitor exceptions
-            }
-            stopwatch.Stop();
-            output.OverallTimings = Math.Round(stopwatch.Elapsed.TotalMilliseconds, 0);
-            output.SupplierTimings = Math.Round(output.SupplierTimings, 0);
-            _log.Info("Get - End - " + stopwatch.Elapsed + (input != null && !string.IsNullOrEmpty(input.CorrelationIdentifier) ? " - " + input.CorrelationIdentifier : string.Empty));
-            //@todo successfull call
-            return output;
         }
     }
 }

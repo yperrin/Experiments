@@ -2,11 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>excit.common</AssemblyName>
+    <RootNamespace>excit.common</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Lamar" Version="1.1.2" />
     <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="2.2.1" />
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
