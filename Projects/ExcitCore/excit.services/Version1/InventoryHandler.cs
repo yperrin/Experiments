@@ -34,7 +34,6 @@ namespace excit.services.Version1
                 CreatedDateTime = start,
             };
             await _eventService.SendInventoryEvent(apiEvent).ConfigureAwait(false);
-            apiEvent.Type = "End";
             try
             {
                 if (input == null)
@@ -57,6 +56,7 @@ namespace excit.services.Version1
                 apiEvent.Output = await (implementation.GetByProductAsync((InputByProduct)input, supplier).ConfigureAwait(false));
                 //apiEvent.Output.IsValid = IsValidInventory(output, supplier, System.Configuration.ConfigurationManager.AppSettings[InvalidValuesForInventory]);
                 stopwatch.Stop();
+                apiEvent.Type = "End";
                 apiEvent.Output.OverallTimings = Math.Round(stopwatch.Elapsed.TotalMilliseconds, 0);
                 apiEvent.Output.SupplierTimings = Math.Round(apiEvent.Output.SupplierTimings, 0);
                 apiEvent.CreatedDateTime = DateTime.Now;
@@ -66,6 +66,7 @@ namespace excit.services.Version1
             }
             catch (Exception ex)
             {
+                apiEvent.Type = "Error";
                 apiEvent.CreatedDateTime = DateTime.Now;
                 apiEvent.ExceptionMessage = ex.Message;
                 apiEvent.ExceptionStackTrace = ex.StackTrace;

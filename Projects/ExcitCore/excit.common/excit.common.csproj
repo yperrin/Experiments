@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ASI.Contracts.Excit\ASI.Contracts.Excit.csproj" />
+    <ProjectReference Include="..\ASI.EntityModel\ASI.EntityModel.csproj" />
     <ProjectReference Include="..\excit.externalreferences\excit.externalreferences.csproj" />
   </ItemGroup>
 

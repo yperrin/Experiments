@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ASI.Contracts.Excit
+﻿namespace ASI.Contracts.Excit
 {
     /// <summary>
     /// Supplier details
@@ -10,7 +8,6 @@ namespace ASI.Contracts.Excit
         /// <summary>
         /// Id of the supplier company.
         /// </summary>
-        [Required]
         public int CompanyId { get; set; }
 
         /// <summary>
