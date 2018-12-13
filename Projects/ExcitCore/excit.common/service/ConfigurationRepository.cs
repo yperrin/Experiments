@@ -1,4 +1,5 @@
 ﻿using excit.common.model;
+using log4net;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ namespace excit.common.service
 {
     public class ConfigurationRepository
     {
+        private static ILog _log = LogManager.GetLogger(typeof(ConfigurationRepository));
         private static string _collectionName = "suppliers";
         private string _connectionString;
         private string _databaseName;
@@ -27,14 +29,17 @@ namespace excit.common.service
             return result;
         }
 
-        public async Task<Supplier> Get(int id)
+        public virtual async Task<Supplier> Get(int id)
         {
+            var start = DateTime.Now;
+            _log.Debug("Get - Start");
             if (id == 0)
                 throw new ArgumentNullException("supplier");
             Init();
             var filter = Builders<Supplier>.Filter.Eq(e => e.Id, Convert.ToString(id));
             var collection = _database.GetCollection<Supplier>(_collectionName);
             var result = await collection.Find(filter).FirstOrDefaultAsync().ConfigureAwait(false);
+            _log.Debug("Get - End -" + (DateTime.Now - start).TotalMilliseconds);
             return result;
         }
 

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace ExcitCore.Controllers
 {
@@ -7,10 +9,20 @@ namespace ExcitCore.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        ILogger _logger;
+        IMediator _mediator;
+        public ValuesController(ILoggerFactory loggerFactory, IMediator mediator)
+        {
+            _logger = loggerFactory.CreateLogger("ValuesController");
+            _mediator = mediator;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            _logger.LogDebug("Get - Start");
+            //_mediator.Publish
             return new string[] { "value1", "value2" };
         }
 
@@ -18,6 +30,7 @@ namespace ExcitCore.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
+            _logger.LogDebug($"Get by id - Start - {id}");
             return "value";
         }
 

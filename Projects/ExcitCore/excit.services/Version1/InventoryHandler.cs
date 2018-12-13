@@ -1,31 +1,35 @@
 ﻿using ASI.Contracts.Excit.Inventory.Version1;
 using excit.common.service;
 using Lamar;
-using log4net;
 using System;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using ASI.Contracts.Excit;
+using Microsoft.Extensions.Logging;
 
 namespace excit.services.Version1
 {
     public class InventoryHandler
     {
-        private static ILog _log = LogManager.GetLogger(typeof(InventoryHandler));
+        ILogger _logger;
         ConfigurationRepository _configurationRepository;
         EventService _eventService;
-        public InventoryHandler(ConfigurationRepository configurationRepository, EventService eventService)
+        IServiceContext _serviceContext;
+        public InventoryHandler(ILoggerFactory loggerFactory, IServiceContext serviceContext, ConfigurationRepository configurationRepository, EventService eventService)
         {
+            _logger = loggerFactory.CreateLogger(typeof(InventoryHandler));
+            _serviceContext = serviceContext;
             _configurationRepository = configurationRepository;
             _eventService = eventService;
         }
 
-        public async Task<Output> Process(IServiceContext serviceContext, InputByProduct input)
+        public async Task<Output> Process(InputByProduct input)
         {
             var start = DateTime.Now;
             var stopwatch = Stopwatch.StartNew();
-            _log.Info("ProcessRequest - Start" + (input != null && !string.IsNullOrEmpty(input.CorrelationIdentifier) ? " - " + input.CorrelationIdentifier : string.Empty));
+            input.CorrelationIdentifier = input.CorrelationIdentifier ?? Guid.NewGuid().ToString();
+            _logger.LogInformation($"ProcessRequest - Start - {input.CorrelationIdentifier}");
             var apiEvent = new ApiEvent()
             {
                 Input = input,
@@ -44,7 +48,7 @@ namespace excit.services.Version1
                 if (supplier == null || supplierApi == null || string.IsNullOrEmpty(supplierApi.Implementation))
                     throw new Exception("Could not find the configuration");
                 if (input.Company.CompanyId == 0) input.Company.CompanyId = Int32.Parse(supplier.Id);
-                var implementation = serviceContext.TryGetInstance<asi.excit.common.Interfaces.version1.IInventory>(supplierApi.Implementation);
+                var implementation = _serviceContext.TryGetInstance<asi.excit.common.Interfaces.version1.IInventory>(supplierApi.Implementation);
                 if (implementation == null) throw new Exception("Could not find the implementation for '" + supplierApi.Implementation + "'");
                 if (!implementation.IsSupported) throw new Exception("The implementation is no longer valid '" + supplierApi.Implementation + "'");
                 if ((input.UserCredentials == null || string.IsNullOrEmpty(input.UserCredentials.Username)) && supplierApi.DefaultCredentials != null)
@@ -61,15 +65,13 @@ namespace excit.services.Version1
                 apiEvent.Output.SupplierTimings = Math.Round(apiEvent.Output.SupplierTimings, 0);
                 apiEvent.CreatedDateTime = DateTime.Now;
                 await _eventService.SendInventoryEvent(apiEvent).ConfigureAwait(false);
-                _log.Info("Get - End - " + stopwatch.Elapsed + (input != null && !string.IsNullOrEmpty(input.CorrelationIdentifier) ? " - " + input.CorrelationIdentifier : string.Empty));
+                _logger.LogInformation($"ProcessRequest - End - {input.CorrelationIdentifier} - {(DateTime.Now - start).TotalMilliseconds}");
                 return (Output)apiEvent.Output;
             }
             catch (Exception ex)
             {
-                apiEvent.Type = "Error";
-                apiEvent.CreatedDateTime = DateTime.Now;
-                apiEvent.ExceptionMessage = ex.Message;
-                apiEvent.ExceptionStackTrace = ex.StackTrace;
+                _logger.LogError($"ProcessRequest - Error - {ex.Message}");
+                apiEvent.SetException(ex);
                 await _eventService.SendInventoryEvent(apiEvent).ConfigureAwait(false);
                 throw;
             }

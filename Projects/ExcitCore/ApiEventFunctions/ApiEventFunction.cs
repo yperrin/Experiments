@@ -13,8 +13,6 @@ namespace ApiEventFunctions
         public static void Run([EventHubTrigger("api-events", Connection = "hubConnectionString", ConsumerGroup = "serverless-group")]string apiEventMessage, ILogger log)
         {
             log.LogInformation($"C# Event Hub trigger function processed a message: {apiEventMessage}");
-            log.LogInformation(GetEnvironmentVariable("AzureWebJobsStorage"));
-            log.LogInformation(GetEnvironmentVariable("STATS_EVENTHUB_CONNECTION_STRING"));
             var apiEvent = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiEvent>(apiEventMessage);
             //send an event to time series
             var apiStatsEvent = new ApiStatsEvent
@@ -41,13 +39,16 @@ namespace ApiEventFunctions
                 default:
                     throw new Exception("Not a valid event type");
             }
-            var connectionStringBuilder = new EventHubsConnectionStringBuilder("Endpoint=sb://excit-hub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+AubRIl3l2Q2K9xyeUfIwRnErH2JiUEbe5NowD4AiBU=")
+            var connectionStringBuilder = new EventHubsConnectionStringBuilder(Environment.GetEnvironmentVariable("STATS_EVENTHUB_CONNECTION_STRING", EnvironmentVariableTarget.Process))
             {
                 EntityPath = "api-stats"
             };
+            log.LogInformation($"C# Event Hub trigger stats event " + connectionStringBuilder.ToString());
             var eventHubClient = EventHubClient.CreateFromConnectionString(connectionStringBuilder.ToString());
-            eventHubClient.SendAsync(new EventData(Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(apiStatsEvent)))).Wait();
-            eventHubClient.CloseAsync().Wait();
+            //eventHubClient.SendAsync(new EventData(Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(apiStatsEvent)))).Wait();
+            //eventHubClient.CloseAsync().Wait();
+            log.LogInformation($"C# Event Hub trigger stats event turned off");
+            log.LogInformation($"C# Event Hub trigger function processed");
         }
         public static string GetEnvironmentVariable(string name)
         {

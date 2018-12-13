@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lamar" Version="1.1.2" />
+    <PackageReference Include="Lamar" Version="2.0.1" />
     <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="MediatR" Version="6.0.0" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="2.2.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.519" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
   </ItemGroup>

@@ -11,5 +11,13 @@ namespace ASI.Contracts.Excit
         public BaseOutput Output { get; set; }
         public string ExceptionMessage { get; set; }
         public string ExceptionStackTrace { get; set; }
+
+        public void SetException(Exception exception)
+        {
+            Type = "Error";
+            CreatedDateTime = DateTime.Now;
+            ExceptionMessage = exception.Message;
+            ExceptionStackTrace = exception.StackTrace;
+        }
     }
 }

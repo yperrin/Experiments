@@ -8,6 +8,13 @@ namespace excit.common
     {
         public static void ConfigureContainer(ApplicationSettings applicationSettings, ServiceRegistry services)
         {
+            services.For<CacheConfigurationRepository>()
+                .Add<CacheConfigurationRepository>()
+                .Ctor<string>("redisConnectionString").Is(applicationSettings.RedisconnectionString)
+                .Ctor<string>("redisPassword").Is(applicationSettings.RedisPassword)
+                .Ctor<string>("databaseConnectionString").Is(applicationSettings.ConfigurationConnectionString)
+                .Ctor<string>("databaseName").Is("excit");
+
             services.For<ConfigurationRepository>()
                 .Add<ConfigurationRepository>()
                 .Ctor<string>("connectionString").Is(applicationSettings.ConfigurationConnectionString)

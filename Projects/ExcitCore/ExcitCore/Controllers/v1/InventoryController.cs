@@ -1,9 +1,9 @@
 ﻿using ASI.Contracts.Excit.Inventory.Version1;
-using excit.common.model;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using excit.services.Version1;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace ExcitCore.Controllers.v1
 {
@@ -12,16 +12,22 @@ namespace ExcitCore.Controllers.v1
     [ApiController]
     public class InventoryController : ControllerBase
     {
+        ILogger _logger;
         InventoryHandler _inventoryHandler;
-        public InventoryController(InventoryHandler inventoryHandler)
+        public InventoryController(ILoggerFactory loggerFactory, InventoryHandler inventoryHandler)
         {
+            _logger = loggerFactory.CreateLogger(typeof(InventoryController));
             _inventoryHandler = inventoryHandler;
         }
 
         [HttpPost]
         public async Task<ActionResult<Output>> Get([FromBody] InputByProduct input)
         {
-            return await _inventoryHandler.Process((Lamar.IServiceContext)HttpContext.RequestServices, input).ConfigureAwait(false);
+            _logger.LogDebug("Get - Start");
+            var start = DateTime.Now;
+            var output = await _inventoryHandler.Process(input).ConfigureAwait(false);
+            _logger.LogDebug("Get - End - " + (DateTime.Now - start).TotalMilliseconds);
+            return output;
         }
     }
 }
