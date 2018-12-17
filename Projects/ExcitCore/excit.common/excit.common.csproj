@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssemblyName>excit.common</AssemblyName>
     <RootNamespace>excit.common</RootNamespace>
   </PropertyGroup>
@@ -9,7 +9,6 @@
   <ItemGroup>
     <PackageReference Include="Lamar" Version="2.0.1" />
     <PackageReference Include="log4net" Version="2.0.8" />
-    <PackageReference Include="MediatR" Version="6.0.0" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="2.2.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />

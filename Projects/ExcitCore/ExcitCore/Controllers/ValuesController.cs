@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -10,11 +9,9 @@ namespace ExcitCore.Controllers
     public class ValuesController : ControllerBase
     {
         ILogger _logger;
-        IMediator _mediator;
-        public ValuesController(ILoggerFactory loggerFactory, IMediator mediator)
+        public ValuesController(ILoggerFactory loggerFactory)
         {
             _logger = loggerFactory.CreateLogger("ValuesController");
-            _mediator = mediator;
         }
 
         // GET api/values
@@ -22,7 +19,6 @@ namespace ExcitCore.Controllers
         public ActionResult<IEnumerable<string>> Get()
         {
             _logger.LogDebug("Get - Start");
-            //_mediator.Publish
             return new string[] { "value1", "value2" };
         }
 
