@@ -2,15 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ExcitMaterialModule } from './excit-material/excit-material.module'
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    ExcitMaterialModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
