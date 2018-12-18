@@ -1,0 +1,12 @@
+<table mat-table [dataSource]="suppliersDataSource" matSort>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Supplier </th>
+    <td mat-cell *matCellDef="let supplier" title="{{supplier.id}}"> {{supplier.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="asiNumber">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ASI# </th>
+    <td mat-cell *matCellDef="let supplier"> {{supplier.asiNumber}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['name', 'asiNumber']"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: ['name', 'asiNumber']"></tr>
+</table>

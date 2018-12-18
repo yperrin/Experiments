@@ -1,6 +1,7 @@
 export class Supplier {
     id: number;
     name: string;
+    asiNumber: string;
     hasInventory: boolean;
     hasLogin: boolean;
     hasOrderCreation: boolean;
