@@ -1,12 +1,32 @@
 <table mat-table [dataSource]="suppliersDataSource" matSort>
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Supplier </th>
-    <td mat-cell *matCellDef="let supplier" title="{{supplier.id}}"> {{supplier.name}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="left"> Name </th>
+    <td mat-cell *matCellDef="let supplier" class="left" title="{{supplier.id}}"> {{supplier.name}} </td>
   </ng-container>
   <ng-container matColumnDef="asiNumber">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> ASI# </th>
     <td mat-cell *matCellDef="let supplier"> {{supplier.asiNumber}} </td>
   </ng-container>
-  <tr mat-header-row *matHeaderRowDef="['name', 'asiNumber']"></tr>
-  <tr mat-row *matRowDef="let myRowData; columns: ['name', 'asiNumber']"></tr>
+  <ng-container matColumnDef="hasInventory">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Inventory </th>
+    <td mat-cell *matCellDef="let supplier"> <span *ngIf="supplier.hasInventory"> - </span> </td>
+  </ng-container>
+  <ng-container matColumnDef="hasLogin">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Login </th>
+    <td mat-cell *matCellDef="let supplier"> <span *ngIf="supplier.hasLogin"> - </span> </td>
+  </ng-container>
+  <ng-container matColumnDef="hasOrderStatus">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Status </th>
+    <td mat-cell *matCellDef="let supplier"> <span *ngIf="supplier.hasOrderStatus"> - </span> </td>
+  </ng-container>
+  <ng-container matColumnDef="hasOrderCreation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Order Creation </th>
+    <td mat-cell *matCellDef="let supplier"> <span *ngIf="supplier.hasOrderCreation"> - </span> </td>
+  </ng-container>
+  <ng-container matColumnDef="hasProductIntegration">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Integration </th>
+      <td mat-cell *matCellDef="let supplier"> <span *ngIf="supplier.hasProductIntegration"> - </span> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['name', 'asiNumber', 'hasInventory', 'hasLogin', 'hasOrderStatus', 'hasOrderCreation', 'hasProductIntegration']"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: ['name', 'asiNumber', 'hasInventory', 'hasLogin', 'hasOrderStatus', 'hasOrderCreation', 'hasProductIntegration']"></tr>
 </table>

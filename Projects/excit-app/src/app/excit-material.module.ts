@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -16,12 +17,13 @@ import { MatSortModule } from '@angular/material';
   ],
   exports: [
     BrowserAnimationsModule,
-    MatIconModule, 
     MatButtonModule,
+    MatCardModule,
+    MatIconModule, 
     MatMenuModule,
-    MatToolbarModule,
+    MatSortModule,
     MatTableModule,
-    MatSortModule
+    MatToolbarModule
   ]
 })
 export class ExcitMaterialModule { }

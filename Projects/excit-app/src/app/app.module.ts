@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { ExcitMaterialModule } from './excit-material/excit-material.module';
+import { ExcitMaterialModule } from './excit-material.module';
 import { SupplierListComponent } from './supplier-list/supplier-list.component'
 
 @NgModule({

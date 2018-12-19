@@ -4,8 +4,9 @@ export class Supplier {
     asiNumber: string;
     hasInventory: boolean;
     hasLogin: boolean;
+    hasOrderStatus: boolean;
     hasOrderCreation: boolean;
-    hasProductUpdate: boolean;
+    hasProductIntegration: boolean;
 
     public constructor(init?:Partial<Supplier>) {
         Object.assign(this, init);

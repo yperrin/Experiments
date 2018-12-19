@@ -1,0 +1,14 @@
+th.mat-header-cell {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+}
+th.mat-header-cell .left {
+    text-align: left;
+}
+td {
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+}
+td.left {
+    text-align: left;
+}
