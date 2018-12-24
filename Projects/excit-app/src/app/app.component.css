@@ -6,8 +6,3 @@
 .header {
     min-height: 60px;
 }
-.content {
-    margin-top: 10px;
-    overflow-y: auto;
-    flex-grow: 1;
-}
