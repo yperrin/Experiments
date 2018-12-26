@@ -21,6 +21,7 @@ export class DirectConnectService {
     return this.http.get<any[]>(endpoints[environment] + 'suppliers').pipe(
       map(obj => obj.map(supp => {
         let supplier = new Supplier({
+          id: supp.CompanyId,
           name: supp.CompanyName, 
           asiNumber: supp.AsiNumber, 
           hasInventory: supp.HasInventory, 
