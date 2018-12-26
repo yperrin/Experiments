@@ -2,10 +2,3 @@
     font-size:12px;
     height: 30px;
 }
-div.mat-button-toggle-label-content {
-    line-height: 15px !important;
-    font-style: italic;
-}
-mat-button-toggle > button > div {
-    color:red;
-}
