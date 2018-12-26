@@ -1,6 +1,14 @@
-<mat-card class="content">
-  <mat-card-title>Supplier List</mat-card-title>
-  <mat-card-content>
-    <supplier-list [suppliers]="suppliers"></supplier-list>
-  </mat-card-content>
+<mat-card class="main primary">
+  <mat-toolbar class="header mat-elevation-z8">
+    <div class="title">
+      <div>Direct Connect</div>
+      <div class="centered"><direct-environment [environment]="environment" (notify)="onEnvironmentChange($event)"></direct-environment></div>
+    </div>
+  </mat-toolbar>
+  <mat-card class="content">
+    <mat-card-title>Supplier List</mat-card-title>
+    <mat-card-content>
+      <supplier-list [suppliers]="suppliers"></supplier-list>
+    </mat-card-content>
+  </mat-card>
 </mat-card>

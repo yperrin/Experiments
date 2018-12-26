@@ -19,4 +19,9 @@ export class SupplierListComponent implements OnInit {
     this.suppliersDataSource.sort = this.sort;
     this.suppliers.subscribe(data => this.suppliersDataSource.data = data);
   }
+
+  updateList(suppliers: Observable<Supplier[]>) {
+    this.suppliers = suppliers;
+    this.suppliers.subscribe(data => this.suppliersDataSource.data = data);
+  }
 }

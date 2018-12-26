@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module'
 import { MaterialModule } from './material.module';
 import { DirectConnectComponent } from './direct-connect/direct-connect.component';
 import { SupplierListComponent } from './direct-connect/supplier-list/supplier-list.component';
+import { DirectEnvironmentComponent } from './direct-connect/direct-environment/direct-environment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectConnectComponent,
-    SupplierListComponent
+    SupplierListComponent,
+    DirectEnvironmentComponent
   ],
   imports: [
     BrowserModule,

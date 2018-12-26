@@ -1,5 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+.header {
+    min-height: 60px;
+}
 .content {
     margin-top: 10px;
     overflow-y: auto;
     flex-grow: 1;
+}
+.title {
+    display:flex;
+}
+.title .centered {
+    padding-left: 20px;
+    text-align: left;
+    font-weight: normal;
 }

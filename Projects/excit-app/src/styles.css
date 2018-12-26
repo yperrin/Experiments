@@ -2,3 +2,6 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 html { height: 100% }
 body { height: 95% }
+direct-environment .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height:30px;
+}

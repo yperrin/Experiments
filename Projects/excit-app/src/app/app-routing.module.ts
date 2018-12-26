@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DirectConnectComponent } from './direct-connect/direct-connect.component';
 
 const routes: Routes = [
-  { path: '.', redirectTo: '/supplier-list', pathMatch: 'full' },
-  { path: 'home', component: DirectConnectComponent }
+  { path: '', redirectTo: '/supplier-list', pathMatch: 'full' },
+  { path: 'supplier-list', component: DirectConnectComponent }
 ]
 
 @NgModule({

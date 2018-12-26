@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Supplier } from '../models/supplier.model';
 
-const endpoints = { 'Production': 'https://dc.asicentral.com/v1/' };
+const endpoints = { 'Production': 'https://dc.asicentral.com/v1/', 'UAT': 'https://dc.uat-asicentral.com/v1/', 'Stage': 'https://dc.stage-asicentral.com/v1/' };
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -15,12 +15,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DirectConnectService {
-  public environment = 'Production';
-
   constructor(private http: HttpClient  ) { }
 
-  getSuppliers(): Observable<Supplier[]> {
-    return this.http.get<any[]>(endpoints[this.environment] + 'suppliers').pipe(
+  getSuppliers(environment: string = 'Production'): Observable<Supplier[]> {
+    return this.http.get<any[]>(endpoints[environment] + 'suppliers').pipe(
       map(obj => obj.map(supp => {
         let supplier = new Supplier({
           name: supp.CompanyName, 

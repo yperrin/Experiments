@@ -1,0 +1,5 @@
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" #environmentGroup="matButtonToggleGroup" [value]="environment" (change)="onChange(environmentGroup.value)">
+  <mat-button-toggle value="Production" [checked]="environment == 'Production'">Production</mat-button-toggle>
+  <mat-button-toggle value="UAT">UAT</mat-button-toggle>
+  <mat-button-toggle value="Stage">Stage</mat-button-toggle>
+</mat-button-toggle-group>
