@@ -7,7 +7,7 @@ import {MatButtonModule, } from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
-import {MatSortModule, MatSelectModule} from '@angular/material';
+import {MatSortModule, MatSelectModule, MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -28,7 +28,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatTableModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
   ]
 })
 export class MaterialModule { }

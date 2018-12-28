@@ -12,3 +12,6 @@ td {
 td.left {
     text-align: left;
 }
+mat-icon {
+    color: "primary";
+}

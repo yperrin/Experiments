@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 html { height: 100% }
 body { height: 95% }
+/* customizing header menu on a global level as component specific not possible */
 direct-environment .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
     line-height:30px;
 }

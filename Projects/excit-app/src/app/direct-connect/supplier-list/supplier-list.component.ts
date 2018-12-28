@@ -24,4 +24,8 @@ export class SupplierListComponent implements OnInit {
     this.suppliers = suppliers;
     this.suppliers.subscribe(data => this.suppliersDataSource.data = data);
   }
+
+  filterList(filterValue: string) {
+    this.suppliersDataSource.filter = filterValue;
+  }
 }
