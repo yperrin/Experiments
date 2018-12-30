@@ -12,6 +12,7 @@ import { OrderStatusComponent } from './order-status/order-status.component';
 import { ProductIntegrationComponent } from './product-integration/product-integration.component';
 import { OrderCreationComponent } from './order-creation/order-creation.component';
 import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
+import { DirectConnectRoutingModule } from './direct-connect-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,10 @@ import { InventoryListComponent } from './inventory/inventory-list/inventory-lis
     CommonModule,
     RouterModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    DirectConnectRoutingModule
   ],
   exports: [
-    RouterModule
   ]
 })
 export class DirectConnectModule { }

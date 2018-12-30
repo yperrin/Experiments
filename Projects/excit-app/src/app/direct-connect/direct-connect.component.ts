@@ -30,6 +30,7 @@ export class DirectConnectComponent implements OnInit {
     this.directConnectService.setEnvironment(environment);
     this.suppliers = this.directConnectService.getSuppliers();
     this.supplierList.updateList(this.suppliers);
+    this.router.navigate(['/']);
   }
 
   applyFilter(filterValue: string) {

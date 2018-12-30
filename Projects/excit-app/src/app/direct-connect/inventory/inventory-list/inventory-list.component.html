@@ -1,6 +1,6 @@
-<span *ngIf="!hasData"><br />No inventory available yet</span>
-<div *ngIf="hasData">
-  Timing - Client Overall: 1906ms - Server: 1781ms - Supplier: 1576ms<br />
+<span *ngIf="!inventoryOutput"><br />No inventory available yet</span>
+<div *ngIf="inventoryOutput">
+  Timing - Client Overall: {{inventoryOutput.clientTimings}}ms - Server: {{inventoryOutput.serverTimings}}ms - Supplier: {{inventoryOutput.supplierTimings}}ms<br />
   <table mat-table [dataSource]="suppliersDataSource">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef class="left"> Name </th>

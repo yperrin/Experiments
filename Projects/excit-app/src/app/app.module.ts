@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'
 
 import { MaterialModule } from './material.module';
+import { HttpErrorInterceptor } from './shared/http-error.interceptor';
 import { DirectConnectModule } from './direct-connect/direct-connect.module';
 
 @NgModule({
@@ -15,11 +16,17 @@ import { DirectConnectModule } from './direct-connect/direct-connect.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     MaterialModule,
-    DirectConnectModule
+    DirectConnectModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

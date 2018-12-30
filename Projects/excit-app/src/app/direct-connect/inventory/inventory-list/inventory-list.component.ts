@@ -1,19 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { InventoryOutputModel } from '../../models/output/inventory/inventory-ouput.model';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'inventory-list',
   templateUrl: './inventory-list.component.html',
   styleUrls: ['./inventory-list.component.css']
 })
-export class InventoryListComponent implements OnInit {
-  hasData = false;
+export class InventoryListComponent implements OnDestroy {
+  inventoryOutput: InventoryOutputModel;
+  inventoryDataSource = new MatTableDataSource();
+  inventorySubscription: Subscription;
 
   constructor() { }
 
-  ngOnInit() {
+  loadData(output: Observable<InventoryOutputModel>) {
+    if (this.inventorySubscription) this.inventorySubscription.unsubscribe();
+    this.inventorySubscription = output.subscribe(data => {
+      this.inventoryDataSource.data = data.quantities;
+    });
   }
-
-  loadData() {
-    this.hasData = true;
+  ngOnDestroy(): void {
+    if (this.inventorySubscription) this.inventorySubscription.unsubscribe();
   }
 }

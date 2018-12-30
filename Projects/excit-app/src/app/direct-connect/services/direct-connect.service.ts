@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Supplier } from '../models/supplier.model';
 import { SupplierConfig } from '../models/config/supplierConfig.model';
 import { ServiceDetail } from '../models/config/serviceDetail.model';
 import { Services } from '../models/config/services.model';
+import { InventoryOutputModel } from '../models/output/inventory/inventory-ouput.model';
 
 const endpoints = { 'Production': 'https://dc.asicentral.com/v1/', 'UAT': 'https://dc.uat-asicentral.com/v1/', 'Stage': 'https://dc.stage-asicentral.com/v1/' };
 
@@ -14,6 +15,10 @@ const endpoints = { 'Production': 'https://dc.asicentral.com/v1/', 'UAT': 'https
 })
 export class DirectConnectService {
   private environment = 'Production';
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })};
 
   constructor(private http: HttpClient) { }
 
@@ -60,5 +65,24 @@ export class DirectConnectService {
         }
         return config;
       }));
+  }
+  getInventory(id: number, productJson: string): Observable<InventoryOutputModel> {
+    let input = '{ "Client" : "Angular Client", "Company": { "CompanyId":' + id + '}, "Products":[' + productJson + ']';
+    let start = Date.now();
+    return this.http.post<any>(endpoints[this.environment] + 'products/inventory', input, this.httpOptions).pipe(
+      map(obj => {
+        let output = new InventoryOutputModel({
+            clientTimings: Date.now() - start,
+            serverTimings: obj.ServerTimings,
+            supplierTimings: obj.SupplierTimings,
+            productIdentifier: obj.ProductIdentifier,
+            productDescription: obj.productDescription
+        })
+        if (obj.quantities) {
+
+        }
+        return output;
+      })
+    );
   }
 }
