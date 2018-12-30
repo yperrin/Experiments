@@ -3,13 +3,16 @@
     flex-direction: column;
     height:100%;
 }
-mat-card {
-    margin-top: 10px;
-    margin-bottom: 10px;
+#search {
+    padding-bottom: 5px;
 }
 #content {
     overflow-y: auto;
     flex-grow: 1;
+}
+mat-card {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 mat-card-title {
     height: 30px
@@ -23,7 +26,4 @@ mat-card-title {
     padding-left: 5%;
     text-align: left;
     font-weight: normal;
-}
-#search {
-    padding-bottom: 5px;
 }

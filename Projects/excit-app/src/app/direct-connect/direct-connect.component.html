@@ -2,7 +2,7 @@
   <mat-toolbar class="title mat-elevation-z8">
     <div>Direct Connect</div>
     <div class="centered">
-      <direct-environment [environment]="environment" (notify)="onEnvironmentChange($event)"></direct-environment>
+      <direct-environment [environment]="'Production'" (notify)="onEnvironmentChange($event)"></direct-environment>
     </div>
   </mat-toolbar>
   <mat-card id="content">
@@ -16,18 +16,8 @@
       </div>
     </mat-card-title>
     <mat-card-content>
-      <supplier-list [suppliers]="suppliers"></supplier-list>
+      <supplier-list [suppliers]="suppliers" (notify)="showPreview($event)"></supplier-list>
     </mat-card-content>
   </mat-card>
-  <mat-card id="preview" *ngIf="viewPreview">
-    <mat-card-title>
-      This is the Preview Pane <button mat-icon-button (click)="previewShow(false)"><mat-icon>clear</mat-icon></button></mat-card-title>
-    <mat-card-content>
-      This would be child content <br />
-      This would be child content <br />
-      This would be child content <br />
-      This would be child content <br />
-      This would be child content <br />
-      This would be child content <br />
-    </mat-card-content>
-  </mat-card>
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</mat-card>

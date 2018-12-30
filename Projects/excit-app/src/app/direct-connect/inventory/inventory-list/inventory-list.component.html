@@ -1,0 +1,47 @@
+<span *ngIf="!hasData"><br />No inventory available yet</span>
+<div *ngIf="hasData">
+  Timing - Client Overall: 1906ms - Server: 1781ms - Supplier: 1576ms<br />
+  <table mat-table [dataSource]="suppliersDataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="left"> Name </th>
+      <td mat-cell *matCellDef="let supplier" class="left" title="{{supplier.id}}"> {{supplier.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="asiNumber">
+      <th mat-header-cell *matHeaderCellDef> ASI# </th>
+      <td mat-cell *matCellDef="let supplier"> {{supplier.asiNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="hasInventory">
+      <th mat-header-cell *matHeaderCellDef> Inventory </th>
+      <td mat-cell *matCellDef="let supplier">
+        <span *ngIf="supplier.hasInventory">
+          <button (click)="showAction({type:'inventory', companyId:supplier.id, companyName: supplier.name})"
+            mat-icon-button title="Click to view inventory">
+            <mat-icon>play_arrow</mat-icon>
+          </button>
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="hasLogin">
+      <th mat-header-cell *matHeaderCellDef> Login </th>
+      <td mat-cell *matCellDef="let supplier">
+        <span *ngIf="supplier.hasLogin">
+          <button (click)="showAction({type:'login', companyId:supplier.id})" mat-icon-button title="Click to login">
+            <mat-icon>play_arrow</mat-icon>
+          </button>
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="hasOrderStatus">
+      <th mat-header-cell *matHeaderCellDef> Order Status </th>
+      <td mat-cell *matCellDef="let supplier">
+        <span *ngIf="supplier.hasOrderStatus">
+          <button (click)="showAction({type:'order-status', companyId:supplier.id})" mat-icon-button title="Click to view order status">
+            <mat-icon>play_arrow</mat-icon>
+          </button>
+        </span>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['name', 'asiNumber', 'hasInventory']"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: ['name', 'asiNumber', 'hasInventory']"></tr>
+  </table>
+</div>

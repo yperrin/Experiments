@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router'; 
 import { DirectConnectService } from './services/direct-connect.service';
 import { Supplier } from './models/supplier.model';
+import { Action } from './models/action.model';
 import { Observable } from 'rxjs';
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
-
 
 @Component({
   selector: 'direct-connect',
@@ -14,20 +15,20 @@ export class DirectConnectComponent implements OnInit {
   @ViewChild(SupplierListComponent) supplierList: SupplierListComponent;
   @ViewChild('search') searchElement: ElementRef;
   suppliers: Observable<Supplier[]>;
-  environment = 'Production';
   searchText = '';
-  viewPreview = true;
+  viewPreview = false;
 
-  constructor(private directConnectService: DirectConnectService) {
+  constructor(private directConnectService: DirectConnectService, private router: Router) {
   }
 
   ngOnInit() {
-    this.suppliers = this.directConnectService.getSuppliers(this.environment);
+    this.suppliers = this.directConnectService.getSuppliers();
     this.searchElement.nativeElement.focus();
   }
 
   onEnvironmentChange(environment: string): void {
-    this.suppliers = this.directConnectService.getSuppliers(environment);
+    this.directConnectService.setEnvironment(environment);
+    this.suppliers = this.directConnectService.getSuppliers();
     this.supplierList.updateList(this.suppliers);
   }
 
@@ -35,7 +36,7 @@ export class DirectConnectComponent implements OnInit {
     this.supplierList.filterList(filterValue.trim().toLowerCase());
   }
 
-  previewShow(viewPreview) {
-    this.viewPreview = viewPreview;
+  showPreview(action: Action) {
+    this.router.navigate([action.type, action.companyId, action.companyName]);
   }
 }

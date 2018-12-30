@@ -1,37 +1,64 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Supplier } from '../models/supplier.model';
+import { SupplierConfig } from '../models/config/supplierConfig.model';
+import { ServiceDetail } from '../models/config/serviceDetail.model';
+import { Services } from '../models/config/services.model';
 
 const endpoints = { 'Production': 'https://dc.asicentral.com/v1/', 'UAT': 'https://dc.uat-asicentral.com/v1/', 'Stage': 'https://dc.stage-asicentral.com/v1/' };
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json'
-  })
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class DirectConnectService {
-  constructor(private http: HttpClient  ) { }
+  private environment = 'Production';
 
-  getSuppliers(environment: string = 'Production'): Observable<Supplier[]> {
-    return this.http.get<any[]>(endpoints[environment] + 'suppliers').pipe(
+  constructor(private http: HttpClient) { }
+
+  setEnvironment(environment: string): void {
+    this.environment = environment;
+  }
+
+  getSuppliers(): Observable<Supplier[]> {
+    return this.http.get<any[]>(endpoints[this.environment] + 'suppliers').pipe(
       map(obj => obj.map(supp => {
         let supplier = new Supplier({
           id: supp.CompanyId,
-          name: supp.CompanyName, 
-          asiNumber: supp.AsiNumber, 
-          hasInventory: supp.HasInventory, 
-          hasLogin: supp.HasLogin, 
-          hasOrderStatus: supp.HasOrderStatus, 
+          name: supp.CompanyName,
+          asiNumber: supp.AsiNumber,
+          hasInventory: supp.HasInventory,
+          hasLogin: supp.HasLogin,
+          hasOrderStatus: supp.HasOrderStatus,
           hasOrderCreation: supp.HasOrderCreation,
           hasProductIntegration: supp.HasProductIntegration
         });
         return supplier;
       }))
     );
+  }
+
+  getConfig(id: number): Observable<SupplierConfig> {
+    return this.http.get<any>(endpoints[this.environment] + 'suppliers/' + id + '/config').pipe(
+      map(obj => {
+        let config = new SupplierConfig({
+          id: id,
+          asiNumber: obj.AsiNumber,
+          services: new Services(),
+          loginInstruction: obj.LoginInstruction,
+          overallTimings: obj.OverallTimings
+        });
+        if (obj.Services) {
+          if (obj.Services.Inventory) {
+            config.services.inventory = new ServiceDetail({
+              available: obj.Services.Inventory.Available,
+              url: obj.Services.Inventory.Url,
+              implementation: obj.Services.Inventory.Implementation
+            });
+          }
+        }
+        return config;
+      }));
   }
 }

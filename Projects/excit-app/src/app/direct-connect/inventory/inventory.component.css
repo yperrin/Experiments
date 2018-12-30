@@ -1,0 +1,16 @@
+.in-line {
+    display: flex;
+}
+.half {
+    width:40%;
+}
+.half mat-form-field {
+    width:90%;
+}
+.half mat-form-field.small {
+    width:70%;
+    margin-right:20px;
+}
+textarea {
+    height: 60px;
+}
