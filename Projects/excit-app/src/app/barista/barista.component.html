@@ -1,0 +1,22 @@
+<mat-card id="main">
+  <mat-toolbar class="title mat-elevation-z8">
+    <div>Direct Connect</div>
+    <div class="centered">
+      <mat-button-toggle-group #environmentGroup="matButtonToggleGroup" [value]="environment" (onChange)="onEnvironmentChange($event)">
+        <mat-button-toggle value="Production" [checked]="environment == 'Production'">Production</mat-button-toggle>
+        <mat-button-toggle value="UAT">UAT</mat-button-toggle>
+        <mat-button-toggle value="Stage">Stage</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </mat-toolbar>
+  <mat-card id="content">
+    <mat-card-title>
+      <div class="title">
+        <div>Barista modules</div>
+      </div>
+    </mat-card-title>
+    <mat-card-content>
+      <plugin-list #pluginList></plugin-list>
+    </mat-card-content>
+  </mat-card>
+</mat-card>

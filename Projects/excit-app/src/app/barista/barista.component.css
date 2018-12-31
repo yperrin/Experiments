@@ -1,0 +1,30 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+#content {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+mat-card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+mat-card-title {
+    height: 30px
+}
+.title {
+    display:flex;
+    min-height: 60px;
+}
+.title .centered {
+    flex-grow: 1;
+    padding-left: 5%;
+    text-align: left;
+    font-weight: normal;
+}
+.mat-button-toggle {
+    font-size:12px;
+    height: 30px;
+}

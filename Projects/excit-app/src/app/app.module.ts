@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { MaterialModule } from './material.module';
 import { HttpErrorInterceptor } from './shared/http-error.interceptor';
 import { DirectConnectModule } from './direct-connect/direct-connect.module';
+import { BaristaModule } from './barista/barista.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DirectConnectModule } from './direct-connect/direct-connect.module';
     HttpClientModule,
     MaterialModule,
     DirectConnectModule,
+    BaristaModule,
     AppRoutingModule
   ],
   providers: [
