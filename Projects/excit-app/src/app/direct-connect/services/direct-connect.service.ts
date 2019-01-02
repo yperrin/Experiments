@@ -73,13 +73,13 @@ export class DirectConnectService {
       map(obj => {
         let output = new InventoryOutputModel({
             clientTimings: Date.now() - start,
-            serverTimings: obj.ServerTimings,
+            serverTimings: obj.OverallTimings,
             supplierTimings: obj.SupplierTimings,
-            productIdentifier: obj.ProductIdentifier,
-            productDescription: obj.productDescription
         })
-        if (obj.quantities) {
-
+        if (obj.ProductQuantities) {
+            obj.ProductQuantities.foreach(objProductQuantity => {
+              
+            });
         }
         return output;
       })
