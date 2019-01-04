@@ -18,6 +18,7 @@ export class InventoryListComponent implements OnDestroy {
   loadData(output: Observable<InventoryOutputModel>) {
     if (this.inventorySubscription) this.inventorySubscription.unsubscribe();
     this.inventorySubscription = output.subscribe(data => {
+      this.inventoryOutput = data; 
       this.inventoryDataSource.data = data.quantities;
     });
   }

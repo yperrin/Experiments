@@ -7,6 +7,7 @@ import { SupplierConfig } from '../models/config/supplierConfig.model';
 import { ServiceDetail } from '../models/config/serviceDetail.model';
 import { Services } from '../models/config/services.model';
 import { InventoryOutputModel } from '../models/output/inventory/inventory-ouput.model';
+import { InventoryQuantityModel } from '../models/output/inventory/inventory-quantity.model';
 
 const endpoints = { 'Production': 'https://dc.asicentral.com/v1/', 'UAT': 'https://dc.uat-asicentral.com/v1/', 'Stage': 'https://dc.stage-asicentral.com/v1/' };
 
@@ -77,8 +78,21 @@ export class DirectConnectService {
             supplierTimings: obj.SupplierTimings,
         })
         if (obj.ProductQuantities) {
-            obj.ProductQuantities.foreach(objProductQuantity => {
-              
+            obj.ProductQuantities.forEach(objProductQuantity => {
+              if (objProductQuantity.Quantities) {
+                objProductQuantity.Quantities.forEach(objQuantity => {
+                  let quantity = new InventoryQuantityModel({
+                    productIdentifier: objProductQuantity.ProductIdentifier,
+                    productDescription: objProductQuantity.ProductDescription,
+                    partCode: objQuantity.PartCode,
+                    partDescription: objQuantity.PartDescription,
+                    label: objQuantity.Label,
+                    location: objQuantity.Location,
+                    value: objQuantity.Value
+                  });
+                  output.quantities.push(quantity);
+                })
+              }
             });
         }
         return output;

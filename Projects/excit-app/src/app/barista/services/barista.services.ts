@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { PluginModel } from '../models/plugin.model';
 import { PluginNodeModel } from '../models/plugin-node.model';
 import { PluginDiagnosticsModel } from '../models/plugin-diagnostics.model';
@@ -25,11 +25,12 @@ export class BaristaService {
 
     getPlugins(): Observable<PluginNodeModel[]> {
         return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins').pipe(
+            map(objPlugin => objPlugin.filter(objPlugin => objPlugin.Name.includes('Excit') || objPlugin.Name.includes('ProductUpdates'))),
             map(obj => obj.map(objPlugin => {
-                let pluginNodes: PluginNodeModel;
+                let pluginNode: PluginNodeModel;
                 if (objPlugin.Nodes) {
                     objPlugin.Nodes.forEach(node => {
-                        let pluginNode = new PluginNodeModel({
+                        pluginNode = new PluginNodeModel({
                             name: objPlugin.Name,
                             node: node.Node,
                             status: node.Status,
@@ -51,7 +52,7 @@ export class BaristaService {
                         }
                     });
                 }
-                return pluginNodes;
+                return pluginNode;
             }))
         );
     }
