@@ -2,7 +2,7 @@
   <mat-toolbar class="title mat-elevation-z8">
     <div>Direct Connect</div>
     <div class="centered">
-      <mat-button-toggle-group #environmentGroup="matButtonToggleGroup" [value]="environment" (onChange)="onEnvironmentChange($event)">
+      <mat-button-toggle-group #environmentGroup="matButtonToggleGroup" [value]="environment" (change)="onEnvironmentChange($event.value)">
         <mat-button-toggle value="Production" [checked]="environment == 'Production'">Production</mat-button-toggle>
         <mat-button-toggle value="UAT">UAT</mat-button-toggle>
         <mat-button-toggle value="Stage">Stage</mat-button-toggle>

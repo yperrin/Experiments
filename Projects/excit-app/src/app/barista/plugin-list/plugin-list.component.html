@@ -1,8 +1,29 @@
 <table mat-table [dataSource]="pluginsDataSource" matSort>
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef class="left"> Name </th>
-    <td mat-cell *matCellDef="let pluginNode" class="left">{{pluginNode.name}} </td>
+    <td mat-cell *matCellDef="let pluginNode" class="left" [style.display]="pluginNode.nodeCount > 0 ? '' : 'none'"
+      [attr.rowspan]="pluginNode.nodeCount > 0 ? pluginNode.nodeCount : ''">{{pluginNode.name}} </td>
   </ng-container>
-  <tr mat-header-row *matHeaderRowDef="['name']"></tr>
-  <tr mat-row *matRowDef="let myRowData; columns: ['name']"></tr>
+  <ng-container matColumnDef="node">
+    <th mat-header-cell *matHeaderCellDef> Node </th>
+    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.node}} </td>
+  </ng-container>
+  <ng-container matColumnDef="version">
+    <th mat-header-cell *matHeaderCellDef> Version </th>
+    <td mat-cell *matCellDef="let pluginNode">
+      {{pluginNode.version}}
+      <mat-icon *ngIf="pluginNode.status == 'Running'">directions_run</mat-icon>
+      <mat-icon *ngIf="pluginNode.status != 'Running'">block</mat-icon>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="memory">
+    <th mat-header-cell *matHeaderCellDef> Memory </th>
+    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.diagnostics.memoryUtilizationPercentage}} </td>
+  </ng-container>
+  <ng-container matColumnDef="cpu">
+    <th mat-header-cell *matHeaderCellDef> CPU </th>
+    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.diagnostics.pluginProcessorTime}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['name', 'version', 'node', 'memory', 'cpu']"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: ['name', 'version', 'node', 'memory', 'cpu']"></tr>
 </table>

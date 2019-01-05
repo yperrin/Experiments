@@ -18,6 +18,11 @@ export class PluginListComponent implements OnDestroy {
   setData(data: Observable<PluginNodeModel[]>) {
     if (this.subscription) this.subscription.unsubscribe();
     this.subscription = data.subscribe(plugins => {
+      //go through the data and remove nodeCount except for first record
+      let data = plugins;
+      data.forEach((value, index) => {
+        if (index > 0 && value.name == plugins[index-1].name) value.nodeCount = 0;
+      });
       this.pluginsDataSource.data = plugins;
     });
   }
