@@ -28,6 +28,7 @@ export class InventoryComponent extends PreviewBaseComponent implements OnInit, 
   onConfigLoaded() {
     super.onConfigLoaded();
     this.productJson = InventoryComponent.getProduct(this.supplierConfig.id);
+    this.inventoryList.loadData(null);
   }
 
   ngOnDestroy(): void {

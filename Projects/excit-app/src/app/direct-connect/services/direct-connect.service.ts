@@ -38,7 +38,8 @@ export class DirectConnectService {
           hasLogin: supp.HasLogin,
           hasOrderStatus: supp.HasOrderStatus,
           hasOrderCreation: supp.HasOrderCreation,
-          hasProductIntegration: supp.HasProductIntegration
+          hasProductIntegration: supp.HasProductIntegration,
+          hasServiceProviderLogin: supp.HasServiceProviderLogin
         });
         return supplier;
       }))

@@ -7,6 +7,7 @@ export class Supplier {
     hasOrderStatus: boolean;
     hasOrderCreation: boolean;
     hasProductIntegration: boolean;
+    hasServiceProviderLogin: boolean;
 
     public constructor(init?:Partial<Supplier>) {
         Object.assign(this, init);
