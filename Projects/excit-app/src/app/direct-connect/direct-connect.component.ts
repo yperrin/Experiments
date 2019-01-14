@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router'; 
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { DirectConnectService } from './services/direct-connect.service';
 import { Supplier } from './models/supplier.model';
 import { Action } from './models/action.model';
@@ -15,22 +16,24 @@ export class DirectConnectComponent implements OnInit {
   @ViewChild(SupplierListComponent) supplierList: SupplierListComponent;
   @ViewChild('search') searchElement: ElementRef;
   suppliers: Observable<Supplier[]>;
-  searchText = '';
-  viewPreview = false;
+  searchText: string = '';
 
-  constructor(private directConnectService: DirectConnectService, private router: Router) {
+  constructor(private directConnectService: DirectConnectService, 
+    private router: Router,
+    private deviceService: DeviceDetectorService) {
   }
 
   ngOnInit() {
     this.suppliers = this.directConnectService.getSuppliers();
-    this.searchElement.nativeElement.focus();
+    if (this.searchElement) this.searchElement.nativeElement.focus();
   }
 
   onEnvironmentChange(environment: string): void {
     this.directConnectService.setEnvironment(environment);
     this.suppliers = this.directConnectService.getSuppliers();
     this.supplierList.updateList(this.suppliers);
-    this.router.navigate(['/']);
+    if (this.searchElement) this.searchElement.nativeElement.focus();
+    this.router.navigate(['']);
   }
 
   applyFilter(filterValue: string) {

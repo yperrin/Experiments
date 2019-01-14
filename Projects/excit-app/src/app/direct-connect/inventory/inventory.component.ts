@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { PreviewBaseComponent } from '../preview-base.component';
 import { DirectConnectService } from '../services/direct-connect.service';
-import { SupplierConfig } from '../models/config/supplierConfig.model';
 import { InventoryListComponent } from './inventory-list/inventory-list.component';
 import { InventoryOutputModel } from '../models/output/inventory/inventory-ouput.model';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-inventory',
@@ -17,7 +16,10 @@ export class InventoryComponent extends PreviewBaseComponent implements OnInit, 
   inventoryOutput: InventoryOutputModel;
   @ViewChild('inventoryList') inventoryList: InventoryListComponent;
 
-  constructor(protected directConnectService: DirectConnectService, protected route: ActivatedRoute, protected router: Router) {
+  constructor(protected directConnectService: DirectConnectService, 
+    protected route: ActivatedRoute, 
+    protected router: Router,
+    private deviceService: DeviceDetectorService) {
     super(directConnectService, route, router);
    }
 

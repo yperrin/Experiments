@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module';
 import { HttpErrorInterceptor } from './shared/http-error.interceptor';
 import { DirectConnectModule } from './direct-connect/direct-connect.module';
 import { BaristaModule } from './barista/barista.module';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BaristaModule } from './barista/barista.module';
     MaterialModule,
     DirectConnectModule,
     BaristaModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [
     {

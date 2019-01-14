@@ -10,6 +10,9 @@ const endpoints = {
     'UAT': 'http://asi-barun1-02a.asinetwork.local:8080/api/',
     'Stage': 'http://asi-barsn1-02.asinetwork.local:8080/api/'
 };
+const header = {
+    withCredentials: true
+};
 
 @Injectable({
     providedIn: 'root'
@@ -23,7 +26,7 @@ export class BaristaService {
     }
 
     getPlugins(): Observable<PluginNodeModel[]> {
-        return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins').pipe(
+        return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins', header).pipe(
             map(objPlugin => objPlugin.filter(objPlugin => objPlugin.Name.includes('Excit') || objPlugin.Name.includes('ProductUpdates'))),
             map(obj => obj.map(objPlugin => {
                 return objPlugin.Nodes.map(node => {
