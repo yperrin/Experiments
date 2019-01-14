@@ -12,15 +12,17 @@ import { InventoryOutputModel } from '../models/output/inventory/inventory-ouput
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent extends PreviewBaseComponent implements OnInit, OnDestroy {
-  productJson: string;
-  inventoryOutput: InventoryOutputModel;
   @ViewChild('inventoryList') inventoryList: InventoryListComponent;
+  inventoryOutput: InventoryOutputModel;
+  productJson: string;
+  isMobile: boolean = false;
 
   constructor(protected directConnectService: DirectConnectService, 
     protected route: ActivatedRoute, 
     protected router: Router,
     private deviceService: DeviceDetectorService) {
     super(directConnectService, route, router);
+    this.isMobile = deviceService.isMobile();
    }
 
   ngOnInit() {

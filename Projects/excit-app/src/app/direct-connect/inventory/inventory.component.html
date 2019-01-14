@@ -1,11 +1,11 @@
 <mat-card>
-  <mat-card-content class="in-line">
+  <mat-card-content [ngClass]="{'in-line-mobile': isMobile, 'in-line': !isMobile}">
     <div class="half" *ngIf="!supplierConfig">
       <button mat-icon-button (click)="close()">
         <mat-icon>clear</mat-icon>
       </button>Inventory is loading...
     </div>
-    <div class="half" *ngIf="supplierConfig">
+    <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}" *ngIf="supplierConfig">
       <button mat-icon-button (click)="close()">
         <mat-icon>clear</mat-icon>
       </button>Inventory for {{name}} (ASI# {{supplierConfig.asiNumber}})
@@ -25,7 +25,7 @@
         <textarea matInput placeholder="Product data" value="{{productJson}}"></textarea>
       </mat-form-field>
     </div>
-    <div class="half">
+    <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}">
       <inventory-list #inventoryList></inventory-list>
     </div>
   </mat-card-content>

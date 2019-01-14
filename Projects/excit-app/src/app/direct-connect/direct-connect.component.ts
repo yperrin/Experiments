@@ -18,9 +18,7 @@ export class DirectConnectComponent implements OnInit {
   suppliers: Observable<Supplier[]>;
   searchText: string = '';
 
-  constructor(private directConnectService: DirectConnectService, 
-    private router: Router,
-    private deviceService: DeviceDetectorService) {
+  constructor(private directConnectService: DirectConnectService, private router: Router) {
   }
 
   ngOnInit() {
