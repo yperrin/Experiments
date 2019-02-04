@@ -10,7 +10,7 @@ const endpoints = {
     'UAT': 'http://asi-barun1-02a.asinetwork.local:8080/api/',
     'Stage': 'http://asi-barsn1-02.asinetwork.local:8080/api/'
 };
-const header = {
+const options = {
     withCredentials: true
 };
 
@@ -26,7 +26,7 @@ export class BaristaService {
     }
 
     setScheduleName(plugin: PluginNodeModel): Observable<PluginNodeModel> {
-        return this.http.get<any>('http://' + plugin.node + '/api/plugins/' + plugin.name + '/info', header).pipe(
+        return this.http.get<any>('http://' + plugin.node + '/api/plugins/' + plugin.name + '/info', options).pipe(
             map( pluginInfo => {
                 if (pluginInfo.RequestedSchedules) {
                     plugin.scheduleName = pluginInfo.RequestedSchedules[0];
@@ -37,12 +37,15 @@ export class BaristaService {
     }
 
     triggerSchedule(plugin: PluginNodeModel, scheduleName: string): void {
-        this.http.post('http://' + plugin.node + '/api/plugins/' + plugin.name + '/schedules/' + scheduleName + '/trigger', header)
-        .pipe(take(1));
+        this.http.post(endpoints[this.environment] + 'plugins/ASI.Barista.Plugins.Scheduler.SchedulerPlugin/schedules/' +
+        encodeURIComponent(scheduleName).replace('*', '%2A') +
+        '/trigger', null,
+        options)
+        .pipe(take(1)).subscribe();
     }
 
     getPlugins(): Observable<PluginNodeModel[]> {
-        return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins', header).pipe(
+        return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins', options).pipe(
             map(objPlugin => objPlugin.filter(plugin => plugin.Name.includes('Excit') || plugin.Name.includes('ProductUpdates'))),
             map((obj: any[]) => obj.map(objPlugin => {
                 return objPlugin.Nodes.map(node => {
