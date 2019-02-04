@@ -12,17 +12,20 @@
     <th mat-header-cell *matHeaderCellDef> Version </th>
     <td mat-cell *matCellDef="let pluginNode">
       {{pluginNode.version}}
-      <mat-icon *ngIf="pluginNode.status == 'Running'">directions_run</mat-icon>
-      <mat-icon *ngIf="pluginNode.status != 'Running'">block</mat-icon>
+      <button mat-icon-button>
+        <mat-icon *ngIf="pluginNode.status == 'Running'" title="The plugin is running">directions_run</mat-icon>
+        <mat-icon *ngIf="pluginNode.status != 'Running'" title="The plugin is not running">block</mat-icon>
+      </button>
+      <button (click)="triggerSchedule(pluginNode, pluginNode.scheduleName)" title="{{pluginNode.scheduleName}}" mat-icon-button><mat-icon>alarm_on</mat-icon></button>
     </td>
   </ng-container>
   <ng-container matColumnDef="memory">
     <th mat-header-cell *matHeaderCellDef> Memory </th>
-    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.diagnostics.memoryUtilizationPercentage}} </td>
+    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.diagnostics ? pluginNode.diagnostics.memoryUtilizationPercentage : '&nbsp;'}} </td>
   </ng-container>
   <ng-container matColumnDef="cpu">
     <th mat-header-cell *matHeaderCellDef> CPU </th>
-    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.diagnostics.pluginProcessorTime}} </td>
+    <td mat-cell *matCellDef="let pluginNode">{{pluginNode.diagnostics ? pluginNode.diagnostics.pluginProcessorTime : '&nbsp;'}} </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="['name', 'version', 'node', 'memory', 'cpu']"></tr>
   <tr mat-row *matRowDef="let myRowData; columns: ['name', 'version', 'node', 'memory', 'cpu']"></tr>

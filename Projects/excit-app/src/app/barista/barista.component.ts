@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './barista.component.html',
   styleUrls: ['./barista.component.css']
 })
-export class BaristaComponent implements OnInit {
+export class BaristaComponent implements OnInit, OnDestroy {
   environment = 'Production';
   subscription: Subscription;
   @ViewChild('pluginList') pluginList: PluginListComponent;
@@ -25,6 +25,8 @@ export class BaristaComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    if (this.subscription) this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

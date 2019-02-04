@@ -9,8 +9,9 @@ export class PluginNodeModel {
     isMonitored: boolean;
     hasApi: boolean;
     diagnostics: PluginDiagnosticsModel;
+    scheduleName: string;
 
-    public constructor(init?:Partial<PluginNodeModel>) {
+    public constructor(init?: Partial<PluginNodeModel>) {
         Object.assign(this, init);
-    } 
+    }
 }

@@ -9,7 +9,11 @@ import { Services } from '../models/config/services.model';
 import { InventoryOutputModel } from '../models/output/inventory/inventory-ouput.model';
 import { InventoryQuantityModel } from '../models/output/inventory/inventory-quantity.model';
 
-const endpoints = { 'Production': 'https://dc.asicentral.com/v1/', 'UAT': 'https://dc.uat-asicentral.com/v1/', 'Stage': 'https://dc.stage-asicentral.com/v1/' };
+const endpoints = {
+  'Production': 'https://dc.asicentral.com/v1/',
+  'UAT': 'https://dc.uat-asicentral.com/v1/',
+  'Stage': 'https://dc.stage-asicentral.com/v1/'
+};
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +34,7 @@ export class DirectConnectService {
   getSuppliers(): Observable<Supplier[]> {
     return this.http.get<any[]>(endpoints[this.environment] + 'suppliers').pipe(
       map(obj => obj.map(supp => {
-        let supplier = new Supplier({
+        const supplier = new Supplier({
           id: supp.CompanyId,
           name: supp.CompanyName,
           asiNumber: supp.AsiNumber,
@@ -49,7 +53,7 @@ export class DirectConnectService {
   getConfig(id: number): Observable<SupplierConfig> {
     return this.http.get<any>(endpoints[this.environment] + 'suppliers/' + id + '/config').pipe(
       map(obj => {
-        let config = new SupplierConfig({
+        const config = new SupplierConfig({
           id: id,
           asiNumber: obj.AsiNumber,
           services: new Services(),
@@ -69,11 +73,11 @@ export class DirectConnectService {
       }));
   }
   getInventory(id: number, productJson: string): Observable<InventoryOutputModel> {
-    let input = '{ "Client" : "Angular Client", "Company": { "CompanyId":' + id + '}, "Products":[' + productJson + ']';
-    let start = Date.now();
+    const input = '{ "Client" : "Angular Client", "Company": { "CompanyId":' + id + '}, "Products":[' + productJson + ']';
+    const start = Date.now();
     return this.http.post<any>(endpoints[this.environment] + 'products/inventory', input, this.httpOptions).pipe(
       map(obj => {
-        let output = new InventoryOutputModel({
+        const output = new InventoryOutputModel({
             clientTimings: Date.now() - start,
             serverTimings: obj.OverallTimings,
             supplierTimings: obj.SupplierTimings,
@@ -82,7 +86,7 @@ export class DirectConnectService {
             obj.ProductQuantities.forEach(objProductQuantity => {
               if (objProductQuantity.Quantities) {
                 objProductQuantity.Quantities.forEach(objQuantity => {
-                  let quantity = new InventoryQuantityModel({
+                  const quantity = new InventoryQuantityModel({
                     productIdentifier: objProductQuantity.ProductIdentifier,
                     productDescription: objProductQuantity.ProductDescription,
                     partCode: objQuantity.PartCode,
@@ -92,7 +96,7 @@ export class DirectConnectService {
                     value: objQuantity.Value
                   });
                   output.quantities.push(quantity);
-                })
+                });
               }
             });
         }

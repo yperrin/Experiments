@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { map, mergeAll, flatMap, concatAll, reduce } from 'rxjs/operators';
+import { Observable, forkJoin } from 'rxjs';
+import { map, reduce, mergeMap, flatMap, take } from 'rxjs/operators';
 import { PluginNodeModel } from '../models/plugin-node.model';
 import { PluginDiagnosticsModel } from '../models/plugin-diagnostics.model';
 
@@ -25,12 +25,28 @@ export class BaristaService {
         this.environment = environment;
     }
 
+    setScheduleName(plugin: PluginNodeModel): Observable<PluginNodeModel> {
+        return this.http.get<any>('http://' + plugin.node + '/api/plugins/' + plugin.name + '/info', header).pipe(
+            map( pluginInfo => {
+                if (pluginInfo.RequestedSchedules) {
+                    plugin.scheduleName = pluginInfo.RequestedSchedules[0];
+                }
+                return plugin;
+            })
+        );
+    }
+
+    triggerSchedule(plugin: PluginNodeModel, scheduleName: string): void {
+        this.http.post('http://' + plugin.node + '/api/plugins/' + plugin.name + '/schedules/' + scheduleName + '/trigger', header)
+        .pipe(take(1));
+    }
+
     getPlugins(): Observable<PluginNodeModel[]> {
         return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins', header).pipe(
-            map(objPlugin => objPlugin.filter(objPlugin => objPlugin.Name.includes('Excit') || objPlugin.Name.includes('ProductUpdates'))),
-            map(obj => obj.map(objPlugin => {
+            map(objPlugin => objPlugin.filter(plugin => plugin.Name.includes('Excit') || plugin.Name.includes('ProductUpdates'))),
+            map((obj: any[]) => obj.map(objPlugin => {
                 return objPlugin.Nodes.map(node => {
-                    let pluginNode = new PluginNodeModel({
+                    const pluginNode = new PluginNodeModel({
                         name: objPlugin.Name,
                         node: node.Node,
                         nodeCount: objPlugin.Nodes.length,
@@ -40,7 +56,7 @@ export class BaristaService {
                         hasApi: node.HasApi
                     });
                     if (node.Diagnostics) {
-                        let pluginDiagnostics = new PluginDiagnosticsModel({
+                        const pluginDiagnostics = new PluginDiagnosticsModel({
                             date: node.Diagnostics.Date,
                             deploymentDiskUsage: node.Diagnostics.DeploymentDiskUsage,
                             memoryUtilizationPercentage: node.Diagnostics.MemoryUtilizationPercentage,
@@ -58,7 +74,14 @@ export class BaristaService {
             reduce((actual, value) => actual.concat(
                 value.reduce(function (prev, curr) {
                     return prev.concat(curr);
-                })), [])
+                })), []),
+            flatMap((plugins: PluginNodeModel[]) => forkJoin(plugins.map( plugin => {
+                if (plugin.status === 'Running') {
+                    return this.setScheduleName(plugin);
+                }
+                return [plugin];
+            }))
+            )
         );
     }
-}  
+}

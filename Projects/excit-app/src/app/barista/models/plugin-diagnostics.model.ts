@@ -7,7 +7,7 @@ export class PluginDiagnosticsModel {
     deploymentDiskUsage: string;
     date: Date;
 
-    public constructor(init?:Partial<PluginDiagnosticsModel>) {
+    public constructor(init?: Partial<PluginDiagnosticsModel>) {
         Object.assign(this, init);
-    } 
+    }
 }
