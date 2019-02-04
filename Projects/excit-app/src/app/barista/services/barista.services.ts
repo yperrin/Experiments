@@ -80,8 +80,7 @@ export class BaristaService {
                     return this.setScheduleName(plugin);
                 }
                 return [plugin];
-            }))
-            )
+            })))
         );
     }
 }
