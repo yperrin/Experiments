@@ -15,14 +15,13 @@ export class InventoryComponent extends PreviewBaseComponent implements OnInit, 
   @ViewChild('inventoryList') inventoryList: InventoryListComponent;
   inventoryOutput: InventoryOutputModel;
   productJson: string;
-  isMobile = false;
 
   constructor(protected directConnectService: DirectConnectService,
     protected route: ActivatedRoute,
     protected router: Router,
-    private deviceService: DeviceDetectorService) {
-    super(directConnectService, route, router);
-    this.isMobile = deviceService.isMobile();
+    protected deviceService: DeviceDetectorService) {
+
+    super(directConnectService, route, router, deviceService);
    }
 
   ngOnInit() {

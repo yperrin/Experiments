@@ -3,14 +3,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DirectConnectService } from './services/direct-connect.service';
 import { SupplierConfig } from './models/config/supplierConfig.model';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 export class PreviewBaseComponent implements OnInit, OnDestroy {
   id: number;
   name: string;
   supplierConfig: SupplierConfig;
+  isMobile = false;
   private subscriber: Subscription;
 
-  constructor(protected directConnectService: DirectConnectService, protected route: ActivatedRoute, protected router: Router) { }
+  constructor(protected directConnectService: DirectConnectService,
+    protected route: ActivatedRoute,
+    protected router: Router,
+    protected deviceService: DeviceDetectorService) {
+
+      this.isMobile = deviceService.isMobile();
+    }
 
   ngOnInit() {
     this.subscriber = this.route.params.subscribe(params => {
