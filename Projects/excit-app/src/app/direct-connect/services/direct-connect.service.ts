@@ -68,9 +68,38 @@ export class DirectConnectService {
               implementation: obj.Services.Inventory.Implementation
             });
           }
+          if (obj.Services.LoginValidate) {
+            config.services.loginValidate = new ServiceDetail({
+              available: obj.Services.LoginValidate.Available,
+              url: obj.Services.LoginValidate.Url,
+              implementation: obj.Services.LoginValidate.Implementation
+            });
+          }
+          if (obj.Services.OrderStatus) {
+            config.services.orderStatus = new ServiceDetail({
+              available: obj.Services.OrderStatus.Available,
+              url: obj.Services.OrderStatus.Url,
+              implementation: obj.Services.OrderStatus.Implementation
+            });
+          }
+          if (obj.Services.OrderCreation) {
+            config.services.orderCreation = new ServiceDetail({
+              available: obj.Services.OrderCreation.Available,
+              url: obj.Services.OrderCreation.Url,
+              implementation: obj.Services.OrderCreation.Implementation
+            });
+          }
+          if (obj.Services.ProductIntegration) {
+            config.services.productIntegration = new ServiceDetail({
+              available: obj.Services.ProductIntegration.Available,
+              url: obj.Services.ProductIntegration.Url,
+              implementation: obj.Services.ProductIntegration.Implementation
+            });
+          }
         }
         return config;
-      }));
+      }
+    ));
   }
   getInventory(id: number, productJson: string): Observable<InventoryOutputModel> {
     const input = '{ "Client" : "Angular Client", "Company": { "CompanyId":' + id + '}, "Products":[' + productJson + ']';

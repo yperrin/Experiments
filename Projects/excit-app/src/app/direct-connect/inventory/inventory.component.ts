@@ -15,10 +15,10 @@ export class InventoryComponent extends PreviewBaseComponent implements OnInit, 
   @ViewChild('inventoryList') inventoryList: InventoryListComponent;
   inventoryOutput: InventoryOutputModel;
   productJson: string;
-  isMobile: boolean = false;
+  isMobile = false;
 
-  constructor(protected directConnectService: DirectConnectService, 
-    protected route: ActivatedRoute, 
+  constructor(protected directConnectService: DirectConnectService,
+    protected route: ActivatedRoute,
     protected router: Router,
     private deviceService: DeviceDetectorService) {
     super(directConnectService, route, router);
@@ -40,7 +40,7 @@ export class InventoryComponent extends PreviewBaseComponent implements OnInit, 
   }
 
   callInventory() {
-    let output = this.directConnectService.getInventory(this.supplierConfig.id, this.productJson)
+    const output = this.directConnectService.getInventory(this.supplierConfig.id, this.productJson)
     this.inventoryList.loadData(output);
   }
 

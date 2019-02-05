@@ -16,16 +16,16 @@ export class PreviewBaseComponent implements OnInit, OnDestroy {
     this.subscriber = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       this.name = params['name'];
-      let temp = this.directConnectService.getConfig(this.id).subscribe( config => {
+      const temp = this.directConnectService.getConfig(this.id).subscribe( config => {
         this.supplierConfig = config;
         temp.unsubscribe();
         this.onConfigLoaded();
-      })
+      });
    });
   }
 
   onConfigLoaded() {
-    //nothing yet
+    // nothing yet
   }
 
   ngOnDestroy(): void {

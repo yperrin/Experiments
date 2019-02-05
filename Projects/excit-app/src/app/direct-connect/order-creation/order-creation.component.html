@@ -1,10 +1,26 @@
 <mat-card>
-  <mat-card-title>
-    <button mat-icon-button (click)="close()">
-      <mat-icon>clear</mat-icon>
-    </button>This is the Preview Pane
-  </mat-card-title>
-  <mat-card-content>
-    This would be order creation content
+  <mat-card-content [ngClass]="{'in-line-mobile': isMobile, 'in-line': !isMobile}">
+    <div class="half" *ngIf="!supplierConfig">
+      <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+      </button>Login is loading...
+    </div>
+    <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}" *ngIf="supplierConfig">
+      <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+      </button>Login for {{name}} (ASI# {{supplierConfig.asiNumber}})
+      <br /><br />
+      <mat-form-field>
+        <input matInput placeholder="Implementation" title="{{supplierConfig.services.orderCreation.implementation}}"
+          value="{{supplierConfig.services.orderCreation.implementation}}" readonly>
+      </mat-form-field><br />
+      <mat-form-field>
+        <input matInput placeholder="Url" title="{{supplierConfig.services.orderCreation.url}}" value="{{supplierConfig.services.orderCreation.url}}"
+          readonly>
+      </mat-form-field>
+    </div>
+    <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}">
+      Not implemented yet
+    </div>
   </mat-card-content>
 </mat-card>
