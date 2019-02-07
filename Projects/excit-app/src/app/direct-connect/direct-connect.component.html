@@ -1,6 +1,6 @@
 <mat-card id="main">
   <mat-toolbar class="title mat-elevation-z8">
-    <div>Direct Connect</div>
+    <div><a routerLink="/barista"><mat-icon>access_time</mat-icon></a> Direct Connect</div>
     <div class="centered">
       <direct-environment [environment]="'Production'" (notify)="onEnvironmentChange($event)"></direct-environment>
     </div>

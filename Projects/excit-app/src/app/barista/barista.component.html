@@ -1,6 +1,6 @@
 <mat-card id="main">
   <mat-toolbar class="title mat-elevation-z8">
-    <div>Direct Connect</div>
+    <div><a routerLink="/"><mat-icon>home</mat-icon></a> Direct Connect</div>
     <div class="centered">
       <mat-button-toggle-group #environmentGroup="matButtonToggleGroup" [value]="environment" (change)="onEnvironmentChange($event.value)">
         <mat-button-toggle value="Production" [checked]="environment == 'Production'">Production</mat-button-toggle>

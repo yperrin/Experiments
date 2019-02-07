@@ -17,17 +17,21 @@ export class SupplierListComponent implements OnInit, OnDestroy {
   supplierSubscription: Subscription;
 
   constructor() { }
-  
+
   ngOnInit() {
     this.suppliersDataSource.sort = this.sort;
     this.supplierSubscription = this.suppliers.subscribe(data => this.suppliersDataSource.data = data);
   }
   ngOnDestroy(): void {
-    if (this.supplierSubscription) this.supplierSubscription.unsubscribe();
+    if (this.supplierSubscription) {
+      this.supplierSubscription.unsubscribe();
+    }
   }
 
   updateList(suppliers: Observable<Supplier[]>) {
-    if (this.supplierSubscription) this.supplierSubscription.unsubscribe();
+    if (this.supplierSubscription) {
+      this.supplierSubscription.unsubscribe();
+    }
     this.suppliers = suppliers;
     this.supplierSubscription = this.suppliers.subscribe(data => this.suppliersDataSource.data = data);
   }
