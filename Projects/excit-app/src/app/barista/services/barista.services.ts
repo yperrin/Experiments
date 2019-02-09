@@ -45,7 +45,11 @@ export class BaristaService {
     }
 
     getPlugins(): Observable<PluginNodeModel[]> {
-        return this.http.get<any[]>(endpoints[this.environment] + 'cluster/plugins', options).pipe(
+        let url = endpoints[this.environment] + 'cluster/plugins';
+        if (this.environment === 'Production') {
+            url += '?zones=excit';
+        }
+        return this.http.get<any[]>(url, options).pipe(
             map(objPlugin => objPlugin.filter(plugin => plugin.Name.includes('Excit') || plugin.Name.includes('ProductUpdates'))),
             map((obj: any[]) => obj.map(objPlugin => {
                 return objPlugin.Nodes.map(node => {

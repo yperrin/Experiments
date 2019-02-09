@@ -29,7 +29,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
       multi: true
-    }    
+    }
   ],
   bootstrap: [AppComponent]
 })

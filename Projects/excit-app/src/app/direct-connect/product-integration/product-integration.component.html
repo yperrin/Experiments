@@ -3,12 +3,12 @@
     <div class="half" *ngIf="!supplierConfig">
       <button mat-icon-button (click)="close()">
         <mat-icon>clear</mat-icon>
-      </button>Login is loading...
+      </button>Production Integration is loading...
     </div>
     <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}" *ngIf="supplierConfig">
       <button mat-icon-button (click)="close()">
         <mat-icon>clear</mat-icon>
-      </button>Login for {{name}} (ASI# {{supplierConfig.asiNumber}})
+      </button>Production Integration for {{name}} (ASI# {{supplierConfig.asiNumber}})
       <br /><br />
       <mat-form-field>
         <input matInput placeholder="Implementation" title="{{supplierConfig.services.productIntegration.implementation}}"
