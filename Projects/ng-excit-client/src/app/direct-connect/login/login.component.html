@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-content [ngClass]="{'in-line-mobile': isMobile, 'in-line': !isMobile}">
+    <div class="half" *ngIf="!supplierConfig">
+      <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+      </button>Login is loading...
+    </div>
+    <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}" *ngIf="supplierConfig">
+      <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+      </button>Login for {{name}} (ASI# {{supplierConfig.asiNumber}})
+      <br /><br />
+      <mat-form-field>
+        <input matInput placeholder="Implementation" title="{{supplierConfig.services.loginValidate.implementation}}"
+          value="{{supplierConfig.services.loginValidate.implementation}}" readonly>
+      </mat-form-field><br />
+      <mat-form-field>
+        <input matInput placeholder="Url" title="{{supplierConfig.services.loginValidate.url}}"
+          value="{{supplierConfig.services.loginValidate.url}}" readonly>
+      </mat-form-field>
+    </div>
+    <div [ngClass]="{'half-mobile': isMobile, 'half': !isMobile}">
+      <div *ngIf="supplierConfig && supplierConfig.loginInstructions" [innerHtml]="supplierConfig.loginInstructions"></div>
+      <div *ngIf="supplierConfig && supplierConfig.loginConfig">
+        <mat-form-field *ngIf="supplierConfig.loginConfig.accountNumberRequired">
+          <input matInput placeholder="Account Number" title="Account Number" (change)="reset()"
+            [(ngModel)]="accountNumber">
+        </mat-form-field>
+        <mat-form-field *ngIf="supplierConfig.loginConfig.usernameRequired">
+          <input matInput placeholder="Username" title="Username" (change)="reset()" [(ngModel)]="username">
+        </mat-form-field>
+        <mat-form-field *ngIf="supplierConfig.loginConfig.passwordRequired">
+          <input matInput placeholder="Password" title="Username" (change)="reset()" [(ngModel)]="password">
+        </mat-form-field>
+        <button mat-raised-button mat-primary (click)="validate()">Validate</button> &nbsp;
+        <span class="valid" *ngIf="status && status == 'valid'">&nbsp;<mat-icon>verified_user</mat-icon>Credentials are
+          valid</span>
+        <span class="invalid" *ngIf="status && status == 'invalid'">&nbsp;<mat-icon>cancel</mat-icon>Credentials are not
+          valid</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

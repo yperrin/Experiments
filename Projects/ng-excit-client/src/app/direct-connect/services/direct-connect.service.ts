@@ -1,0 +1,183 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Supplier } from '../models/supplier.model';
+import { SupplierConfig } from '../models/config/supplierConfig.model';
+import { ServiceDetail } from '../models/config/serviceDetail.model';
+import { Services } from '../models/config/services.model';
+import { InventoryOutputModel } from '../models/output/inventory/inventory-ouput.model';
+import { InventoryQuantityModel } from '../models/output/inventory/inventory-quantity.model';
+import { LoginOutputModel } from '../models/output/login/login-output.model';
+
+const endpoints = {
+  'Production': 'https://dc.asicentral.com/v1/',
+  'UAT': 'https://dc.uat-asicentral.com/v1/',
+  'Stage': 'https://dc.stage-asicentral.com/v1/'
+};
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DirectConnectService {
+  private environment = 'Production';
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  constructor(private http: HttpClient) { }
+
+  setEnvironment(environment: string): void {
+    this.environment = environment;
+  }
+
+  getSuppliers(): Observable<Supplier[]> {
+    return this.http.get<any[]>(endpoints[this.environment] + 'suppliers').pipe(
+      map(obj => obj.map(supp => {
+        const supplier = new Supplier({
+          id: supp.CompanyId,
+          name: supp.CompanyName,
+          asiNumber: supp.AsiNumber,
+          hasInventory: supp.HasInventory,
+          hasLogin: supp.HasLogin,
+          hasOrderStatus: supp.HasOrderStatus,
+          hasOrderCreation: supp.HasOrderCreation,
+          hasProductIntegration: supp.HasProductIntegration,
+          hasServiceProviderLogin: supp.HasServiceProviderLogin
+        });
+        return supplier;
+      }))
+    );
+  }
+
+  getConfig(id: number): Observable<SupplierConfig> {
+    return this.http.get<any>(endpoints[this.environment] + 'suppliers/' + id + '/config').pipe(
+      map(obj => {
+        const config = new SupplierConfig({
+          id: id,
+          asiNumber: obj.AsiNumber,
+          services: new Services(),
+          loginInstructions: obj.LoginInstruction,
+          overallTimings: obj.OverallTimings
+        });
+        if (obj.Services) {
+          if (obj.Services.Inventory) {
+            config.services.inventory = new ServiceDetail({
+              available: obj.Services.Inventory.Available,
+              url: obj.Services.Inventory.Url,
+              implementation: obj.Services.Inventory.Implementation
+            });
+          }
+          if (obj.Services.LoginValidate) {
+            config.services.loginValidate = new ServiceDetail({
+              available: obj.Services.LoginValidate.Available,
+              url: obj.Services.LoginValidate.Url,
+              implementation: obj.Services.LoginValidate.Implementation
+            });
+          }
+          if (obj.Services.OrderStatus) {
+            config.services.orderStatus = new ServiceDetail({
+              available: obj.Services.OrderStatus.Available,
+              url: obj.Services.OrderStatus.Url,
+              implementation: obj.Services.OrderStatus.Implementation
+            });
+          }
+          if (obj.Services.OrderCreation) {
+            config.services.orderCreation = new ServiceDetail({
+              available: obj.Services.OrderCreation.Available,
+              url: obj.Services.OrderCreation.Url,
+              implementation: obj.Services.OrderCreation.Implementation
+            });
+          }
+          if (obj.Services.ProductIntegration) {
+            config.services.productIntegration = new ServiceDetail({
+              available: obj.Services.ProductIntegration.Available,
+              url: obj.Services.ProductIntegration.Url,
+              implementation: obj.Services.ProductIntegration.Implementation
+            });
+          }
+        }
+        if (obj.Login && obj.Login.Properties) {
+          const props = obj.Login.Properties;
+          if (props.AccountNumber) {
+            config.loginConfig.accountNumberRequired = (props.AccountNumber.required === 'true');
+          }
+          if (props.Password) {
+            config.loginConfig.passwordRequired = (props.Password.required === 'true');
+          }
+          if (props.Username) {
+            config.loginConfig.usernameRequired = (props.Username.required === 'true');
+          }
+        }
+        if (obj.Order) {
+          config.orderConfig.warehouseRequired = obj.Order.WarehouseRequired;
+          config.orderConfig.warehouseAvailable = obj.Order.WarehouseAvailable;
+        }
+        return config;
+      }
+      ));
+  }
+  getInventory(id: number, productJson: string): Observable<InventoryOutputModel> {
+    const input = '{ "Client" : "Angular Client", "Company": { "CompanyId":' + id + '}, "Products":[' + productJson + ']';
+    const start = Date.now();
+    return this.http.post<any>(endpoints[this.environment] + 'products/inventory', input, this.httpOptions).pipe(
+      map(obj => {
+        const output = new InventoryOutputModel({
+          clientTimings: Date.now() - start,
+          serverTimings: obj.OverallTimings,
+          supplierTimings: obj.SupplierTimings,
+        });
+        if (obj.ProductQuantities) {
+          obj.ProductQuantities.forEach(objProductQuantity => {
+            if (objProductQuantity.Quantities) {
+              objProductQuantity.Quantities.forEach(objQuantity => {
+                const quantity = new InventoryQuantityModel({
+                  productIdentifier: objProductQuantity.ProductIdentifier,
+                  productDescription: objProductQuantity.ProductDescription,
+                  partCode: objQuantity.PartCode,
+                  partDescription: objQuantity.PartDescription,
+                  label: objQuantity.Label,
+                  location: objQuantity.Location,
+                  value: objQuantity.Value
+                });
+                output.quantities.push(quantity);
+              });
+            }
+          });
+        }
+        return output;
+      })
+    );
+  }
+  login(id: number, username: string, password = '', accountNumber = ''): Observable<LoginOutputModel> {
+    let credentials = '';
+    if (!!accountNumber) {
+      credentials += '"AccountNumber": "' + accountNumber + '"';
+    }
+    if (!!username) {
+      if (credentials.length > 0) {
+        credentials += ',';
+      }
+      credentials += '"Username": "' + username + '"';
+    }
+    if (!!password) {
+      if (credentials.length > 0) {
+        credentials += ',';
+      }
+      credentials += '"Password": "' + password + '"';
+    }
+    credentials = '{' + credentials + '}';
+    const input = '{ "Client" : "Angular Client", "Company": { "CompanyId":' + id + '}, "UserCredentials": ' + credentials + '}';
+    const start = Date.now();
+    return this.http.post<any>(endpoints[this.environment] + 'users/validate', input, this.httpOptions).pipe(
+      map(obj => new LoginOutputModel({
+          clientTimings: Date.now() - start,
+          serverTimings: obj.OverallTimings,
+          supplierTimings: obj.SupplierTimings,
+          isValid: obj.IsValid,
+        })
+      ));
+  }
+}
