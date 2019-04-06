@@ -1,0 +1,4 @@
+<h3>Parent Content</h3> <button (click)="updateData()">Update</button> &nbsp; <button (click)="reset()">Reset</button><br />
+Children: {{person.numberOfChildren}} - <label>Children: <input [(ngModel)]="person.numberOfChildren"/></label>
+
+<app-parent-child-child [person]="person" [peoplePush]="peoplePush" [people]="people"></app-parent-child-child>

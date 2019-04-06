@@ -1,0 +1,14 @@
+<h3>Child Content</h3>
+<h4>Person</h4>
+<label>Children: <input [(ngModel)]="person.numberOfChildren"/></label><br />
+{{person.name}} ({{person.dateOfBirth | date}}) - {{person.numberOfChildren}}
+<h4>People Push</h4>
+<label>Children: <input [(ngModel)]="peoplePush[0].numberOfChildren"/></label><br />
+<ul>
+  <li *ngFor="let individual of peoplePush">{{individual.name}} ({{individual.dateOfBirth | date}}) - {{individual.numberOfChildren}}</li>
+</ul>
+<h4>People</h4>
+<label>Children: <input [(ngModel)]="people[0].numberOfChildren"/></label><br />
+<ul>
+  <li *ngFor="let individual of people">{{individual.name}} ({{individual.dateOfBirth | date}}) - {{individual.numberOfChildren}}</li>
+</ul>
