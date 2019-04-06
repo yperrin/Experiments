@@ -7,7 +7,7 @@ import { ActionModel } from './model/action.model';
   selector: 'app-parent-child-child',
   templateUrl: './parent-child-child.component.html',
   styleUrls: ['./parent-child-child.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ParentChildChildComponent implements OnInit {
   @Input() person: PersonModel;
