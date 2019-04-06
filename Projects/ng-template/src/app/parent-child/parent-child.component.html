@@ -1,4 +1,6 @@
 <h3>Parent Content</h3> <button (click)="updateData()">Update</button> &nbsp; <button (click)="reset()">Reset</button><br />
-Children: {{person.numberOfChildren}} - <label>Children: <input [(ngModel)]="person.numberOfChildren"/></label>
+Children: {{person.numberOfChildren}} - <label>Children: <input [(ngModel)]="person.numberOfChildren"/></label><br />
 
-<app-parent-child-child [person]="person" [peoplePush]="peoplePush" [people]="people"></app-parent-child-child>
+<small>Since the table optimizes for performance, it will not automatically check for changes to the data array. Instead, when objects are added, removed, or moved on the data array, you can trigger an update to the table's rendered rows by calling its renderRows() method.</small>
+
+<app-parent-child-child [person]="person" [peoplePush]="peoplePush" [people]="people" (childReset)="reset()" (childUpdatedata)="updateData()"></app-parent-child-child>
