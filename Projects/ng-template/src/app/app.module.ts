@@ -7,12 +7,14 @@ import { ParentChildComponent } from './parent-child/parent-child.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ParentChildChildComponent } from './parent-child/parent-child-child/parent-child-child.component';
 import { FormsModule } from '@angular/forms';
+import { ReferencesComponent } from './references/references.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParentChildComponent,
-    ParentChildChildComponent
+    ParentChildChildComponent,
+    ReferencesComponent
   ],
   imports: [
     BrowserModule,

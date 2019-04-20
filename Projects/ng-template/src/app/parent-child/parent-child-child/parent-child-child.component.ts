@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { PersonModel } from './model/person.model';
-import { MatTableDataSource, MatTable } from '@angular/material';
+import { MatTable } from '@angular/material';
 import { ActionModel } from './model/action.model';
 
 @Component({
   selector: 'app-parent-child-child',
   templateUrl: './parent-child-child.component.html',
   styleUrls: ['./parent-child-child.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ParentChildChildComponent implements OnInit {
   @Input() person: PersonModel;
