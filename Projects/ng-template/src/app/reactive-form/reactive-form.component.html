@@ -1,0 +1,22 @@
+<h3>Creating the form</h3>
+<form [formGroup]="myForm">
+  <mat-form-field>
+    <input matInput placeholder="first" formControlName="first">
+  </mat-form-field><br />
+  <mat-form-field>
+    <input matInput placeholder="second" formControlName="second">
+  </mat-form-field><br />
+  <mat-form-field>
+    <input matInput placeholder="third" formControlName="third">
+  </mat-form-field><br />
+  <mat-form-field>
+    <input matInput placeholder="email address" formControlName="email">
+  </mat-form-field><br />
+  <mat-form-field>
+    <textarea matInput placeholder="Basic text" formControlName="text"></textarea>
+  </mat-form-field><br />
+  <button mat-button [disabled]="!myForm.valid">Submit</button>
+</form>
+<br />
+<i>Form Status: {{formStatus}}</i><br />
+<i>Char Left: {{maxLength - (myForm.value.text ? myForm.value.text.length : 0)}}</i>
