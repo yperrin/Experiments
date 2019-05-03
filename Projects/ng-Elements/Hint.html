@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.softwarearchitekt.at/labs/elements/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Hint</title>
+        <link rel="stylesheet" href="./Hint_files/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="./Hint_files/markdown.css">
+        <link rel="stylesheet" href="./Hint_files/highlight.css">
+        <link href="./Hint_files/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="./Hint_files/katex-copytex.min.js.download"></script>
+    </head>
+    <body>
+        <h1>Labs: Web Components with Angular</h1>
+<ul>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#hint">Hint</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#your-first-angular-element">Your first Angular Element</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#working-with-shadom-dom">Working with Shadom DOM</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#dynamically-adding-a-web-component">Dynamically adding a Web Component</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#loading-an-external-web-component">Loading an external Web Component</a>
+<ul>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#inspecting-the-web-component-to-load">Inspecting the Web Component to load</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#load-the-external-web-component">Load the external web component</a></li>
+</ul>
+</li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#content-projection-and-the-slot-api">Content projection and the Slot API</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#bonus-native-web-components-and-angular">Bonus: Native Web Components and Angular **</a>
+<ul>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#using-existing-web-components">Using existing Web Components</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#working-with-events-checkbox-component">Working with events: Checkbox Component</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#implementing-two-way-bindings-for-existing-web-components">Implementing Two-Way-Bindings for existing web components</a></li>
+</ul>
+</li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#directors-cut">Director's Cut **</a>
+<ul>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#lazy-loading-web-components">Lazy Loading Web Components</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#loading-an-external-web-component-1">Loading an external Web Component</a>
+<ul>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#inspecting-the-external-project">Inspecting the external project</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#build-the-external-web-component">Build the external web component</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#load-the-external-web-component-1">Load the external web component</a></li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#bonus-sharing-dependencies">Bonus: Sharing dependencies **</a></li>
+</ul>
+</li>
+<li><a href="https://www.softwarearchitekt.at/labs/elements/#zone-less-change-detection">Zone-less change detection</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="hint">Hint</h1>
+<ul>
+<li>To quickly switch between files in this lab, use <code>CTRL+P</code> in Visual Studio Code.</li>
+</ul>
+<h1 id="your-first-angular-element">Your first Angular Element</h1>
+<ol>
+<li>
+<p>Open the <a href="https://stackblitz.com/github/manfredsteyer/ngconf-angular-elements-workshop">lab project with stackblitz</a>. You find it <a href="https://stackblitz.com/github/manfredsteyer/ngconf-angular-elements-workshop">here</a>.</p>
+</li>
+<li>
+<p>Have a look to the file <code>dashboard-tile.component.ts</code> and its template in <code>dashboard-tile.component.html</code>. Find out what it does and that it is just an ordinary Angular component.</p>
+</li>
+<li>
+<p>Now, let's expose this component as a web component using Angular Elements. For this, open the file <code>dashboard-tile.module.ts</code> and add the <code>DashboardTileComponent</code> to the <code>entryComponents</code>:</p>
+<pre><code class="language-typescript"><div>entryComponents: [
+    DashboardTileComponent
+]
+</div></code></pre>
+</li>
+<li>
+<p>In the module's constructor, wrap your component with Angular Elements and register it as a custom element.</p>
+ <details open="">
+ <summary>Show Code</summary>
+ <p>
+</p><pre><code class="language-typescript"><div><span class="hljs-keyword">const</span> tileElm = createCustomElement(DashboardTileComponent, { injector: <span class="hljs-keyword">this</span>.injector });
+
+customElements.define(<span class="hljs-string">'dashboard-tile'</span>, tileElm);
+</div></code></pre>
+ <p></p>
+ </details>
+</li>
+<li>
+<p>To test your web component, call it within your <code>home.component.html</code> file:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">dashboard-tile</span> <span class="hljs-attr">a</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">b</span>=<span class="hljs-string">"4"</span> <span class="hljs-attr">c</span>=<span class="hljs-string">"5"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">dashboard-tile</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Find out that the application is broken. Hence, have a look to the Chrome dev tools and read the error.</p>
+<p><img src="file:///C:/Users/Manfred/Documents/Konferenzen/2019/ngconf/workshop/labs/img/error-not-a-known-element.png" alt="Error: dashboard-tile is not a known element"></p>
+</li>
+<li>
+<p>Fix this issue: Open the <code>app.module.ts</code> file and add the <code>CUSTOM_ELEMENTS_SCHEMA</code> to your module:</p>
+<pre><code class="language-typescript"><div>schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
+</div></code></pre>
+</li>
+<li>
+<p>Find out, that the application still doesn't work. But now, you should see another error in the Chrome dev tools.</p>
+</li>
+<li>
+<p>To solve this issue, we have to make sure that we've installed the necessary polyfills. Open the file <code>pollyfills.ts</code> and uncomment the lines at the end to get them:</p>
+<pre><code class="language-typescript"><div><span class="hljs-keyword">import</span> <span class="hljs-string">'@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'</span>;  
+
+<span class="hljs-comment">// This polyfill needs to be loaded </span>
+<span class="hljs-comment">// via a script tag (!) after core-js</span>
+<span class="hljs-comment">// Origin: @webcomponents/webcomponentsjs</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-built_in">window</span>[<span class="hljs-string">'customElements'</span>]) {
+    <span class="hljs-built_in">document</span>.write(<span class="hljs-string">`&lt;script src="/assets/webcomponentsjs/webcomponents-loader.js"&gt;&lt;/script&gt;`</span>);
+}
+</div></code></pre>
+</li>
+<li>
+<p>Make sure, the solution works now and displays the <code>dashboard-tile</code> web component.</p>
+</li>
+</ol>
+<p>Congrats! You've implemented your first Angular Element and you've successfully dealt with some typical show stoppers.</p>
+<h1 id="working-with-shadom-dom">Working with Shadom DOM</h1>
+<p>If you <strong>did not</strong> finish the last exercise, you can use <a href="https://stackblitz.com/github/manfredsteyer/ngconf-angular-elements-workshop/tree/01">this safe point</a>.</p>
+<ol>
+<li>
+<p>Open the file <code>dashboard-tile.component.ts</code> and add the following style:</p>
+<pre><code class="language-typescript"><div><span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'app-dashboard-tile'</span>,
+    templateUrl: <span class="hljs-string">'./dashboard-tile.component.html'</span>,
+    styles: [<span class="hljs-string">`
+        .card .title {
+            color: green;
+        }
+    `</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DashboardTileComponent <span class="hljs-keyword">implements</span> OnInit {
+    [...]
+}
+</div></code></pre>
+</li>
+<li>
+<p>Find out that this modification only affects the title of the <code>dashboard-tile</code> and NOT the title of the page.</p>
+</li>
+<li>
+<p>Now, turn off Shadow DOM by setting <code>encapsulation</code> to <code>none</code>:</p>
+<pre><code class="language-typescript"><div><span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'app-dashboard-tile'</span>,
+    templateUrl: <span class="hljs-string">'./dashboard-tile.component.html'</span>,
+    styles: [<span class="hljs-string">`
+        .card .title {
+            color: green;
+        }
+    `</span>],
+    encapsulation: ViewEncapsulation.None
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DashboardTileComponent <span class="hljs-keyword">implements</span> OnInit {
+    [...]
+}
+</div></code></pre>
+</li>
+<li>
+<p>Find out that now this style leaks through and also affects the title of the page.</p>
+</li>
+<li>
+<p>Undo the last modification or set encapsulation to the default value <code>Emulated</code>, so that the styles DOES NOT leask trough anymore.</p>
+</li>
+<li>
+<p>Introduce a CSS property <code>my-color</code> for the title's color:</p>
+<pre><code class="language-typescript"><div><span class="hljs-meta">@Component</span>({
+    selector: <span class="hljs-string">'app-dashboard-tile'</span>,
+    templateUrl: <span class="hljs-string">'./dashboard-tile.component.html'</span>,
+    styles: [<span class="hljs-string">`
+        .card .title {
+        color: green; /* fallback value */
+        color: var(--my-color)
+        }
+    `</span>],
+    encapsulation: ViewEncapsulation.Emulated
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> DashboardTileComponent <span class="hljs-keyword">implements</span> OnInit {
+    [...]
+}
+</div></code></pre>
+</li>
+<li>
+<p>Open the file <code>style.css</code> and define a value for this property at the end:</p>
+<pre><code class="language-css"><div><span class="hljs-selector-pseudo">:root</span> {
+    <span class="hljs-attribute">--my-color</span>: lightsteelblue;
+}
+</div></code></pre>
+</li>
+<li>
+<p>Your application should now display a blue title for the <code>dashboard-tile</code>.</p>
+</li>
+</ol>
+<h1 id="dynamically-adding-a-web-component">Dynamically adding a Web Component</h1>
+<p>If you <strong>did not</strong> finish the last exercise, you can use <a href="https://stackblitz.com/github/manfredsteyer/ngconf-angular-elements-workshop/tree/01-shadow">this safe point</a>.</p>
+<ol>
+<li>
+<p>Open the <code>dashboard-page.component.ts</code> file and inspect its methods.</p>
+</li>
+<li>
+<p>In this file, implement the open TODOs (see comments) to dynamically add a dashboard tile to your dashboard.</p>
+ <details open="">
+ <summary>Show Hint</summary>
+ <p>
+</p><pre><code class="language-typescript"><div><span class="hljs-keyword">const</span> content = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'content'</span>);
+
+<span class="hljs-keyword">const</span> tile = <span class="hljs-built_in">document</span>.createElement(tileKind);
+
+tile.setAttribute(<span class="hljs-string">'class'</span>, <span class="hljs-string">'col-lg-4 col-md-3 col-sm-2'</span>);
+tile.setAttribute(<span class="hljs-string">'a'</span>, <span class="hljs-string">''</span> + data[<span class="hljs-number">0</span>]);
+tile.setAttribute(<span class="hljs-string">'b'</span>, <span class="hljs-string">''</span> + data[<span class="hljs-number">1</span>]);
+tile.setAttribute(<span class="hljs-string">'c'</span>, <span class="hljs-string">''</span> + data[<span class="hljs-number">2</span>]);
+
+content.appendChild(tile);
+</div></code></pre>
+ <p></p>
+ </details>
+</li>
+<li>
+<p>Test your application. Navigate to the dashboard in the app and press <code>Add Tile</code>. You should now see a dynamically added tile. We will take care about the other button here in the next exercises.</p>
+</li>
+</ol>
+<h1 id="loading-an-external-web-component">Loading an external Web Component</h1>
+<h2 id="inspecting-the-web-component-to-load">Inspecting the Web Component to load</h2>
+<p>In this exercise, we'll dynamically load an external web component that has been compiled separately. The  web component is part of an other GitHub repo.</p>
+<ol>
+<li>
+<p>Use an other (!) browser tab to navigate to <a href="https://github.com/manfredsteyer/ngconf-angular-elements-workshop-external">this GitHub</a> project and inspect the file <code>src/app/app.module.ts</code>. Please note that this file does not bootstrap an Angular component (empty <code>bootstrap</code> array). Instead, it provides an Angular Element in its <code>doBootstrap</code> method.</p>
+</li>
+<li>
+<p>Switch back to your browser tab containing our  StackBlitz based example. Find out that a compiled version of this project is part of your StackBlitz lab project. You can find it in the file <code>assets/external-dashboard-tile.bundle.js</code>. Please also look at its (quite huge) file size.</p>
+</li>
+</ol>
+<p>The Director's Cut of this Lab which can be found on the end of this file also shows how to compile this project. However, for the time being we concentrate on loading the compiled version.</p>
+<h2 id="load-the-external-web-component">Load the external web component</h2>
+<ol>
+<li>
+<p>Open the file <code>external-dashboard-tile.service.ts</code> and implement the missing parts (see TODO comments) in the <code>load</code> method.</p>
+<pre><code class="language-typescript"><div><span class="hljs-keyword">const</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>);
+script.src = <span class="hljs-string">'assets/external-dashboard-tile.bundle.js'</span>;
+<span class="hljs-built_in">document</span>.body.appendChild(script);
+<span class="hljs-keyword">this</span>.loaded = <span class="hljs-literal">true</span>;
+</div></code></pre>
+</li>
+<li>
+<p>Have a look to your <code>dashboard-page.component.ts</code>. See that your modified <code>load</code> method is called by <code>addExternal</code>.</p>
+</li>
+<li>
+<p>In your lab application, switch to the menu item dashboard and press <code>Add External</code>. Your external component should now be loaded and displayed.</p>
+</li>
+<li>
+<p>Reload the app and use the network tab in Chrome's dev tools to assure yourself that the bundle is loaded just on demand.</p>
+</li>
+</ol>
+<h1 id="content-projection-and-the-slot-api">Content projection and the Slot API</h1>
+<p>If you <strong>did not</strong> finish the last exercise, you can use <a href="https://stackblitz.com/github/manfredsteyer/ngconf-angular-elements-workshop/tree/02">this safe point</a>.</p>
+<ol>
+<li>
+<p>Open the file <code>tabs.module.ts</code> and have a look at the containing module. Uncomment the lines that are wrapping and registering the two web components.</p>
+</li>
+<li>
+<p>Open the file <code>tab.component.ts</code> assure yourself, that <code>ViewEncapsulation.ShadowDom</code> is used (the respective line is located on the end of the file).</p>
+</li>
+<li>
+<p>Add two slots to the inline (!) template (see TODO comments).</p>
+ <details>
+ <summary>Show Hint</summary>
+ <p>
+</p><pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"footer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+ <p></p>
+ </details>
+</li>
+<li>
+<p>Test your modifications by calling the <code>my-tab</code> component within the file <code>tabs-page.component.html</code>:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">my-tab</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Test"</span>&gt;</span>
+    Some text
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Footer!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">my-tab</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Assure yourself that it works by navigating to the <code>Tabs</code> menu item in the lab application.</p>
+</li>
+<li>
+<p>Open the file <code>tabs.component.ts</code>.</p>
+</li>
+<li>
+<p>Modify the slot tag so that it defines an event handler for <code>slotschange</code>:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">slot</span> (<span class="hljs-attr">slotchange</span>)=<span class="hljs-string">"slotChange($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Implement the missing parts (see TODO comments).</p>
+ <details>
+ <summary>Show Hint</summary>
+ <p>
+</p><pre><code class="language-typescript"><div>slotChange($event) {
+
+    <span class="hljs-keyword">const</span> assigned = $event.target.assignedNodes();
+    <span class="hljs-keyword">this</span>.tabs = assigned.filter(<span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n.localName === <span class="hljs-string">'my-tab'</span>);
+    
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.tabs.length &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">this</span>.activate(<span class="hljs-keyword">this</span>.tabs[<span class="hljs-number">0</span>]);
+    }
+}
+
+activate(tab: TabComponent) {
+    <span class="hljs-keyword">this</span>.tabs.forEach(<span class="hljs-function"><span class="hljs-params">t</span> =&gt;</span> t[<span class="hljs-string">'hidden'</span>] = <span class="hljs-literal">true</span>);
+    tab[<span class="hljs-string">'hidden'</span>] = <span class="hljs-literal">false</span>;
+}
+
+</div></code></pre>
+ <p></p>
+ </details>
+</li>
+<li>
+<p>Update your <code>tabs-page.component.html</code> and call the my-tabs element with my-tab elements:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">my-tabs</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">my-tab</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Page 1"</span>&gt;</span>
+        Lorem ipsum what ever
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Some extra info<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">my-tab</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">my-tab</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Page 2"</span>&gt;</span>
+        Lorem ipsum once again
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"footer"</span>&gt;</span>Some extra info<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">my-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">my-tabs</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Test your application.</p>
+</li>
+</ol>
+<h1 id="bonus-native-web-components-and-angular">Bonus: Native Web Components and Angular **</h1>
+<p>If you <strong>did not</strong> finish the last exercise, you can use <a href="https://stackblitz.com/github/manfredsteyer/ngconf-angular-elements-workshop/tree/03">this safe point</a>.</p>
+<h2 id="using-existing-web-components">Using existing Web Components</h2>
+<ol>
+<li>
+<p>Open the file <code>hello-world.ts</code> and inspect the containing native web component.</p>
+</li>
+<li>
+<p>Open your <code>main.ts</code> and reference the <code>hello-world</code> file:</p>
+<pre><code class="language-typescript"><div><span class="hljs-keyword">import</span> <span class="hljs-string">'./app/native-elements/hello-world/hello-world'</span>;
+</div></code></pre>
+</li>
+<li>
+<p>Reference the <code>hello-world</code> element in your <code>home.component.html</code>:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">hello-world</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Manfred"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">hello-world</span>&gt;</span>
+</div></code></pre>
+</li>
+</ol>
+<h2 id="working-with-events-checkbox-component">Working with events: Checkbox Component</h2>
+<ol>
+<li>
+<p>Open the file <code>custom-checkbox.ts</code> and have a look to the implementation. Have a particular look at the call to <code>dispatchEvent</code> which is raising an <code>changed</code> event.</p>
+</li>
+<li>
+<p>Open the file <code>custom-checkbox.module.ts</code> and uncomment the lines which are responsible for registering the <code>custom-checkbox</code> Web Component.</p>
+</li>
+<li>
+<p>Open your <code>home.component.html</code> file and call the <code>custom-checkbox</code> element:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">custom-checkbox</span> [<span class="hljs-attr">checked</span>]=<span class="hljs-string">"expertMode"</span> (<span class="hljs-attr">changed</span>)=<span class="hljs-string">"expertMode = $event.detail"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Expert Mode?"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">custom-checkbox</span>&gt;</span> 
+{{expertMode}}
+</div></code></pre>
+</li>
+<li>
+<p>Test your application.</p>
+</li>
+</ol>
+<h2 id="implementing-two-way-bindings-for-existing-web-components">Implementing Two-Way-Bindings for existing web components</h2>
+<p>To allow the use of two way bindings, we need to provide a directive that exposes a <code>checkedChange</code> event.</p>
+<ol>
+<li>
+<p>Open the file <code>custom-checkbox-directive.ts</code>.</p>
+</li>
+<li>
+<p>Assure yourself that the directive has a selector <code>custom-checkbox</code> which assigns the directive to all instances of our custom element.</p>
+</li>
+<li>
+<p>Add a <code>checkedChange</code> event and a host listener for the existing changed event. Let the latter one trigger <code>checkedChange</code>.</p>
+ <details>
+ <summary>Show Hint</summary>
+ <p>
+</p><pre><code class="language-typescript"><div><span class="hljs-meta">@Output</span>() checkedChange = <span class="hljs-keyword">new</span> EventEmitter&lt;<span class="hljs-built_in">boolean</span>&gt;();
+
+<span class="hljs-meta">@HostListener</span>(<span class="hljs-string">'changed'</span>, [<span class="hljs-string">'$event'</span>])
+changed($event) {
+    <span class="hljs-keyword">this</span>.checkedChange.next($event.detail);
+}
+</div></code></pre>
+ <p></p>
+ </details>
+</li>
+<li>
+<p>Have a look to the file <code>custom-checkbox.module.ts</code> and find out that it exports the directive.</p>
+</li>
+<li>
+<p>Open the file <code>custom-checkbox-page.component.html</code> use two way binding for your checkbox (<code>... [(checked)]="value2" ...</code>).</p>
+</li>
+<li>
+<p>Test your solution.</p>
+</li>
+</ol>
+<h1 id="directors-cut">Director's Cut **</h1>
+<p>This Director's Cut contains further examples. To work on them, you need a local setup:</p>
+<ul>
+<li>NodeJS in current LTS version</li>
+<li>Visual Studio Code</li>
+<li>Git</li>
+</ul>
+<h2 id="lazy-loading-web-components">Lazy Loading Web Components</h2>
+<ol>
+<li>
+<p>To get started, clone the lab project and npm install its dependencies:</p>
+<pre><code><div>git clone https://github.com/manfredsteyer/ngconf-angular-elements-workshop
+
+cd ngconf-angular-elements-workshop
+npm install
+</div></code></pre>
+</li>
+<li>
+<p>In your lab example, open the file <code>lazy-dashboard-tile.component.ts</code> and have a look to its component and its template. Find out that it's another ordinary Angular Component.</p>
+</li>
+<li>
+<p>Open the file <code>lazy-dashboard-tile.module.ts</code> and see that the lazy dashboard tile is provided as an Angular Element.</p>
+</li>
+<li>
+<p>In your <code>angular.json</code>, scroll down to the element <code>lazyModules</code> node. Assure yourself that the following entry exists:</p>
+<pre><code class="language-json"><div><span class="hljs-string">"lazyModules"</span>: [
+    <span class="hljs-string">"src/app/lazy-dashboard-tile/lazy-dashboard-tile.module"</span>
+],
+</div></code></pre>
+</li>
+<li>
+<p>At the command line, you should now see that the CLI splits off a bundle for this module.</p>
+<p><img src="file:///C:/Users/Manfred/Documents/Konferenzen/2019/ngconf/workshop/labs/img/lazy-bundle.png" alt="Lazy Bundle"></p>
+</li>
+<li>
+<p>Open the file <code>lazy-dashboard-tile.service.ts</code>. Its <code>load</code> method already contains some low level API calls to load the lazy chunk and instantiate the included <code>LazyDashboardTileModule</code>. Have a look at it.</p>
+</li>
+<li>
+<p>Switch back to the file <code>dashboard-page.component.ts</code> and find out that its <code>addLazy</code> method already calls the load method we've looked at before.</p>
+</li>
+<li>
+<p>Now, let's try this out. Open your application, move to the Dashboard and click the button <code>Add Lazy</code>.</p>
+</li>
+<li>
+<p>To assure yourself that the module is lazy loaded, refresh the page, open Chrome's dev tools and move to the network page. Then, press <code>Add Lazy</code> and see that the chunk is just loaded on demand.</p>
+</li>
+</ol>
+<h2 id="loading-an-external-web-component-1">Loading an external Web Component</h2>
+<h3 id="inspecting-the-external-project">Inspecting the external project</h3>
+<p>In this part of the exercise, we are using <strong>an other</strong> project with an external web component.</p>
+<ol>
+<li>
+<p>Clone the <strong>external</strong> project and npm install its dependencies:</p>
+<pre><code><div>git clone https://github.com/manfredsteyer/ngconf-angular-elements-workshop
+cd ngconf-angular-elements-workshop
+npm install
+</div></code></pre>
+</li>
+<li>
+<p>Inspect the <code>external</code> project with Visual Studio Code.</p>
+</li>
+<li>
+<p>Have a look to the <code>external-dashboard-tile.component.ts</code> file and its template. One more time, it's just an ordinary Angular component.</p>
+</li>
+<li>
+<p>Have a look to the <code>app.module.ts</code> file and find out that defines a <code>ngDoBootstrap</code> for wrapping and registering the web component.</p>
+<p>NOTE: This is needed because this application is started without an bootstrap component (see empty <code>bootstrap</code> array)</p>
+</li>
+<li>
+<p>Start the external project to test it:</p>
+<pre><code><div>ng serve  -o
+</div></code></pre>
+</li>
+</ol>
+<h3 id="build-the-external-web-component">Build the external web component</h3>
+<p>In this part of the exercise, we are using the <code>external</code> project one more time.</p>
+<ol>
+<li>
+<p>Now, let's build the <code>external</code> project. To make sure to get just one bundle, use the option <code>--single-bundle</code> provided by the community project <a href="https://www.npmjs.com/package/ngx-build-plus">ngx-build-plus</a></p>
+<pre><code><div>ng build --prod --single-bundle --output-hashing none --project external
+</div></code></pre>
+<p>HINT: Preventing <code>output-hashing</code> makes writing code for dynamically loading the bundles easier.</p>
+<p><img src="file:///C:/Users/Manfred/Documents/Konferenzen/2019/ngconf/workshop/labs/img/build-prod-single-bundle.png" alt="producing just a single bundle"></p>
+<p>As you see here, this bundle is rather big for such a simple web component. The upcoming Ivy compiler will help here a lot.</p>
+</li>
+<li>
+<p>Copy the <code>external</code> project's bundle over to your <code>important-app</code>'s <code>assets</code> folder.</p>
+</li>
+</ol>
+<h3 id="load-the-external-web-component-1">Load the external web component</h3>
+<p>See section "Load the external web component", above.</p>
+<h3 id="bonus-sharing-dependencies">Bonus: Sharing dependencies **</h3>
+<ol>
+<li>
+<p>As this example changes a lot to our project and the idea behind it is not always useful, we create an own branch for it.</p>
+<p>For this, commit your current state:</p>
+<pre><code><div>git add *
+git commit -m "web components class"
+</div></code></pre>
+<p>Create a new branch:</p>
+<pre><code><div>git branch -b externals-demo
+</div></code></pre>
+</li>
+<li>
+<p>Activate externals support using the community project <a href="https://www.npmjs.com/package/ngx-build-plus">ngx-build-plus</a>:</p>
+<pre><code><div>ng g ngx-build-plus:externals 
+</div></code></pre>
+</li>
+<li>
+<p>Inspect the changes this command performed within your <code>external</code> project.</p>
+</li>
+<li>
+<p>Build your external project:</p>
+<pre><code><div>npm run build:externals -- --output-hashing none
+</div></code></pre>
+</li>
+<li>
+<p>Have a look at the size of the generated bundle. It should be pretty small.</p>
+</li>
+</ol>
+<h2 id="zone-less-change-detection">Zone-less change detection</h2>
+<p>In this part of the exercise, we are using the <code>external</code> project one more time.</p>
+<ol>
+<li>
+<p>Open the file <code>external-dashboard-tile.component.ts</code> and put the component into <code>OnPush</code> mode:</p>
+ <details>
+ <summary>Show Hint</summary>
+ <p>
+ ```typescript
+ @Component({
+     [...]
+     changeDetection: ChangeDetectionStrategy.OnPush
+ })
+ export class ExternalDashboardTileComponent {
+     [...]
+ }
+ ```
+ </p>
+ </details>
+</li>
+<li>
+<p>Replace the <code>data</code> property with a <code>data$</code> ReplaySubject:</p>
+<pre><code><div>data$ = new ReplaySubject&lt;Data&gt;(1);
+</div></code></pre>
+<p>REMARKS: Normally, a service or a store would provide this data as an observable. For the sake of simplicity, we are creating a Subject directly within the component.</p>
+</li>
+<li>
+<p>In the <code>more</code> method, send the received data to <code>data$</code>.</p>
+ <details>
+ <summary>Show Hint</summary>
+ <p>
+</p><pre><code class="language-typescript"><div>more() {
+    <span class="hljs-keyword">this</span>.src++;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.src &gt; <span class="hljs-number">3</span>) <span class="hljs-keyword">this</span>.src = <span class="hljs-number">1</span>;
+
+    <span class="hljs-comment">// publish further data</span>
+    <span class="hljs-keyword">this</span>.http
+        .get&lt;Data&gt;(<span class="hljs-string">`/assets/stats-<span class="hljs-subst">${this.src}</span>.json`</span>)
+        .subscribe(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-keyword">this</span>.data$.next(data));
+}
+</div></code></pre>
+ <p></p>
+ </details>
+</li>
+<li>
+<p>In the template <code>external-dashboard-tile.component.ts</code> unwrap the observable using the experimental push pipe:</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">table</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">"data$ | push as data "</span>&gt;</span>
+    [...]
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</div></code></pre>
+<p>REMARKS: The source of this experimental push pipe is included in your project.</p>
+</li>
+<li>
+<p>Open the <code>main.ts</code> file and make Angular use Noop-Zone (No Operation Zone):</p>
+<pre><code class="language-typescript"><div>platformBrowserDynamic().bootstrapModule(AppModule, {ngZone: <span class="hljs-string">'noop'</span>})
+.catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(err));
+</div></code></pre>
+</li>
+<li>
+<p>Start your application and test whether the <code>next</code> button and hence data binding works.</p>
+<pre><code><div>ng serve --project external -o
+</div></code></pre>
+</li>
+</ol>
+
+    
+    </body></html>
