@@ -110,3 +110,5 @@ UpgradeLog*.XML
 Projects/Umbraco/Umbraco7/App_Data/*
 /Projects/Material/node_modules/**/*
 /Projects/ExcitCore/.vs/**/*
+/Projects/ng-Elements/node_modules/**/*
+/Projects/AzureAPIs/CoreWebApp/.vs/**/*
