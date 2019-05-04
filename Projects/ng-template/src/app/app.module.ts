@@ -9,6 +9,9 @@ import { ParentChildChildComponent } from './parent-child/parent-child-child/par
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReferencesComponent } from './references/references.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ObservableComponent } from './observable/observable.component';
+import { JavascriptComponent } from './javascript/javascript.component';
+import { ObservableChildComponent } from './observable/observable-child/observable-child.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ParentChildComponent,
     ParentChildChildComponent,
     ReferencesComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ObservableComponent,
+    ObservableChildComponent,
+    JavascriptComponent
   ],
   imports: [
     BrowserModule,

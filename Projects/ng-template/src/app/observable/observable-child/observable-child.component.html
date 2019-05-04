@@ -1,0 +1,5 @@
+On the child
+<ul *ngIf="todo">
+  <li *ngFor="let item of todo">{{item}}</li>
+</ul>
+<div *ngIf="!todo">No data set in the todo yet</div>

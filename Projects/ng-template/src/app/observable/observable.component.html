@@ -1,0 +1,14 @@
+<h3>Reading</h3> <button (click)="updateTodo()">Refresh Todo</button> &nbsp;<button (click)="reset()">Reset</button><br />
+<br />Todo with observable
+<ul *ngIf="todo$">
+<li *ngFor="let item of todo$ | async">{{item}}</li>
+</ul>
+<br />Todo with Subject
+<ul *ngIf="otherTodo$">
+<li *ngFor="let item of otherTodo$ | async">{{item}}</li>
+</ul>
+<div *ngIf="!otherTodo$">No data set in the subject todo yet</div>
+Child using observable
+<app-observable-child [todo]="todo$ | async"></app-observable-child>
+Child using Subject
+<app-observable-child [todo]="otherTodo$ | async"></app-observable-child>
