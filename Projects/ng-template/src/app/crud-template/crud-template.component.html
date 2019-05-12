@@ -1,0 +1,9 @@
+ToDo <button (click)="reset()">Reset</button> - <button (click)="add()">Add</button>
+<ng-container *ngIf="(toDoList$ | async) as todos; else todoLoading">
+    <ul>
+        <li *ngFor="let item of todos">{{item.description}} - <button (click)="delete(item.id)">delete</button> - <button (click)="edit(item)">Edit</button></li>
+    </ul>
+</ng-container>
+<ng-template #todoLoading>
+        <br />Data is loading<br />
+</ng-template>

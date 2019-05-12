@@ -1,0 +1,9 @@
+<h4 *ngIf="todo.id == 0">Add a new ToDo</h4>
+<h4 *ngIf="todo.id > 0">Edit '{{todo.description}}'</h4>
+<hr width="50%" />
+<form [formGroup]="form">
+    <label for="description">Description</label>
+    <input id="description" formControlName="description" />
+</form>
+<br /><br />
+<button (click)="cancel()">Cancel</button> - <button [disabled]="!form.valid" (click)="save()">Save</button>

@@ -5,13 +5,15 @@ import { ReferencesComponent } from './references/references.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ObservableComponent } from './observable/observable.component';
 import { JavascriptComponent } from './javascript/javascript.component';
+import { CrudTemplateComponent } from './crud-template/crud-template.component';
 
 const routes: Routes = [
   { path: 'parent-child', component: ParentChildComponent },
   { path: 'references', component: ReferencesComponent },
   { path: 'reactive-form', component: ReactiveFormComponent },
   { path: 'observables', component: ObservableComponent },
-  { path: 'javascript', component: JavascriptComponent }
+  { path: 'javascript', component: JavascriptComponent },
+  { path: 'crud', component: CrudTemplateComponent }
 ];
 
 @NgModule({

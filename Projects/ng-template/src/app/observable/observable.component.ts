@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserModel } from './models/user.model';
 
@@ -16,8 +16,9 @@ export class ObservableComponent implements OnInit {
   formStatus: string;
   todo$: Observable<string[]>;
   otherTodo$ = this.otherTodoSubject.asObservable();
+  otherTodo2$ = this.otherTodoSubject.asObservable();
   user$ = this.userSubject.asObservable().pipe(
-    tap(user => this.form.patchValue(user))
+    tap(user => this.form.reset(user))
   );
 
   constructor(private fb: FormBuilder) { }

@@ -1,17 +1,28 @@
 <h3>Reading</h3> <button (click)="updateTodo()">Refresh Todo</button> &nbsp;<button (click)="init()">Init</button> &nbsp;<button (click)="clear()">Clear</button><br />
 <br />Todo with observable
-<ul *ngIf="todo$">
-<li *ngFor="let item of todo$ | async">{{item}}</li>
+<ng-container *ngIf="(todo$ | async) as todos; else todoLoading">
+    <ul>
+        <li *ngFor="let item of todos">{{item}}</li>
+    </ul>
+</ng-container>
+<ng-template #todoLoading>
+        <br />No data set in the todo yet<br />
+</ng-template>
+
+Todo with Subject
+<ng-container *ngIf="(otherTodo$ | async) as otherTodos; else otherTodoLoading">
+<ul>
+    <li *ngFor="let item of otherTodos">{{item}}</li>
 </ul>
-<br />Todo with Subject
-<ul *ngIf="otherTodo$">
-<li *ngFor="let item of otherTodo$ | async">{{item}}</li>
-</ul>
-<div *ngIf="!otherTodo$">No data set in the subject todo yet</div>
+</ng-container>
+<ng-template #otherTodoLoading>
+        <br />No data set in the otherTodo yet<br />
+</ng-template>
+
 Child using observable
 <app-observable-child [todo]="todo$ | async"></app-observable-child>
-Child using Subject
-<app-observable-child [todo]="otherTodo$ | async"></app-observable-child>
+<br />Child using Subject
+<app-observable-child [todo]="otherTodo2$ | async"></app-observable-child>
 <hr width="50%" />
 Form Data <br />
 <form *ngIf="user$ | async; else loading" [formGroup]="form">
