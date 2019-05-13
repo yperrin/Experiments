@@ -15,19 +15,22 @@ export class SimpleAddEditComponent implements OnInit {
 
   constructor(private modalService: BsModalService,
               private modalRef: BsModalRef,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder) {
 
-  ngOnInit() {
     this.form = this.fb.group({
       id: ['', Validators.required],
       description: ['', [Validators.required]],
     });
+  }
+
+  ngOnInit() {
     this.form.reset(this.todo);
   }
 
   cancel() {
     this.modalRef.hide();
   }
+
   save() {
     if (!this.form.pristine) {
       this.modalService.onHide.next(new ToDoModel(this.form.value));

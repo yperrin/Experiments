@@ -1,4 +1,4 @@
-ToDo <button (click)="reset()">Reset</button> - <button (click)="add()">Add</button>
+ToDo <button (click)="reset()" [disabled]="loading">Reset</button> - <button (click)="add()" [disabled]="loading">Add</button>
 <ng-container *ngIf="(toDoList$ | async) as todos; else todoLoading">
     <ul>
         <li *ngFor="let item of todos">{{item.description}} - <button (click)="delete(item.id)">delete</button> - <button (click)="edit(item)">Edit</button></li>
