@@ -23,7 +23,6 @@ export class ToDoService {
         // instead of of(toDoList), would retrieve the data using http client
         return of(toDoList)
             .pipe(
-                take(1),
                 delay(1000), // add some time to show what happens for slow api
                 tap(toDoListValue => {
                     this.toDoListCurrent = [...toDoListValue];
@@ -52,7 +51,7 @@ export class ToDoService {
                         break;
                     }
                     this.toDoSubject.next(this.toDoListCurrent);
-                        })
+                })
             )
         }
     }
