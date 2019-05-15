@@ -37,7 +37,7 @@ export class CrudTemplateComponent implements OnInit, OnDestroy {
   }
 
   add() {
-    this.openAddEdit(new ToDoModel({id: 0}));
+    this.openAddEdit(new ToDoModel());
   }
 
   edit(toDo: ToDoModel) {

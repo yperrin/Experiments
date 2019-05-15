@@ -18,7 +18,7 @@ export class SimpleAddEditComponent implements OnInit {
               private fb: FormBuilder) {
 
     this.form = this.fb.group({
-      id: ['', Validators.required],
+      id: [null],
       description: ['', [Validators.required]],
     });
   }

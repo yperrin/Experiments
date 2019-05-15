@@ -1,7 +1,7 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { Observable, of, Subject, BehaviorSubject, Subscription } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { ToDoModel } from '../models/toDo.model';
-import { tap, delay, take } from 'rxjs/operators';
+import { tap, delay, scan } from 'rxjs/operators';
 
 const toDoList = [
     new ToDoModel({id: 1, description: 'have service return a list'}),
@@ -17,7 +17,7 @@ const toDoList = [
 export class ToDoService {
     private toDoListCurrent: ToDoModel[];
     private toDoSubject = new BehaviorSubject<ToDoModel[]>(null);
-    toDoList$: Observable<ToDoModel[]> = this.toDoSubject.asObservable();
+    readonly toDoList$: Observable<ToDoModel[]> = this.toDoSubject.asObservable();
 
     init$(): Observable<ToDoModel[]> {
         // instead of of(toDoList), would retrieve the data using http client
@@ -32,7 +32,19 @@ export class ToDoService {
     }
 
     save$(toDo: ToDoModel): Observable<ToDoModel> {
-        if (toDo.id === 0) {
+        if (toDo.id) {
+            return of (toDo).pipe(
+                tap(() => {
+                    for (let i = 0; i < this.toDoListCurrent.length; i++) {
+                        if (this.toDoListCurrent[i].id === toDo.id) {
+                            this.toDoListCurrent[i] = toDo;
+                            break;
+                        }
+                    }
+                    this.toDoSubject.next(this.toDoListCurrent);
+                })
+            )
+        } else {
             // add a new item
             toDo.id = this.toDoListCurrent.length + 1;
             return of(toDo).pipe(
@@ -41,18 +53,6 @@ export class ToDoService {
                     this.toDoSubject.next(this.toDoListCurrent);
                 })
             );
-        } else {
-            return of (toDo).pipe(
-                tap(() => {
-                    for (let i = 0; i < this.toDoListCurrent.length; i++) {
-                        if (this.toDoListCurrent[i].id === toDo.id) {
-                            this.toDoListCurrent[i] = toDo;
-                        }
-                        break;
-                    }
-                    this.toDoSubject.next(this.toDoListCurrent);
-                })
-            )
         }
     }
 
