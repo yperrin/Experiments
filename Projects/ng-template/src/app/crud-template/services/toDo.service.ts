@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, BehaviorSubject } from 'rxjs';
 import { ToDoModel } from '../models/toDo.model';
-import { tap, delay, scan } from 'rxjs/operators';
+import { tap, delay, take } from 'rxjs/operators';
 
 const toDoList = [
     new ToDoModel({id: 1, description: 'have service return a list'}),
@@ -24,6 +24,7 @@ export class ToDoService {
         return of(toDoList)
             .pipe(
                 delay(1000), // add some time to show what happens for slow api
+                take(1),
                 tap(toDoListValue => {
                     this.toDoListCurrent = [...toDoListValue];
                     this.toDoSubject.next(this.toDoListCurrent);
@@ -34,6 +35,7 @@ export class ToDoService {
     save$(toDo: ToDoModel): Observable<ToDoModel> {
         if (toDo.id) {
             return of (toDo).pipe(
+                take(1),
                 tap(() => {
                     for (let i = 0; i < this.toDoListCurrent.length; i++) {
                         if (this.toDoListCurrent[i].id === toDo.id) {
@@ -48,6 +50,7 @@ export class ToDoService {
             // add a new item
             toDo.id = this.toDoListCurrent.length + 1;
             return of(toDo).pipe(
+                take(1),
                 tap(() => {
                     this.toDoListCurrent.unshift(toDo);
                     this.toDoSubject.next(this.toDoListCurrent);
@@ -58,6 +61,7 @@ export class ToDoService {
 
     delete$(id: number): Observable<boolean> {
         return of(true).pipe(
+            take(1),
             tap( success => {
                 this.toDoListCurrent = this.toDoListCurrent.filter(item => item.id !== id);
                 this.toDoSubject.next(this.toDoListCurrent);
