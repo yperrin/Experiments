@@ -37,6 +37,7 @@ export class ToDoService {
             return of (toDo).pipe(
                 take(1),
                 tap(() => {
+                    // throw new Error('Something bad happened');
                     for (let i = 0; i < this.toDoListCurrent.length; i++) {
                         if (this.toDoListCurrent[i].id === toDo.id) {
                             this.toDoListCurrent[i] = toDo;

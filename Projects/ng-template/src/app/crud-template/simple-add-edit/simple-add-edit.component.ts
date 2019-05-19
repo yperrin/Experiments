@@ -33,8 +33,7 @@ export class SimpleAddEditComponent implements OnInit {
 
   save() {
     if (!this.form.pristine) {
-      this.modalService.onHide.next(new ToDoModel(this.form.value));
+      this.modalService.onHide.next(this.form.value as ToDoModel);
     }
-    this.modalRef.hide();
   }
 }
