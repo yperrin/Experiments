@@ -1,0 +1,11 @@
+<div *ngIf="vm$ | async as vm; else loading">
+  <p>Accessing the option: {{vm.option}}</p>
+  This is the form <br />
+  <form [formGroup]="form">
+    <label for="first">First</label> &nbsp;<input id="first" formControlName="first" /><br >
+    <label for="second">Second</label> &nbsp;<input id="second" formControlName="second" /><br >
+  </form>
+</div>
+<ng-template #loading>
+  The data is being loaded...
+</ng-template>

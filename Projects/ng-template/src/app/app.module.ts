@@ -16,6 +16,7 @@ import { JavascriptComponent } from './javascript/javascript.component';
 import { ObservableChildComponent } from './observable/observable-child/observable-child.component';
 import { CrudTemplateComponent } from './crud-template/crud-template.component';
 import { SimpleAddEditComponent } from './crud-template/simple-add-edit/simple-add-edit.component';
+import { PlayComponent } from './play/play.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SimpleAddEditComponent } from './crud-template/simple-add-edit/simple-a
     ObservableChildComponent,
     JavascriptComponent,
     CrudTemplateComponent,
-    SimpleAddEditComponent
+    SimpleAddEditComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,
