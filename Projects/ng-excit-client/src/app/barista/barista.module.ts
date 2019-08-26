@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaristaComponent } from './barista.component';
+
 import { BaristaRoutingModule } from './barista-routing.module';
 import { MaterialModule } from '../material.module';
-import { PluginListComponent } from './plugin-list/plugin-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { BaristaComponent } from './components/barista.component';
+import { PluginListComponent } from './components/plugin-list/plugin-list.component';
+import { BaristaShortNamePipe } from './pipes/barista-short-name';
+
 
 @NgModule({
   declarations: [
     BaristaComponent,
-    PluginListComponent
+    PluginListComponent,
+    BaristaShortNamePipe
   ],
   imports: [
     CommonModule,

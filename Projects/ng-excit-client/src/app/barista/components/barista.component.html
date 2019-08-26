@@ -1,0 +1,11 @@
+<mat-card id="content">
+  <mat-card-title>
+    <h1>Barista modules</h1>
+  </mat-card-title>
+  <mat-card-content *ngIf="pluginList$ | async as pluginList; else loading">
+    <app-plugin-list [pluginList]="pluginList"></app-plugin-list>
+  </mat-card-content>
+  <ng-template #loading>
+    <br /><br />Loading the data...
+  </ng-template>
+</mat-card>

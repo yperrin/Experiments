@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <h2>Direct Connect</h2>
+    <mat-nav-list>
+      <mat-list-item (click)="sidenav.toggle()">
+        <a routerLink="/" href="#">
+          <mat-icon>list</mat-icon> Supplier List
+        </a>
+      </mat-list-item>
+      <mat-list-item (click)="sidenav.toggle()">
+        <a routerLink="/barista" href="#">
+          <mat-icon>list</mat-icon> Barista Plugins
+        </a></mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="mat-elevation-z8">
+      <span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="app-title">Direct Connect</span><span class="app-title-short">DC</span>
+      </span>
+      <app-environment [environment]="environment$ | async" (notify)="onEnvironmentChange($event)">
+      </app-environment>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

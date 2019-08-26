@@ -1,55 +1,144 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin } from 'rxjs';
-import { map, reduce, mergeMap, flatMap, take } from 'rxjs/operators';
+import { Observable, of, Subject, concat, BehaviorSubject } from 'rxjs';
+import { map, reduce, take, last, switchMap } from 'rxjs/operators';
 import { PluginNodeModel } from '../models/plugin-node.model';
 import { PluginDiagnosticsModel } from '../models/plugin-diagnostics.model';
+import { PluginNodeInfoModel } from '../models/plugin-node-info.model';
+import { PluginNodeConfigModel } from '../models/plugin-node-config.model';
+import { PluginInfoConsumerModel } from '../models/plugin-info-consumer.model';
 
-const endpoints = {
-    'Production': 'http://asi-barpn1-02a.asinetwork.local:8080/api/',
-    'UAT': 'http://asi-barun1-02a.asinetwork.local:8080/api/',
-    'Stage': 'http://asi-barsn1-02.asinetwork.local:8080/api/'
-};
-const options = {
-    withCredentials: true
-};
+import data from '../../../assets/data/barista.json';
+import { EnvironmentService } from 'src/app/shared/environment.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class BaristaService {
-    private environment = 'Production';
-    constructor(private http: HttpClient) { }
+    static readonly endpoints = {
+        Production: 'http://e2-barpn1-03b.asinetwork.local:8080/api/', // 'http://asi-barpn1-02a.asinetwork.local:8080/api/',
+        UAT: 'http://asi-barun1-03a.asinetwork.local:8080/api/',
+        Stage: 'http://asi-barsn1-02.asinetwork.local:8080/api/'
+    };
+    static readonly options = {
+        withCredentials: true
+    };
 
-    setEnvironment(environment: string): void {
-        this.environment = environment;
+    private initialized = false;
+    private pluginListSubject = new Subject<PluginNodeModel[]>();
+    pluginList$: Observable<PluginNodeModel[]> = this.pluginListSubject.asObservable();
+
+    constructor(private http: HttpClient, private environmentService: EnvironmentService) { }
+
+    init(): void {
+        if (!this.initialized) {
+            this.environmentService.environment$.pipe(
+                switchMap(env => this.getList$(env))
+            ).subscribe(plugins => {
+                this.pluginListSubject.next(plugins);
+            });
+            this.initialized = true;
+        } else {
+            this.environmentService.refresh();
+        }
     }
 
-    setScheduleName(plugin: PluginNodeModel): Observable<PluginNodeModel> {
-        return this.http.get<any>('http://' + plugin.node + '/api/plugins/' + plugin.name + '/info', options).pipe(
-            map( pluginInfo => {
+    retrievePluginDetails$(plugin: PluginNodeModel): Observable<PluginNodeModel> {
+        return concat(this.getPluginInfo$(plugin), this.getPluginConfig$(plugin)).pipe(
+            last()
+        );
+    }
+
+    triggerSchedule(scheduleName: string): void {
+        this.http.post(BaristaService.endpoints[this.environmentService.getEnvironment()] +
+            'plugins/ASI.Barista.Plugins.Scheduler.SchedulerPlugin/schedules/' +
+            encodeURIComponent(scheduleName).replace('*', '%2A') + '/trigger', null, BaristaService.options)
+            .pipe(take(1)).subscribe();
+    }
+
+    getMonitorUrl(plugin: string | PluginNodeModel): string {
+        let url: string;
+        if (typeof plugin === 'string') {
+            const environment = this.environmentService.getEnvironment();
+            url = BaristaService.endpoints[environment];
+            url += 'cluster/' + plugin;
+        } else {
+            url = 'http://' + plugin.node + '/api/plugins/' + plugin.name;
+        }
+        url += '/monitor?limit=20';
+        return url;
+    }
+
+    switchPluginStatus(plugin: PluginNodeModel): void {
+        const running = plugin.status === 'Running';
+        const url = 'http://' + plugin.node + '/api/plugins/' + plugin.name + (running ? '/stop' : '/start');
+        this.http.get<any>(url, BaristaService.options).pipe(take(1)).subscribe();
+        plugin.status = running ? 'Stopped' : 'Running';
+    }
+
+    private getPluginInfo$(plugin: PluginNodeModel): Observable<PluginNodeModel> {
+        const url = 'http://' + plugin.node + '/api/plugins/' + plugin.name + '/info';
+        const pluginInfoData$ = data.use ? of(data.info) : this.http.get<any>(url, BaristaService.options);
+        return pluginInfoData$.pipe(
+            take(1),
+            map(pluginInfo => {
+                const info = new PluginNodeInfoModel({ url });
                 if (pluginInfo.RequestedSchedules) {
-                    plugin.scheduleName = pluginInfo.RequestedSchedules[0];
+                    info.schedules = pluginInfo.RequestedSchedules;
                 }
+                if (pluginInfo.Consumers) {
+                    const consumerNames = Object.getOwnPropertyNames(pluginInfo.Consumers);
+                    consumerNames.forEach(consumerName => {
+                        const pluginConsumer = new PluginInfoConsumerModel({
+                            name: consumerName,
+                        });
+                        if (pluginInfo.Consumers[consumerName].QueueInfo) {
+                            pluginConsumer.lastRun = pluginInfo.Consumers[consumerName].QueueInfo.IdleSince;
+                            pluginConsumer.queueMessageCount = pluginInfo.Consumers[consumerName].QueueInfo.MessageCount;
+                            pluginConsumer.queueState = pluginInfo.Consumers[consumerName].QueueInfo.State;
+                            if (pluginInfo.Consumers[consumerName].QueueInfo.Consumers) {
+                                pluginConsumer.queueConsumerCount = pluginInfo.Consumers[consumerName].QueueInfo.Consumers.length;
+                            }
+                        }
+                        info.consumers.push(pluginConsumer);
+                    });
+                }
+                plugin.setInfo(info);
                 return plugin;
             })
         );
     }
 
-    triggerSchedule(plugin: PluginNodeModel, scheduleName: string): void {
-        this.http.post(endpoints[this.environment] + 'plugins/ASI.Barista.Plugins.Scheduler.SchedulerPlugin/schedules/' +
-        encodeURIComponent(scheduleName).replace('*', '%2A') +
-        '/trigger', null,
-        options)
-        .pipe(take(1)).subscribe();
+    private getPluginConfig$(plugin: PluginNodeModel): Observable<PluginNodeModel> {
+        const url = 'http://' + plugin.node + '/api/plugins/' + plugin.name + '/config';
+        const pluginConfigData$ = data.use ? of(data.config) : this.http.get<any>(url, BaristaService.options);
+        return pluginConfigData$.pipe(
+            take(1),
+            map(pluginConfig => {
+                const config = new PluginNodeConfigModel({ url });
+                if (pluginConfig.AppSettings) {
+                    const names = Object.getOwnPropertyNames(pluginConfig.AppSettings);
+                    names.forEach(name => {
+                        config.addProperty(name, pluginConfig.AppSettings[name]);
+                    });
+                }
+                if (pluginConfig.ConnectionStrings) {
+                    const names = Object.getOwnPropertyNames(pluginConfig.ConnectionStrings);
+                    names.forEach(name => {
+                        config.addProperty(name, pluginConfig.ConnectionStrings[name]);
+                    });
+                }
+                plugin.setConfig(config);
+                return plugin;
+            })
+        );
     }
 
-    getPlugins(): Observable<PluginNodeModel[]> {
-        let url = endpoints[this.environment] + 'cluster/plugins';
-        if (this.environment === 'Production') {
-            url += '?zones=excit';
-        }
-        return this.http.get<any[]>(url, options).pipe(
+    getList$(environment: string): Observable<PluginNodeModel[]> {
+        const url = BaristaService.endpoints[environment] + 'cluster/plugins';
+        const pluginsData$ = data.use ? of(data.plugins) : this.http.get<any[]>(url, BaristaService.options);
+        return pluginsData$.pipe(
+            take(1),
             map(objPlugin => objPlugin.filter(plugin => plugin.Name.includes('Excit') || plugin.Name.includes('ProductUpdates'))),
             map((obj: any[]) => obj.map(objPlugin => {
                 return objPlugin.Nodes.map(node => {
@@ -68,7 +157,7 @@ export class BaristaService {
                             deploymentDiskUsage: node.Diagnostics.DeploymentDiskUsage,
                             memoryUtilizationPercentage: node.Diagnostics.MemoryUtilizationPercentage,
                             pluginMemory: node.PluginMemory,
-                            pluginProcessorTime: node.Diagnostics.PluginProcessorTime,
+                            pluginProcessorTime: this.formatCPU(node.Diagnostics.PluginProcessorTime),
                             survivedBaristaMemory: node.Diagnostics.SurvivedBaristaMemory,
                             totalAllocatedPluginMemory: node.Diagnostics.totalAllocatedPluginMemory
                         });
@@ -79,16 +168,26 @@ export class BaristaService {
             }
             )),
             reduce((actual, value) => actual.concat(
-                value.reduce(function (prev, curr) {
-                    return prev.concat(curr);
-                })), []),
-            flatMap((plugins: PluginNodeModel[]) => forkJoin(plugins.map( plugin => {
-                if (plugin.status === 'Running') {
-                    return this.setScheduleName(plugin);
-                }
-                return [plugin];
-            })))
+                value.reduce((prev, curr) => prev.concat(curr))
+            ), []),
+            map(pluginNodes => {
+                // set firstNode property for each first node of a given plugin
+                pluginNodes.forEach((node, index) => {
+                    node.firstNode = index === 0 || (index > 0 && node.name !== pluginNodes[index - 1].name);
+                });
+                return pluginNodes;
+            })
         );
     }
+
+    private formatCPU(value: string): string {
+        let formattedValue = value;
+        if (formattedValue) {
+            const pos = formattedValue.indexOf('.');
+            if (pos > 0 && pos < formattedValue.length) {
+                formattedValue = formattedValue.substring(0, pos);
+            }
+        }
+        return formattedValue;
+    }
 }
-// also implement http://asi-barsn1-02.asinetwork.local:8080/api/plugins/ASI.Barista.Plugins.Excit.InventoryReport.Plugin/config

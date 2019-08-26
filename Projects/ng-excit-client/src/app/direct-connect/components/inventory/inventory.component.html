@@ -1,0 +1,8 @@
+<ng-container *ngIf="supplierConfig$ | async as supplierConfig; else loadingConfig">
+  <button mat-icon-button (click)="close()">
+    <mat-icon>clear</mat-icon>
+  </button>Inventory for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+</ng-container>
+<ng-template #loadingConfig>
+  <br /><br />Loading config data...
+</ng-template>

@@ -1,0 +1,11 @@
+mat-card-title {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 200px 1fr;
+}
+mat-card-title h1 {
+    margin: 0px 0px 0px 0px;
+}
+.mat-card-content {    
+  overflow-x: auto;
+}

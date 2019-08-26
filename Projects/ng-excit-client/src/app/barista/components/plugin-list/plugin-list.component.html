@@ -1,0 +1,92 @@
+<table mat-table [dataSource]="pluginList" matSort multiTemplateDataRows>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class="left"> Name </th>
+    <td mat-cell *matCellDef="let pluginNode" class="left" [style.display]="pluginNode.firstNode ? '' : 'none'"
+      [attr.rowspan]="pluginNode.firstNode ? pluginNode.nodeCount * 2: ''">
+      <div title="{{pluginNode.name}}">
+        <a *ngIf="pluginNode.nodeCount > 1" href="{{getMonitorUrl(pluginNode.name)}}" target="_window" class="app-title"
+          mat-icon-button>
+          <mat-icon title="Monitor the plugin">receipt</mat-icon>
+        </a>
+        {{pluginNode.name | baristaShortName}}
+      </div>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="node">
+    <th mat-header-cell *matHeaderCellDef><span class="app-title"> Node </span></th>
+    <td mat-cell *matCellDef="let pluginNode"><span class="app-title">{{pluginNode.node}}</span></td>
+  </ng-container>
+  <ng-container matColumnDef="version">
+    <th mat-header-cell *matHeaderCellDef> Version </th>
+    <td mat-cell *matCellDef="let pluginNode">
+      <span class="app-title">{{pluginNode.version}}</span><span
+        class="app-title-short">{{pluginNode.version | slice:4:13}}</span>
+      <button mat-icon-button *ngIf="pluginNode.status == 'Running'" (click)="switchPluginStatus(pluginNode)"
+        title="The plugin is running, click to stop">
+        <mat-icon>directions_run</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="pluginNode.status != 'Running'" (click)="switchPluginStatus(pluginNode)"
+        title="The plugin is not running, click to start">
+        <mat-icon>block</mat-icon>
+      </button>
+      <a href="{{getMonitorUrl(pluginNode)}}" target="_window" mat-icon-button>
+        <mat-icon title="Monitor the plugin">receipt</mat-icon>
+      </a>
+      <button name="details" (click)="getPluginInfo(pluginNode)" title="Click here for details" mat-icon-button>
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="memory">
+    <th mat-header-cell *matHeaderCellDef><span class="app-title"> Mem </span></th>
+    <td mat-cell *matCellDef="let pluginNode"><span
+        class="app-title">{{pluginNode.diagnostics ? pluginNode.diagnostics.memoryUtilizationPercentage : '&nbsp;'}}
+      </span></td>
+  </ng-container>
+  <ng-container matColumnDef="cpu">
+    <th mat-header-cell *matHeaderCellDef><span class="app-title"> CPU </span></th>
+    <td mat-cell *matCellDef="let pluginNode"><span
+        class="app-title">{{pluginNode.diagnostics ? pluginNode.diagnostics.pluginProcessorTime : '&nbsp;'}} </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="pluginDetails">
+    <td mat-cell *matCellDef="let pluginNode" [attr.colspan]="5">
+      <div [@detailExpand]="pluginNode.showDetails ? 'expanded' : 'collapsed'">
+        <div class="details" *ngIf="pluginNode.info || pluginNode.config">
+          <div *ngIf="pluginNode.info">
+            <h4><a href="{{pluginNode.info.url}}" target="_window">Schedules defined <mat-icon>link</mat-icon></a></h4>
+            <ul *ngFor="let schedule of pluginNode.info.schedules">
+              <li>{{schedule}} <button (click)="triggerSchedule(schedule)" title="Click to trigger" mat-icon-button>
+                  <mat-icon>alarm_on</mat-icon>
+                </button></li>
+              <ng-container *ngIf="pluginNode.info.consumers.length > 0">
+                <ul *ngFor="let consumer of pluginNode.info.consumers">
+                  <li>State: {{consumer.queueState}}</li>
+                  <li title="{{consumer.lastRun}}">last Run: {{consumer.lastRun | date}}</li>
+                  <li># consumers: {{consumer.queueConsumerCount}}</li>
+                  <li># messages: {{consumer.queueMessageCount}}</li>
+                </ul>
+              </ng-container>
+            </ul>
+          </div>
+          <div *ngIf="pluginNode.config">
+            <h4><a href="{{pluginNode.config.url}}" target="_window">Configuration <mat-icon>link</mat-icon></a></h4>
+            <div class="config" *ngFor="let name of pluginNode.config.getPropertyNames()">
+              <div><strong>{{name}}:</strong></div>
+              <div class="value" title="{{pluginNode.config.getProperty(name)}}">
+                {{pluginNode.config.getDisplayProperty(name)}}</div>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngIf="!pluginNode.info && !pluginNode.config">
+          <span class="app-title">Loading data for {{pluginNode.name | baristaShortName}} on
+            {{pluginNode.node}}...</span>
+          <span class="app-title-short">Loading {{pluginNode.name | baristaShortName}} data....</span>
+        </ng-container>
+      </div>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['name', 'version', 'node', 'memory', 'cpu']"></tr>
+  <tr mat-row *matRowDef="let pluginNode; columns: ['name', 'version', 'node', 'memory', 'cpu']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['pluginDetails']" class="plugin-detail-row"></tr>
+</table>

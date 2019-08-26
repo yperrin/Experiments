@@ -1,0 +1,83 @@
+<table mat-table [dataSource]="suppliersDataSource" matSort>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="left app-title"> Name </th>
+    <td mat-cell *matCellDef="let supplier" class="left app-title" title="{{supplier.id}} - {{supplier.name}}"> {{supplier.name}} <small>({{supplier.id}})</small></td>
+  </ng-container>
+  <ng-container matColumnDef="asiNumber">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ASI# </th>
+    <td mat-cell *matCellDef="let supplier"> {{supplier.asiNumber}} </td>
+  </ng-container>
+  <ng-container matColumnDef="hasInventory">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="app-title"> Inventory </span><span class="app-title-short">I</span></th>
+    <td mat-cell *matCellDef="let supplier">
+      <span *ngIf="supplier.hasInventory">
+        <button (click)="showAction({type:'inventory', companyId:supplier.id, companyName: supplier.name})"
+          mat-icon-button title="Click to view inventory">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="hasLogin">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="app-title"> Login </span><span class="app-title-short">L</span></th>
+    <td mat-cell *matCellDef="let supplier">
+      <span *ngIf="supplier.hasLogin">
+        <button (click)="showAction({type:'login', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to login">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="hasOrderStatus">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="app-title"> Order Status </span><span class="app-title-short">OS</span></th>
+    <td mat-cell *matCellDef="let supplier">
+      <span *ngIf="supplier.hasOrderStatusImplementation && !supplier.hasOrderShipmentImplementation">
+        <button (click)="showAction({type:'order-status', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to view order status">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </span>
+      <span *ngIf="!supplier.hasOrderStatusImplementation && supplier.hasOrderShipmentImplementation">
+        <button (click)="showAction({type:'order-status', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to view order status">
+          <mat-icon>panorama_fish_eye</mat-icon>
+        </button>
+      </span>
+      <span *ngIf="supplier.hasOrderStatusImplementation && supplier.hasOrderShipmentImplementation">
+        <button (click)="showAction({type:'order-status', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to view order status">
+          <mat-icon>play_circle_outline</mat-icon>
+        </button>
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="hasOrderCreation">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="app-title"> Order Creation </span><span class="app-title-short">OC</span></th>
+    <td mat-cell *matCellDef="let supplier">
+      <span *ngIf="supplier.hasOrderCreation">
+        <button (click)="showAction({type:'order-creation', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to test order creation">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="hasProductIntegration">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="app-title"> Product Integration </span><span class="app-title-short">PI</span></th>
+    <td mat-cell *matCellDef="let supplier">
+      <span *ngIf="supplier.hasProductIntegration">
+        <button (click)="showAction({type:'product-integration', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to view product integration configuration">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </span>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="hasServiceProviderLogin">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><span class="app-title">  Service Login  </span><span class="app-title-short">SL</span></th>
+    <td mat-cell *matCellDef="let supplier">
+      <span *ngIf="supplier.hasServiceProviderLogin">
+        <button (click)="showAction({type:'service-login', companyId:supplier.id, companyName: supplier.name})" mat-icon-button title="Click to view Service Login configuration">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </span>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['name', 'asiNumber', 'hasInventory', 'hasLogin', 'hasOrderStatus', 'hasOrderCreation', 'hasProductIntegration', 'hasServiceProviderLogin']"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: ['name', 'asiNumber', 'hasInventory', 'hasLogin', 'hasOrderStatus', 'hasOrderCreation', 'hasProductIntegration', 'hasServiceProviderLogin']"></tr>
+</table>

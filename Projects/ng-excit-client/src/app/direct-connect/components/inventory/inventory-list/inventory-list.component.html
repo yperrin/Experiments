@@ -1,0 +1,24 @@
+<span *ngIf="!inventoryOutput"><br />No inventory available yet</span>
+<div *ngIf="inventoryOutput">
+  Timing - Client Overall: {{inventoryOutput.clientTimings}}ms - Server: {{inventoryOutput.serverTimings}}ms - Supplier: {{inventoryOutput.supplierTimings}}ms<br />
+  <table mat-table [dataSource]="inventoryOutput.quantities">
+    <ng-container matColumnDef="partCode">
+      <th mat-header-cell *matHeaderCellDef class="left"> Code </th>
+      <td mat-cell *matCellDef="let quantity" class="left"> {{quantity.partCode}} </td>
+    </ng-container>
+    <ng-container matColumnDef="partDescription">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let quantity"> {{quantity.partDescription}} </td>
+    </ng-container>
+    <ng-container matColumnDef="label">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let quantity"> {{quantity.label}} </td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef> Location </th>
+      <td mat-cell *matCellDef="let quantity"> {{quantity.location}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['partCode', 'partDescription', 'label', 'location']"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: ['partCode', 'partDescription', 'label', 'location']"></tr>
+  </table>
+</div>

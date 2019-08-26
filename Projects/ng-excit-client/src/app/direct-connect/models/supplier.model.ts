@@ -5,11 +5,13 @@ export class Supplier {
     hasInventory: boolean;
     hasLogin: boolean;
     hasOrderStatus: boolean;
+    hasOrderStatusImplementation: boolean;
+    hasOrderShipmentImplementation: boolean;
     hasOrderCreation: boolean;
     hasProductIntegration: boolean;
     hasServiceProviderLogin: boolean;
 
-    public constructor(init?:Partial<Supplier>) {
+    public constructor(init?: Partial<Supplier>) {
         Object.assign(this, init);
     }
 }

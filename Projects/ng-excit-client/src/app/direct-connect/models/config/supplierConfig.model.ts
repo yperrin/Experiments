@@ -2,8 +2,9 @@ import { Services } from './services.model';
 import { LoginConfig } from './loginConfig.model';
 import { OrderConfig } from './orderConfig.model';
 
-export class SupplierConfig {
+export class SupplierConfigModel {
     id: number;
+    name: string;
     asiNumber: number;
     loginInstructions: string;
     services: Services;
@@ -13,7 +14,7 @@ export class SupplierConfig {
 
     public constructor(init?:
 
-        Partial<SupplierConfig>) {
+        Partial<SupplierConfigModel>) {
         Object.assign(this, init);
         if (!this.loginConfig) {
             this.loginConfig = new LoginConfig();

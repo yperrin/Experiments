@@ -1,0 +1,23 @@
+<div  [ngClass]="detailsVisible ? 'details-visible' : 'details-invisible'">
+    <mat-card id="list" [ngClass]="detailsVisible ? 'details-visible' : 'details-invisible'">
+        <mat-card-title>
+            <h1>Supplier List</h1>
+            <h4>
+                <mat-form-field>
+                    <mat-icon matPrefix>search</mat-icon><span matPrefix>&nbsp;</span>
+                    <input matInput [formControl]="search" placeholder="Company name...">
+                </mat-form-field>
+            </h4>
+        </mat-card-title>
+        <mat-card-content *ngIf="suppliers$ | async as suppliers; else loading">
+            <app-supplier-list [suppliers]="suppliers" [filter]="searchText$ | async" (notify)="showPreview($event)">
+            </app-supplier-list>
+        </mat-card-content>
+        <ng-template #loading>
+            <br /><br />Loading the data...
+        </ng-template>
+    </mat-card>
+    <mat-card id="details" [ngClass]="detailsVisible ? 'details-visible' : 'details-invisible'">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+    </mat-card>
+</div>
