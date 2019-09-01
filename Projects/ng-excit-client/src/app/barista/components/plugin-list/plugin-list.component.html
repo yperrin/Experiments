@@ -54,7 +54,7 @@
       <div [@detailExpand]="pluginNode.showDetails ? 'expanded' : 'collapsed'">
         <div class="details" *ngIf="pluginNode.info || pluginNode.config">
           <div *ngIf="pluginNode.info">
-            <h4><a href="{{pluginNode.info.url}}" target="_window">Schedules defined <mat-icon>link</mat-icon></a></h4>
+            <h3><a href="{{pluginNode.info.url}}" target="_window">Schedules defined <mat-icon>link</mat-icon></a></h3>
             <ul *ngFor="let schedule of pluginNode.info.schedules">
               <li>{{schedule}} <button (click)="triggerSchedule(schedule)" title="Click to trigger" mat-icon-button>
                   <mat-icon>alarm_on</mat-icon>
@@ -70,7 +70,7 @@
             </ul>
           </div>
           <div *ngIf="pluginNode.config">
-            <h4><a href="{{pluginNode.config.url}}" target="_window">Configuration <mat-icon>link</mat-icon></a></h4>
+            <h3><a href="{{pluginNode.config.url}}" target="_window">Configuration <mat-icon>link</mat-icon></a></h3>
             <div class="config" *ngFor="let name of pluginNode.config.getPropertyNames()">
               <div><strong>{{name}}:</strong></div>
               <div class="value" title="{{pluginNode.config.getProperty(name)}}">

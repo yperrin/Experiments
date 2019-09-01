@@ -2,6 +2,30 @@
   <button mat-icon-button (click)="close()">
     <mat-icon>clear</mat-icon>
   </button>Inventory for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+  <div class="content">
+    <div class="configuration">
+      <div class="combined">
+        <mat-form-field>
+          <input matInput placeholder="Implementation" title="{{supplierConfig.services.inventory.implementation}}"
+            value="{{supplierConfig.services.inventory.implementation}}" readonly>
+        </mat-form-field>
+        <button mat-raised-button mat-primary (click)="callInventory(supplierConfig.id)">Check Inventory</button>
+      </div>
+      <mat-form-field style="width:100%">
+        <input matInput placeholder="Url" title="{{supplierConfig.services.inventory.url}}"
+          value="{{supplierConfig.services.inventory.url}}" readonly>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Product data" [formControl]="productJson"></textarea>
+      </mat-form-field>
+    </div>
+    <div *ngIf="inventoryOutput$ | async as inventoryOutput; else inventoryMessage">
+      <app-inventory-list [inventoryOutput]="inventoryOutput$ | async"></app-inventory-list>
+    </div>
+    <ng-template #inventoryMessage>
+      <span><mat-icon matPrefix>info</mat-icon> Enter the product information and click "Check Inventory" button.</span>
+    </ng-template>
+  </div>
 </ng-container>
 <ng-template #loadingConfig>
   <br /><br />Loading config data...

@@ -5,6 +5,7 @@ import { DirectConnectService } from '../../services/direct-connect.service';
 import { InventoryOutputModel } from '../../models/output/inventory/inventory-ouput.model';
 import { switchMap, tap } from 'rxjs/operators';
 import { SupplierConfigModel } from '../../models/config/supplierConfig.model';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-inventory',
@@ -14,9 +15,10 @@ import { SupplierConfigModel } from '../../models/config/supplierConfig.model';
 export class InventoryComponent implements OnInit {
   supplierConfig$: Observable<SupplierConfigModel>;
   inventoryOutput$: Observable<InventoryOutputModel>;
-  productJson: string;
+  productJson = new FormControl('');
 
-  constructor(protected directConnectService: DirectConnectService,
+  constructor(
+    protected directConnectService: DirectConnectService,
     protected route: ActivatedRoute,
     protected router: Router) {
   }
@@ -27,9 +29,18 @@ export class InventoryComponent implements OnInit {
         switchMap(params => {
           const id = +params['id']; // (+) converts string 'id' to a number
           const name = params['name'];
-          return this.directConnectService.getConfig$(id, name);
+          return this.directConnectService.getConfig$(id, name).pipe(
+            tap(config => {
+              this.productJson.setValue(InventoryComponent.getProduct(config.id));
+              console.log(InventoryComponent.getProduct(config.id));
+            })
+          );
         })
       );
+  }
+
+  callInventory(supplierId: number) {
+    this.inventoryOutput$ = this.directConnectService.getInventory$(supplierId, this.productJson.value);
   }
 
   close() {

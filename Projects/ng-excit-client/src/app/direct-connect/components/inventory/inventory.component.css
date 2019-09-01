@@ -1,3 +1,29 @@
 mat-card {
     margin: 0px;    
 }
+div.content {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-gap: 20px;
+    align-items: start;
+}
+div.configuration {
+    display:grid;
+    grid-gap: 5px;
+    grid-template-rows: 50px 50px 1fr;
+    align-items: start; 
+}
+div.configuration .combined {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: minmax(120px, 1fr) 135px;
+}
+textarea {
+    height: 60px;
+}
+@media (max-width: 680px) {
+    div.content {
+        grid-template-columns: minmax(250px, 1fr);
+    }
+}

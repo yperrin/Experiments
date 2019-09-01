@@ -22,7 +22,6 @@ div.details-visible mat-card {
 }
 #details.details-visible {
     display: block;
-    height:200px;
 }
 @media (max-width: 576px) {
     div.details-visible {
