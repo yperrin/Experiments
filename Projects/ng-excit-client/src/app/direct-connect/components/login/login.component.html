@@ -1,0 +1,48 @@
+<ng-container *ngIf="supplierConfig$ | async as supplierConfig; else loadingConfig">
+    <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+    </button>Login for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+    <div class="content">
+        <div class="configuration">
+            <mat-form-field>
+                <input matInput placeholder="Implementation"
+                    title="{{supplierConfig.services.loginValidate.implementation}}"
+                    value="{{supplierConfig.services.loginValidate.implementation}}" readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Url" title="{{supplierConfig.services.loginValidate.url}}"
+                    value="{{supplierConfig.services.loginValidate.url}}" readonly>
+            </mat-form-field>
+        </div>
+        <div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <mat-form-field>
+                    <input matInput placeholder="Username" formControlName="username" />
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="password" />
+                </mat-form-field>
+                <span><button type="submit" mat-raised-button mat-primary
+                        [disabled]="!loginForm.valid">Login</button></span>
+            </form>
+            <div *ngIf="loginOutput$ | async as loginOutput; else loginMessage">
+                <br /><br />
+                <span *ngIf="loginOutput.isValid; else invalidBlock" class="valid">
+                        <button mat-button><mat-icon>verified_user</mat-icon>The credentials are valid</button>
+                </span>
+                <ng-template #invalidBlock>
+                    <button mat-button color="warn"><mat-icon>cancel</mat-icon>The credentials are not valid</button>
+                </ng-template>
+            </div>
+            <ng-template #loginMessage>
+                <br /><br />
+                <span>
+                    <mat-icon matPrefix>info</mat-icon> Enter your credentials and click "Login" button.
+                </span>
+            </ng-template>
+        </div>
+    </div>
+</ng-container>
+<ng-template #loadingConfig>
+    <br /><br />Loading config data...
+</ng-template>

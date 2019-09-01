@@ -1,0 +1,9 @@
+div.content {
+    padding: 10px;
+}
+div.configuration {
+    display:grid;
+    grid-gap: 5px;
+    grid-template-rows: repeat(auto-fill 50px);
+    align-items: start; 
+}

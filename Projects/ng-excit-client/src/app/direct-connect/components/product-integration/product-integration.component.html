@@ -1,0 +1,21 @@
+<ng-container *ngIf="supplierConfig$ | async as supplierConfig; else loadingConfig">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>clear</mat-icon>
+        </button>Login for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+        <div class="content">
+            <div class="configuration">
+                <mat-form-field>
+                    <input matInput placeholder="Implementation"
+                        title="{{supplierConfig.services.productIntegration.implementation}}"
+                        value="{{supplierConfig.services.productIntegration.implementation}}" readonly>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Url" title="{{supplierConfig.services.productIntegration.url}}"
+                        value="{{supplierConfig.services.productIntegration.url}}" readonly>
+                </mat-form-field>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #loadingConfig>
+        <br /><br />Loading config data...
+    </ng-template>

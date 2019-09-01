@@ -1,0 +1,52 @@
+<ng-container *ngIf="supplierConfig$ | async as supplierConfig; else loadingConfig">
+    <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+    </button>Login for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+    <div class="content">
+        <div id="configuration">
+            <mat-form-field>
+                <input matInput placeholder="Implementation"
+                    title="{{supplierConfig.services.orderStatus.implementation}}"
+                    value="{{supplierConfig.services.orderStatus.implementation}}" readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Url" title="{{supplierConfig.services.orderStatus.url}}"
+                    value="{{supplierConfig.services.orderStatus.url}}" readonly>
+            </mat-form-field>
+        </div>
+        <div>
+            <div *ngIf="orderStatusOutput$ | async as orderStatusOutput; else orderStatusPrompt">
+                <button mat-icon-button (click)="reset()">
+                    <mat-icon>clear</mat-icon>
+                </button>Order Status
+                <app-order-status-list [orderStatusOutput]="orderStatusOutput$ | async"></app-order-status-list>
+            </div>
+            <ng-template #orderStatusPrompt>
+                <form [formGroup]="orderStatusForm" (ngSubmit)="getStatus()">
+                    <mat-form-field>
+                        <input matInput placeholder="Account Number" formControlName="accountNumber" />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Username" formControlName="username" />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Password" formControlName="password" />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="PO Number" formControlName="poNumber" />
+                    </mat-form-field>
+                    <span><button type="submit" mat-raised-button mat-primary [disabled]="!orderStatusForm.valid">View
+                            Status</button></span>
+                    <br />
+                    <div>
+                        <mat-icon matPrefix>info</mat-icon> Enter your credentials, a PO Number and click "View Status"
+                        button.
+                    </div>
+                </form>
+            </ng-template>
+        </div>
+    </div>
+</ng-container>
+<ng-template #loadingConfig>
+    <br /><br />Loading config data...
+</ng-template>

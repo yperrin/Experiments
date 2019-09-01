@@ -1,0 +1,21 @@
+<ng-container *ngIf="supplierConfig$ | async as supplierConfig; else loadingConfig">
+    <button mat-icon-button (click)="close()">
+        <mat-icon>clear</mat-icon>
+    </button>Order Creation  for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+    <div class="content">
+        <div class="configuration">
+            <mat-form-field>
+                <input matInput placeholder="Implementation"
+                    title="{{supplierConfig.services.orderCreation.implementation}}"
+                    value="{{supplierConfig.services.orderCreation.implementation}}" readonly>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Url" title="{{supplierConfig.services.orderCreation.url}}"
+                    value="{{supplierConfig.services.orderCreation.url}}" readonly>
+            </mat-form-field>
+        </div>
+    </div>
+</ng-container>
+<ng-template #loadingConfig>
+    <br /><br />Loading config data...
+</ng-template>

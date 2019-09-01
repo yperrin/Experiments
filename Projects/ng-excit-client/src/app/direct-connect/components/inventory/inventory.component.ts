@@ -6,14 +6,15 @@ import { InventoryOutputModel } from '../../models/output/inventory/inventory-ou
 import { switchMap, tap } from 'rxjs/operators';
 import { SupplierConfigModel } from '../../models/config/supplierConfig.model';
 import { FormControl } from '@angular/forms';
+import { DirectConnectComponent } from '../direct-connect.component';
+import { BaseDetailComponent } from '../base-detail.component';
 
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css']
 })
-export class InventoryComponent implements OnInit {
-  supplierConfig$: Observable<SupplierConfigModel>;
+export class InventoryComponent extends BaseDetailComponent implements OnInit {
   inventoryOutput$: Observable<InventoryOutputModel>;
   productJson = new FormControl('');
 
@@ -21,30 +22,20 @@ export class InventoryComponent implements OnInit {
     protected directConnectService: DirectConnectService,
     protected route: ActivatedRoute,
     protected router: Router) {
+      super(directConnectService, route, router);
   }
 
   ngOnInit(): void {
-    this.supplierConfig$ = this.route.params
-      .pipe(
-        switchMap(params => {
-          const id = +params['id']; // (+) converts string 'id' to a number
-          const name = params['name'];
-          return this.directConnectService.getConfig$(id, name).pipe(
-            tap(config => {
-              this.productJson.setValue(InventoryComponent.getProduct(config.id));
-              console.log(InventoryComponent.getProduct(config.id));
-            })
-          );
-        })
-      );
+    super.ngOnInit();
+    this.supplierConfig$ = this.supplierConfig$.pipe(
+      tap(config => {
+        this.productJson.setValue(InventoryComponent.getProduct(config.id));
+      })
+    );
   }
 
   callInventory(supplierId: number) {
     this.inventoryOutput$ = this.directConnectService.getInventory$(supplierId, this.productJson.value);
-  }
-
-  close() {
-    this.router.navigate(['']);
   }
 
   // tslint:disable-next-line: member-ordering
@@ -290,6 +281,7 @@ export class InventoryComponent implements OnInit {
       case 6004250: // RS Owens Canada
         return '{"Number":"8328.19"}';
       case 3141: // SanMar
+        // tslint:disable-next-line: max-line-length
         return '{"Number":"K420", "Attributes":{"Colors":{"Values":[{"Code":"BLK","Name":"Black-IronGray-White","VendorCode":"Black"}]}, "Sizes":{"Values":[{"Code":"S","Name":"S","VendorCode":"S"}]}},"SKU": [{"SKU": "29223" }, {"SKU": "29223", "Values": [{"Code": "SIZE", "Name": "S" },{"Code": "PRCL","Name": "Black-IronGray-White","VendorCode":"Black"} ]}],}';
       case 3264: // Snugz
         return '{"Number":"ZAV10O"}';

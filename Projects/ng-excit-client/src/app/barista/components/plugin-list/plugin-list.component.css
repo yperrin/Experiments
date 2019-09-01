@@ -6,7 +6,8 @@ tr.plugin-detail-row {
 }
 div.details {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px;
     font-style: italic;
 }
 div.details a:link, a:visited, a:hover {
@@ -52,4 +53,8 @@ strong {
         padding-left:5px;
     }
 }
-  
+@media (max-width: 800px) {
+    div.details {
+        grid-template-columns: 1fr;
+    }
+} 

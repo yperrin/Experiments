@@ -13,7 +13,7 @@ import { BaristaShortNamePipe } from './pipes/barista-short-name';
   declarations: [
     BaristaComponent,
     PluginListComponent,
-    BaristaShortNamePipe
+    BaristaShortNamePipe,
   ],
   imports: [
     CommonModule,

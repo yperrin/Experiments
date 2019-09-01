@@ -1,0 +1,13 @@
+<ng-container *ngIf="supplierConfig$ | async as supplierConfig; else loadingConfig">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>clear</mat-icon>
+        </button>Service Login  for {{supplierConfig.name}} (ASI# {{supplierConfig.asiNumber}})
+        <div class="content">
+            <div class="configuration">
+                No information at this point, would need to be implemented
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #loadingConfig>
+        <br /><br />Loading config data...
+    </ng-template>

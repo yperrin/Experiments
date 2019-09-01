@@ -9,6 +9,12 @@ import { SharedModule } from '../shared/shared.module';
 import { SupplierListComponent } from './components/supplier-list/supplier-list.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { InventoryListComponent } from './components/inventory/inventory-list/inventory-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { OrderCreationComponent } from './components/order-creation/order-creation.component';
+import { ProductIntegrationComponent } from './components/product-integration/product-integration.component';
+import { OrderStatusComponent } from './components/order-status/order-status.component';
+import { OrderStatusListComponent } from './components/order-status/order-status-list/order-status-list.component';
+import { ServiceLoginComponent } from './components/service-login/service-login.component';
 
 
 @NgModule({
@@ -16,7 +22,13 @@ import { InventoryListComponent } from './components/inventory/inventory-list/in
     DirectConnectComponent,
     SupplierListComponent,
     InventoryComponent,
-    InventoryListComponent
+    InventoryListComponent,
+    LoginComponent,
+    OrderCreationComponent,
+    ProductIntegrationComponent,
+    OrderStatusComponent,
+    OrderStatusListComponent,
+    ServiceLoginComponent
   ],
   imports: [
     CommonModule,
