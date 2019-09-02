@@ -16,10 +16,10 @@ export class OrderStatusComponent extends BaseDetailComponent implements OnInit 
   orderStatusOutput$: Observable<OrderStatusOutputModel>;
   orderStatusForm = this.fb.group({
     supplierId: [0],
-    accountNumber: ['test'],
-    username: ['test', Validators.required],
-    password: ['test', Validators.required],
-    poNumber: ['test', Validators.required]
+    accountNumber: [''],
+    username: ['', Validators.required],
+    password: ['', Validators.required],
+    poNumber: ['', Validators.required]
   });
 
   constructor(
