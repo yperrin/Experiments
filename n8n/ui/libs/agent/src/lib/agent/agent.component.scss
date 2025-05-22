@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: stretch;
+  justify-content: stretch;
+  row-gap: 5px;
+  mat-card {
+    background-color: transparent;
+    width: 100%;
+    margin-left: 1px;
+  }
+}
+.chat-models {
+  height: 70px;
+  flex: 0 0 70px;
+  display: flex;
+  align-items: center;
+  mat-card {
+    height: 98%;
+    ::ng-deep .mat-select-panel {
+      max-height: 200px !important; /* Adjust value as needed */
+    }
+  }
+}
+.chat-responses {
+  flex: 1 1 auto;
+  overflow: hidden;
+  mat-card {
+    height: 99%;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .chat-response-user {
+    height: 40px;
+    .content {
+      padding: 10px 10px 10px 10px;
+      border-radius: 10px;
+      width: 500px;
+      background-color: lightblue;
+      float: right;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .chat-response-agent {
+    .content {
+      padding: 0px 10px 10px 10px;
+      border-radius: 10px;
+      border: 1px solid lightgray;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .chat-response-error {
+    .content {
+      padding: 0px 10px 10px 10px;
+      border-radius: 10px;
+      border: 1px solid red;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+.chat-input {
+  flex: 0 0 150px;
+  display: flex;
+  align-items: center;
+  mat-card {
+    height: 98%;
+  }
+  .chat-form {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .message-input {
+    position: relative;
+    flex-grow: 1;
+    mat-form-field {
+      width: 100%;
+      .message-textarea {
+        padding-right: 40px;
+        overflow-y: auto;
+        width: 100%;
+      }
+    }
+  }
+  .file-upload-button {
+    bottom: 8px;
+    right: 8px;
+  }
+  .send-button {
+    align-self: flex-end;
+    margin-bottom: 16px;
+  }
+  .loader {
+    margin-bottom: 16px;
+  }
+  .file-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .file-chip {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 16px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  .file-chip button {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+  }
+  input[type='file'] {
+    display: none;
+  }
+}
+mat-form-field.wide {
+  min-width: 320px;
+}
