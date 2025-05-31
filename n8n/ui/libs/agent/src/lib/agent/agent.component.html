@@ -1,99 +1,118 @@
-<div class="container">
-  <div class="chat-models">
+<mat-drawer-container autosize>
+  <mat-drawer #tasks mode="side" position="end">
     <mat-card>
       <mat-card-content>
-        Agent:
-        <mat-form-field>
-          <mat-label>Agent</mat-label>
-          <mat-select [ngModel]="agentStore.agent()" (selectionChange)="onAgentChange($event.value)">
-            @for(agent of agentStore.agents(); track agent.id) {
-              <mat-option [value]="agent.id">{{ agent.name }}</mat-option> 
-            }
-          </mat-select>
-        </mat-form-field>
-        &nbsp; Models:
-        <mat-form-field class="wide">
-          <mat-label>Models</mat-label>
-          <mat-select [ngModel]="agentStore.model()" (selectionChange)="onModelChange($event.value)">
-            @for(model of agentStore.models(); track model.name) {
-              <mat-option [value]="model.value">{{ model.name }}</mat-option>
-            }
-          </mat-select>
-        </mat-form-field>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="chat-responses">
-    <mat-card id="responses">
-      <mat-card-content>
-        @for (agentResponse of agentStore.thread(); track $index) {
-          @switch (agentResponse.type) {
-            @case ('user') {
-              <div class="chat-response-user">
-                <div class="content">{{ agentResponse.content }}</div>
-              </div>
-            }
-            @case ('agent') {
-              <div class="chat-response-agent">
-                <div class="content" [innerHTML]="agentResponse.content"></div>
-              </div>
-            }
-            @default {
-              <div class="chat-response-error">
-                <div class="content">{{ agentResponse.content }}</div>
-              </div>
-            }
-          }
+        @for (task of agentStore.tasks(); track task.name; let i = $index) {
+        <div class="task">
+          <button type="button" [className]="task.run ? 'run' : ''" [title]="(i < 10 ? 'ctrl + alt + ' + i + ' - ': '') + task.description" (click)="agentStore.runTask(i)">
+            {{ task.name + (task.run ? ' !' : '') }}
+          </button>
+          - {{ task.description }}
+        </div>
         }
       </mat-card-content>
     </mat-card>
-  </div>
-  <div class="chat-input">
-    <mat-card>
-      <mat-card-content>
-        <div class="chat-form">
-          <div class="message-input">
-            <mat-form-field class="message-input" appearance="outline">
-              <mat-label>Ask away...</mat-label>
-              <textarea
-                class="message-textarea"
-                matInput
-                placeholder="Enter your prompt..."
-                [ngModel]="agentStore.prompt()" (input)="setPrompt($event)"
-                (keydown)="handleKeydown($event)"
-                aria-label="Chat message"
-                cdkTextareaAutosize
-                #autosize="cdkTextareaAutosize"
-                cdkAutosizeMinRows="4"
-                cdkAutosizeMaxRows="4"
-              ></textarea>
+  </mat-drawer>
+  <div class="container">
+    <div class="chat-models">
+      <mat-card>
+        <mat-card-content class="models-header">
+          <div class="models-agent">
+            Agent:
+            <mat-form-field>
+              <mat-label>Agent</mat-label>
+              <mat-select [ngModel]="agentStore.agent()" (selectionChange)="onAgentChange($event.value)">
+                @for(agent of agentStore.agents(); track agent.id) {
+                <mat-option [value]="agent.id">{{ agent.name }}</mat-option>
+                }
+              </mat-select>
             </mat-form-field>
           </div>
-          <div class="message-file-upload">
-            <button mat-icon-button color="primary" matTooltip="Attach files" class="file-upload-button" (click)="fileInput.click()" aria-label="Attach files">
-              <mat-icon>attach_file</mat-icon>
-            </button>
-            <input #fileInput type="file" multiple (change)="onFilesSelected($event)" aria-label="File upload" />
+          <div class="models-models">
+            Models:
+            <mat-form-field class="wide">
+              <mat-label>Models</mat-label>
+              <mat-select [value]="agentStore.model()" (selectionChange)="onModelChange($event.value)">
+                @for(model of agentStore.models(); track model.name) {
+                <mat-option [value]="model.value">{{ model.name }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
           </div>
-          <div class="message-send">
-            <button mat-fab color="primary" class="send-button" [disabled]="!canSendChat()" (click)="sendChat()" aria-label="Send message">
-              <mat-icon *ngIf="!agentStore.loading()">send</mat-icon>
-              <mat-spinner *ngIf="agentStore.loading()" [diameter]="24" color="accent"></mat-spinner>
-            </button>
+          <div class="models-tasks">
+            @if (agentStore.tasks().length > 0) {
+            <span>Tasks: <mat-icon (click)="tasks.toggle()">list</mat-icon></span>
+            }
           </div>
-        </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="chat-responses">
+      <mat-card id="responses">
+        <mat-card-content>
+          @for (agentResponse of agentStore.thread(); track $index) { @switch (agentResponse.type) { @case ('user') {
+          <div class="chat-response-user">
+            <div class="content">{{ agentResponse.content }}</div>
+          </div>
+          } @case ('agent') {
+          <div class="chat-response-agent">
+            <div class="content" [innerHTML]="agentResponse.content"></div>
+          </div>
+          } @default {
+          <div class="chat-response-error">
+            <div class="content">{{ agentResponse.content }}</div>
+          </div>
+          } } }
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="chat-input">
+      <mat-card>
+        <mat-card-content>
+          <div class="chat-form">
+            <div class="message-input">
+              <mat-form-field class="message-input" appearance="outline">
+                <mat-label>Ask away...</mat-label>
+                <textarea
+                  class="message-textarea"
+                  matInput
+                  placeholder="Enter your prompt..."
+                  [ngModel]="agentStore.prompt()"
+                  (input)="setPrompt($event)"
+                  (keydown)="handleKeydown($event)"
+                  aria-label="Chat message"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMaxRows="3"
+                ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="message-file-upload">
+              <button mat-icon-button color="primary" matTooltip="Attach files" class="file-upload-button" (click)="fileInput.click()" aria-label="Attach files">
+                <mat-icon>attach_file</mat-icon>
+              </button>
+              <input #fileInput type="file" multiple (change)="onFilesSelected($event)" aria-label="File upload" />
+            </div>
+            <div class="message-send">
+              <button mat-fab color="primary" class="send-button" [disabled]="!canSendChat()" (click)="sendChat()" aria-label="Send message">
+                <mat-icon *ngIf="!agentStore.loading()">send</mat-icon>
+                <mat-spinner *ngIf="agentStore.loading()" [diameter]="24" color="accent"></mat-spinner>
+              </button>
+            </div>
+          </div>
 
-        <!-- Display selected files -->
-        <mat-chip-listbox *ngIf="selectedFiles.length > 0" class="file-list">
-          <mat-chip *ngFor="let file of selectedFiles; let i = index" 
-             (removed)="removeFile(i)">
-            {{ file.name }}
-            <button matChipRemove>
-              <mat-icon>cancel</mat-icon>
-            </button>
-          </mat-chip>
-        </mat-chip-listbox>
-      </mat-card-content>
-    </mat-card>
+          <!-- Display selected files -->
+          <mat-chip-listbox *ngIf="agentStore.selectedFiles().length > 0" class="file-list">
+            <mat-chip *ngFor="let file of agentStore.selectedFiles(); let i = index" (removed)="removeFile(i)">
+              {{ file.name }}
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+          </mat-chip-listbox>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-</div>
+</mat-drawer-container>

@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, Observable, of, tap } from 'rxjs';
-import { AgentModel, AgentResponse, Workflow } from './agent.model';
+import { AgentModel, AgentResponse, TaskModel, Workflow } from './agent.model';
 
 @Injectable({providedIn: 'root'})
 export class AgentService {
     private readonly apiUrl = 'http://localhost:5678';
     constructor(private httpClient: HttpClient) { }
     
-    callN8NChat(formData: FormData, agent: string, model: string, sessionId: string): Observable<AgentResponse> {
+    callN8NChat(formData: FormData): Observable<AgentResponse> {
         const headers = new HttpHeaders();
         headers.append('Accept', 'application/json');
         headers.append('Content-Type', 'multipart/form-data');
-        formData.append('agent', agent);
-        formData.append('model', model);
-        formData.append('sessionId', sessionId);
         return this.httpClient.post(this.apiUrl + '/webhook/chat', formData, { headers, observe: 'response' }).pipe(
             map((response) => {
                 const value: AgentResponse = { 
@@ -23,7 +20,7 @@ export class AgentService {
                 }
                 if (!value.content || value.content === '') {
                     value.type = 'error';
-                    value.content = agent + ' is not able to process this request.';
+                    value.content = formData.get('agent') + ' is not able to process this request.';
                 }
                 return value;
             }),
@@ -51,5 +48,13 @@ export class AgentService {
 
     getN8nWorkflows(): Observable<Workflow[]> {
         return this.httpClient.get<Workflow[]>(this.apiUrl + '/webhook/n8n/workflows');
+    }
+
+    getTasks(): Observable<TaskModel[]> {
+        return this.httpClient.get<{ tasks: TaskModel[]}>(this.apiUrl + '/webhook/tasks').pipe(
+            map((response) => {
+                return response.tasks;
+            })
+        );
     }
 }

@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, inject, effect, computed } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, effect, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,20 +16,21 @@ import { AgentStore } from './agent.store';
 @Component({
   selector: 'lib-agent',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule, MatChipsModule],
+  imports: [CommonModule, MatSidenavModule, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule, MatChipsModule],
   templateUrl: './agent.component.html',
   styleUrl: './agent.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentComponent {
   readonly agentStore = inject(AgentStore);
-  selectedFiles: File[] = [];
+  selectedFiles = signal<File[]>([]);
   canSendChat = computed(() => {
     const prompt = this.agentStore.prompt();
     const agent = this.agentStore.agent();
     const loading  = this.agentStore.loading();
+    const files = this.agentStore.selectedFiles();
 
-    return !loading && (prompt.trim().length != 0 || agent === 'n8n') && this.selectedFiles.length === 0;
+    return !loading && (prompt.trim().length != 0 || agent === 'n8n'|| files.length > 0);
   });
 
   constructor() {
@@ -64,24 +66,21 @@ export class AgentComponent {
     const input = event.target as HTMLInputElement;
     if (input.files) {
       const newFiles = Array.from(input.files);
-      this.selectedFiles = [...this.selectedFiles, ...newFiles];
+      this.agentStore.addFiles(newFiles);
     }
   }
 
   removeFile(index: number): void {
-    this.selectedFiles = this.selectedFiles.filter((_, i) => i !== index);
+    this.agentStore.removeFile(index);
   }
 
   sendChat(): void {
     if (!this.canSendChat()) return;
+    this.agentStore.sendChat();
+  }
 
-    // Create form data for files and prompt
-    const formData = new FormData();
-    formData.append('prompt', this.agentStore.prompt());
-    this.selectedFiles.forEach((file) => {
-      formData.append('files', file);
-    });
-    this.agentStore.queryPrompt({ formData });
+  runTask(taskIndex: number): void {
+    this.agentStore.runTask(taskIndex);
   }
 
   hasData(): boolean {
@@ -93,6 +92,17 @@ export class AgentComponent {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
       this.sendChat();
+    } else if (event.key === 'Escape') {
+      this.agentStore.setPrompt('');
+    } else if (event.key === 'ArrowUp') {
+      this.agentStore.changePromptHistoryIndex(1);
+    } else if (event.key === 'ArrowDown') {
+      this.agentStore.changePromptHistoryIndex(-1);
+    } else if (event.ctrlKey && event.altKey) {
+      const taskIndex = parseInt(event.key);
+      if (!isNaN(taskIndex)) {
+        this.runTask(taskIndex);
+      }
     }
   }
 }

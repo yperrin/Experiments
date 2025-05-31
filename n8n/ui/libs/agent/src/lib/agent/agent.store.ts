@@ -1,6 +1,6 @@
 import { getState, patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { combineLatest, of, pipe, switchMap, tap } from 'rxjs';
+import { combineLatest, pipe, switchMap, tap } from 'rxjs';
 import { computed, inject } from '@angular/core';
 import { setLoaded, setLoading, withCallState } from '@fdm-ui/shared';
 import { Agent, AgentModel, AgentResponse, AgentState } from './agent.model';
@@ -12,8 +12,11 @@ const initialState: AgentState = {
   model: 'Auto',
   agents: [],
   prompt: '',
+  promptHistoryIndex: 0,
+  promptHistory: [],
   selectedFiles: [],
   thread: [],
+  tasks: [],
 };
 
 export const AgentStore = signalStore(
@@ -44,6 +47,25 @@ export const AgentStore = signalStore(
       setModel: (model: string) => {
         patchState(store, { model });
       },
+      changePromptHistoryIndex: (jump: number) => {
+        const prompt = store.promptHistory()[store.promptHistoryIndex()];
+        let promptHistoryIndex = store.promptHistoryIndex() + jump;
+        if (promptHistoryIndex < 0) {
+          promptHistoryIndex = 0;
+        } else if (promptHistoryIndex >= store.promptHistory().length) {
+          promptHistoryIndex = store.promptHistory().length - 1;
+        }
+        patchState(store, { promptHistoryIndex, prompt });
+      },
+      addFiles: (files: File[]) => {
+        const currentFiles = store.selectedFiles();
+        patchState(store, { selectedFiles: [...currentFiles, ...files] });
+      },
+      removeFile: (index: number) => {
+        const currentFiles = store.selectedFiles();
+        const updatedFiles = currentFiles.filter((_, i) => i !== index);
+        patchState(store, { selectedFiles: updatedFiles });
+      }
     };
   }),
   withMethods((store) => {
@@ -53,20 +75,25 @@ export const AgentStore = signalStore(
         pipe(
           tap(({ formData }) => {
             const agent = store.agent();
-            let prompt = (formData.get('prompt') as string);
+            let prompt = formData.get('prompt') as string;
             if (agent === 'n8n') {
-              const name = store.models().find((models) => models.value === store.model())?.name
-              prompt = 'Calling workflow \'' + name + '\'...';
+              const name = store.models().find((models) => models.value === store.model())?.name;
+              prompt = "Calling workflow '" + name + "'...";
             }
             const userPrompt: AgentResponse = {
               type: 'user',
               content: prompt,
             };
             patchState(store, setLoading());
-            patchState(store, { thread: [...getState(store).thread, userPrompt], prompt: '' });
+            patchState(store, {
+              thread: [...getState(store).thread, userPrompt],
+              prompt: '',
+              promptHistoryIndex: 0,
+              promptHistory: [formData.get('prompt') as string, ...getState(store).promptHistory],
+            });
           }),
           switchMap(({ formData }) => {
-              return agentService.callN8NChat(formData, store.agent(), store.model(), store.sessionId());
+            return agentService.callN8NChat(formData);
           }),
           tap((agentResponse) => {
             patchState(store, { thread: [...getState(store).thread, agentResponse] });
@@ -75,6 +102,46 @@ export const AgentStore = signalStore(
         )
       ),
     };
+  }),
+  withMethods((store) => {
+    return {
+      sendChat: () => {
+        const formData = new FormData();
+        formData.append('prompt', store.prompt());
+        formData.append('agent', store.agent());
+        formData.append('model', store.model());
+        formData.append('sessionId', store.sessionId());
+        store.selectedFiles().forEach((file) => {
+          formData.append('files', file, file.name);
+        });
+        return store.queryPrompt({ formData });
+      },
+    };
+  }),
+  withMethods((store) => {
+    return {
+      runTask: (taskIndex: number): void => {
+        const tasks = store.tasks();
+        const agents = store.agents();
+        const selectedAgent = agents.find((a) => a.id === tasks[taskIndex].agent);
+        let selectedModel = '';
+        if (selectedAgent) {
+          store.setAgent(selectedAgent.id);
+          const selectedModelObject = selectedAgent.models.find((m) => m.name === tasks[taskIndex].model);
+          if (selectedModelObject) {  
+            selectedModel = selectedModelObject.value;
+          }
+        }
+        patchState(store, {model: selectedModel});
+        if (tasks[taskIndex].prompt && tasks[taskIndex].prompt.length > 0) {
+          patchState(store, {prompt: tasks[taskIndex].prompt});
+        }
+        const run = tasks[taskIndex].run;
+        if (run) {
+          store.sendChat();
+        }
+      }
+    }
   }),
   withHooks({
     onInit: (store) => {
@@ -93,6 +160,16 @@ export const AgentStore = signalStore(
       });
       patchState(store, { agents, model: 'Auto', sessionId: crypto.randomUUID() });
 
+      agentService.getTasks().subscribe({
+        next: (tasks) => {
+          if (tasks && tasks.length > 0) {
+            patchState(store, { tasks });
+          }
+        },
+        error: (error) => {
+          console.error('Error fetching tasks:', error);
+        },
+      });
       // need to use combine latest
       combineLatest([agentService.getAAndGModels(), agentService.getN8nWorkflows()]).subscribe({
         next: ([agModels, n8nModels]) => {

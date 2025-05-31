@@ -1,7 +1,21 @@
+mat-drawer-container {
+  height: 100%;
+  mat-drawer {
+    mat-card {
+      height: 100%;
+      .task {
+        padding-bottom: 5px;
+        .run {
+          background-color: lightgray;
+        }
+      }
+    }
+  }
+}
 .container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 99%;
   align-items: stretch;
   justify-content: stretch;
   row-gap: 5px;
@@ -9,23 +23,43 @@
     background-color: transparent;
     width: 100%;
     margin-left: 1px;
+    .models-header {
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+      gap: 10px;
+      .models-models {
+        flex: 1 1 200px;
+      }
+    }
+    .models-tasks {
+      padding-bottom: 20px;
+      mat-icon {
+        cursor: pointer;
+      }
+    }
   }
 }
 .chat-models {
   height: 70px;
   flex: 0 0 70px;
   display: flex;
+  padding-right: 5px;
   align-items: center;
   mat-card {
     height: 98%;
     ::ng-deep .mat-select-panel {
       max-height: 200px !important; /* Adjust value as needed */
     }
+    .mat-icon {
+      vertical-align: middle;
+    }
   }
 }
 .chat-responses {
   flex: 1 1 auto;
   overflow: hidden;
+  padding-right: 5px;
   mat-card {
     height: 99%;
     overflow-y: auto;
@@ -67,11 +101,11 @@
   flex: 0 0 150px;
   display: flex;
   align-items: center;
+  padding-right: 5px;
   mat-card {
     height: 98%;
   }
   .chat-form {
-    height: 80px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -79,6 +113,7 @@
   .message-input {
     position: relative;
     flex-grow: 1;
+    max-height: 80px;
     mat-form-field {
       width: 100%;
       .message-textarea {
