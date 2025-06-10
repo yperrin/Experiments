@@ -15,7 +15,7 @@ const initialState: AgentState = {
   promptHistoryIndex: 0,
   promptHistory: [],
   selectedFiles: [],
-  thread: [],
+  thread: [], //what is shown in the UI
   tasks: [],
 };
 
@@ -65,6 +65,14 @@ export const AgentStore = signalStore(
         const currentFiles = store.selectedFiles();
         const updatedFiles = currentFiles.filter((_, i) => i !== index);
         patchState(store, { selectedFiles: updatedFiles });
+      },
+      resetState() {
+        patchState(store, {
+          sessionId: crypto.randomUUID(),
+          prompt: '',
+          selectedFiles: [],
+          thread: [],
+        });
       }
     };
   }),

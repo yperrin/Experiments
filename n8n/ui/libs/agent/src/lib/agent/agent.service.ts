@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { AgentModel, AgentResponse, TaskModel, Workflow } from './agent.model';
 
 @Injectable({providedIn: 'root'})
@@ -16,6 +16,7 @@ export class AgentService {
             map((response) => {
                 const value: AgentResponse = { 
                     type: 'agent',
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     content: (response.body as any)?.async ? 'The workflow was triggered' : (response.body as any)?.output as string                   
                 }
                 if (!value.content || value.content === '') {
